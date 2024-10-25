@@ -9,6 +9,7 @@ export default {
   // front page will a specifycally page
   page,
   single,
+  lpu:single,
   category,
   tag,
   index: main,
