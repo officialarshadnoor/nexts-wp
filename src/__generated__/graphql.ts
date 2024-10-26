@@ -14,43 +14,8 @@ export type Scalars = {
   Boolean: { input: boolean; output: boolean; }
   Int: { input: number; output: number; }
   Float: { input: number; output: number; }
-  /** Generic Array Scalar Type */
-  BlockAttributesArray: { input: any; output: any; }
   /** Generic Object Scalar Type */
   BlockAttributesObject: { input: any; output: any; }
-};
-
-/** Connection between the NcmazfaustMenu_Fields type and the ContentNode type */
-export type AcfContentNodeConnection = Connection & ContentNodeConnection & {
-  __typename?: 'AcfContentNodeConnection';
-  /** Edges for the AcfContentNodeConnection connection */
-  edges: Array<AcfContentNodeConnectionEdge>;
-  /** The nodes of the connection, without the edges */
-  nodes: Array<ContentNode>;
-  /** Information about pagination in a connection. */
-  pageInfo: AcfContentNodeConnectionPageInfo;
-};
-
-/** An edge in a connection */
-export type AcfContentNodeConnectionEdge = ContentNodeConnectionEdge & Edge & {
-  __typename?: 'AcfContentNodeConnectionEdge';
-  /** A cursor for use in pagination */
-  cursor?: Maybe<Scalars['String']['output']>;
-  /** The item at the end of the edge */
-  node: ContentNode;
-};
-
-/** Page Info on the &quot;AcfContentNodeConnection&quot; */
-export type AcfContentNodeConnectionPageInfo = ContentNodeConnectionPageInfo & PageInfo & WpPageInfo & {
-  __typename?: 'AcfContentNodeConnectionPageInfo';
-  /** When paginating forwards, the cursor to continue. */
-  endCursor?: Maybe<Scalars['String']['output']>;
-  /** When paginating forwards, are there more items? */
-  hasNextPage: Scalars['Boolean']['output'];
-  /** When paginating backwards, are there more items? */
-  hasPreviousPage: Scalars['Boolean']['output'];
-  /** When paginating backwards, the cursor to continue. */
-  startCursor?: Maybe<Scalars['String']['output']>;
 };
 
 /** A Field Group managed by ACF */
@@ -69,15 +34,6 @@ export type AcfFieldGroupFields = {
    * @deprecated Use __typename instead
    */
   fieldGroupName?: Maybe<Scalars['String']['output']>;
-};
-
-/** Connection between the NcmazGalleryImgs_Fields type and the MediaItem type */
-export type AcfMediaItemConnectionEdge = Edge & MediaItemConnectionEdge & OneToOneConnection & {
-  __typename?: 'AcfMediaItemConnectionEdge';
-  /** Opaque reference to the nodes position in the connection. Value can be used with pagination args. */
-  cursor?: Maybe<Scalars['String']['output']>;
-  /** The node of the connection, without the edges */
-  node: MediaItem;
 };
 
 /** Avatars are profile images for users. WordPress by default uses the Gravatar service to host and fetch avatars from. */
@@ -1485,11 +1441,25 @@ export enum ContentTypeEnum {
   /** The Type of Content object */
   Attachment = 'ATTACHMENT',
   /** The Type of Content object */
+  DelhiUniversity = 'DELHI_UNIVERSITY',
+  /** The Type of Content object */
+  Ggsipu = 'GGSIPU',
+  /** The Type of Content object */
   GraphqlDocument = 'GRAPHQL_DOCUMENT',
+  /** The Type of Content object */
+  Kuk = 'KUK',
+  /** The Type of Content object */
+  Lpu = 'LPU',
+  /** The Type of Content object */
+  Makaut = 'MAKAUT',
+  /** The Type of Content object */
+  MumbaiUniversity = 'MUMBAI_UNIVERSITY',
   /** The Type of Content object */
   Page = 'PAGE',
   /** The Type of Content object */
   Post = 'POST',
+  /** The Type of Content object */
+  Rgpv = 'RGPV',
   /** The Type of Content object */
   UserReactionPost = 'USER_REACTION_POST'
 }
@@ -1623,7 +1593,21 @@ export enum ContentTypesOfGraphqlDocumentGroupEnum {
 /** Allowed Content Types of the PostFormat taxonomy. */
 export enum ContentTypesOfPostFormatEnum {
   /** The Type of Content object */
-  Post = 'POST'
+  DelhiUniversity = 'DELHI_UNIVERSITY',
+  /** The Type of Content object */
+  Ggsipu = 'GGSIPU',
+  /** The Type of Content object */
+  Kuk = 'KUK',
+  /** The Type of Content object */
+  Lpu = 'LPU',
+  /** The Type of Content object */
+  Makaut = 'MAKAUT',
+  /** The Type of Content object */
+  MumbaiUniversity = 'MUMBAI_UNIVERSITY',
+  /** The Type of Content object */
+  Post = 'POST',
+  /** The Type of Content object */
+  Rgpv = 'RGPV'
 }
 
 /** Allowed Content Types of the Tag taxonomy. */
@@ -1633,7 +1617,7 @@ export enum ContentTypesOfTagEnum {
 }
 
 /** A block used for editing the site */
-export type CoreArchives = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreArchives = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreArchives';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -1660,32 +1644,32 @@ export type CoreArchives = EditorBlock & PageEditorBlock & PostEditorBlock & {
 /** Attributes of the CoreArchives Block Type */
 export type CoreArchivesAttributes = {
   __typename?: 'CoreArchivesAttributes';
-  /** The &quot;align&quot; field on the &quot;CoreArchivesAttributes&quot; block or block attributes */
+  /** The &quot;align&quot; field on the &quot;CoreArchives&quot; block */
   align?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CoreArchivesAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreArchives&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;displayAsDropdown&quot; field on the &quot;CoreArchivesAttributes&quot; block or block attributes */
-  displayAsDropdown: Scalars['Boolean']['output'];
-  /** The &quot;fontFamily&quot; field on the &quot;CoreArchivesAttributes&quot; block or block attributes */
+  /** The &quot;displayAsDropdown&quot; field on the &quot;CoreArchives&quot; block */
+  displayAsDropdown?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;fontFamily&quot; field on the &quot;CoreArchives&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CoreArchivesAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CoreArchives&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CoreArchivesAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CoreArchives&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreArchivesAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreArchives&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;showLabel&quot; field on the &quot;CoreArchivesAttributes&quot; block or block attributes */
-  showLabel: Scalars['Boolean']['output'];
-  /** The &quot;showPostCounts&quot; field on the &quot;CoreArchivesAttributes&quot; block or block attributes */
-  showPostCounts: Scalars['Boolean']['output'];
-  /** The &quot;style&quot; field on the &quot;CoreArchivesAttributes&quot; block or block attributes */
+  /** The &quot;showLabel&quot; field on the &quot;CoreArchives&quot; block */
+  showLabel?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;showPostCounts&quot; field on the &quot;CoreArchives&quot; block */
+  showPostCounts?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;style&quot; field on the &quot;CoreArchives&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;type&quot; field on the &quot;CoreArchivesAttributes&quot; block or block attributes */
-  type: Scalars['String']['output'];
+  /** The &quot;type&quot; field on the &quot;CoreArchives&quot; block */
+  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreAudio = BlockWithSupportsAnchor & EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreAudio = BlockWithSupportsAnchor & DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreAudio';
   /** The anchor field for the block. */
   anchor?: Maybe<Scalars['String']['output']>;
@@ -1714,34 +1698,32 @@ export type CoreAudio = BlockWithSupportsAnchor & EditorBlock & PageEditorBlock 
 /** Attributes of the CoreAudio Block Type */
 export type CoreAudioAttributes = BlockWithSupportsAnchor & {
   __typename?: 'CoreAudioAttributes';
-  /** The &quot;align&quot; field on the &quot;CoreAudioAttributes&quot; block or block attributes */
+  /** The &quot;align&quot; field on the &quot;CoreAudio&quot; block */
   align?: Maybe<Scalars['String']['output']>;
   /** The anchor field for the block. */
   anchor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;autoplay&quot; field on the &quot;CoreAudioAttributes&quot; block or block attributes */
+  /** The &quot;autoplay&quot; field on the &quot;CoreAudio&quot; block */
   autoplay?: Maybe<Scalars['Boolean']['output']>;
-  /** The &quot;caption&quot; field on the &quot;CoreAudioAttributes&quot; block or block attributes */
-  caption?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CoreAudioAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreAudio&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;id&quot; field on the &quot;CoreAudioAttributes&quot; block or block attributes */
+  /** The &quot;id&quot; field on the &quot;CoreAudio&quot; block */
   id?: Maybe<Scalars['Float']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CoreAudioAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CoreAudio&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;loop&quot; field on the &quot;CoreAudioAttributes&quot; block or block attributes */
+  /** The &quot;loop&quot; field on the &quot;CoreAudio&quot; block */
   loop?: Maybe<Scalars['Boolean']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreAudioAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreAudio&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;preload&quot; field on the &quot;CoreAudioAttributes&quot; block or block attributes */
+  /** The &quot;preload&quot; field on the &quot;CoreAudio&quot; block */
   preload?: Maybe<Scalars['String']['output']>;
-  /** The &quot;src&quot; field on the &quot;CoreAudioAttributes&quot; block or block attributes */
+  /** The &quot;src&quot; field on the &quot;CoreAudio&quot; block */
   src?: Maybe<Scalars['String']['output']>;
-  /** The &quot;style&quot; field on the &quot;CoreAudioAttributes&quot; block or block attributes */
+  /** The &quot;style&quot; field on the &quot;CoreAudio&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreAvatar = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreAvatar = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreAvatar';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -1768,30 +1750,30 @@ export type CoreAvatar = EditorBlock & PageEditorBlock & PostEditorBlock & {
 /** Attributes of the CoreAvatar Block Type */
 export type CoreAvatarAttributes = {
   __typename?: 'CoreAvatarAttributes';
-  /** The &quot;align&quot; field on the &quot;CoreAvatarAttributes&quot; block or block attributes */
+  /** The &quot;align&quot; field on the &quot;CoreAvatar&quot; block */
   align?: Maybe<Scalars['String']['output']>;
-  /** The &quot;borderColor&quot; field on the &quot;CoreAvatarAttributes&quot; block or block attributes */
+  /** The &quot;borderColor&quot; field on the &quot;CoreAvatar&quot; block */
   borderColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CoreAvatarAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreAvatar&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;isLink&quot; field on the &quot;CoreAvatarAttributes&quot; block or block attributes */
-  isLink: Scalars['Boolean']['output'];
-  /** The &quot;linkTarget&quot; field on the &quot;CoreAvatarAttributes&quot; block or block attributes */
-  linkTarget: Scalars['String']['output'];
-  /** The &quot;lock&quot; field on the &quot;CoreAvatarAttributes&quot; block or block attributes */
+  /** The &quot;isLink&quot; field on the &quot;CoreAvatar&quot; block */
+  isLink?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;linkTarget&quot; field on the &quot;CoreAvatar&quot; block */
+  linkTarget?: Maybe<Scalars['String']['output']>;
+  /** The &quot;lock&quot; field on the &quot;CoreAvatar&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreAvatarAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreAvatar&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;size&quot; field on the &quot;CoreAvatarAttributes&quot; block or block attributes */
-  size: Scalars['Float']['output'];
-  /** The &quot;style&quot; field on the &quot;CoreAvatarAttributes&quot; block or block attributes */
+  /** The &quot;size&quot; field on the &quot;CoreAvatar&quot; block */
+  size?: Maybe<Scalars['Float']['output']>;
+  /** The &quot;style&quot; field on the &quot;CoreAvatar&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;userId&quot; field on the &quot;CoreAvatarAttributes&quot; block or block attributes */
+  /** The &quot;userId&quot; field on the &quot;CoreAvatar&quot; block */
   userId?: Maybe<Scalars['Float']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreBlock = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreBlock = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreBlock';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -1818,18 +1800,18 @@ export type CoreBlock = EditorBlock & PageEditorBlock & PostEditorBlock & {
 /** Attributes of the CoreBlock Block Type */
 export type CoreBlockAttributes = {
   __typename?: 'CoreBlockAttributes';
-  /** The &quot;content&quot; field on the &quot;CoreBlockAttributes&quot; block or block attributes */
-  content: Scalars['BlockAttributesObject']['output'];
-  /** The &quot;lock&quot; field on the &quot;CoreBlockAttributes&quot; block or block attributes */
+  /** The &quot;content&quot; field on the &quot;CoreBlock&quot; block */
+  content?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;lock&quot; field on the &quot;CoreBlock&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreBlockAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreBlock&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;ref&quot; field on the &quot;CoreBlockAttributes&quot; block or block attributes */
+  /** The &quot;ref&quot; field on the &quot;CoreBlock&quot; block */
   ref?: Maybe<Scalars['Float']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreButton = BlockWithSupportsAnchor & EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreButton = BlockWithSupportsAnchor & DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreButton';
   /** The anchor field for the block. */
   anchor?: Maybe<Scalars['String']['output']>;
@@ -1860,54 +1842,52 @@ export type CoreButtonAttributes = BlockWithSupportsAnchor & {
   __typename?: 'CoreButtonAttributes';
   /** The anchor field for the block. */
   anchor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;backgroundColor&quot; field on the &quot;CoreButtonAttributes&quot; block or block attributes */
+  /** The &quot;backgroundColor&quot; field on the &quot;CoreButton&quot; block */
   backgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;borderColor&quot; field on the &quot;CoreButtonAttributes&quot; block or block attributes */
+  /** The &quot;borderColor&quot; field on the &quot;CoreButton&quot; block */
   borderColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CoreButtonAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreButton&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;cssClassName&quot; field on the &quot;CoreButtonAttributes&quot; block or block attributes */
+  /** The &quot;cssClassName&quot; field on the &quot;CoreButton&quot; block */
   cssClassName?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontFamily&quot; field on the &quot;CoreButtonAttributes&quot; block or block attributes */
+  /** The &quot;fontFamily&quot; field on the &quot;CoreButton&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CoreButtonAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CoreButton&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;gradient&quot; field on the &quot;CoreButtonAttributes&quot; block or block attributes */
+  /** The &quot;gradient&quot; field on the &quot;CoreButton&quot; block */
   gradient?: Maybe<Scalars['String']['output']>;
-  /** The &quot;linkClassName&quot; field on the &quot;CoreButtonAttributes&quot; block or block attributes */
+  /** The &quot;linkClassName&quot; field on the &quot;CoreButton&quot; block */
   linkClassName?: Maybe<Scalars['String']['output']>;
-  /** The &quot;linkTarget&quot; field on the &quot;CoreButtonAttributes&quot; block or block attributes */
+  /** The &quot;linkTarget&quot; field on the &quot;CoreButton&quot; block */
   linkTarget?: Maybe<Scalars['String']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CoreButtonAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CoreButton&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreButtonAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreButton&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;placeholder&quot; field on the &quot;CoreButtonAttributes&quot; block or block attributes */
+  /** The &quot;placeholder&quot; field on the &quot;CoreButton&quot; block */
   placeholder?: Maybe<Scalars['String']['output']>;
-  /** The &quot;rel&quot; field on the &quot;CoreButtonAttributes&quot; block or block attributes */
+  /** The &quot;rel&quot; field on the &quot;CoreButton&quot; block */
   rel?: Maybe<Scalars['String']['output']>;
-  /** The &quot;style&quot; field on the &quot;CoreButtonAttributes&quot; block or block attributes */
+  /** The &quot;style&quot; field on the &quot;CoreButton&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;tagName&quot; field on the &quot;CoreButtonAttributes&quot; block or block attributes */
-  tagName: Scalars['String']['output'];
-  /** The &quot;text&quot; field on the &quot;CoreButtonAttributes&quot; block or block attributes */
-  text?: Maybe<Scalars['String']['output']>;
-  /** The &quot;textAlign&quot; field on the &quot;CoreButtonAttributes&quot; block or block attributes */
+  /** The &quot;tagName&quot; field on the &quot;CoreButton&quot; block */
+  tagName?: Maybe<Scalars['String']['output']>;
+  /** The &quot;textAlign&quot; field on the &quot;CoreButton&quot; block */
   textAlign?: Maybe<Scalars['String']['output']>;
-  /** The &quot;textColor&quot; field on the &quot;CoreButtonAttributes&quot; block or block attributes */
+  /** The &quot;textColor&quot; field on the &quot;CoreButton&quot; block */
   textColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;title&quot; field on the &quot;CoreButtonAttributes&quot; block or block attributes */
+  /** The &quot;title&quot; field on the &quot;CoreButton&quot; block */
   title?: Maybe<Scalars['String']['output']>;
-  /** The &quot;type&quot; field on the &quot;CoreButtonAttributes&quot; block or block attributes */
-  type: Scalars['String']['output'];
-  /** The &quot;url&quot; field on the &quot;CoreButtonAttributes&quot; block or block attributes */
+  /** The &quot;type&quot; field on the &quot;CoreButton&quot; block */
+  type?: Maybe<Scalars['String']['output']>;
+  /** The &quot;url&quot; field on the &quot;CoreButton&quot; block */
   url?: Maybe<Scalars['String']['output']>;
-  /** The &quot;width&quot; field on the &quot;CoreButtonAttributes&quot; block or block attributes */
+  /** The &quot;width&quot; field on the &quot;CoreButton&quot; block */
   width?: Maybe<Scalars['Float']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreButtons = BlockWithSupportsAnchor & EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreButtons = BlockWithSupportsAnchor & DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreButtons';
   /** The anchor field for the block. */
   anchor?: Maybe<Scalars['String']['output']>;
@@ -1936,30 +1916,30 @@ export type CoreButtons = BlockWithSupportsAnchor & EditorBlock & PageEditorBloc
 /** Attributes of the CoreButtons Block Type */
 export type CoreButtonsAttributes = BlockWithSupportsAnchor & {
   __typename?: 'CoreButtonsAttributes';
-  /** The &quot;align&quot; field on the &quot;CoreButtonsAttributes&quot; block or block attributes */
+  /** The &quot;align&quot; field on the &quot;CoreButtons&quot; block */
   align?: Maybe<Scalars['String']['output']>;
   /** The anchor field for the block. */
   anchor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CoreButtonsAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreButtons&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;cssClassName&quot; field on the &quot;CoreButtonsAttributes&quot; block or block attributes */
+  /** The &quot;cssClassName&quot; field on the &quot;CoreButtons&quot; block */
   cssClassName?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontFamily&quot; field on the &quot;CoreButtonsAttributes&quot; block or block attributes */
+  /** The &quot;fontFamily&quot; field on the &quot;CoreButtons&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CoreButtonsAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CoreButtons&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;layout&quot; field on the &quot;CoreButtonsAttributes&quot; block or block attributes */
+  /** The &quot;layout&quot; field on the &quot;CoreButtons&quot; block */
   layout?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CoreButtonsAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CoreButtons&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreButtonsAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreButtons&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;style&quot; field on the &quot;CoreButtonsAttributes&quot; block or block attributes */
+  /** The &quot;style&quot; field on the &quot;CoreButtons&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreCalendar = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreCalendar = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreCalendar';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -1986,32 +1966,32 @@ export type CoreCalendar = EditorBlock & PageEditorBlock & PostEditorBlock & {
 /** Attributes of the CoreCalendar Block Type */
 export type CoreCalendarAttributes = {
   __typename?: 'CoreCalendarAttributes';
-  /** The &quot;align&quot; field on the &quot;CoreCalendarAttributes&quot; block or block attributes */
+  /** The &quot;align&quot; field on the &quot;CoreCalendar&quot; block */
   align?: Maybe<Scalars['String']['output']>;
-  /** The &quot;backgroundColor&quot; field on the &quot;CoreCalendarAttributes&quot; block or block attributes */
+  /** The &quot;backgroundColor&quot; field on the &quot;CoreCalendar&quot; block */
   backgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CoreCalendarAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreCalendar&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontFamily&quot; field on the &quot;CoreCalendarAttributes&quot; block or block attributes */
+  /** The &quot;fontFamily&quot; field on the &quot;CoreCalendar&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CoreCalendarAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CoreCalendar&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CoreCalendarAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CoreCalendar&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreCalendarAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreCalendar&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;month&quot; field on the &quot;CoreCalendarAttributes&quot; block or block attributes */
+  /** The &quot;month&quot; field on the &quot;CoreCalendar&quot; block */
   month?: Maybe<Scalars['Int']['output']>;
-  /** The &quot;style&quot; field on the &quot;CoreCalendarAttributes&quot; block or block attributes */
+  /** The &quot;style&quot; field on the &quot;CoreCalendar&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;textColor&quot; field on the &quot;CoreCalendarAttributes&quot; block or block attributes */
+  /** The &quot;textColor&quot; field on the &quot;CoreCalendar&quot; block */
   textColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;year&quot; field on the &quot;CoreCalendarAttributes&quot; block or block attributes */
+  /** The &quot;year&quot; field on the &quot;CoreCalendar&quot; block */
   year?: Maybe<Scalars['Int']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreCategories = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreCategories = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreCategories';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -2038,34 +2018,34 @@ export type CoreCategories = EditorBlock & PageEditorBlock & PostEditorBlock & {
 /** Attributes of the CoreCategories Block Type */
 export type CoreCategoriesAttributes = {
   __typename?: 'CoreCategoriesAttributes';
-  /** The &quot;align&quot; field on the &quot;CoreCategoriesAttributes&quot; block or block attributes */
+  /** The &quot;align&quot; field on the &quot;CoreCategories&quot; block */
   align?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CoreCategoriesAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreCategories&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;displayAsDropdown&quot; field on the &quot;CoreCategoriesAttributes&quot; block or block attributes */
-  displayAsDropdown: Scalars['Boolean']['output'];
-  /** The &quot;fontFamily&quot; field on the &quot;CoreCategoriesAttributes&quot; block or block attributes */
+  /** The &quot;displayAsDropdown&quot; field on the &quot;CoreCategories&quot; block */
+  displayAsDropdown?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;fontFamily&quot; field on the &quot;CoreCategories&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CoreCategoriesAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CoreCategories&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CoreCategoriesAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CoreCategories&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreCategoriesAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreCategories&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;showEmpty&quot; field on the &quot;CoreCategoriesAttributes&quot; block or block attributes */
-  showEmpty: Scalars['Boolean']['output'];
-  /** The &quot;showHierarchy&quot; field on the &quot;CoreCategoriesAttributes&quot; block or block attributes */
-  showHierarchy: Scalars['Boolean']['output'];
-  /** The &quot;showOnlyTopLevel&quot; field on the &quot;CoreCategoriesAttributes&quot; block or block attributes */
-  showOnlyTopLevel: Scalars['Boolean']['output'];
-  /** The &quot;showPostCounts&quot; field on the &quot;CoreCategoriesAttributes&quot; block or block attributes */
-  showPostCounts: Scalars['Boolean']['output'];
-  /** The &quot;style&quot; field on the &quot;CoreCategoriesAttributes&quot; block or block attributes */
+  /** The &quot;showEmpty&quot; field on the &quot;CoreCategories&quot; block */
+  showEmpty?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;showHierarchy&quot; field on the &quot;CoreCategories&quot; block */
+  showHierarchy?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;showOnlyTopLevel&quot; field on the &quot;CoreCategories&quot; block */
+  showOnlyTopLevel?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;showPostCounts&quot; field on the &quot;CoreCategories&quot; block */
+  showPostCounts?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;style&quot; field on the &quot;CoreCategories&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreCode = BlockWithSupportsAnchor & EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreCode = BlockWithSupportsAnchor & DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreCode';
   /** The anchor field for the block. */
   anchor?: Maybe<Scalars['String']['output']>;
@@ -2094,38 +2074,36 @@ export type CoreCode = BlockWithSupportsAnchor & EditorBlock & PageEditorBlock &
 /** Attributes of the CoreCode Block Type */
 export type CoreCodeAttributes = BlockWithSupportsAnchor & {
   __typename?: 'CoreCodeAttributes';
-  /** The &quot;align&quot; field on the &quot;CoreCodeAttributes&quot; block or block attributes */
+  /** The &quot;align&quot; field on the &quot;CoreCode&quot; block */
   align?: Maybe<Scalars['String']['output']>;
   /** The anchor field for the block. */
   anchor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;backgroundColor&quot; field on the &quot;CoreCodeAttributes&quot; block or block attributes */
+  /** The &quot;backgroundColor&quot; field on the &quot;CoreCode&quot; block */
   backgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;borderColor&quot; field on the &quot;CoreCodeAttributes&quot; block or block attributes */
+  /** The &quot;borderColor&quot; field on the &quot;CoreCode&quot; block */
   borderColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CoreCodeAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreCode&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;content&quot; field on the &quot;CoreCodeAttributes&quot; block or block attributes */
-  content?: Maybe<Scalars['String']['output']>;
-  /** The &quot;cssClassName&quot; field on the &quot;CoreCodeAttributes&quot; block or block attributes */
+  /** The &quot;cssClassName&quot; field on the &quot;CoreCode&quot; block */
   cssClassName?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontFamily&quot; field on the &quot;CoreCodeAttributes&quot; block or block attributes */
+  /** The &quot;fontFamily&quot; field on the &quot;CoreCode&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CoreCodeAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CoreCode&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;gradient&quot; field on the &quot;CoreCodeAttributes&quot; block or block attributes */
+  /** The &quot;gradient&quot; field on the &quot;CoreCode&quot; block */
   gradient?: Maybe<Scalars['String']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CoreCodeAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CoreCode&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreCodeAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreCode&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;style&quot; field on the &quot;CoreCodeAttributes&quot; block or block attributes */
+  /** The &quot;style&quot; field on the &quot;CoreCode&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;textColor&quot; field on the &quot;CoreCodeAttributes&quot; block or block attributes */
+  /** The &quot;textColor&quot; field on the &quot;CoreCode&quot; block */
   textColor?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreColumn = BlockWithSupportsAnchor & EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreColumn = BlockWithSupportsAnchor & DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreColumn';
   /** The anchor field for the block. */
   anchor?: Maybe<Scalars['String']['output']>;
@@ -2154,42 +2132,42 @@ export type CoreColumn = BlockWithSupportsAnchor & EditorBlock & PageEditorBlock
 /** Attributes of the CoreColumn Block Type */
 export type CoreColumnAttributes = BlockWithSupportsAnchor & {
   __typename?: 'CoreColumnAttributes';
-  /** The &quot;allowedBlocks&quot; field on the &quot;CoreColumnAttributes&quot; block or block attributes */
-  allowedBlocks?: Maybe<Scalars['BlockAttributesArray']['output']>;
+  /** The &quot;allowedBlocks&quot; field on the &quot;CoreColumn&quot; block */
+  allowedBlocks?: Maybe<Scalars['BlockAttributesObject']['output']>;
   /** The anchor field for the block. */
   anchor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;backgroundColor&quot; field on the &quot;CoreColumnAttributes&quot; block or block attributes */
+  /** The &quot;backgroundColor&quot; field on the &quot;CoreColumn&quot; block */
   backgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;borderColor&quot; field on the &quot;CoreColumnAttributes&quot; block or block attributes */
+  /** The &quot;borderColor&quot; field on the &quot;CoreColumn&quot; block */
   borderColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CoreColumnAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreColumn&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;cssClassName&quot; field on the &quot;CoreColumnAttributes&quot; block or block attributes */
+  /** The &quot;cssClassName&quot; field on the &quot;CoreColumn&quot; block */
   cssClassName?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontFamily&quot; field on the &quot;CoreColumnAttributes&quot; block or block attributes */
+  /** The &quot;fontFamily&quot; field on the &quot;CoreColumn&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CoreColumnAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CoreColumn&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;gradient&quot; field on the &quot;CoreColumnAttributes&quot; block or block attributes */
+  /** The &quot;gradient&quot; field on the &quot;CoreColumn&quot; block */
   gradient?: Maybe<Scalars['String']['output']>;
-  /** The &quot;layout&quot; field on the &quot;CoreColumnAttributes&quot; block or block attributes */
+  /** The &quot;layout&quot; field on the &quot;CoreColumn&quot; block */
   layout?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CoreColumnAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CoreColumn&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreColumnAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreColumn&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;style&quot; field on the &quot;CoreColumnAttributes&quot; block or block attributes */
+  /** The &quot;style&quot; field on the &quot;CoreColumn&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;textColor&quot; field on the &quot;CoreColumnAttributes&quot; block or block attributes */
+  /** The &quot;textColor&quot; field on the &quot;CoreColumn&quot; block */
   textColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;verticalAlignment&quot; field on the &quot;CoreColumnAttributes&quot; block or block attributes */
+  /** The &quot;verticalAlignment&quot; field on the &quot;CoreColumn&quot; block */
   verticalAlignment?: Maybe<Scalars['String']['output']>;
-  /** The &quot;width&quot; field on the &quot;CoreColumnAttributes&quot; block or block attributes */
+  /** The &quot;width&quot; field on the &quot;CoreColumn&quot; block */
   width?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreColumns = BlockWithSupportsAnchor & EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreColumns = BlockWithSupportsAnchor & DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreColumns';
   /** The anchor field for the block. */
   anchor?: Maybe<Scalars['String']['output']>;
@@ -2218,42 +2196,42 @@ export type CoreColumns = BlockWithSupportsAnchor & EditorBlock & PageEditorBloc
 /** Attributes of the CoreColumns Block Type */
 export type CoreColumnsAttributes = BlockWithSupportsAnchor & {
   __typename?: 'CoreColumnsAttributes';
-  /** The &quot;align&quot; field on the &quot;CoreColumnsAttributes&quot; block or block attributes */
+  /** The &quot;align&quot; field on the &quot;CoreColumns&quot; block */
   align?: Maybe<Scalars['String']['output']>;
   /** The anchor field for the block. */
   anchor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;backgroundColor&quot; field on the &quot;CoreColumnsAttributes&quot; block or block attributes */
+  /** The &quot;backgroundColor&quot; field on the &quot;CoreColumns&quot; block */
   backgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;borderColor&quot; field on the &quot;CoreColumnsAttributes&quot; block or block attributes */
+  /** The &quot;borderColor&quot; field on the &quot;CoreColumns&quot; block */
   borderColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CoreColumnsAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreColumns&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;cssClassName&quot; field on the &quot;CoreColumnsAttributes&quot; block or block attributes */
+  /** The &quot;cssClassName&quot; field on the &quot;CoreColumns&quot; block */
   cssClassName?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontFamily&quot; field on the &quot;CoreColumnsAttributes&quot; block or block attributes */
+  /** The &quot;fontFamily&quot; field on the &quot;CoreColumns&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CoreColumnsAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CoreColumns&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;gradient&quot; field on the &quot;CoreColumnsAttributes&quot; block or block attributes */
+  /** The &quot;gradient&quot; field on the &quot;CoreColumns&quot; block */
   gradient?: Maybe<Scalars['String']['output']>;
-  /** The &quot;isStackedOnMobile&quot; field on the &quot;CoreColumnsAttributes&quot; block or block attributes */
-  isStackedOnMobile: Scalars['Boolean']['output'];
-  /** The &quot;layout&quot; field on the &quot;CoreColumnsAttributes&quot; block or block attributes */
+  /** The &quot;isStackedOnMobile&quot; field on the &quot;CoreColumns&quot; block */
+  isStackedOnMobile?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;layout&quot; field on the &quot;CoreColumns&quot; block */
   layout?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CoreColumnsAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CoreColumns&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreColumnsAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreColumns&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;style&quot; field on the &quot;CoreColumnsAttributes&quot; block or block attributes */
+  /** The &quot;style&quot; field on the &quot;CoreColumns&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;textColor&quot; field on the &quot;CoreColumnsAttributes&quot; block or block attributes */
+  /** The &quot;textColor&quot; field on the &quot;CoreColumns&quot; block */
   textColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;verticalAlignment&quot; field on the &quot;CoreColumnsAttributes&quot; block or block attributes */
+  /** The &quot;verticalAlignment&quot; field on the &quot;CoreColumns&quot; block */
   verticalAlignment?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreCommentAuthorName = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreCommentAuthorName = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreCommentAuthorName';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -2280,34 +2258,34 @@ export type CoreCommentAuthorName = EditorBlock & PageEditorBlock & PostEditorBl
 /** Attributes of the CoreCommentAuthorName Block Type */
 export type CoreCommentAuthorNameAttributes = {
   __typename?: 'CoreCommentAuthorNameAttributes';
-  /** The &quot;backgroundColor&quot; field on the &quot;CoreCommentAuthorNameAttributes&quot; block or block attributes */
+  /** The &quot;backgroundColor&quot; field on the &quot;CoreCommentAuthorName&quot; block */
   backgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CoreCommentAuthorNameAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreCommentAuthorName&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontFamily&quot; field on the &quot;CoreCommentAuthorNameAttributes&quot; block or block attributes */
+  /** The &quot;fontFamily&quot; field on the &quot;CoreCommentAuthorName&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CoreCommentAuthorNameAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CoreCommentAuthorName&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;gradient&quot; field on the &quot;CoreCommentAuthorNameAttributes&quot; block or block attributes */
+  /** The &quot;gradient&quot; field on the &quot;CoreCommentAuthorName&quot; block */
   gradient?: Maybe<Scalars['String']['output']>;
-  /** The &quot;isLink&quot; field on the &quot;CoreCommentAuthorNameAttributes&quot; block or block attributes */
-  isLink: Scalars['Boolean']['output'];
-  /** The &quot;linkTarget&quot; field on the &quot;CoreCommentAuthorNameAttributes&quot; block or block attributes */
-  linkTarget: Scalars['String']['output'];
-  /** The &quot;lock&quot; field on the &quot;CoreCommentAuthorNameAttributes&quot; block or block attributes */
+  /** The &quot;isLink&quot; field on the &quot;CoreCommentAuthorName&quot; block */
+  isLink?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;linkTarget&quot; field on the &quot;CoreCommentAuthorName&quot; block */
+  linkTarget?: Maybe<Scalars['String']['output']>;
+  /** The &quot;lock&quot; field on the &quot;CoreCommentAuthorName&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreCommentAuthorNameAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreCommentAuthorName&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;style&quot; field on the &quot;CoreCommentAuthorNameAttributes&quot; block or block attributes */
+  /** The &quot;style&quot; field on the &quot;CoreCommentAuthorName&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;textAlign&quot; field on the &quot;CoreCommentAuthorNameAttributes&quot; block or block attributes */
+  /** The &quot;textAlign&quot; field on the &quot;CoreCommentAuthorName&quot; block */
   textAlign?: Maybe<Scalars['String']['output']>;
-  /** The &quot;textColor&quot; field on the &quot;CoreCommentAuthorNameAttributes&quot; block or block attributes */
+  /** The &quot;textColor&quot; field on the &quot;CoreCommentAuthorName&quot; block */
   textColor?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreCommentContent = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreCommentContent = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreCommentContent';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -2334,30 +2312,30 @@ export type CoreCommentContent = EditorBlock & PageEditorBlock & PostEditorBlock
 /** Attributes of the CoreCommentContent Block Type */
 export type CoreCommentContentAttributes = {
   __typename?: 'CoreCommentContentAttributes';
-  /** The &quot;backgroundColor&quot; field on the &quot;CoreCommentContentAttributes&quot; block or block attributes */
+  /** The &quot;backgroundColor&quot; field on the &quot;CoreCommentContent&quot; block */
   backgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CoreCommentContentAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreCommentContent&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontFamily&quot; field on the &quot;CoreCommentContentAttributes&quot; block or block attributes */
+  /** The &quot;fontFamily&quot; field on the &quot;CoreCommentContent&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CoreCommentContentAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CoreCommentContent&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;gradient&quot; field on the &quot;CoreCommentContentAttributes&quot; block or block attributes */
+  /** The &quot;gradient&quot; field on the &quot;CoreCommentContent&quot; block */
   gradient?: Maybe<Scalars['String']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CoreCommentContentAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CoreCommentContent&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreCommentContentAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreCommentContent&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;style&quot; field on the &quot;CoreCommentContentAttributes&quot; block or block attributes */
+  /** The &quot;style&quot; field on the &quot;CoreCommentContent&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;textAlign&quot; field on the &quot;CoreCommentContentAttributes&quot; block or block attributes */
+  /** The &quot;textAlign&quot; field on the &quot;CoreCommentContent&quot; block */
   textAlign?: Maybe<Scalars['String']['output']>;
-  /** The &quot;textColor&quot; field on the &quot;CoreCommentContentAttributes&quot; block or block attributes */
+  /** The &quot;textColor&quot; field on the &quot;CoreCommentContent&quot; block */
   textColor?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreCommentDate = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreCommentDate = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreCommentDate';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -2384,32 +2362,32 @@ export type CoreCommentDate = EditorBlock & PageEditorBlock & PostEditorBlock & 
 /** Attributes of the CoreCommentDate Block Type */
 export type CoreCommentDateAttributes = {
   __typename?: 'CoreCommentDateAttributes';
-  /** The &quot;backgroundColor&quot; field on the &quot;CoreCommentDateAttributes&quot; block or block attributes */
+  /** The &quot;backgroundColor&quot; field on the &quot;CoreCommentDate&quot; block */
   backgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CoreCommentDateAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreCommentDate&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontFamily&quot; field on the &quot;CoreCommentDateAttributes&quot; block or block attributes */
+  /** The &quot;fontFamily&quot; field on the &quot;CoreCommentDate&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CoreCommentDateAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CoreCommentDate&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;format&quot; field on the &quot;CoreCommentDateAttributes&quot; block or block attributes */
+  /** The &quot;format&quot; field on the &quot;CoreCommentDate&quot; block */
   format?: Maybe<Scalars['String']['output']>;
-  /** The &quot;gradient&quot; field on the &quot;CoreCommentDateAttributes&quot; block or block attributes */
+  /** The &quot;gradient&quot; field on the &quot;CoreCommentDate&quot; block */
   gradient?: Maybe<Scalars['String']['output']>;
-  /** The &quot;isLink&quot; field on the &quot;CoreCommentDateAttributes&quot; block or block attributes */
-  isLink: Scalars['Boolean']['output'];
-  /** The &quot;lock&quot; field on the &quot;CoreCommentDateAttributes&quot; block or block attributes */
+  /** The &quot;isLink&quot; field on the &quot;CoreCommentDate&quot; block */
+  isLink?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;lock&quot; field on the &quot;CoreCommentDate&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreCommentDateAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreCommentDate&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;style&quot; field on the &quot;CoreCommentDateAttributes&quot; block or block attributes */
+  /** The &quot;style&quot; field on the &quot;CoreCommentDate&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;textColor&quot; field on the &quot;CoreCommentDateAttributes&quot; block or block attributes */
+  /** The &quot;textColor&quot; field on the &quot;CoreCommentDate&quot; block */
   textColor?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreCommentEditLink = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreCommentEditLink = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreCommentEditLink';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -2436,30 +2414,30 @@ export type CoreCommentEditLink = EditorBlock & PageEditorBlock & PostEditorBloc
 /** Attributes of the CoreCommentEditLink Block Type */
 export type CoreCommentEditLinkAttributes = {
   __typename?: 'CoreCommentEditLinkAttributes';
-  /** The &quot;backgroundColor&quot; field on the &quot;CoreCommentEditLinkAttributes&quot; block or block attributes */
+  /** The &quot;backgroundColor&quot; field on the &quot;CoreCommentEditLink&quot; block */
   backgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CoreCommentEditLinkAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreCommentEditLink&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontFamily&quot; field on the &quot;CoreCommentEditLinkAttributes&quot; block or block attributes */
+  /** The &quot;fontFamily&quot; field on the &quot;CoreCommentEditLink&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CoreCommentEditLinkAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CoreCommentEditLink&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;gradient&quot; field on the &quot;CoreCommentEditLinkAttributes&quot; block or block attributes */
+  /** The &quot;gradient&quot; field on the &quot;CoreCommentEditLink&quot; block */
   gradient?: Maybe<Scalars['String']['output']>;
-  /** The &quot;linkTarget&quot; field on the &quot;CoreCommentEditLinkAttributes&quot; block or block attributes */
-  linkTarget: Scalars['String']['output'];
-  /** The &quot;lock&quot; field on the &quot;CoreCommentEditLinkAttributes&quot; block or block attributes */
+  /** The &quot;linkTarget&quot; field on the &quot;CoreCommentEditLink&quot; block */
+  linkTarget?: Maybe<Scalars['String']['output']>;
+  /** The &quot;lock&quot; field on the &quot;CoreCommentEditLink&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreCommentEditLinkAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreCommentEditLink&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;style&quot; field on the &quot;CoreCommentEditLinkAttributes&quot; block or block attributes */
+  /** The &quot;style&quot; field on the &quot;CoreCommentEditLink&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;textAlign&quot; field on the &quot;CoreCommentEditLinkAttributes&quot; block or block attributes */
+  /** The &quot;textAlign&quot; field on the &quot;CoreCommentEditLink&quot; block */
   textAlign?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreCommentReplyLink = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreCommentReplyLink = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreCommentReplyLink';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -2486,28 +2464,28 @@ export type CoreCommentReplyLink = EditorBlock & PageEditorBlock & PostEditorBlo
 /** Attributes of the CoreCommentReplyLink Block Type */
 export type CoreCommentReplyLinkAttributes = {
   __typename?: 'CoreCommentReplyLinkAttributes';
-  /** The &quot;backgroundColor&quot; field on the &quot;CoreCommentReplyLinkAttributes&quot; block or block attributes */
+  /** The &quot;backgroundColor&quot; field on the &quot;CoreCommentReplyLink&quot; block */
   backgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CoreCommentReplyLinkAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreCommentReplyLink&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontFamily&quot; field on the &quot;CoreCommentReplyLinkAttributes&quot; block or block attributes */
+  /** The &quot;fontFamily&quot; field on the &quot;CoreCommentReplyLink&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CoreCommentReplyLinkAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CoreCommentReplyLink&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;gradient&quot; field on the &quot;CoreCommentReplyLinkAttributes&quot; block or block attributes */
+  /** The &quot;gradient&quot; field on the &quot;CoreCommentReplyLink&quot; block */
   gradient?: Maybe<Scalars['String']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CoreCommentReplyLinkAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CoreCommentReplyLink&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreCommentReplyLinkAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreCommentReplyLink&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;style&quot; field on the &quot;CoreCommentReplyLinkAttributes&quot; block or block attributes */
+  /** The &quot;style&quot; field on the &quot;CoreCommentReplyLink&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;textAlign&quot; field on the &quot;CoreCommentReplyLinkAttributes&quot; block or block attributes */
+  /** The &quot;textAlign&quot; field on the &quot;CoreCommentReplyLink&quot; block */
   textAlign?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreCommentTemplate = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreCommentTemplate = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreCommentTemplate';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -2534,24 +2512,24 @@ export type CoreCommentTemplate = EditorBlock & PageEditorBlock & PostEditorBloc
 /** Attributes of the CoreCommentTemplate Block Type */
 export type CoreCommentTemplateAttributes = {
   __typename?: 'CoreCommentTemplateAttributes';
-  /** The &quot;align&quot; field on the &quot;CoreCommentTemplateAttributes&quot; block or block attributes */
+  /** The &quot;align&quot; field on the &quot;CoreCommentTemplate&quot; block */
   align?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CoreCommentTemplateAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreCommentTemplate&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontFamily&quot; field on the &quot;CoreCommentTemplateAttributes&quot; block or block attributes */
+  /** The &quot;fontFamily&quot; field on the &quot;CoreCommentTemplate&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CoreCommentTemplateAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CoreCommentTemplate&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CoreCommentTemplateAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CoreCommentTemplate&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreCommentTemplateAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreCommentTemplate&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;style&quot; field on the &quot;CoreCommentTemplateAttributes&quot; block or block attributes */
+  /** The &quot;style&quot; field on the &quot;CoreCommentTemplate&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreComments = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreComments = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreComments';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -2578,34 +2556,34 @@ export type CoreComments = EditorBlock & PageEditorBlock & PostEditorBlock & {
 /** Attributes of the CoreComments Block Type */
 export type CoreCommentsAttributes = {
   __typename?: 'CoreCommentsAttributes';
-  /** The &quot;align&quot; field on the &quot;CoreCommentsAttributes&quot; block or block attributes */
+  /** The &quot;align&quot; field on the &quot;CoreComments&quot; block */
   align?: Maybe<Scalars['String']['output']>;
-  /** The &quot;backgroundColor&quot; field on the &quot;CoreCommentsAttributes&quot; block or block attributes */
+  /** The &quot;backgroundColor&quot; field on the &quot;CoreComments&quot; block */
   backgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CoreCommentsAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreComments&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontFamily&quot; field on the &quot;CoreCommentsAttributes&quot; block or block attributes */
+  /** The &quot;fontFamily&quot; field on the &quot;CoreComments&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CoreCommentsAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CoreComments&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;gradient&quot; field on the &quot;CoreCommentsAttributes&quot; block or block attributes */
+  /** The &quot;gradient&quot; field on the &quot;CoreComments&quot; block */
   gradient?: Maybe<Scalars['String']['output']>;
-  /** The &quot;legacy&quot; field on the &quot;CoreCommentsAttributes&quot; block or block attributes */
-  legacy: Scalars['Boolean']['output'];
-  /** The &quot;lock&quot; field on the &quot;CoreCommentsAttributes&quot; block or block attributes */
+  /** The &quot;legacy&quot; field on the &quot;CoreComments&quot; block */
+  legacy?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;lock&quot; field on the &quot;CoreComments&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreCommentsAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreComments&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;style&quot; field on the &quot;CoreCommentsAttributes&quot; block or block attributes */
+  /** The &quot;style&quot; field on the &quot;CoreComments&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;tagName&quot; field on the &quot;CoreCommentsAttributes&quot; block or block attributes */
-  tagName: Scalars['String']['output'];
-  /** The &quot;textColor&quot; field on the &quot;CoreCommentsAttributes&quot; block or block attributes */
+  /** The &quot;tagName&quot; field on the &quot;CoreComments&quot; block */
+  tagName?: Maybe<Scalars['String']['output']>;
+  /** The &quot;textColor&quot; field on the &quot;CoreComments&quot; block */
   textColor?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreCommentsPagination = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreCommentsPagination = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreCommentsPagination';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -2632,34 +2610,34 @@ export type CoreCommentsPagination = EditorBlock & PageEditorBlock & PostEditorB
 /** Attributes of the CoreCommentsPagination Block Type */
 export type CoreCommentsPaginationAttributes = {
   __typename?: 'CoreCommentsPaginationAttributes';
-  /** The &quot;align&quot; field on the &quot;CoreCommentsPaginationAttributes&quot; block or block attributes */
+  /** The &quot;align&quot; field on the &quot;CoreCommentsPagination&quot; block */
   align?: Maybe<Scalars['String']['output']>;
-  /** The &quot;backgroundColor&quot; field on the &quot;CoreCommentsPaginationAttributes&quot; block or block attributes */
+  /** The &quot;backgroundColor&quot; field on the &quot;CoreCommentsPagination&quot; block */
   backgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CoreCommentsPaginationAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreCommentsPagination&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontFamily&quot; field on the &quot;CoreCommentsPaginationAttributes&quot; block or block attributes */
+  /** The &quot;fontFamily&quot; field on the &quot;CoreCommentsPagination&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CoreCommentsPaginationAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CoreCommentsPagination&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;gradient&quot; field on the &quot;CoreCommentsPaginationAttributes&quot; block or block attributes */
+  /** The &quot;gradient&quot; field on the &quot;CoreCommentsPagination&quot; block */
   gradient?: Maybe<Scalars['String']['output']>;
-  /** The &quot;layout&quot; field on the &quot;CoreCommentsPaginationAttributes&quot; block or block attributes */
+  /** The &quot;layout&quot; field on the &quot;CoreCommentsPagination&quot; block */
   layout?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CoreCommentsPaginationAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CoreCommentsPagination&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreCommentsPaginationAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreCommentsPagination&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;paginationArrow&quot; field on the &quot;CoreCommentsPaginationAttributes&quot; block or block attributes */
-  paginationArrow: Scalars['String']['output'];
-  /** The &quot;style&quot; field on the &quot;CoreCommentsPaginationAttributes&quot; block or block attributes */
+  /** The &quot;paginationArrow&quot; field on the &quot;CoreCommentsPagination&quot; block */
+  paginationArrow?: Maybe<Scalars['String']['output']>;
+  /** The &quot;style&quot; field on the &quot;CoreCommentsPagination&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;textColor&quot; field on the &quot;CoreCommentsPaginationAttributes&quot; block or block attributes */
+  /** The &quot;textColor&quot; field on the &quot;CoreCommentsPagination&quot; block */
   textColor?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreCommentsPaginationNext = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreCommentsPaginationNext = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreCommentsPaginationNext';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -2686,28 +2664,28 @@ export type CoreCommentsPaginationNext = EditorBlock & PageEditorBlock & PostEdi
 /** Attributes of the CoreCommentsPaginationNext Block Type */
 export type CoreCommentsPaginationNextAttributes = {
   __typename?: 'CoreCommentsPaginationNextAttributes';
-  /** The &quot;backgroundColor&quot; field on the &quot;CoreCommentsPaginationNextAttributes&quot; block or block attributes */
+  /** The &quot;backgroundColor&quot; field on the &quot;CoreCommentsPaginationNext&quot; block */
   backgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CoreCommentsPaginationNextAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreCommentsPaginationNext&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontFamily&quot; field on the &quot;CoreCommentsPaginationNextAttributes&quot; block or block attributes */
+  /** The &quot;fontFamily&quot; field on the &quot;CoreCommentsPaginationNext&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CoreCommentsPaginationNextAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CoreCommentsPaginationNext&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;gradient&quot; field on the &quot;CoreCommentsPaginationNextAttributes&quot; block or block attributes */
+  /** The &quot;gradient&quot; field on the &quot;CoreCommentsPaginationNext&quot; block */
   gradient?: Maybe<Scalars['String']['output']>;
-  /** The &quot;label&quot; field on the &quot;CoreCommentsPaginationNextAttributes&quot; block or block attributes */
+  /** The &quot;label&quot; field on the &quot;CoreCommentsPaginationNext&quot; block */
   label?: Maybe<Scalars['String']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CoreCommentsPaginationNextAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CoreCommentsPaginationNext&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreCommentsPaginationNextAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreCommentsPaginationNext&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;style&quot; field on the &quot;CoreCommentsPaginationNextAttributes&quot; block or block attributes */
+  /** The &quot;style&quot; field on the &quot;CoreCommentsPaginationNext&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreCommentsPaginationNumbers = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreCommentsPaginationNumbers = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreCommentsPaginationNumbers';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -2734,26 +2712,26 @@ export type CoreCommentsPaginationNumbers = EditorBlock & PageEditorBlock & Post
 /** Attributes of the CoreCommentsPaginationNumbers Block Type */
 export type CoreCommentsPaginationNumbersAttributes = {
   __typename?: 'CoreCommentsPaginationNumbersAttributes';
-  /** The &quot;backgroundColor&quot; field on the &quot;CoreCommentsPaginationNumbersAttributes&quot; block or block attributes */
+  /** The &quot;backgroundColor&quot; field on the &quot;CoreCommentsPaginationNumbers&quot; block */
   backgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CoreCommentsPaginationNumbersAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreCommentsPaginationNumbers&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontFamily&quot; field on the &quot;CoreCommentsPaginationNumbersAttributes&quot; block or block attributes */
+  /** The &quot;fontFamily&quot; field on the &quot;CoreCommentsPaginationNumbers&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CoreCommentsPaginationNumbersAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CoreCommentsPaginationNumbers&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;gradient&quot; field on the &quot;CoreCommentsPaginationNumbersAttributes&quot; block or block attributes */
+  /** The &quot;gradient&quot; field on the &quot;CoreCommentsPaginationNumbers&quot; block */
   gradient?: Maybe<Scalars['String']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CoreCommentsPaginationNumbersAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CoreCommentsPaginationNumbers&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreCommentsPaginationNumbersAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreCommentsPaginationNumbers&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;style&quot; field on the &quot;CoreCommentsPaginationNumbersAttributes&quot; block or block attributes */
+  /** The &quot;style&quot; field on the &quot;CoreCommentsPaginationNumbers&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreCommentsPaginationPrevious = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreCommentsPaginationPrevious = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreCommentsPaginationPrevious';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -2780,28 +2758,28 @@ export type CoreCommentsPaginationPrevious = EditorBlock & PageEditorBlock & Pos
 /** Attributes of the CoreCommentsPaginationPrevious Block Type */
 export type CoreCommentsPaginationPreviousAttributes = {
   __typename?: 'CoreCommentsPaginationPreviousAttributes';
-  /** The &quot;backgroundColor&quot; field on the &quot;CoreCommentsPaginationPreviousAttributes&quot; block or block attributes */
+  /** The &quot;backgroundColor&quot; field on the &quot;CoreCommentsPaginationPrevious&quot; block */
   backgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CoreCommentsPaginationPreviousAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreCommentsPaginationPrevious&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontFamily&quot; field on the &quot;CoreCommentsPaginationPreviousAttributes&quot; block or block attributes */
+  /** The &quot;fontFamily&quot; field on the &quot;CoreCommentsPaginationPrevious&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CoreCommentsPaginationPreviousAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CoreCommentsPaginationPrevious&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;gradient&quot; field on the &quot;CoreCommentsPaginationPreviousAttributes&quot; block or block attributes */
+  /** The &quot;gradient&quot; field on the &quot;CoreCommentsPaginationPrevious&quot; block */
   gradient?: Maybe<Scalars['String']['output']>;
-  /** The &quot;label&quot; field on the &quot;CoreCommentsPaginationPreviousAttributes&quot; block or block attributes */
+  /** The &quot;label&quot; field on the &quot;CoreCommentsPaginationPrevious&quot; block */
   label?: Maybe<Scalars['String']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CoreCommentsPaginationPreviousAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CoreCommentsPaginationPrevious&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreCommentsPaginationPreviousAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreCommentsPaginationPrevious&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;style&quot; field on the &quot;CoreCommentsPaginationPreviousAttributes&quot; block or block attributes */
+  /** The &quot;style&quot; field on the &quot;CoreCommentsPaginationPrevious&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreCommentsTitle = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreCommentsTitle = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreCommentsTitle';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -2828,40 +2806,40 @@ export type CoreCommentsTitle = EditorBlock & PageEditorBlock & PostEditorBlock 
 /** Attributes of the CoreCommentsTitle Block Type */
 export type CoreCommentsTitleAttributes = {
   __typename?: 'CoreCommentsTitleAttributes';
-  /** The &quot;align&quot; field on the &quot;CoreCommentsTitleAttributes&quot; block or block attributes */
+  /** The &quot;align&quot; field on the &quot;CoreCommentsTitle&quot; block */
   align?: Maybe<Scalars['String']['output']>;
-  /** The &quot;backgroundColor&quot; field on the &quot;CoreCommentsTitleAttributes&quot; block or block attributes */
+  /** The &quot;backgroundColor&quot; field on the &quot;CoreCommentsTitle&quot; block */
   backgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;borderColor&quot; field on the &quot;CoreCommentsTitleAttributes&quot; block or block attributes */
+  /** The &quot;borderColor&quot; field on the &quot;CoreCommentsTitle&quot; block */
   borderColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CoreCommentsTitleAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreCommentsTitle&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontFamily&quot; field on the &quot;CoreCommentsTitleAttributes&quot; block or block attributes */
+  /** The &quot;fontFamily&quot; field on the &quot;CoreCommentsTitle&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CoreCommentsTitleAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CoreCommentsTitle&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;gradient&quot; field on the &quot;CoreCommentsTitleAttributes&quot; block or block attributes */
+  /** The &quot;gradient&quot; field on the &quot;CoreCommentsTitle&quot; block */
   gradient?: Maybe<Scalars['String']['output']>;
-  /** The &quot;level&quot; field on the &quot;CoreCommentsTitleAttributes&quot; block or block attributes */
-  level: Scalars['Float']['output'];
-  /** The &quot;lock&quot; field on the &quot;CoreCommentsTitleAttributes&quot; block or block attributes */
+  /** The &quot;level&quot; field on the &quot;CoreCommentsTitle&quot; block */
+  level?: Maybe<Scalars['Float']['output']>;
+  /** The &quot;lock&quot; field on the &quot;CoreCommentsTitle&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreCommentsTitleAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreCommentsTitle&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;showCommentsCount&quot; field on the &quot;CoreCommentsTitleAttributes&quot; block or block attributes */
-  showCommentsCount: Scalars['Boolean']['output'];
-  /** The &quot;showPostTitle&quot; field on the &quot;CoreCommentsTitleAttributes&quot; block or block attributes */
-  showPostTitle: Scalars['Boolean']['output'];
-  /** The &quot;style&quot; field on the &quot;CoreCommentsTitleAttributes&quot; block or block attributes */
+  /** The &quot;showCommentsCount&quot; field on the &quot;CoreCommentsTitle&quot; block */
+  showCommentsCount?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;showPostTitle&quot; field on the &quot;CoreCommentsTitle&quot; block */
+  showPostTitle?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;style&quot; field on the &quot;CoreCommentsTitle&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;textAlign&quot; field on the &quot;CoreCommentsTitleAttributes&quot; block or block attributes */
+  /** The &quot;textAlign&quot; field on the &quot;CoreCommentsTitle&quot; block */
   textAlign?: Maybe<Scalars['String']['output']>;
-  /** The &quot;textColor&quot; field on the &quot;CoreCommentsTitleAttributes&quot; block or block attributes */
+  /** The &quot;textColor&quot; field on the &quot;CoreCommentsTitle&quot; block */
   textColor?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreCover = BlockWithSupportsAnchor & EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreCover = BlockWithSupportsAnchor & DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreCover';
   /** The anchor field for the block. */
   anchor?: Maybe<Scalars['String']['output']>;
@@ -2890,72 +2868,72 @@ export type CoreCover = BlockWithSupportsAnchor & EditorBlock & PageEditorBlock 
 /** Attributes of the CoreCover Block Type */
 export type CoreCoverAttributes = BlockWithSupportsAnchor & {
   __typename?: 'CoreCoverAttributes';
-  /** The &quot;align&quot; field on the &quot;CoreCoverAttributes&quot; block or block attributes */
+  /** The &quot;align&quot; field on the &quot;CoreCover&quot; block */
   align?: Maybe<Scalars['String']['output']>;
-  /** The &quot;allowedBlocks&quot; field on the &quot;CoreCoverAttributes&quot; block or block attributes */
-  allowedBlocks?: Maybe<Scalars['BlockAttributesArray']['output']>;
-  /** The &quot;alt&quot; field on the &quot;CoreCoverAttributes&quot; block or block attributes */
-  alt: Scalars['String']['output'];
+  /** The &quot;allowedBlocks&quot; field on the &quot;CoreCover&quot; block */
+  allowedBlocks?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;alt&quot; field on the &quot;CoreCover&quot; block */
+  alt?: Maybe<Scalars['String']['output']>;
   /** The anchor field for the block. */
   anchor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;backgroundType&quot; field on the &quot;CoreCoverAttributes&quot; block or block attributes */
-  backgroundType: Scalars['String']['output'];
-  /** The &quot;borderColor&quot; field on the &quot;CoreCoverAttributes&quot; block or block attributes */
+  /** The &quot;backgroundType&quot; field on the &quot;CoreCover&quot; block */
+  backgroundType?: Maybe<Scalars['String']['output']>;
+  /** The &quot;borderColor&quot; field on the &quot;CoreCover&quot; block */
   borderColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CoreCoverAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreCover&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;contentPosition&quot; field on the &quot;CoreCoverAttributes&quot; block or block attributes */
+  /** The &quot;contentPosition&quot; field on the &quot;CoreCover&quot; block */
   contentPosition?: Maybe<Scalars['String']['output']>;
-  /** The &quot;customGradient&quot; field on the &quot;CoreCoverAttributes&quot; block or block attributes */
+  /** The &quot;customGradient&quot; field on the &quot;CoreCover&quot; block */
   customGradient?: Maybe<Scalars['String']['output']>;
-  /** The &quot;customOverlayColor&quot; field on the &quot;CoreCoverAttributes&quot; block or block attributes */
+  /** The &quot;customOverlayColor&quot; field on the &quot;CoreCover&quot; block */
   customOverlayColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;dimRatio&quot; field on the &quot;CoreCoverAttributes&quot; block or block attributes */
-  dimRatio: Scalars['Float']['output'];
-  /** The &quot;focalPoint&quot; field on the &quot;CoreCoverAttributes&quot; block or block attributes */
+  /** The &quot;dimRatio&quot; field on the &quot;CoreCover&quot; block */
+  dimRatio?: Maybe<Scalars['Float']['output']>;
+  /** The &quot;focalPoint&quot; field on the &quot;CoreCover&quot; block */
   focalPoint?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;fontFamily&quot; field on the &quot;CoreCoverAttributes&quot; block or block attributes */
+  /** The &quot;fontFamily&quot; field on the &quot;CoreCover&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CoreCoverAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CoreCover&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;gradient&quot; field on the &quot;CoreCoverAttributes&quot; block or block attributes */
+  /** The &quot;gradient&quot; field on the &quot;CoreCover&quot; block */
   gradient?: Maybe<Scalars['String']['output']>;
-  /** The &quot;hasParallax&quot; field on the &quot;CoreCoverAttributes&quot; block or block attributes */
-  hasParallax: Scalars['Boolean']['output'];
-  /** The &quot;id&quot; field on the &quot;CoreCoverAttributes&quot; block or block attributes */
+  /** The &quot;hasParallax&quot; field on the &quot;CoreCover&quot; block */
+  hasParallax?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;id&quot; field on the &quot;CoreCover&quot; block */
   id?: Maybe<Scalars['Float']['output']>;
-  /** The &quot;isDark&quot; field on the &quot;CoreCoverAttributes&quot; block or block attributes */
-  isDark: Scalars['Boolean']['output'];
-  /** The &quot;isRepeated&quot; field on the &quot;CoreCoverAttributes&quot; block or block attributes */
-  isRepeated: Scalars['Boolean']['output'];
-  /** The &quot;isUserOverlayColor&quot; field on the &quot;CoreCoverAttributes&quot; block or block attributes */
+  /** The &quot;isDark&quot; field on the &quot;CoreCover&quot; block */
+  isDark?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;isRepeated&quot; field on the &quot;CoreCover&quot; block */
+  isRepeated?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;isUserOverlayColor&quot; field on the &quot;CoreCover&quot; block */
   isUserOverlayColor?: Maybe<Scalars['Boolean']['output']>;
-  /** The &quot;layout&quot; field on the &quot;CoreCoverAttributes&quot; block or block attributes */
+  /** The &quot;layout&quot; field on the &quot;CoreCover&quot; block */
   layout?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CoreCoverAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CoreCover&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreCoverAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreCover&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;minHeight&quot; field on the &quot;CoreCoverAttributes&quot; block or block attributes */
+  /** The &quot;minHeight&quot; field on the &quot;CoreCover&quot; block */
   minHeight?: Maybe<Scalars['Float']['output']>;
-  /** The &quot;minHeightUnit&quot; field on the &quot;CoreCoverAttributes&quot; block or block attributes */
+  /** The &quot;minHeightUnit&quot; field on the &quot;CoreCover&quot; block */
   minHeightUnit?: Maybe<Scalars['String']['output']>;
-  /** The &quot;overlayColor&quot; field on the &quot;CoreCoverAttributes&quot; block or block attributes */
+  /** The &quot;overlayColor&quot; field on the &quot;CoreCover&quot; block */
   overlayColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;style&quot; field on the &quot;CoreCoverAttributes&quot; block or block attributes */
+  /** The &quot;style&quot; field on the &quot;CoreCover&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;tagName&quot; field on the &quot;CoreCoverAttributes&quot; block or block attributes */
-  tagName: Scalars['String']['output'];
-  /** The &quot;textColor&quot; field on the &quot;CoreCoverAttributes&quot; block or block attributes */
+  /** The &quot;tagName&quot; field on the &quot;CoreCover&quot; block */
+  tagName?: Maybe<Scalars['String']['output']>;
+  /** The &quot;textColor&quot; field on the &quot;CoreCover&quot; block */
   textColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;url&quot; field on the &quot;CoreCoverAttributes&quot; block or block attributes */
+  /** The &quot;url&quot; field on the &quot;CoreCover&quot; block */
   url?: Maybe<Scalars['String']['output']>;
-  /** The &quot;useFeaturedImage&quot; field on the &quot;CoreCoverAttributes&quot; block or block attributes */
-  useFeaturedImage: Scalars['Boolean']['output'];
+  /** The &quot;useFeaturedImage&quot; field on the &quot;CoreCover&quot; block */
+  useFeaturedImage?: Maybe<Scalars['Boolean']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreDetails = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreDetails = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreDetails';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -2982,38 +2960,36 @@ export type CoreDetails = EditorBlock & PageEditorBlock & PostEditorBlock & {
 /** Attributes of the CoreDetails Block Type */
 export type CoreDetailsAttributes = {
   __typename?: 'CoreDetailsAttributes';
-  /** The &quot;align&quot; field on the &quot;CoreDetailsAttributes&quot; block or block attributes */
+  /** The &quot;align&quot; field on the &quot;CoreDetails&quot; block */
   align?: Maybe<Scalars['String']['output']>;
-  /** The &quot;backgroundColor&quot; field on the &quot;CoreDetailsAttributes&quot; block or block attributes */
+  /** The &quot;backgroundColor&quot; field on the &quot;CoreDetails&quot; block */
   backgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;borderColor&quot; field on the &quot;CoreDetailsAttributes&quot; block or block attributes */
+  /** The &quot;borderColor&quot; field on the &quot;CoreDetails&quot; block */
   borderColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CoreDetailsAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreDetails&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontFamily&quot; field on the &quot;CoreDetailsAttributes&quot; block or block attributes */
+  /** The &quot;fontFamily&quot; field on the &quot;CoreDetails&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CoreDetailsAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CoreDetails&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;gradient&quot; field on the &quot;CoreDetailsAttributes&quot; block or block attributes */
+  /** The &quot;gradient&quot; field on the &quot;CoreDetails&quot; block */
   gradient?: Maybe<Scalars['String']['output']>;
-  /** The &quot;layout&quot; field on the &quot;CoreDetailsAttributes&quot; block or block attributes */
+  /** The &quot;layout&quot; field on the &quot;CoreDetails&quot; block */
   layout?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CoreDetailsAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CoreDetails&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreDetailsAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreDetails&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;showContent&quot; field on the &quot;CoreDetailsAttributes&quot; block or block attributes */
-  showContent: Scalars['Boolean']['output'];
-  /** The &quot;style&quot; field on the &quot;CoreDetailsAttributes&quot; block or block attributes */
+  /** The &quot;showContent&quot; field on the &quot;CoreDetails&quot; block */
+  showContent?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;style&quot; field on the &quot;CoreDetails&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;summary&quot; field on the &quot;CoreDetailsAttributes&quot; block or block attributes */
-  summary?: Maybe<Scalars['String']['output']>;
-  /** The &quot;textColor&quot; field on the &quot;CoreDetailsAttributes&quot; block or block attributes */
+  /** The &quot;textColor&quot; field on the &quot;CoreDetails&quot; block */
   textColor?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreEmbed = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreEmbed = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreEmbed';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -3040,34 +3016,32 @@ export type CoreEmbed = EditorBlock & PageEditorBlock & PostEditorBlock & {
 /** Attributes of the CoreEmbed Block Type */
 export type CoreEmbedAttributes = {
   __typename?: 'CoreEmbedAttributes';
-  /** The &quot;align&quot; field on the &quot;CoreEmbedAttributes&quot; block or block attributes */
+  /** The &quot;align&quot; field on the &quot;CoreEmbed&quot; block */
   align?: Maybe<Scalars['String']['output']>;
-  /** The &quot;allowResponsive&quot; field on the &quot;CoreEmbedAttributes&quot; block or block attributes */
-  allowResponsive: Scalars['Boolean']['output'];
-  /** The &quot;caption&quot; field on the &quot;CoreEmbedAttributes&quot; block or block attributes */
-  caption?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CoreEmbedAttributes&quot; block or block attributes */
+  /** The &quot;allowResponsive&quot; field on the &quot;CoreEmbed&quot; block */
+  allowResponsive?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;className&quot; field on the &quot;CoreEmbed&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CoreEmbedAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CoreEmbed&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreEmbedAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreEmbed&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;previewable&quot; field on the &quot;CoreEmbedAttributes&quot; block or block attributes */
-  previewable: Scalars['Boolean']['output'];
-  /** The &quot;providerNameSlug&quot; field on the &quot;CoreEmbedAttributes&quot; block or block attributes */
+  /** The &quot;previewable&quot; field on the &quot;CoreEmbed&quot; block */
+  previewable?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;providerNameSlug&quot; field on the &quot;CoreEmbed&quot; block */
   providerNameSlug?: Maybe<Scalars['String']['output']>;
-  /** The &quot;responsive&quot; field on the &quot;CoreEmbedAttributes&quot; block or block attributes */
-  responsive: Scalars['Boolean']['output'];
-  /** The &quot;style&quot; field on the &quot;CoreEmbedAttributes&quot; block or block attributes */
+  /** The &quot;responsive&quot; field on the &quot;CoreEmbed&quot; block */
+  responsive?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;style&quot; field on the &quot;CoreEmbed&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;type&quot; field on the &quot;CoreEmbedAttributes&quot; block or block attributes */
+  /** The &quot;type&quot; field on the &quot;CoreEmbed&quot; block */
   type?: Maybe<Scalars['String']['output']>;
-  /** The &quot;url&quot; field on the &quot;CoreEmbedAttributes&quot; block or block attributes */
+  /** The &quot;url&quot; field on the &quot;CoreEmbed&quot; block */
   url?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreFile = BlockWithSupportsAnchor & EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreFile = BlockWithSupportsAnchor & DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreFile';
   /** The anchor field for the block. */
   anchor?: Maybe<Scalars['String']['output']>;
@@ -3096,46 +3070,42 @@ export type CoreFile = BlockWithSupportsAnchor & EditorBlock & PageEditorBlock &
 /** Attributes of the CoreFile Block Type */
 export type CoreFileAttributes = BlockWithSupportsAnchor & {
   __typename?: 'CoreFileAttributes';
-  /** The &quot;align&quot; field on the &quot;CoreFileAttributes&quot; block or block attributes */
+  /** The &quot;align&quot; field on the &quot;CoreFile&quot; block */
   align?: Maybe<Scalars['String']['output']>;
   /** The anchor field for the block. */
   anchor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;backgroundColor&quot; field on the &quot;CoreFileAttributes&quot; block or block attributes */
+  /** The &quot;backgroundColor&quot; field on the &quot;CoreFile&quot; block */
   backgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CoreFileAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreFile&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;displayPreview&quot; field on the &quot;CoreFileAttributes&quot; block or block attributes */
+  /** The &quot;displayPreview&quot; field on the &quot;CoreFile&quot; block */
   displayPreview?: Maybe<Scalars['Boolean']['output']>;
-  /** The &quot;downloadButtonText&quot; field on the &quot;CoreFileAttributes&quot; block or block attributes */
-  downloadButtonText?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fileId&quot; field on the &quot;CoreFileAttributes&quot; block or block attributes */
+  /** The &quot;fileId&quot; field on the &quot;CoreFile&quot; block */
   fileId?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fileName&quot; field on the &quot;CoreFileAttributes&quot; block or block attributes */
-  fileName?: Maybe<Scalars['String']['output']>;
-  /** The &quot;gradient&quot; field on the &quot;CoreFileAttributes&quot; block or block attributes */
+  /** The &quot;gradient&quot; field on the &quot;CoreFile&quot; block */
   gradient?: Maybe<Scalars['String']['output']>;
-  /** The &quot;href&quot; field on the &quot;CoreFileAttributes&quot; block or block attributes */
+  /** The &quot;href&quot; field on the &quot;CoreFile&quot; block */
   href?: Maybe<Scalars['String']['output']>;
-  /** The &quot;id&quot; field on the &quot;CoreFileAttributes&quot; block or block attributes */
+  /** The &quot;id&quot; field on the &quot;CoreFile&quot; block */
   id?: Maybe<Scalars['Float']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CoreFileAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CoreFile&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreFileAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreFile&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;previewHeight&quot; field on the &quot;CoreFileAttributes&quot; block or block attributes */
-  previewHeight: Scalars['Float']['output'];
-  /** The &quot;showDownloadButton&quot; field on the &quot;CoreFileAttributes&quot; block or block attributes */
-  showDownloadButton: Scalars['Boolean']['output'];
-  /** The &quot;style&quot; field on the &quot;CoreFileAttributes&quot; block or block attributes */
+  /** The &quot;previewHeight&quot; field on the &quot;CoreFile&quot; block */
+  previewHeight?: Maybe<Scalars['Float']['output']>;
+  /** The &quot;showDownloadButton&quot; field on the &quot;CoreFile&quot; block */
+  showDownloadButton?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;style&quot; field on the &quot;CoreFile&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;textLinkHref&quot; field on the &quot;CoreFileAttributes&quot; block or block attributes */
+  /** The &quot;textLinkHref&quot; field on the &quot;CoreFile&quot; block */
   textLinkHref?: Maybe<Scalars['String']['output']>;
-  /** The &quot;textLinkTarget&quot; field on the &quot;CoreFileAttributes&quot; block or block attributes */
+  /** The &quot;textLinkTarget&quot; field on the &quot;CoreFile&quot; block */
   textLinkTarget?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreFootnotes = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreFootnotes = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreFootnotes';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -3162,28 +3132,28 @@ export type CoreFootnotes = EditorBlock & PageEditorBlock & PostEditorBlock & {
 /** Attributes of the CoreFootnotes Block Type */
 export type CoreFootnotesAttributes = {
   __typename?: 'CoreFootnotesAttributes';
-  /** The &quot;backgroundColor&quot; field on the &quot;CoreFootnotesAttributes&quot; block or block attributes */
+  /** The &quot;backgroundColor&quot; field on the &quot;CoreFootnotes&quot; block */
   backgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;borderColor&quot; field on the &quot;CoreFootnotesAttributes&quot; block or block attributes */
+  /** The &quot;borderColor&quot; field on the &quot;CoreFootnotes&quot; block */
   borderColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CoreFootnotesAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreFootnotes&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontFamily&quot; field on the &quot;CoreFootnotesAttributes&quot; block or block attributes */
+  /** The &quot;fontFamily&quot; field on the &quot;CoreFootnotes&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CoreFootnotesAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CoreFootnotes&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CoreFootnotesAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CoreFootnotes&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreFootnotesAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreFootnotes&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;style&quot; field on the &quot;CoreFootnotesAttributes&quot; block or block attributes */
+  /** The &quot;style&quot; field on the &quot;CoreFootnotes&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;textColor&quot; field on the &quot;CoreFootnotesAttributes&quot; block or block attributes */
+  /** The &quot;textColor&quot; field on the &quot;CoreFootnotes&quot; block */
   textColor?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreFreeform = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreFreeform = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreFreeform';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -3210,16 +3180,16 @@ export type CoreFreeform = EditorBlock & PageEditorBlock & PostEditorBlock & {
 /** Attributes of the CoreFreeform Block Type */
 export type CoreFreeformAttributes = {
   __typename?: 'CoreFreeformAttributes';
-  /** The &quot;content&quot; field on the &quot;CoreFreeformAttributes&quot; block or block attributes */
+  /** The &quot;content&quot; field on the &quot;CoreFreeform&quot; block */
   content?: Maybe<Scalars['String']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CoreFreeformAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CoreFreeform&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreFreeformAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreFreeform&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreGallery = BlockWithSupportsAnchor & EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreGallery = BlockWithSupportsAnchor & DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreGallery';
   /** The anchor field for the block. */
   anchor?: Maybe<Scalars['String']['output']>;
@@ -3248,69 +3218,50 @@ export type CoreGallery = BlockWithSupportsAnchor & EditorBlock & PageEditorBloc
 /** Attributes of the CoreGallery Block Type */
 export type CoreGalleryAttributes = BlockWithSupportsAnchor & {
   __typename?: 'CoreGalleryAttributes';
-  /** The &quot;align&quot; field on the &quot;CoreGalleryAttributes&quot; block or block attributes */
+  /** The &quot;align&quot; field on the &quot;CoreGallery&quot; block */
   align?: Maybe<Scalars['String']['output']>;
-  /** The &quot;allowResize&quot; field on the &quot;CoreGalleryAttributes&quot; block or block attributes */
-  allowResize: Scalars['Boolean']['output'];
+  /** The &quot;allowResize&quot; field on the &quot;CoreGallery&quot; block */
+  allowResize?: Maybe<Scalars['Boolean']['output']>;
   /** The anchor field for the block. */
   anchor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;backgroundColor&quot; field on the &quot;CoreGalleryAttributes&quot; block or block attributes */
+  /** The &quot;backgroundColor&quot; field on the &quot;CoreGallery&quot; block */
   backgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;caption&quot; field on the &quot;CoreGalleryAttributes&quot; block or block attributes */
-  caption?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CoreGalleryAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreGallery&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;columns&quot; field on the &quot;CoreGalleryAttributes&quot; block or block attributes */
+  /** The &quot;columns&quot; field on the &quot;CoreGallery&quot; block */
   columns?: Maybe<Scalars['Float']['output']>;
-  /** The &quot;fixedHeight&quot; field on the &quot;CoreGalleryAttributes&quot; block or block attributes */
-  fixedHeight: Scalars['Boolean']['output'];
-  /** The &quot;gradient&quot; field on the &quot;CoreGalleryAttributes&quot; block or block attributes */
+  /** The &quot;fixedHeight&quot; field on the &quot;CoreGallery&quot; block */
+  fixedHeight?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;gradient&quot; field on the &quot;CoreGallery&quot; block */
   gradient?: Maybe<Scalars['String']['output']>;
-  /** The &quot;ids&quot; field on the &quot;CoreGalleryAttributes&quot; block or block attributes */
-  ids: Array<Maybe<Scalars['Float']['output']>>;
-  /** The &quot;imageCrop&quot; field on the &quot;CoreGalleryAttributes&quot; block or block attributes */
-  imageCrop: Scalars['Boolean']['output'];
-  /** The &quot;images&quot; field on the &quot;CoreGalleryAttributes&quot; block or block attributes */
-  images: Array<Maybe<CoreGalleryAttributesImages>>;
-  /** The &quot;layout&quot; field on the &quot;CoreGalleryAttributes&quot; block or block attributes */
+  /** The &quot;ids&quot; field on the &quot;CoreGallery&quot; block */
+  ids?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;imageCrop&quot; field on the &quot;CoreGallery&quot; block */
+  imageCrop?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;images&quot; field on the &quot;CoreGallery&quot; block */
+  images?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;layout&quot; field on the &quot;CoreGallery&quot; block */
   layout?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;linkTarget&quot; field on the &quot;CoreGalleryAttributes&quot; block or block attributes */
+  /** The &quot;linkTarget&quot; field on the &quot;CoreGallery&quot; block */
   linkTarget?: Maybe<Scalars['String']['output']>;
-  /** The &quot;linkTo&quot; field on the &quot;CoreGalleryAttributes&quot; block or block attributes */
+  /** The &quot;linkTo&quot; field on the &quot;CoreGallery&quot; block */
   linkTo?: Maybe<Scalars['String']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CoreGalleryAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CoreGallery&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreGalleryAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreGallery&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;randomOrder&quot; field on the &quot;CoreGalleryAttributes&quot; block or block attributes */
-  randomOrder: Scalars['Boolean']['output'];
-  /** The &quot;shortCodeTransforms&quot; field on the &quot;CoreGalleryAttributes&quot; block or block attributes */
-  shortCodeTransforms: Array<Maybe<Scalars['BlockAttributesObject']['output']>>;
-  /** The &quot;sizeSlug&quot; field on the &quot;CoreGalleryAttributes&quot; block or block attributes */
-  sizeSlug: Scalars['String']['output'];
-  /** The &quot;style&quot; field on the &quot;CoreGalleryAttributes&quot; block or block attributes */
+  /** The &quot;randomOrder&quot; field on the &quot;CoreGallery&quot; block */
+  randomOrder?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;shortCodeTransforms&quot; field on the &quot;CoreGallery&quot; block */
+  shortCodeTransforms?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;sizeSlug&quot; field on the &quot;CoreGallery&quot; block */
+  sizeSlug?: Maybe<Scalars['String']['output']>;
+  /** The &quot;style&quot; field on the &quot;CoreGallery&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
 };
 
-/** The &quot;CoreGalleryAttributesImages&quot; field on the &quot;CoreGalleryAttributes&quot; block attribute field */
-export type CoreGalleryAttributesImages = {
-  __typename?: 'CoreGalleryAttributesImages';
-  /** The &quot;alt&quot; field on the &quot;CoreGalleryAttributesImages&quot; block attribute field */
-  alt: Scalars['String']['output'];
-  /** The &quot;caption&quot; field on the &quot;CoreGalleryAttributesImages&quot; block attribute field */
-  caption?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fullUrl&quot; field on the &quot;CoreGalleryAttributesImages&quot; block attribute field */
-  fullUrl?: Maybe<Scalars['String']['output']>;
-  /** The &quot;id&quot; field on the &quot;CoreGalleryAttributesImages&quot; block attribute field */
-  id?: Maybe<Scalars['String']['output']>;
-  /** The &quot;link&quot; field on the &quot;CoreGalleryAttributesImages&quot; block attribute field */
-  link?: Maybe<Scalars['String']['output']>;
-  /** The &quot;url&quot; field on the &quot;CoreGalleryAttributesImages&quot; block attribute field */
-  url?: Maybe<Scalars['String']['output']>;
-};
-
 /** A block used for editing the site */
-export type CoreGroup = BlockWithSupportsAnchor & EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreGroup = BlockWithSupportsAnchor & DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreGroup';
   /** The anchor field for the block. */
   anchor?: Maybe<Scalars['String']['output']>;
@@ -3339,40 +3290,40 @@ export type CoreGroup = BlockWithSupportsAnchor & EditorBlock & PageEditorBlock 
 /** Attributes of the CoreGroup Block Type */
 export type CoreGroupAttributes = BlockWithSupportsAnchor & {
   __typename?: 'CoreGroupAttributes';
-  /** The &quot;align&quot; field on the &quot;CoreGroupAttributes&quot; block or block attributes */
+  /** The &quot;align&quot; field on the &quot;CoreGroup&quot; block */
   align?: Maybe<Scalars['String']['output']>;
-  /** The &quot;allowedBlocks&quot; field on the &quot;CoreGroupAttributes&quot; block or block attributes */
-  allowedBlocks?: Maybe<Scalars['BlockAttributesArray']['output']>;
+  /** The &quot;allowedBlocks&quot; field on the &quot;CoreGroup&quot; block */
+  allowedBlocks?: Maybe<Scalars['BlockAttributesObject']['output']>;
   /** The anchor field for the block. */
   anchor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;backgroundColor&quot; field on the &quot;CoreGroupAttributes&quot; block or block attributes */
+  /** The &quot;backgroundColor&quot; field on the &quot;CoreGroup&quot; block */
   backgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;borderColor&quot; field on the &quot;CoreGroupAttributes&quot; block or block attributes */
+  /** The &quot;borderColor&quot; field on the &quot;CoreGroup&quot; block */
   borderColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CoreGroupAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreGroup&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontFamily&quot; field on the &quot;CoreGroupAttributes&quot; block or block attributes */
+  /** The &quot;fontFamily&quot; field on the &quot;CoreGroup&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CoreGroupAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CoreGroup&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;gradient&quot; field on the &quot;CoreGroupAttributes&quot; block or block attributes */
+  /** The &quot;gradient&quot; field on the &quot;CoreGroup&quot; block */
   gradient?: Maybe<Scalars['String']['output']>;
-  /** The &quot;layout&quot; field on the &quot;CoreGroupAttributes&quot; block or block attributes */
+  /** The &quot;layout&quot; field on the &quot;CoreGroup&quot; block */
   layout?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CoreGroupAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CoreGroup&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreGroupAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreGroup&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;style&quot; field on the &quot;CoreGroupAttributes&quot; block or block attributes */
+  /** The &quot;style&quot; field on the &quot;CoreGroup&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;tagName&quot; field on the &quot;CoreGroupAttributes&quot; block or block attributes */
-  tagName: Scalars['String']['output'];
-  /** The &quot;textColor&quot; field on the &quot;CoreGroupAttributes&quot; block or block attributes */
+  /** The &quot;tagName&quot; field on the &quot;CoreGroup&quot; block */
+  tagName?: Maybe<Scalars['String']['output']>;
+  /** The &quot;textColor&quot; field on the &quot;CoreGroup&quot; block */
   textColor?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreHeading = BlockWithSupportsAnchor & EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreHeading = BlockWithSupportsAnchor & DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreHeading';
   /** The anchor field for the block. */
   anchor?: Maybe<Scalars['String']['output']>;
@@ -3401,42 +3352,40 @@ export type CoreHeading = BlockWithSupportsAnchor & EditorBlock & PageEditorBloc
 /** Attributes of the CoreHeading Block Type */
 export type CoreHeadingAttributes = BlockWithSupportsAnchor & {
   __typename?: 'CoreHeadingAttributes';
-  /** The &quot;align&quot; field on the &quot;CoreHeadingAttributes&quot; block or block attributes */
+  /** The &quot;align&quot; field on the &quot;CoreHeading&quot; block */
   align?: Maybe<Scalars['String']['output']>;
   /** The anchor field for the block. */
   anchor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;backgroundColor&quot; field on the &quot;CoreHeadingAttributes&quot; block or block attributes */
+  /** The &quot;backgroundColor&quot; field on the &quot;CoreHeading&quot; block */
   backgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CoreHeadingAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreHeading&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;content&quot; field on the &quot;CoreHeadingAttributes&quot; block or block attributes */
-  content?: Maybe<Scalars['String']['output']>;
-  /** The &quot;cssClassName&quot; field on the &quot;CoreHeadingAttributes&quot; block or block attributes */
+  /** The &quot;cssClassName&quot; field on the &quot;CoreHeading&quot; block */
   cssClassName?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontFamily&quot; field on the &quot;CoreHeadingAttributes&quot; block or block attributes */
+  /** The &quot;fontFamily&quot; field on the &quot;CoreHeading&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CoreHeadingAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CoreHeading&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;gradient&quot; field on the &quot;CoreHeadingAttributes&quot; block or block attributes */
+  /** The &quot;gradient&quot; field on the &quot;CoreHeading&quot; block */
   gradient?: Maybe<Scalars['String']['output']>;
-  /** The &quot;level&quot; field on the &quot;CoreHeadingAttributes&quot; block or block attributes */
-  level: Scalars['Float']['output'];
-  /** The &quot;lock&quot; field on the &quot;CoreHeadingAttributes&quot; block or block attributes */
+  /** The &quot;level&quot; field on the &quot;CoreHeading&quot; block */
+  level?: Maybe<Scalars['Float']['output']>;
+  /** The &quot;lock&quot; field on the &quot;CoreHeading&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreHeadingAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreHeading&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;placeholder&quot; field on the &quot;CoreHeadingAttributes&quot; block or block attributes */
+  /** The &quot;placeholder&quot; field on the &quot;CoreHeading&quot; block */
   placeholder?: Maybe<Scalars['String']['output']>;
-  /** The &quot;style&quot; field on the &quot;CoreHeadingAttributes&quot; block or block attributes */
+  /** The &quot;style&quot; field on the &quot;CoreHeading&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;textAlign&quot; field on the &quot;CoreHeadingAttributes&quot; block or block attributes */
+  /** The &quot;textAlign&quot; field on the &quot;CoreHeading&quot; block */
   textAlign?: Maybe<Scalars['String']['output']>;
-  /** The &quot;textColor&quot; field on the &quot;CoreHeadingAttributes&quot; block or block attributes */
+  /** The &quot;textColor&quot; field on the &quot;CoreHeading&quot; block */
   textColor?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreHomeLink = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreHomeLink = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreHomeLink';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -3463,24 +3412,24 @@ export type CoreHomeLink = EditorBlock & PageEditorBlock & PostEditorBlock & {
 /** Attributes of the CoreHomeLink Block Type */
 export type CoreHomeLinkAttributes = {
   __typename?: 'CoreHomeLinkAttributes';
-  /** The &quot;className&quot; field on the &quot;CoreHomeLinkAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreHomeLink&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontFamily&quot; field on the &quot;CoreHomeLinkAttributes&quot; block or block attributes */
+  /** The &quot;fontFamily&quot; field on the &quot;CoreHomeLink&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CoreHomeLinkAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CoreHomeLink&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;label&quot; field on the &quot;CoreHomeLinkAttributes&quot; block or block attributes */
+  /** The &quot;label&quot; field on the &quot;CoreHomeLink&quot; block */
   label?: Maybe<Scalars['String']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CoreHomeLinkAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CoreHomeLink&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreHomeLinkAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreHomeLink&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;style&quot; field on the &quot;CoreHomeLinkAttributes&quot; block or block attributes */
+  /** The &quot;style&quot; field on the &quot;CoreHomeLink&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreHtml = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreHtml = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreHtml';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -3507,16 +3456,16 @@ export type CoreHtml = EditorBlock & PageEditorBlock & PostEditorBlock & {
 /** Attributes of the CoreHtml Block Type */
 export type CoreHtmlAttributes = {
   __typename?: 'CoreHtmlAttributes';
-  /** The &quot;content&quot; field on the &quot;CoreHtmlAttributes&quot; block or block attributes */
+  /** The &quot;content&quot; field on the &quot;CoreHtml&quot; block */
   content?: Maybe<Scalars['String']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CoreHtmlAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CoreHtml&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreHtmlAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreHtml&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreImage = BlockWithSupportsAnchor & EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreImage = BlockWithSupportsAnchor & DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreImage';
   /** The anchor field for the block. */
   anchor?: Maybe<Scalars['String']['output']>;
@@ -3534,8 +3483,6 @@ export type CoreImage = BlockWithSupportsAnchor & EditorBlock & PageEditorBlock 
   innerBlocks?: Maybe<Array<Maybe<EditorBlock>>>;
   /** Whether the block is Dynamic (server rendered) */
   isDynamic: Scalars['Boolean']['output'];
-  /** Media Details of the CoreImage Block Type */
-  mediaDetails?: Maybe<MediaDetails>;
   /** The name of the block */
   name?: Maybe<Scalars['String']['output']>;
   /** The parent id of the Block */
@@ -3547,60 +3494,58 @@ export type CoreImage = BlockWithSupportsAnchor & EditorBlock & PageEditorBlock 
 /** Attributes of the CoreImage Block Type */
 export type CoreImageAttributes = BlockWithSupportsAnchor & {
   __typename?: 'CoreImageAttributes';
-  /** The &quot;align&quot; field on the &quot;CoreImageAttributes&quot; block or block attributes */
+  /** The &quot;align&quot; field on the &quot;CoreImage&quot; block */
   align?: Maybe<Scalars['String']['output']>;
-  /** The &quot;alt&quot; field on the &quot;CoreImageAttributes&quot; block or block attributes */
-  alt: Scalars['String']['output'];
+  /** The &quot;alt&quot; field on the &quot;CoreImage&quot; block */
+  alt?: Maybe<Scalars['String']['output']>;
   /** The anchor field for the block. */
   anchor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;aspectRatio&quot; field on the &quot;CoreImageAttributes&quot; block or block attributes */
+  /** The &quot;aspectRatio&quot; field on the &quot;CoreImage&quot; block */
   aspectRatio?: Maybe<Scalars['String']['output']>;
-  /** The &quot;borderColor&quot; field on the &quot;CoreImageAttributes&quot; block or block attributes */
+  /** The &quot;borderColor&quot; field on the &quot;CoreImage&quot; block */
   borderColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;caption&quot; field on the &quot;CoreImageAttributes&quot; block or block attributes */
-  caption?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CoreImageAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreImage&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;cssClassName&quot; field on the &quot;CoreImageAttributes&quot; block or block attributes */
+  /** The &quot;cssClassName&quot; field on the &quot;CoreImage&quot; block */
   cssClassName?: Maybe<Scalars['String']['output']>;
-  /** The &quot;height&quot; field on the &quot;CoreImageAttributes&quot; block or block attributes */
+  /** The &quot;height&quot; field on the &quot;CoreImage&quot; block */
   height?: Maybe<Scalars['String']['output']>;
-  /** The &quot;href&quot; field on the &quot;CoreImageAttributes&quot; block or block attributes */
+  /** The &quot;href&quot; field on the &quot;CoreImage&quot; block */
   href?: Maybe<Scalars['String']['output']>;
-  /** The &quot;id&quot; field on the &quot;CoreImageAttributes&quot; block or block attributes */
+  /** The &quot;id&quot; field on the &quot;CoreImage&quot; block */
   id?: Maybe<Scalars['Float']['output']>;
-  /** The &quot;lightbox&quot; field on the &quot;CoreImageAttributes&quot; block or block attributes */
+  /** The &quot;lightbox&quot; field on the &quot;CoreImage&quot; block */
   lightbox?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;linkClass&quot; field on the &quot;CoreImageAttributes&quot; block or block attributes */
+  /** The &quot;linkClass&quot; field on the &quot;CoreImage&quot; block */
   linkClass?: Maybe<Scalars['String']['output']>;
-  /** The &quot;linkDestination&quot; field on the &quot;CoreImageAttributes&quot; block or block attributes */
+  /** The &quot;linkDestination&quot; field on the &quot;CoreImage&quot; block */
   linkDestination?: Maybe<Scalars['String']['output']>;
-  /** The &quot;linkTarget&quot; field on the &quot;CoreImageAttributes&quot; block or block attributes */
+  /** The &quot;linkTarget&quot; field on the &quot;CoreImage&quot; block */
   linkTarget?: Maybe<Scalars['String']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CoreImageAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CoreImage&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreImageAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreImage&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;rel&quot; field on the &quot;CoreImageAttributes&quot; block or block attributes */
+  /** The &quot;rel&quot; field on the &quot;CoreImage&quot; block */
   rel?: Maybe<Scalars['String']['output']>;
-  /** The &quot;scale&quot; field on the &quot;CoreImageAttributes&quot; block or block attributes */
+  /** The &quot;scale&quot; field on the &quot;CoreImage&quot; block */
   scale?: Maybe<Scalars['String']['output']>;
-  /** The &quot;sizeSlug&quot; field on the &quot;CoreImageAttributes&quot; block or block attributes */
+  /** The &quot;sizeSlug&quot; field on the &quot;CoreImage&quot; block */
   sizeSlug?: Maybe<Scalars['String']['output']>;
-  /** The &quot;src&quot; field on the &quot;CoreImageAttributes&quot; block or block attributes */
+  /** The &quot;src&quot; field on the &quot;CoreImage&quot; block */
   src?: Maybe<Scalars['String']['output']>;
-  /** The &quot;style&quot; field on the &quot;CoreImageAttributes&quot; block or block attributes */
+  /** The &quot;style&quot; field on the &quot;CoreImage&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;title&quot; field on the &quot;CoreImageAttributes&quot; block or block attributes */
+  /** The &quot;title&quot; field on the &quot;CoreImage&quot; block */
   title?: Maybe<Scalars['String']['output']>;
-  /** The &quot;url&quot; field on the &quot;CoreImageAttributes&quot; block or block attributes */
+  /** The &quot;url&quot; field on the &quot;CoreImage&quot; block */
   url?: Maybe<Scalars['String']['output']>;
-  /** The &quot;width&quot; field on the &quot;CoreImageAttributes&quot; block or block attributes */
+  /** The &quot;width&quot; field on the &quot;CoreImage&quot; block */
   width?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreLatestComments = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreLatestComments = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreLatestComments';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -3627,32 +3572,32 @@ export type CoreLatestComments = EditorBlock & PageEditorBlock & PostEditorBlock
 /** Attributes of the CoreLatestComments Block Type */
 export type CoreLatestCommentsAttributes = {
   __typename?: 'CoreLatestCommentsAttributes';
-  /** The &quot;align&quot; field on the &quot;CoreLatestCommentsAttributes&quot; block or block attributes */
+  /** The &quot;align&quot; field on the &quot;CoreLatestComments&quot; block */
   align?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CoreLatestCommentsAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreLatestComments&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;commentsToShow&quot; field on the &quot;CoreLatestCommentsAttributes&quot; block or block attributes */
-  commentsToShow: Scalars['Float']['output'];
-  /** The &quot;displayAvatar&quot; field on the &quot;CoreLatestCommentsAttributes&quot; block or block attributes */
-  displayAvatar: Scalars['Boolean']['output'];
-  /** The &quot;displayDate&quot; field on the &quot;CoreLatestCommentsAttributes&quot; block or block attributes */
-  displayDate: Scalars['Boolean']['output'];
-  /** The &quot;displayExcerpt&quot; field on the &quot;CoreLatestCommentsAttributes&quot; block or block attributes */
-  displayExcerpt: Scalars['Boolean']['output'];
-  /** The &quot;fontFamily&quot; field on the &quot;CoreLatestCommentsAttributes&quot; block or block attributes */
+  /** The &quot;commentsToShow&quot; field on the &quot;CoreLatestComments&quot; block */
+  commentsToShow?: Maybe<Scalars['Float']['output']>;
+  /** The &quot;displayAvatar&quot; field on the &quot;CoreLatestComments&quot; block */
+  displayAvatar?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;displayDate&quot; field on the &quot;CoreLatestComments&quot; block */
+  displayDate?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;displayExcerpt&quot; field on the &quot;CoreLatestComments&quot; block */
+  displayExcerpt?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;fontFamily&quot; field on the &quot;CoreLatestComments&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CoreLatestCommentsAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CoreLatestComments&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CoreLatestCommentsAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CoreLatestComments&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreLatestCommentsAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreLatestComments&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;style&quot; field on the &quot;CoreLatestCommentsAttributes&quot; block or block attributes */
+  /** The &quot;style&quot; field on the &quot;CoreLatestComments&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreLatestPosts = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreLatestPosts = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreLatestPosts';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -3679,66 +3624,66 @@ export type CoreLatestPosts = EditorBlock & PageEditorBlock & PostEditorBlock & 
 /** Attributes of the CoreLatestPosts Block Type */
 export type CoreLatestPostsAttributes = {
   __typename?: 'CoreLatestPostsAttributes';
-  /** The &quot;addLinkToFeaturedImage&quot; field on the &quot;CoreLatestPostsAttributes&quot; block or block attributes */
-  addLinkToFeaturedImage: Scalars['Boolean']['output'];
-  /** The &quot;align&quot; field on the &quot;CoreLatestPostsAttributes&quot; block or block attributes */
+  /** The &quot;addLinkToFeaturedImage&quot; field on the &quot;CoreLatestPosts&quot; block */
+  addLinkToFeaturedImage?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;align&quot; field on the &quot;CoreLatestPosts&quot; block */
   align?: Maybe<Scalars['String']['output']>;
-  /** The &quot;backgroundColor&quot; field on the &quot;CoreLatestPostsAttributes&quot; block or block attributes */
+  /** The &quot;backgroundColor&quot; field on the &quot;CoreLatestPosts&quot; block */
   backgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;categories&quot; field on the &quot;CoreLatestPostsAttributes&quot; block or block attributes */
-  categories?: Maybe<Array<Maybe<Scalars['BlockAttributesObject']['output']>>>;
-  /** The &quot;className&quot; field on the &quot;CoreLatestPostsAttributes&quot; block or block attributes */
+  /** The &quot;categories&quot; field on the &quot;CoreLatestPosts&quot; block */
+  categories?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;className&quot; field on the &quot;CoreLatestPosts&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;columns&quot; field on the &quot;CoreLatestPostsAttributes&quot; block or block attributes */
-  columns: Scalars['Float']['output'];
-  /** The &quot;displayAuthor&quot; field on the &quot;CoreLatestPostsAttributes&quot; block or block attributes */
-  displayAuthor: Scalars['Boolean']['output'];
-  /** The &quot;displayFeaturedImage&quot; field on the &quot;CoreLatestPostsAttributes&quot; block or block attributes */
-  displayFeaturedImage: Scalars['Boolean']['output'];
-  /** The &quot;displayPostContent&quot; field on the &quot;CoreLatestPostsAttributes&quot; block or block attributes */
-  displayPostContent: Scalars['Boolean']['output'];
-  /** The &quot;displayPostContentRadio&quot; field on the &quot;CoreLatestPostsAttributes&quot; block or block attributes */
-  displayPostContentRadio: Scalars['String']['output'];
-  /** The &quot;displayPostDate&quot; field on the &quot;CoreLatestPostsAttributes&quot; block or block attributes */
-  displayPostDate: Scalars['Boolean']['output'];
-  /** The &quot;excerptLength&quot; field on the &quot;CoreLatestPostsAttributes&quot; block or block attributes */
-  excerptLength: Scalars['Float']['output'];
-  /** The &quot;featuredImageAlign&quot; field on the &quot;CoreLatestPostsAttributes&quot; block or block attributes */
+  /** The &quot;columns&quot; field on the &quot;CoreLatestPosts&quot; block */
+  columns?: Maybe<Scalars['Float']['output']>;
+  /** The &quot;displayAuthor&quot; field on the &quot;CoreLatestPosts&quot; block */
+  displayAuthor?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;displayFeaturedImage&quot; field on the &quot;CoreLatestPosts&quot; block */
+  displayFeaturedImage?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;displayPostContent&quot; field on the &quot;CoreLatestPosts&quot; block */
+  displayPostContent?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;displayPostContentRadio&quot; field on the &quot;CoreLatestPosts&quot; block */
+  displayPostContentRadio?: Maybe<Scalars['String']['output']>;
+  /** The &quot;displayPostDate&quot; field on the &quot;CoreLatestPosts&quot; block */
+  displayPostDate?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;excerptLength&quot; field on the &quot;CoreLatestPosts&quot; block */
+  excerptLength?: Maybe<Scalars['Float']['output']>;
+  /** The &quot;featuredImageAlign&quot; field on the &quot;CoreLatestPosts&quot; block */
   featuredImageAlign?: Maybe<Scalars['String']['output']>;
-  /** The &quot;featuredImageSizeHeight&quot; field on the &quot;CoreLatestPostsAttributes&quot; block or block attributes */
+  /** The &quot;featuredImageSizeHeight&quot; field on the &quot;CoreLatestPosts&quot; block */
   featuredImageSizeHeight?: Maybe<Scalars['Float']['output']>;
-  /** The &quot;featuredImageSizeSlug&quot; field on the &quot;CoreLatestPostsAttributes&quot; block or block attributes */
-  featuredImageSizeSlug: Scalars['String']['output'];
-  /** The &quot;featuredImageSizeWidth&quot; field on the &quot;CoreLatestPostsAttributes&quot; block or block attributes */
+  /** The &quot;featuredImageSizeSlug&quot; field on the &quot;CoreLatestPosts&quot; block */
+  featuredImageSizeSlug?: Maybe<Scalars['String']['output']>;
+  /** The &quot;featuredImageSizeWidth&quot; field on the &quot;CoreLatestPosts&quot; block */
   featuredImageSizeWidth?: Maybe<Scalars['Float']['output']>;
-  /** The &quot;fontFamily&quot; field on the &quot;CoreLatestPostsAttributes&quot; block or block attributes */
+  /** The &quot;fontFamily&quot; field on the &quot;CoreLatestPosts&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CoreLatestPostsAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CoreLatestPosts&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;gradient&quot; field on the &quot;CoreLatestPostsAttributes&quot; block or block attributes */
+  /** The &quot;gradient&quot; field on the &quot;CoreLatestPosts&quot; block */
   gradient?: Maybe<Scalars['String']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CoreLatestPostsAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CoreLatestPosts&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreLatestPostsAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreLatestPosts&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;order&quot; field on the &quot;CoreLatestPostsAttributes&quot; block or block attributes */
-  order: Scalars['String']['output'];
-  /** The &quot;orderBy&quot; field on the &quot;CoreLatestPostsAttributes&quot; block or block attributes */
-  orderBy: Scalars['String']['output'];
-  /** The &quot;postLayout&quot; field on the &quot;CoreLatestPostsAttributes&quot; block or block attributes */
-  postLayout: Scalars['String']['output'];
-  /** The &quot;postsToShow&quot; field on the &quot;CoreLatestPostsAttributes&quot; block or block attributes */
-  postsToShow: Scalars['Float']['output'];
-  /** The &quot;selectedAuthor&quot; field on the &quot;CoreLatestPostsAttributes&quot; block or block attributes */
+  /** The &quot;order&quot; field on the &quot;CoreLatestPosts&quot; block */
+  order?: Maybe<Scalars['String']['output']>;
+  /** The &quot;orderBy&quot; field on the &quot;CoreLatestPosts&quot; block */
+  orderBy?: Maybe<Scalars['String']['output']>;
+  /** The &quot;postLayout&quot; field on the &quot;CoreLatestPosts&quot; block */
+  postLayout?: Maybe<Scalars['String']['output']>;
+  /** The &quot;postsToShow&quot; field on the &quot;CoreLatestPosts&quot; block */
+  postsToShow?: Maybe<Scalars['Float']['output']>;
+  /** The &quot;selectedAuthor&quot; field on the &quot;CoreLatestPosts&quot; block */
   selectedAuthor?: Maybe<Scalars['Float']['output']>;
-  /** The &quot;style&quot; field on the &quot;CoreLatestPostsAttributes&quot; block or block attributes */
+  /** The &quot;style&quot; field on the &quot;CoreLatestPosts&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;textColor&quot; field on the &quot;CoreLatestPostsAttributes&quot; block or block attributes */
+  /** The &quot;textColor&quot; field on the &quot;CoreLatestPosts&quot; block */
   textColor?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreLegacyWidget = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreLegacyWidget = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreLegacyWidget';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -3765,20 +3710,20 @@ export type CoreLegacyWidget = EditorBlock & PageEditorBlock & PostEditorBlock &
 /** Attributes of the CoreLegacyWidget Block Type */
 export type CoreLegacyWidgetAttributes = {
   __typename?: 'CoreLegacyWidgetAttributes';
-  /** The &quot;id&quot; field on the &quot;CoreLegacyWidgetAttributes&quot; block or block attributes */
+  /** The &quot;id&quot; field on the &quot;CoreLegacyWidget&quot; block */
   id?: Maybe<Scalars['String']['output']>;
-  /** The &quot;idBase&quot; field on the &quot;CoreLegacyWidgetAttributes&quot; block or block attributes */
+  /** The &quot;idBase&quot; field on the &quot;CoreLegacyWidget&quot; block */
   idBase?: Maybe<Scalars['String']['output']>;
-  /** The &quot;instance&quot; field on the &quot;CoreLegacyWidgetAttributes&quot; block or block attributes */
+  /** The &quot;instance&quot; field on the &quot;CoreLegacyWidget&quot; block */
   instance?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CoreLegacyWidgetAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CoreLegacyWidget&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreLegacyWidgetAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreLegacyWidget&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreList = BlockWithSupportsAnchor & EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreList = BlockWithSupportsAnchor & DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreList';
   /** The anchor field for the block. */
   anchor?: Maybe<Scalars['String']['output']>;
@@ -3809,42 +3754,42 @@ export type CoreListAttributes = BlockWithSupportsAnchor & {
   __typename?: 'CoreListAttributes';
   /** The anchor field for the block. */
   anchor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;backgroundColor&quot; field on the &quot;CoreListAttributes&quot; block or block attributes */
+  /** The &quot;backgroundColor&quot; field on the &quot;CoreList&quot; block */
   backgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CoreListAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreList&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;cssClassName&quot; field on the &quot;CoreListAttributes&quot; block or block attributes */
+  /** The &quot;cssClassName&quot; field on the &quot;CoreList&quot; block */
   cssClassName?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontFamily&quot; field on the &quot;CoreListAttributes&quot; block or block attributes */
+  /** The &quot;fontFamily&quot; field on the &quot;CoreList&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CoreListAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CoreList&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;gradient&quot; field on the &quot;CoreListAttributes&quot; block or block attributes */
+  /** The &quot;gradient&quot; field on the &quot;CoreList&quot; block */
   gradient?: Maybe<Scalars['String']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CoreListAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CoreList&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreListAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreList&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;ordered&quot; field on the &quot;CoreListAttributes&quot; block or block attributes */
-  ordered: Scalars['Boolean']['output'];
-  /** The &quot;placeholder&quot; field on the &quot;CoreListAttributes&quot; block or block attributes */
+  /** The &quot;ordered&quot; field on the &quot;CoreList&quot; block */
+  ordered?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;placeholder&quot; field on the &quot;CoreList&quot; block */
   placeholder?: Maybe<Scalars['String']['output']>;
-  /** The &quot;reversed&quot; field on the &quot;CoreListAttributes&quot; block or block attributes */
+  /** The &quot;reversed&quot; field on the &quot;CoreList&quot; block */
   reversed?: Maybe<Scalars['Boolean']['output']>;
-  /** The &quot;start&quot; field on the &quot;CoreListAttributes&quot; block or block attributes */
+  /** The &quot;start&quot; field on the &quot;CoreList&quot; block */
   start?: Maybe<Scalars['Float']['output']>;
-  /** The &quot;style&quot; field on the &quot;CoreListAttributes&quot; block or block attributes */
+  /** The &quot;style&quot; field on the &quot;CoreList&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;textColor&quot; field on the &quot;CoreListAttributes&quot; block or block attributes */
+  /** The &quot;textColor&quot; field on the &quot;CoreList&quot; block */
   textColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;type&quot; field on the &quot;CoreListAttributes&quot; block or block attributes */
+  /** The &quot;type&quot; field on the &quot;CoreList&quot; block */
   type?: Maybe<Scalars['String']['output']>;
-  /** The &quot;values&quot; field on the &quot;CoreListAttributes&quot; block or block attributes */
-  values: Scalars['String']['output'];
+  /** The &quot;values&quot; field on the &quot;CoreList&quot; block */
+  values?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreListItem = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreListItem = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreListItem';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -3871,26 +3816,24 @@ export type CoreListItem = EditorBlock & PageEditorBlock & PostEditorBlock & {
 /** Attributes of the CoreListItem Block Type */
 export type CoreListItemAttributes = {
   __typename?: 'CoreListItemAttributes';
-  /** The &quot;className&quot; field on the &quot;CoreListItemAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreListItem&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;content&quot; field on the &quot;CoreListItemAttributes&quot; block or block attributes */
-  content?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontFamily&quot; field on the &quot;CoreListItemAttributes&quot; block or block attributes */
+  /** The &quot;fontFamily&quot; field on the &quot;CoreListItem&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CoreListItemAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CoreListItem&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CoreListItemAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CoreListItem&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreListItemAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreListItem&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;placeholder&quot; field on the &quot;CoreListItemAttributes&quot; block or block attributes */
+  /** The &quot;placeholder&quot; field on the &quot;CoreListItem&quot; block */
   placeholder?: Maybe<Scalars['String']['output']>;
-  /** The &quot;style&quot; field on the &quot;CoreListItemAttributes&quot; block or block attributes */
+  /** The &quot;style&quot; field on the &quot;CoreListItem&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreLoginout = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreLoginout = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreLoginout';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -3917,26 +3860,26 @@ export type CoreLoginout = EditorBlock & PageEditorBlock & PostEditorBlock & {
 /** Attributes of the CoreLoginout Block Type */
 export type CoreLoginoutAttributes = {
   __typename?: 'CoreLoginoutAttributes';
-  /** The &quot;className&quot; field on the &quot;CoreLoginoutAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreLoginout&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;displayLoginAsForm&quot; field on the &quot;CoreLoginoutAttributes&quot; block or block attributes */
-  displayLoginAsForm: Scalars['Boolean']['output'];
-  /** The &quot;fontFamily&quot; field on the &quot;CoreLoginoutAttributes&quot; block or block attributes */
+  /** The &quot;displayLoginAsForm&quot; field on the &quot;CoreLoginout&quot; block */
+  displayLoginAsForm?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;fontFamily&quot; field on the &quot;CoreLoginout&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CoreLoginoutAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CoreLoginout&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CoreLoginoutAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CoreLoginout&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreLoginoutAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreLoginout&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;redirectToCurrent&quot; field on the &quot;CoreLoginoutAttributes&quot; block or block attributes */
-  redirectToCurrent: Scalars['Boolean']['output'];
-  /** The &quot;style&quot; field on the &quot;CoreLoginoutAttributes&quot; block or block attributes */
+  /** The &quot;redirectToCurrent&quot; field on the &quot;CoreLoginout&quot; block */
+  redirectToCurrent?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;style&quot; field on the &quot;CoreLoginout&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreMediaText = BlockWithSupportsAnchor & EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreMediaText = BlockWithSupportsAnchor & DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreMediaText';
   /** The anchor field for the block. */
   anchor?: Maybe<Scalars['String']['output']>;
@@ -3965,70 +3908,70 @@ export type CoreMediaText = BlockWithSupportsAnchor & EditorBlock & PageEditorBl
 /** Attributes of the CoreMediaText Block Type */
 export type CoreMediaTextAttributes = BlockWithSupportsAnchor & {
   __typename?: 'CoreMediaTextAttributes';
-  /** The &quot;align&quot; field on the &quot;CoreMediaTextAttributes&quot; block or block attributes */
-  align: Scalars['String']['output'];
-  /** The &quot;allowedBlocks&quot; field on the &quot;CoreMediaTextAttributes&quot; block or block attributes */
-  allowedBlocks?: Maybe<Scalars['BlockAttributesArray']['output']>;
+  /** The &quot;align&quot; field on the &quot;CoreMediaText&quot; block */
+  align?: Maybe<Scalars['String']['output']>;
+  /** The &quot;allowedBlocks&quot; field on the &quot;CoreMediaText&quot; block */
+  allowedBlocks?: Maybe<Scalars['BlockAttributesObject']['output']>;
   /** The anchor field for the block. */
   anchor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;backgroundColor&quot; field on the &quot;CoreMediaTextAttributes&quot; block or block attributes */
+  /** The &quot;backgroundColor&quot; field on the &quot;CoreMediaText&quot; block */
   backgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CoreMediaTextAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreMediaText&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;focalPoint&quot; field on the &quot;CoreMediaTextAttributes&quot; block or block attributes */
+  /** The &quot;focalPoint&quot; field on the &quot;CoreMediaText&quot; block */
   focalPoint?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;fontFamily&quot; field on the &quot;CoreMediaTextAttributes&quot; block or block attributes */
+  /** The &quot;fontFamily&quot; field on the &quot;CoreMediaText&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CoreMediaTextAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CoreMediaText&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;gradient&quot; field on the &quot;CoreMediaTextAttributes&quot; block or block attributes */
+  /** The &quot;gradient&quot; field on the &quot;CoreMediaText&quot; block */
   gradient?: Maybe<Scalars['String']['output']>;
-  /** The &quot;href&quot; field on the &quot;CoreMediaTextAttributes&quot; block or block attributes */
+  /** The &quot;href&quot; field on the &quot;CoreMediaText&quot; block */
   href?: Maybe<Scalars['String']['output']>;
-  /** The &quot;imageFill&quot; field on the &quot;CoreMediaTextAttributes&quot; block or block attributes */
+  /** The &quot;imageFill&quot; field on the &quot;CoreMediaText&quot; block */
   imageFill?: Maybe<Scalars['Boolean']['output']>;
-  /** The &quot;isStackedOnMobile&quot; field on the &quot;CoreMediaTextAttributes&quot; block or block attributes */
-  isStackedOnMobile: Scalars['Boolean']['output'];
-  /** The &quot;linkClass&quot; field on the &quot;CoreMediaTextAttributes&quot; block or block attributes */
+  /** The &quot;isStackedOnMobile&quot; field on the &quot;CoreMediaText&quot; block */
+  isStackedOnMobile?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;linkClass&quot; field on the &quot;CoreMediaText&quot; block */
   linkClass?: Maybe<Scalars['String']['output']>;
-  /** The &quot;linkDestination&quot; field on the &quot;CoreMediaTextAttributes&quot; block or block attributes */
+  /** The &quot;linkDestination&quot; field on the &quot;CoreMediaText&quot; block */
   linkDestination?: Maybe<Scalars['String']['output']>;
-  /** The &quot;linkTarget&quot; field on the &quot;CoreMediaTextAttributes&quot; block or block attributes */
+  /** The &quot;linkTarget&quot; field on the &quot;CoreMediaText&quot; block */
   linkTarget?: Maybe<Scalars['String']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CoreMediaTextAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CoreMediaText&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;mediaAlt&quot; field on the &quot;CoreMediaTextAttributes&quot; block or block attributes */
-  mediaAlt: Scalars['String']['output'];
-  /** The &quot;mediaId&quot; field on the &quot;CoreMediaTextAttributes&quot; block or block attributes */
+  /** The &quot;mediaAlt&quot; field on the &quot;CoreMediaText&quot; block */
+  mediaAlt?: Maybe<Scalars['String']['output']>;
+  /** The &quot;mediaId&quot; field on the &quot;CoreMediaText&quot; block */
   mediaId?: Maybe<Scalars['Float']['output']>;
-  /** The &quot;mediaLink&quot; field on the &quot;CoreMediaTextAttributes&quot; block or block attributes */
+  /** The &quot;mediaLink&quot; field on the &quot;CoreMediaText&quot; block */
   mediaLink?: Maybe<Scalars['String']['output']>;
-  /** The &quot;mediaPosition&quot; field on the &quot;CoreMediaTextAttributes&quot; block or block attributes */
-  mediaPosition: Scalars['String']['output'];
-  /** The &quot;mediaSizeSlug&quot; field on the &quot;CoreMediaTextAttributes&quot; block or block attributes */
+  /** The &quot;mediaPosition&quot; field on the &quot;CoreMediaText&quot; block */
+  mediaPosition?: Maybe<Scalars['String']['output']>;
+  /** The &quot;mediaSizeSlug&quot; field on the &quot;CoreMediaText&quot; block */
   mediaSizeSlug?: Maybe<Scalars['String']['output']>;
-  /** The &quot;mediaType&quot; field on the &quot;CoreMediaTextAttributes&quot; block or block attributes */
+  /** The &quot;mediaType&quot; field on the &quot;CoreMediaText&quot; block */
   mediaType?: Maybe<Scalars['String']['output']>;
-  /** The &quot;mediaUrl&quot; field on the &quot;CoreMediaTextAttributes&quot; block or block attributes */
+  /** The &quot;mediaUrl&quot; field on the &quot;CoreMediaText&quot; block */
   mediaUrl?: Maybe<Scalars['String']['output']>;
-  /** The &quot;mediaWidth&quot; field on the &quot;CoreMediaTextAttributes&quot; block or block attributes */
-  mediaWidth: Scalars['Float']['output'];
-  /** The &quot;metadata&quot; field on the &quot;CoreMediaTextAttributes&quot; block or block attributes */
+  /** The &quot;mediaWidth&quot; field on the &quot;CoreMediaText&quot; block */
+  mediaWidth?: Maybe<Scalars['Float']['output']>;
+  /** The &quot;metadata&quot; field on the &quot;CoreMediaText&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;rel&quot; field on the &quot;CoreMediaTextAttributes&quot; block or block attributes */
+  /** The &quot;rel&quot; field on the &quot;CoreMediaText&quot; block */
   rel?: Maybe<Scalars['String']['output']>;
-  /** The &quot;style&quot; field on the &quot;CoreMediaTextAttributes&quot; block or block attributes */
+  /** The &quot;style&quot; field on the &quot;CoreMediaText&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;textColor&quot; field on the &quot;CoreMediaTextAttributes&quot; block or block attributes */
+  /** The &quot;textColor&quot; field on the &quot;CoreMediaText&quot; block */
   textColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;useFeaturedImage&quot; field on the &quot;CoreMediaTextAttributes&quot; block or block attributes */
-  useFeaturedImage: Scalars['Boolean']['output'];
-  /** The &quot;verticalAlignment&quot; field on the &quot;CoreMediaTextAttributes&quot; block or block attributes */
+  /** The &quot;useFeaturedImage&quot; field on the &quot;CoreMediaText&quot; block */
+  useFeaturedImage?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;verticalAlignment&quot; field on the &quot;CoreMediaText&quot; block */
   verticalAlignment?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreMissing = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreMissing = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreMissing';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -4055,20 +3998,20 @@ export type CoreMissing = EditorBlock & PageEditorBlock & PostEditorBlock & {
 /** Attributes of the CoreMissing Block Type */
 export type CoreMissingAttributes = {
   __typename?: 'CoreMissingAttributes';
-  /** The &quot;lock&quot; field on the &quot;CoreMissingAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CoreMissing&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreMissingAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreMissing&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;originalContent&quot; field on the &quot;CoreMissingAttributes&quot; block or block attributes */
+  /** The &quot;originalContent&quot; field on the &quot;CoreMissing&quot; block */
   originalContent?: Maybe<Scalars['String']['output']>;
-  /** The &quot;originalName&quot; field on the &quot;CoreMissingAttributes&quot; block or block attributes */
+  /** The &quot;originalName&quot; field on the &quot;CoreMissing&quot; block */
   originalName?: Maybe<Scalars['String']['output']>;
-  /** The &quot;originalUndelimitedContent&quot; field on the &quot;CoreMissingAttributes&quot; block or block attributes */
+  /** The &quot;originalUndelimitedContent&quot; field on the &quot;CoreMissing&quot; block */
   originalUndelimitedContent?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreMore = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreMore = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreMore';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -4095,18 +4038,18 @@ export type CoreMore = EditorBlock & PageEditorBlock & PostEditorBlock & {
 /** Attributes of the CoreMore Block Type */
 export type CoreMoreAttributes = {
   __typename?: 'CoreMoreAttributes';
-  /** The &quot;customText&quot; field on the &quot;CoreMoreAttributes&quot; block or block attributes */
-  customText: Scalars['String']['output'];
-  /** The &quot;lock&quot; field on the &quot;CoreMoreAttributes&quot; block or block attributes */
+  /** The &quot;customText&quot; field on the &quot;CoreMore&quot; block */
+  customText?: Maybe<Scalars['String']['output']>;
+  /** The &quot;lock&quot; field on the &quot;CoreMore&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreMoreAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreMore&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;noTeaser&quot; field on the &quot;CoreMoreAttributes&quot; block or block attributes */
-  noTeaser: Scalars['Boolean']['output'];
+  /** The &quot;noTeaser&quot; field on the &quot;CoreMore&quot; block */
+  noTeaser?: Maybe<Scalars['Boolean']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreNavigation = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreNavigation = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreNavigation';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -4133,62 +4076,62 @@ export type CoreNavigation = EditorBlock & PageEditorBlock & PostEditorBlock & {
 /** Attributes of the CoreNavigation Block Type */
 export type CoreNavigationAttributes = {
   __typename?: 'CoreNavigationAttributes';
-  /** The &quot;align&quot; field on the &quot;CoreNavigationAttributes&quot; block or block attributes */
+  /** The &quot;align&quot; field on the &quot;CoreNavigation&quot; block */
   align?: Maybe<Scalars['String']['output']>;
-  /** The &quot;backgroundColor&quot; field on the &quot;CoreNavigationAttributes&quot; block or block attributes */
+  /** The &quot;backgroundColor&quot; field on the &quot;CoreNavigation&quot; block */
   backgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CoreNavigationAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreNavigation&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;customBackgroundColor&quot; field on the &quot;CoreNavigationAttributes&quot; block or block attributes */
+  /** The &quot;customBackgroundColor&quot; field on the &quot;CoreNavigation&quot; block */
   customBackgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;customOverlayBackgroundColor&quot; field on the &quot;CoreNavigationAttributes&quot; block or block attributes */
+  /** The &quot;customOverlayBackgroundColor&quot; field on the &quot;CoreNavigation&quot; block */
   customOverlayBackgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;customOverlayTextColor&quot; field on the &quot;CoreNavigationAttributes&quot; block or block attributes */
+  /** The &quot;customOverlayTextColor&quot; field on the &quot;CoreNavigation&quot; block */
   customOverlayTextColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;customTextColor&quot; field on the &quot;CoreNavigationAttributes&quot; block or block attributes */
+  /** The &quot;customTextColor&quot; field on the &quot;CoreNavigation&quot; block */
   customTextColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontFamily&quot; field on the &quot;CoreNavigationAttributes&quot; block or block attributes */
+  /** The &quot;fontFamily&quot; field on the &quot;CoreNavigation&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CoreNavigationAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CoreNavigation&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;hasIcon&quot; field on the &quot;CoreNavigationAttributes&quot; block or block attributes */
-  hasIcon: Scalars['Boolean']['output'];
-  /** The &quot;icon&quot; field on the &quot;CoreNavigationAttributes&quot; block or block attributes */
-  icon: Scalars['String']['output'];
-  /** The &quot;layout&quot; field on the &quot;CoreNavigationAttributes&quot; block or block attributes */
+  /** The &quot;hasIcon&quot; field on the &quot;CoreNavigation&quot; block */
+  hasIcon?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;icon&quot; field on the &quot;CoreNavigation&quot; block */
+  icon?: Maybe<Scalars['String']['output']>;
+  /** The &quot;layout&quot; field on the &quot;CoreNavigation&quot; block */
   layout?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CoreNavigationAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CoreNavigation&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;maxNestingLevel&quot; field on the &quot;CoreNavigationAttributes&quot; block or block attributes */
-  maxNestingLevel: Scalars['Float']['output'];
-  /** The &quot;metadata&quot; field on the &quot;CoreNavigationAttributes&quot; block or block attributes */
+  /** The &quot;maxNestingLevel&quot; field on the &quot;CoreNavigation&quot; block */
+  maxNestingLevel?: Maybe<Scalars['Float']['output']>;
+  /** The &quot;metadata&quot; field on the &quot;CoreNavigation&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;openSubmenusOnClick&quot; field on the &quot;CoreNavigationAttributes&quot; block or block attributes */
-  openSubmenusOnClick: Scalars['Boolean']['output'];
-  /** The &quot;overlayBackgroundColor&quot; field on the &quot;CoreNavigationAttributes&quot; block or block attributes */
+  /** The &quot;openSubmenusOnClick&quot; field on the &quot;CoreNavigation&quot; block */
+  openSubmenusOnClick?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;overlayBackgroundColor&quot; field on the &quot;CoreNavigation&quot; block */
   overlayBackgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;overlayMenu&quot; field on the &quot;CoreNavigationAttributes&quot; block or block attributes */
-  overlayMenu: Scalars['String']['output'];
-  /** The &quot;overlayTextColor&quot; field on the &quot;CoreNavigationAttributes&quot; block or block attributes */
+  /** The &quot;overlayMenu&quot; field on the &quot;CoreNavigation&quot; block */
+  overlayMenu?: Maybe<Scalars['String']['output']>;
+  /** The &quot;overlayTextColor&quot; field on the &quot;CoreNavigation&quot; block */
   overlayTextColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;ref&quot; field on the &quot;CoreNavigationAttributes&quot; block or block attributes */
+  /** The &quot;ref&quot; field on the &quot;CoreNavigation&quot; block */
   ref?: Maybe<Scalars['Float']['output']>;
-  /** The &quot;rgbBackgroundColor&quot; field on the &quot;CoreNavigationAttributes&quot; block or block attributes */
+  /** The &quot;rgbBackgroundColor&quot; field on the &quot;CoreNavigation&quot; block */
   rgbBackgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;rgbTextColor&quot; field on the &quot;CoreNavigationAttributes&quot; block or block attributes */
+  /** The &quot;rgbTextColor&quot; field on the &quot;CoreNavigation&quot; block */
   rgbTextColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;showSubmenuIcon&quot; field on the &quot;CoreNavigationAttributes&quot; block or block attributes */
-  showSubmenuIcon: Scalars['Boolean']['output'];
-  /** The &quot;style&quot; field on the &quot;CoreNavigationAttributes&quot; block or block attributes */
+  /** The &quot;showSubmenuIcon&quot; field on the &quot;CoreNavigation&quot; block */
+  showSubmenuIcon?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;style&quot; field on the &quot;CoreNavigation&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;textColor&quot; field on the &quot;CoreNavigationAttributes&quot; block or block attributes */
+  /** The &quot;textColor&quot; field on the &quot;CoreNavigation&quot; block */
   textColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;__unstableLocation&quot; field on the &quot;CoreNavigationAttributes&quot; block or block attributes */
+  /** The &quot;__unstableLocation&quot; field on the &quot;CoreNavigation&quot; block */
   unstableLocation?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreNavigationLink = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreNavigationLink = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreNavigationLink';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -4215,42 +4158,42 @@ export type CoreNavigationLink = EditorBlock & PageEditorBlock & PostEditorBlock
 /** Attributes of the CoreNavigationLink Block Type */
 export type CoreNavigationLinkAttributes = {
   __typename?: 'CoreNavigationLinkAttributes';
-  /** The &quot;className&quot; field on the &quot;CoreNavigationLinkAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreNavigationLink&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;description&quot; field on the &quot;CoreNavigationLinkAttributes&quot; block or block attributes */
+  /** The &quot;description&quot; field on the &quot;CoreNavigationLink&quot; block */
   description?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontFamily&quot; field on the &quot;CoreNavigationLinkAttributes&quot; block or block attributes */
+  /** The &quot;fontFamily&quot; field on the &quot;CoreNavigationLink&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CoreNavigationLinkAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CoreNavigationLink&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;id&quot; field on the &quot;CoreNavigationLinkAttributes&quot; block or block attributes */
+  /** The &quot;id&quot; field on the &quot;CoreNavigationLink&quot; block */
   id?: Maybe<Scalars['Float']['output']>;
-  /** The &quot;isTopLevelLink&quot; field on the &quot;CoreNavigationLinkAttributes&quot; block or block attributes */
+  /** The &quot;isTopLevelLink&quot; field on the &quot;CoreNavigationLink&quot; block */
   isTopLevelLink?: Maybe<Scalars['Boolean']['output']>;
-  /** The &quot;kind&quot; field on the &quot;CoreNavigationLinkAttributes&quot; block or block attributes */
+  /** The &quot;kind&quot; field on the &quot;CoreNavigationLink&quot; block */
   kind?: Maybe<Scalars['String']['output']>;
-  /** The &quot;label&quot; field on the &quot;CoreNavigationLinkAttributes&quot; block or block attributes */
+  /** The &quot;label&quot; field on the &quot;CoreNavigationLink&quot; block */
   label?: Maybe<Scalars['String']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CoreNavigationLinkAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CoreNavigationLink&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreNavigationLinkAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreNavigationLink&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;opensInNewTab&quot; field on the &quot;CoreNavigationLinkAttributes&quot; block or block attributes */
-  opensInNewTab: Scalars['Boolean']['output'];
-  /** The &quot;rel&quot; field on the &quot;CoreNavigationLinkAttributes&quot; block or block attributes */
+  /** The &quot;opensInNewTab&quot; field on the &quot;CoreNavigationLink&quot; block */
+  opensInNewTab?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;rel&quot; field on the &quot;CoreNavigationLink&quot; block */
   rel?: Maybe<Scalars['String']['output']>;
-  /** The &quot;style&quot; field on the &quot;CoreNavigationLinkAttributes&quot; block or block attributes */
+  /** The &quot;style&quot; field on the &quot;CoreNavigationLink&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;title&quot; field on the &quot;CoreNavigationLinkAttributes&quot; block or block attributes */
+  /** The &quot;title&quot; field on the &quot;CoreNavigationLink&quot; block */
   title?: Maybe<Scalars['String']['output']>;
-  /** The &quot;type&quot; field on the &quot;CoreNavigationLinkAttributes&quot; block or block attributes */
+  /** The &quot;type&quot; field on the &quot;CoreNavigationLink&quot; block */
   type?: Maybe<Scalars['String']['output']>;
-  /** The &quot;url&quot; field on the &quot;CoreNavigationLinkAttributes&quot; block or block attributes */
+  /** The &quot;url&quot; field on the &quot;CoreNavigationLink&quot; block */
   url?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreNavigationSubmenu = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreNavigationSubmenu = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreNavigationSubmenu';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -4277,36 +4220,36 @@ export type CoreNavigationSubmenu = EditorBlock & PageEditorBlock & PostEditorBl
 /** Attributes of the CoreNavigationSubmenu Block Type */
 export type CoreNavigationSubmenuAttributes = {
   __typename?: 'CoreNavigationSubmenuAttributes';
-  /** The &quot;className&quot; field on the &quot;CoreNavigationSubmenuAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreNavigationSubmenu&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;description&quot; field on the &quot;CoreNavigationSubmenuAttributes&quot; block or block attributes */
+  /** The &quot;description&quot; field on the &quot;CoreNavigationSubmenu&quot; block */
   description?: Maybe<Scalars['String']['output']>;
-  /** The &quot;id&quot; field on the &quot;CoreNavigationSubmenuAttributes&quot; block or block attributes */
+  /** The &quot;id&quot; field on the &quot;CoreNavigationSubmenu&quot; block */
   id?: Maybe<Scalars['Float']['output']>;
-  /** The &quot;isTopLevelItem&quot; field on the &quot;CoreNavigationSubmenuAttributes&quot; block or block attributes */
+  /** The &quot;isTopLevelItem&quot; field on the &quot;CoreNavigationSubmenu&quot; block */
   isTopLevelItem?: Maybe<Scalars['Boolean']['output']>;
-  /** The &quot;kind&quot; field on the &quot;CoreNavigationSubmenuAttributes&quot; block or block attributes */
+  /** The &quot;kind&quot; field on the &quot;CoreNavigationSubmenu&quot; block */
   kind?: Maybe<Scalars['String']['output']>;
-  /** The &quot;label&quot; field on the &quot;CoreNavigationSubmenuAttributes&quot; block or block attributes */
+  /** The &quot;label&quot; field on the &quot;CoreNavigationSubmenu&quot; block */
   label?: Maybe<Scalars['String']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CoreNavigationSubmenuAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CoreNavigationSubmenu&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreNavigationSubmenuAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreNavigationSubmenu&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;opensInNewTab&quot; field on the &quot;CoreNavigationSubmenuAttributes&quot; block or block attributes */
-  opensInNewTab: Scalars['Boolean']['output'];
-  /** The &quot;rel&quot; field on the &quot;CoreNavigationSubmenuAttributes&quot; block or block attributes */
+  /** The &quot;opensInNewTab&quot; field on the &quot;CoreNavigationSubmenu&quot; block */
+  opensInNewTab?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;rel&quot; field on the &quot;CoreNavigationSubmenu&quot; block */
   rel?: Maybe<Scalars['String']['output']>;
-  /** The &quot;title&quot; field on the &quot;CoreNavigationSubmenuAttributes&quot; block or block attributes */
+  /** The &quot;title&quot; field on the &quot;CoreNavigationSubmenu&quot; block */
   title?: Maybe<Scalars['String']['output']>;
-  /** The &quot;type&quot; field on the &quot;CoreNavigationSubmenuAttributes&quot; block or block attributes */
+  /** The &quot;type&quot; field on the &quot;CoreNavigationSubmenu&quot; block */
   type?: Maybe<Scalars['String']['output']>;
-  /** The &quot;url&quot; field on the &quot;CoreNavigationSubmenuAttributes&quot; block or block attributes */
+  /** The &quot;url&quot; field on the &quot;CoreNavigationSubmenu&quot; block */
   url?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreNextpage = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreNextpage = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreNextpage';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -4333,14 +4276,14 @@ export type CoreNextpage = EditorBlock & PageEditorBlock & PostEditorBlock & {
 /** Attributes of the CoreNextpage Block Type */
 export type CoreNextpageAttributes = {
   __typename?: 'CoreNextpageAttributes';
-  /** The &quot;lock&quot; field on the &quot;CoreNextpageAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CoreNextpage&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreNextpageAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreNextpage&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
 };
 
 /** A block used for editing the site */
-export type CorePageList = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CorePageList = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CorePageList';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -4367,26 +4310,26 @@ export type CorePageList = EditorBlock & PageEditorBlock & PostEditorBlock & {
 /** Attributes of the CorePageList Block Type */
 export type CorePageListAttributes = {
   __typename?: 'CorePageListAttributes';
-  /** The &quot;className&quot; field on the &quot;CorePageListAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CorePageList&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontFamily&quot; field on the &quot;CorePageListAttributes&quot; block or block attributes */
+  /** The &quot;fontFamily&quot; field on the &quot;CorePageList&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CorePageListAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CorePageList&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;isNested&quot; field on the &quot;CorePageListAttributes&quot; block or block attributes */
-  isNested: Scalars['Boolean']['output'];
-  /** The &quot;lock&quot; field on the &quot;CorePageListAttributes&quot; block or block attributes */
+  /** The &quot;isNested&quot; field on the &quot;CorePageList&quot; block */
+  isNested?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;lock&quot; field on the &quot;CorePageList&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CorePageListAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CorePageList&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;parentPageID&quot; field on the &quot;CorePageListAttributes&quot; block or block attributes */
-  parentPageID: Scalars['Int']['output'];
-  /** The &quot;style&quot; field on the &quot;CorePageListAttributes&quot; block or block attributes */
+  /** The &quot;parentPageID&quot; field on the &quot;CorePageList&quot; block */
+  parentPageID?: Maybe<Scalars['Int']['output']>;
+  /** The &quot;style&quot; field on the &quot;CorePageList&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
 };
 
 /** A block used for editing the site */
-export type CorePageListItem = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CorePageListItem = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CorePageListItem';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -4413,26 +4356,26 @@ export type CorePageListItem = EditorBlock & PageEditorBlock & PostEditorBlock &
 /** Attributes of the CorePageListItem Block Type */
 export type CorePageListItemAttributes = {
   __typename?: 'CorePageListItemAttributes';
-  /** The &quot;className&quot; field on the &quot;CorePageListItemAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CorePageListItem&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;hasChildren&quot; field on the &quot;CorePageListItemAttributes&quot; block or block attributes */
+  /** The &quot;hasChildren&quot; field on the &quot;CorePageListItem&quot; block */
   hasChildren?: Maybe<Scalars['Boolean']['output']>;
-  /** The &quot;id&quot; field on the &quot;CorePageListItemAttributes&quot; block or block attributes */
+  /** The &quot;id&quot; field on the &quot;CorePageListItem&quot; block */
   id?: Maybe<Scalars['Float']['output']>;
-  /** The &quot;label&quot; field on the &quot;CorePageListItemAttributes&quot; block or block attributes */
+  /** The &quot;label&quot; field on the &quot;CorePageListItem&quot; block */
   label?: Maybe<Scalars['String']['output']>;
-  /** The &quot;link&quot; field on the &quot;CorePageListItemAttributes&quot; block or block attributes */
+  /** The &quot;link&quot; field on the &quot;CorePageListItem&quot; block */
   link?: Maybe<Scalars['String']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CorePageListItemAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CorePageListItem&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CorePageListItemAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CorePageListItem&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;title&quot; field on the &quot;CorePageListItemAttributes&quot; block or block attributes */
+  /** The &quot;title&quot; field on the &quot;CorePageListItem&quot; block */
   title?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreParagraph = BlockWithSupportsAnchor & EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreParagraph = BlockWithSupportsAnchor & DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreParagraph';
   /** The anchor field for the block. */
   anchor?: Maybe<Scalars['String']['output']>;
@@ -4461,42 +4404,42 @@ export type CoreParagraph = BlockWithSupportsAnchor & EditorBlock & PageEditorBl
 /** Attributes of the CoreParagraph Block Type */
 export type CoreParagraphAttributes = BlockWithSupportsAnchor & {
   __typename?: 'CoreParagraphAttributes';
-  /** The &quot;align&quot; field on the &quot;CoreParagraphAttributes&quot; block or block attributes */
+  /** The &quot;align&quot; field on the &quot;CoreParagraph&quot; block */
   align?: Maybe<Scalars['String']['output']>;
   /** The anchor field for the block. */
   anchor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;backgroundColor&quot; field on the &quot;CoreParagraphAttributes&quot; block or block attributes */
+  /** The &quot;backgroundColor&quot; field on the &quot;CoreParagraph&quot; block */
   backgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CoreParagraphAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreParagraph&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;content&quot; field on the &quot;CoreParagraphAttributes&quot; block or block attributes */
+  /** The &quot;content&quot; field on the &quot;CoreParagraph&quot; block */
   content?: Maybe<Scalars['String']['output']>;
-  /** The &quot;cssClassName&quot; field on the &quot;CoreParagraphAttributes&quot; block or block attributes */
+  /** The &quot;cssClassName&quot; field on the &quot;CoreParagraph&quot; block */
   cssClassName?: Maybe<Scalars['String']['output']>;
-  /** The &quot;direction&quot; field on the &quot;CoreParagraphAttributes&quot; block or block attributes */
+  /** The &quot;direction&quot; field on the &quot;CoreParagraph&quot; block */
   direction?: Maybe<Scalars['String']['output']>;
-  /** The &quot;dropCap&quot; field on the &quot;CoreParagraphAttributes&quot; block or block attributes */
-  dropCap: Scalars['Boolean']['output'];
-  /** The &quot;fontFamily&quot; field on the &quot;CoreParagraphAttributes&quot; block or block attributes */
+  /** The &quot;dropCap&quot; field on the &quot;CoreParagraph&quot; block */
+  dropCap?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;fontFamily&quot; field on the &quot;CoreParagraph&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CoreParagraphAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CoreParagraph&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;gradient&quot; field on the &quot;CoreParagraphAttributes&quot; block or block attributes */
+  /** The &quot;gradient&quot; field on the &quot;CoreParagraph&quot; block */
   gradient?: Maybe<Scalars['String']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CoreParagraphAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CoreParagraph&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreParagraphAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreParagraph&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;placeholder&quot; field on the &quot;CoreParagraphAttributes&quot; block or block attributes */
+  /** The &quot;placeholder&quot; field on the &quot;CoreParagraph&quot; block */
   placeholder?: Maybe<Scalars['String']['output']>;
-  /** The &quot;style&quot; field on the &quot;CoreParagraphAttributes&quot; block or block attributes */
+  /** The &quot;style&quot; field on the &quot;CoreParagraph&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;textColor&quot; field on the &quot;CoreParagraphAttributes&quot; block or block attributes */
+  /** The &quot;textColor&quot; field on the &quot;CoreParagraph&quot; block */
   textColor?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CorePattern = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CorePattern = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CorePattern';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -4523,18 +4466,18 @@ export type CorePattern = EditorBlock & PageEditorBlock & PostEditorBlock & {
 /** Attributes of the CorePattern Block Type */
 export type CorePatternAttributes = {
   __typename?: 'CorePatternAttributes';
-  /** The &quot;className&quot; field on the &quot;CorePatternAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CorePattern&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CorePatternAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CorePattern&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CorePatternAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CorePattern&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;slug&quot; field on the &quot;CorePatternAttributes&quot; block or block attributes */
+  /** The &quot;slug&quot; field on the &quot;CorePattern&quot; block */
   slug?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CorePostAuthor = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CorePostAuthor = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CorePostAuthor';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -4561,42 +4504,42 @@ export type CorePostAuthor = EditorBlock & PageEditorBlock & PostEditorBlock & {
 /** Attributes of the CorePostAuthor Block Type */
 export type CorePostAuthorAttributes = {
   __typename?: 'CorePostAuthorAttributes';
-  /** The &quot;avatarSize&quot; field on the &quot;CorePostAuthorAttributes&quot; block or block attributes */
-  avatarSize: Scalars['Float']['output'];
-  /** The &quot;backgroundColor&quot; field on the &quot;CorePostAuthorAttributes&quot; block or block attributes */
+  /** The &quot;avatarSize&quot; field on the &quot;CorePostAuthor&quot; block */
+  avatarSize?: Maybe<Scalars['Float']['output']>;
+  /** The &quot;backgroundColor&quot; field on the &quot;CorePostAuthor&quot; block */
   backgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;byline&quot; field on the &quot;CorePostAuthorAttributes&quot; block or block attributes */
+  /** The &quot;byline&quot; field on the &quot;CorePostAuthor&quot; block */
   byline?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CorePostAuthorAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CorePostAuthor&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontFamily&quot; field on the &quot;CorePostAuthorAttributes&quot; block or block attributes */
+  /** The &quot;fontFamily&quot; field on the &quot;CorePostAuthor&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CorePostAuthorAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CorePostAuthor&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;gradient&quot; field on the &quot;CorePostAuthorAttributes&quot; block or block attributes */
+  /** The &quot;gradient&quot; field on the &quot;CorePostAuthor&quot; block */
   gradient?: Maybe<Scalars['String']['output']>;
-  /** The &quot;isLink&quot; field on the &quot;CorePostAuthorAttributes&quot; block or block attributes */
-  isLink: Scalars['Boolean']['output'];
-  /** The &quot;linkTarget&quot; field on the &quot;CorePostAuthorAttributes&quot; block or block attributes */
-  linkTarget: Scalars['String']['output'];
-  /** The &quot;lock&quot; field on the &quot;CorePostAuthorAttributes&quot; block or block attributes */
+  /** The &quot;isLink&quot; field on the &quot;CorePostAuthor&quot; block */
+  isLink?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;linkTarget&quot; field on the &quot;CorePostAuthor&quot; block */
+  linkTarget?: Maybe<Scalars['String']['output']>;
+  /** The &quot;lock&quot; field on the &quot;CorePostAuthor&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CorePostAuthorAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CorePostAuthor&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;showAvatar&quot; field on the &quot;CorePostAuthorAttributes&quot; block or block attributes */
-  showAvatar: Scalars['Boolean']['output'];
-  /** The &quot;showBio&quot; field on the &quot;CorePostAuthorAttributes&quot; block or block attributes */
+  /** The &quot;showAvatar&quot; field on the &quot;CorePostAuthor&quot; block */
+  showAvatar?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;showBio&quot; field on the &quot;CorePostAuthor&quot; block */
   showBio?: Maybe<Scalars['Boolean']['output']>;
-  /** The &quot;style&quot; field on the &quot;CorePostAuthorAttributes&quot; block or block attributes */
+  /** The &quot;style&quot; field on the &quot;CorePostAuthor&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;textAlign&quot; field on the &quot;CorePostAuthorAttributes&quot; block or block attributes */
+  /** The &quot;textAlign&quot; field on the &quot;CorePostAuthor&quot; block */
   textAlign?: Maybe<Scalars['String']['output']>;
-  /** The &quot;textColor&quot; field on the &quot;CorePostAuthorAttributes&quot; block or block attributes */
+  /** The &quot;textColor&quot; field on the &quot;CorePostAuthor&quot; block */
   textColor?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CorePostAuthorBiography = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CorePostAuthorBiography = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CorePostAuthorBiography';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -4623,30 +4566,30 @@ export type CorePostAuthorBiography = EditorBlock & PageEditorBlock & PostEditor
 /** Attributes of the CorePostAuthorBiography Block Type */
 export type CorePostAuthorBiographyAttributes = {
   __typename?: 'CorePostAuthorBiographyAttributes';
-  /** The &quot;backgroundColor&quot; field on the &quot;CorePostAuthorBiographyAttributes&quot; block or block attributes */
+  /** The &quot;backgroundColor&quot; field on the &quot;CorePostAuthorBiography&quot; block */
   backgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CorePostAuthorBiographyAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CorePostAuthorBiography&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontFamily&quot; field on the &quot;CorePostAuthorBiographyAttributes&quot; block or block attributes */
+  /** The &quot;fontFamily&quot; field on the &quot;CorePostAuthorBiography&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CorePostAuthorBiographyAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CorePostAuthorBiography&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;gradient&quot; field on the &quot;CorePostAuthorBiographyAttributes&quot; block or block attributes */
+  /** The &quot;gradient&quot; field on the &quot;CorePostAuthorBiography&quot; block */
   gradient?: Maybe<Scalars['String']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CorePostAuthorBiographyAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CorePostAuthorBiography&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CorePostAuthorBiographyAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CorePostAuthorBiography&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;style&quot; field on the &quot;CorePostAuthorBiographyAttributes&quot; block or block attributes */
+  /** The &quot;style&quot; field on the &quot;CorePostAuthorBiography&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;textAlign&quot; field on the &quot;CorePostAuthorBiographyAttributes&quot; block or block attributes */
+  /** The &quot;textAlign&quot; field on the &quot;CorePostAuthorBiography&quot; block */
   textAlign?: Maybe<Scalars['String']['output']>;
-  /** The &quot;textColor&quot; field on the &quot;CorePostAuthorBiographyAttributes&quot; block or block attributes */
+  /** The &quot;textColor&quot; field on the &quot;CorePostAuthorBiography&quot; block */
   textColor?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CorePostAuthorName = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CorePostAuthorName = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CorePostAuthorName';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -4673,34 +4616,34 @@ export type CorePostAuthorName = EditorBlock & PageEditorBlock & PostEditorBlock
 /** Attributes of the CorePostAuthorName Block Type */
 export type CorePostAuthorNameAttributes = {
   __typename?: 'CorePostAuthorNameAttributes';
-  /** The &quot;backgroundColor&quot; field on the &quot;CorePostAuthorNameAttributes&quot; block or block attributes */
+  /** The &quot;backgroundColor&quot; field on the &quot;CorePostAuthorName&quot; block */
   backgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CorePostAuthorNameAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CorePostAuthorName&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontFamily&quot; field on the &quot;CorePostAuthorNameAttributes&quot; block or block attributes */
+  /** The &quot;fontFamily&quot; field on the &quot;CorePostAuthorName&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CorePostAuthorNameAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CorePostAuthorName&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;gradient&quot; field on the &quot;CorePostAuthorNameAttributes&quot; block or block attributes */
+  /** The &quot;gradient&quot; field on the &quot;CorePostAuthorName&quot; block */
   gradient?: Maybe<Scalars['String']['output']>;
-  /** The &quot;isLink&quot; field on the &quot;CorePostAuthorNameAttributes&quot; block or block attributes */
-  isLink: Scalars['Boolean']['output'];
-  /** The &quot;linkTarget&quot; field on the &quot;CorePostAuthorNameAttributes&quot; block or block attributes */
-  linkTarget: Scalars['String']['output'];
-  /** The &quot;lock&quot; field on the &quot;CorePostAuthorNameAttributes&quot; block or block attributes */
+  /** The &quot;isLink&quot; field on the &quot;CorePostAuthorName&quot; block */
+  isLink?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;linkTarget&quot; field on the &quot;CorePostAuthorName&quot; block */
+  linkTarget?: Maybe<Scalars['String']['output']>;
+  /** The &quot;lock&quot; field on the &quot;CorePostAuthorName&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CorePostAuthorNameAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CorePostAuthorName&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;style&quot; field on the &quot;CorePostAuthorNameAttributes&quot; block or block attributes */
+  /** The &quot;style&quot; field on the &quot;CorePostAuthorName&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;textAlign&quot; field on the &quot;CorePostAuthorNameAttributes&quot; block or block attributes */
+  /** The &quot;textAlign&quot; field on the &quot;CorePostAuthorName&quot; block */
   textAlign?: Maybe<Scalars['String']['output']>;
-  /** The &quot;textColor&quot; field on the &quot;CorePostAuthorNameAttributes&quot; block or block attributes */
+  /** The &quot;textColor&quot; field on the &quot;CorePostAuthorName&quot; block */
   textColor?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CorePostComments = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CorePostComments = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CorePostComments';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -4727,30 +4670,30 @@ export type CorePostComments = EditorBlock & PageEditorBlock & PostEditorBlock &
 /** Attributes of the CorePostComments Block Type */
 export type CorePostCommentsAttributes = {
   __typename?: 'CorePostCommentsAttributes';
-  /** The &quot;align&quot; field on the &quot;CorePostCommentsAttributes&quot; block or block attributes */
+  /** The &quot;align&quot; field on the &quot;CorePostComments&quot; block */
   align?: Maybe<Scalars['String']['output']>;
-  /** The &quot;backgroundColor&quot; field on the &quot;CorePostCommentsAttributes&quot; block or block attributes */
+  /** The &quot;backgroundColor&quot; field on the &quot;CorePostComments&quot; block */
   backgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CorePostCommentsAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CorePostComments&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CorePostCommentsAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CorePostComments&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;gradient&quot; field on the &quot;CorePostCommentsAttributes&quot; block or block attributes */
+  /** The &quot;gradient&quot; field on the &quot;CorePostComments&quot; block */
   gradient?: Maybe<Scalars['String']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CorePostCommentsAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CorePostComments&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CorePostCommentsAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CorePostComments&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;style&quot; field on the &quot;CorePostCommentsAttributes&quot; block or block attributes */
+  /** The &quot;style&quot; field on the &quot;CorePostComments&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;textAlign&quot; field on the &quot;CorePostCommentsAttributes&quot; block or block attributes */
+  /** The &quot;textAlign&quot; field on the &quot;CorePostComments&quot; block */
   textAlign?: Maybe<Scalars['String']['output']>;
-  /** The &quot;textColor&quot; field on the &quot;CorePostCommentsAttributes&quot; block or block attributes */
+  /** The &quot;textColor&quot; field on the &quot;CorePostComments&quot; block */
   textColor?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CorePostCommentsForm = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CorePostCommentsForm = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CorePostCommentsForm';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -4777,28 +4720,28 @@ export type CorePostCommentsForm = EditorBlock & PageEditorBlock & PostEditorBlo
 /** Attributes of the CorePostCommentsForm Block Type */
 export type CorePostCommentsFormAttributes = {
   __typename?: 'CorePostCommentsFormAttributes';
-  /** The &quot;backgroundColor&quot; field on the &quot;CorePostCommentsFormAttributes&quot; block or block attributes */
+  /** The &quot;backgroundColor&quot; field on the &quot;CorePostCommentsForm&quot; block */
   backgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CorePostCommentsFormAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CorePostCommentsForm&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CorePostCommentsFormAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CorePostCommentsForm&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;gradient&quot; field on the &quot;CorePostCommentsFormAttributes&quot; block or block attributes */
+  /** The &quot;gradient&quot; field on the &quot;CorePostCommentsForm&quot; block */
   gradient?: Maybe<Scalars['String']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CorePostCommentsFormAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CorePostCommentsForm&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CorePostCommentsFormAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CorePostCommentsForm&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;style&quot; field on the &quot;CorePostCommentsFormAttributes&quot; block or block attributes */
+  /** The &quot;style&quot; field on the &quot;CorePostCommentsForm&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;textAlign&quot; field on the &quot;CorePostCommentsFormAttributes&quot; block or block attributes */
+  /** The &quot;textAlign&quot; field on the &quot;CorePostCommentsForm&quot; block */
   textAlign?: Maybe<Scalars['String']['output']>;
-  /** The &quot;textColor&quot; field on the &quot;CorePostCommentsFormAttributes&quot; block or block attributes */
+  /** The &quot;textColor&quot; field on the &quot;CorePostCommentsForm&quot; block */
   textColor?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CorePostContent = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CorePostContent = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CorePostContent';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -4825,32 +4768,32 @@ export type CorePostContent = EditorBlock & PageEditorBlock & PostEditorBlock & 
 /** Attributes of the CorePostContent Block Type */
 export type CorePostContentAttributes = {
   __typename?: 'CorePostContentAttributes';
-  /** The &quot;align&quot; field on the &quot;CorePostContentAttributes&quot; block or block attributes */
+  /** The &quot;align&quot; field on the &quot;CorePostContent&quot; block */
   align?: Maybe<Scalars['String']['output']>;
-  /** The &quot;backgroundColor&quot; field on the &quot;CorePostContentAttributes&quot; block or block attributes */
+  /** The &quot;backgroundColor&quot; field on the &quot;CorePostContent&quot; block */
   backgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CorePostContentAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CorePostContent&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontFamily&quot; field on the &quot;CorePostContentAttributes&quot; block or block attributes */
+  /** The &quot;fontFamily&quot; field on the &quot;CorePostContent&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CorePostContentAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CorePostContent&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;gradient&quot; field on the &quot;CorePostContentAttributes&quot; block or block attributes */
+  /** The &quot;gradient&quot; field on the &quot;CorePostContent&quot; block */
   gradient?: Maybe<Scalars['String']['output']>;
-  /** The &quot;layout&quot; field on the &quot;CorePostContentAttributes&quot; block or block attributes */
+  /** The &quot;layout&quot; field on the &quot;CorePostContent&quot; block */
   layout?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CorePostContentAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CorePostContent&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CorePostContentAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CorePostContent&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;style&quot; field on the &quot;CorePostContentAttributes&quot; block or block attributes */
+  /** The &quot;style&quot; field on the &quot;CorePostContent&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;textColor&quot; field on the &quot;CorePostContentAttributes&quot; block or block attributes */
+  /** The &quot;textColor&quot; field on the &quot;CorePostContent&quot; block */
   textColor?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CorePostDate = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CorePostDate = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CorePostDate';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -4877,36 +4820,36 @@ export type CorePostDate = EditorBlock & PageEditorBlock & PostEditorBlock & {
 /** Attributes of the CorePostDate Block Type */
 export type CorePostDateAttributes = {
   __typename?: 'CorePostDateAttributes';
-  /** The &quot;backgroundColor&quot; field on the &quot;CorePostDateAttributes&quot; block or block attributes */
+  /** The &quot;backgroundColor&quot; field on the &quot;CorePostDate&quot; block */
   backgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CorePostDateAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CorePostDate&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;displayType&quot; field on the &quot;CorePostDateAttributes&quot; block or block attributes */
-  displayType: Scalars['String']['output'];
-  /** The &quot;fontFamily&quot; field on the &quot;CorePostDateAttributes&quot; block or block attributes */
+  /** The &quot;displayType&quot; field on the &quot;CorePostDate&quot; block */
+  displayType?: Maybe<Scalars['String']['output']>;
+  /** The &quot;fontFamily&quot; field on the &quot;CorePostDate&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CorePostDateAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CorePostDate&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;format&quot; field on the &quot;CorePostDateAttributes&quot; block or block attributes */
+  /** The &quot;format&quot; field on the &quot;CorePostDate&quot; block */
   format?: Maybe<Scalars['String']['output']>;
-  /** The &quot;gradient&quot; field on the &quot;CorePostDateAttributes&quot; block or block attributes */
+  /** The &quot;gradient&quot; field on the &quot;CorePostDate&quot; block */
   gradient?: Maybe<Scalars['String']['output']>;
-  /** The &quot;isLink&quot; field on the &quot;CorePostDateAttributes&quot; block or block attributes */
-  isLink: Scalars['Boolean']['output'];
-  /** The &quot;lock&quot; field on the &quot;CorePostDateAttributes&quot; block or block attributes */
+  /** The &quot;isLink&quot; field on the &quot;CorePostDate&quot; block */
+  isLink?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;lock&quot; field on the &quot;CorePostDate&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CorePostDateAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CorePostDate&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;style&quot; field on the &quot;CorePostDateAttributes&quot; block or block attributes */
+  /** The &quot;style&quot; field on the &quot;CorePostDate&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;textAlign&quot; field on the &quot;CorePostDateAttributes&quot; block or block attributes */
+  /** The &quot;textAlign&quot; field on the &quot;CorePostDate&quot; block */
   textAlign?: Maybe<Scalars['String']['output']>;
-  /** The &quot;textColor&quot; field on the &quot;CorePostDateAttributes&quot; block or block attributes */
+  /** The &quot;textColor&quot; field on the &quot;CorePostDate&quot; block */
   textColor?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CorePostExcerpt = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CorePostExcerpt = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CorePostExcerpt';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -4933,36 +4876,36 @@ export type CorePostExcerpt = EditorBlock & PageEditorBlock & PostEditorBlock & 
 /** Attributes of the CorePostExcerpt Block Type */
 export type CorePostExcerptAttributes = {
   __typename?: 'CorePostExcerptAttributes';
-  /** The &quot;backgroundColor&quot; field on the &quot;CorePostExcerptAttributes&quot; block or block attributes */
+  /** The &quot;backgroundColor&quot; field on the &quot;CorePostExcerpt&quot; block */
   backgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CorePostExcerptAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CorePostExcerpt&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;excerptLength&quot; field on the &quot;CorePostExcerptAttributes&quot; block or block attributes */
-  excerptLength: Scalars['Float']['output'];
-  /** The &quot;fontFamily&quot; field on the &quot;CorePostExcerptAttributes&quot; block or block attributes */
+  /** The &quot;excerptLength&quot; field on the &quot;CorePostExcerpt&quot; block */
+  excerptLength?: Maybe<Scalars['Float']['output']>;
+  /** The &quot;fontFamily&quot; field on the &quot;CorePostExcerpt&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CorePostExcerptAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CorePostExcerpt&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;gradient&quot; field on the &quot;CorePostExcerptAttributes&quot; block or block attributes */
+  /** The &quot;gradient&quot; field on the &quot;CorePostExcerpt&quot; block */
   gradient?: Maybe<Scalars['String']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CorePostExcerptAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CorePostExcerpt&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CorePostExcerptAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CorePostExcerpt&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;moreText&quot; field on the &quot;CorePostExcerptAttributes&quot; block or block attributes */
+  /** The &quot;moreText&quot; field on the &quot;CorePostExcerpt&quot; block */
   moreText?: Maybe<Scalars['String']['output']>;
-  /** The &quot;showMoreOnNewLine&quot; field on the &quot;CorePostExcerptAttributes&quot; block or block attributes */
-  showMoreOnNewLine: Scalars['Boolean']['output'];
-  /** The &quot;style&quot; field on the &quot;CorePostExcerptAttributes&quot; block or block attributes */
+  /** The &quot;showMoreOnNewLine&quot; field on the &quot;CorePostExcerpt&quot; block */
+  showMoreOnNewLine?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;style&quot; field on the &quot;CorePostExcerpt&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;textAlign&quot; field on the &quot;CorePostExcerptAttributes&quot; block or block attributes */
+  /** The &quot;textAlign&quot; field on the &quot;CorePostExcerpt&quot; block */
   textAlign?: Maybe<Scalars['String']['output']>;
-  /** The &quot;textColor&quot; field on the &quot;CorePostExcerptAttributes&quot; block or block attributes */
+  /** The &quot;textColor&quot; field on the &quot;CorePostExcerpt&quot; block */
   textColor?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CorePostFeaturedImage = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CorePostFeaturedImage = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CorePostFeaturedImage';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -4989,50 +4932,50 @@ export type CorePostFeaturedImage = EditorBlock & PageEditorBlock & PostEditorBl
 /** Attributes of the CorePostFeaturedImage Block Type */
 export type CorePostFeaturedImageAttributes = {
   __typename?: 'CorePostFeaturedImageAttributes';
-  /** The &quot;align&quot; field on the &quot;CorePostFeaturedImageAttributes&quot; block or block attributes */
+  /** The &quot;align&quot; field on the &quot;CorePostFeaturedImage&quot; block */
   align?: Maybe<Scalars['String']['output']>;
-  /** The &quot;aspectRatio&quot; field on the &quot;CorePostFeaturedImageAttributes&quot; block or block attributes */
+  /** The &quot;aspectRatio&quot; field on the &quot;CorePostFeaturedImage&quot; block */
   aspectRatio?: Maybe<Scalars['String']['output']>;
-  /** The &quot;borderColor&quot; field on the &quot;CorePostFeaturedImageAttributes&quot; block or block attributes */
+  /** The &quot;borderColor&quot; field on the &quot;CorePostFeaturedImage&quot; block */
   borderColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CorePostFeaturedImageAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CorePostFeaturedImage&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;customGradient&quot; field on the &quot;CorePostFeaturedImageAttributes&quot; block or block attributes */
+  /** The &quot;customGradient&quot; field on the &quot;CorePostFeaturedImage&quot; block */
   customGradient?: Maybe<Scalars['String']['output']>;
-  /** The &quot;customOverlayColor&quot; field on the &quot;CorePostFeaturedImageAttributes&quot; block or block attributes */
+  /** The &quot;customOverlayColor&quot; field on the &quot;CorePostFeaturedImage&quot; block */
   customOverlayColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;dimRatio&quot; field on the &quot;CorePostFeaturedImageAttributes&quot; block or block attributes */
-  dimRatio: Scalars['Float']['output'];
-  /** The &quot;gradient&quot; field on the &quot;CorePostFeaturedImageAttributes&quot; block or block attributes */
+  /** The &quot;dimRatio&quot; field on the &quot;CorePostFeaturedImage&quot; block */
+  dimRatio?: Maybe<Scalars['Float']['output']>;
+  /** The &quot;gradient&quot; field on the &quot;CorePostFeaturedImage&quot; block */
   gradient?: Maybe<Scalars['String']['output']>;
-  /** The &quot;height&quot; field on the &quot;CorePostFeaturedImageAttributes&quot; block or block attributes */
+  /** The &quot;height&quot; field on the &quot;CorePostFeaturedImage&quot; block */
   height?: Maybe<Scalars['String']['output']>;
-  /** The &quot;isLink&quot; field on the &quot;CorePostFeaturedImageAttributes&quot; block or block attributes */
-  isLink: Scalars['Boolean']['output'];
-  /** The &quot;linkTarget&quot; field on the &quot;CorePostFeaturedImageAttributes&quot; block or block attributes */
-  linkTarget: Scalars['String']['output'];
-  /** The &quot;lock&quot; field on the &quot;CorePostFeaturedImageAttributes&quot; block or block attributes */
+  /** The &quot;isLink&quot; field on the &quot;CorePostFeaturedImage&quot; block */
+  isLink?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;linkTarget&quot; field on the &quot;CorePostFeaturedImage&quot; block */
+  linkTarget?: Maybe<Scalars['String']['output']>;
+  /** The &quot;lock&quot; field on the &quot;CorePostFeaturedImage&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CorePostFeaturedImageAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CorePostFeaturedImage&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;overlayColor&quot; field on the &quot;CorePostFeaturedImageAttributes&quot; block or block attributes */
+  /** The &quot;overlayColor&quot; field on the &quot;CorePostFeaturedImage&quot; block */
   overlayColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;rel&quot; field on the &quot;CorePostFeaturedImageAttributes&quot; block or block attributes */
-  rel: Scalars['String']['output'];
-  /** The &quot;scale&quot; field on the &quot;CorePostFeaturedImageAttributes&quot; block or block attributes */
-  scale: Scalars['String']['output'];
-  /** The &quot;sizeSlug&quot; field on the &quot;CorePostFeaturedImageAttributes&quot; block or block attributes */
+  /** The &quot;rel&quot; field on the &quot;CorePostFeaturedImage&quot; block */
+  rel?: Maybe<Scalars['String']['output']>;
+  /** The &quot;scale&quot; field on the &quot;CorePostFeaturedImage&quot; block */
+  scale?: Maybe<Scalars['String']['output']>;
+  /** The &quot;sizeSlug&quot; field on the &quot;CorePostFeaturedImage&quot; block */
   sizeSlug?: Maybe<Scalars['String']['output']>;
-  /** The &quot;style&quot; field on the &quot;CorePostFeaturedImageAttributes&quot; block or block attributes */
+  /** The &quot;style&quot; field on the &quot;CorePostFeaturedImage&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;useFirstImageFromPost&quot; field on the &quot;CorePostFeaturedImageAttributes&quot; block or block attributes */
-  useFirstImageFromPost: Scalars['Boolean']['output'];
-  /** The &quot;width&quot; field on the &quot;CorePostFeaturedImageAttributes&quot; block or block attributes */
+  /** The &quot;useFirstImageFromPost&quot; field on the &quot;CorePostFeaturedImage&quot; block */
+  useFirstImageFromPost?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;width&quot; field on the &quot;CorePostFeaturedImage&quot; block */
   width?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CorePostNavigationLink = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CorePostNavigationLink = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CorePostNavigationLink';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -5059,40 +5002,40 @@ export type CorePostNavigationLink = EditorBlock & PageEditorBlock & PostEditorB
 /** Attributes of the CorePostNavigationLink Block Type */
 export type CorePostNavigationLinkAttributes = {
   __typename?: 'CorePostNavigationLinkAttributes';
-  /** The &quot;arrow&quot; field on the &quot;CorePostNavigationLinkAttributes&quot; block or block attributes */
-  arrow: Scalars['String']['output'];
-  /** The &quot;backgroundColor&quot; field on the &quot;CorePostNavigationLinkAttributes&quot; block or block attributes */
+  /** The &quot;arrow&quot; field on the &quot;CorePostNavigationLink&quot; block */
+  arrow?: Maybe<Scalars['String']['output']>;
+  /** The &quot;backgroundColor&quot; field on the &quot;CorePostNavigationLink&quot; block */
   backgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CorePostNavigationLinkAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CorePostNavigationLink&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontFamily&quot; field on the &quot;CorePostNavigationLinkAttributes&quot; block or block attributes */
+  /** The &quot;fontFamily&quot; field on the &quot;CorePostNavigationLink&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CorePostNavigationLinkAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CorePostNavigationLink&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;label&quot; field on the &quot;CorePostNavigationLinkAttributes&quot; block or block attributes */
+  /** The &quot;label&quot; field on the &quot;CorePostNavigationLink&quot; block */
   label?: Maybe<Scalars['String']['output']>;
-  /** The &quot;linkLabel&quot; field on the &quot;CorePostNavigationLinkAttributes&quot; block or block attributes */
-  linkLabel: Scalars['Boolean']['output'];
-  /** The &quot;lock&quot; field on the &quot;CorePostNavigationLinkAttributes&quot; block or block attributes */
+  /** The &quot;linkLabel&quot; field on the &quot;CorePostNavigationLink&quot; block */
+  linkLabel?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;lock&quot; field on the &quot;CorePostNavigationLink&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CorePostNavigationLinkAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CorePostNavigationLink&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;showTitle&quot; field on the &quot;CorePostNavigationLinkAttributes&quot; block or block attributes */
-  showTitle: Scalars['Boolean']['output'];
-  /** The &quot;style&quot; field on the &quot;CorePostNavigationLinkAttributes&quot; block or block attributes */
+  /** The &quot;showTitle&quot; field on the &quot;CorePostNavigationLink&quot; block */
+  showTitle?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;style&quot; field on the &quot;CorePostNavigationLink&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;taxonomy&quot; field on the &quot;CorePostNavigationLinkAttributes&quot; block or block attributes */
-  taxonomy: Scalars['String']['output'];
-  /** The &quot;textAlign&quot; field on the &quot;CorePostNavigationLinkAttributes&quot; block or block attributes */
+  /** The &quot;taxonomy&quot; field on the &quot;CorePostNavigationLink&quot; block */
+  taxonomy?: Maybe<Scalars['String']['output']>;
+  /** The &quot;textAlign&quot; field on the &quot;CorePostNavigationLink&quot; block */
   textAlign?: Maybe<Scalars['String']['output']>;
-  /** The &quot;textColor&quot; field on the &quot;CorePostNavigationLinkAttributes&quot; block or block attributes */
+  /** The &quot;textColor&quot; field on the &quot;CorePostNavigationLink&quot; block */
   textColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;type&quot; field on the &quot;CorePostNavigationLinkAttributes&quot; block or block attributes */
-  type: Scalars['String']['output'];
+  /** The &quot;type&quot; field on the &quot;CorePostNavigationLink&quot; block */
+  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CorePostTemplate = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CorePostTemplate = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CorePostTemplate';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -5119,32 +5062,32 @@ export type CorePostTemplate = EditorBlock & PageEditorBlock & PostEditorBlock &
 /** Attributes of the CorePostTemplate Block Type */
 export type CorePostTemplateAttributes = {
   __typename?: 'CorePostTemplateAttributes';
-  /** The &quot;align&quot; field on the &quot;CorePostTemplateAttributes&quot; block or block attributes */
+  /** The &quot;align&quot; field on the &quot;CorePostTemplate&quot; block */
   align?: Maybe<Scalars['String']['output']>;
-  /** The &quot;backgroundColor&quot; field on the &quot;CorePostTemplateAttributes&quot; block or block attributes */
+  /** The &quot;backgroundColor&quot; field on the &quot;CorePostTemplate&quot; block */
   backgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CorePostTemplateAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CorePostTemplate&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontFamily&quot; field on the &quot;CorePostTemplateAttributes&quot; block or block attributes */
+  /** The &quot;fontFamily&quot; field on the &quot;CorePostTemplate&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CorePostTemplateAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CorePostTemplate&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;gradient&quot; field on the &quot;CorePostTemplateAttributes&quot; block or block attributes */
+  /** The &quot;gradient&quot; field on the &quot;CorePostTemplate&quot; block */
   gradient?: Maybe<Scalars['String']['output']>;
-  /** The &quot;layout&quot; field on the &quot;CorePostTemplateAttributes&quot; block or block attributes */
+  /** The &quot;layout&quot; field on the &quot;CorePostTemplate&quot; block */
   layout?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CorePostTemplateAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CorePostTemplate&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CorePostTemplateAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CorePostTemplate&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;style&quot; field on the &quot;CorePostTemplateAttributes&quot; block or block attributes */
+  /** The &quot;style&quot; field on the &quot;CorePostTemplate&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;textColor&quot; field on the &quot;CorePostTemplateAttributes&quot; block or block attributes */
+  /** The &quot;textColor&quot; field on the &quot;CorePostTemplate&quot; block */
   textColor?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CorePostTerms = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CorePostTerms = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CorePostTerms';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -5171,38 +5114,38 @@ export type CorePostTerms = EditorBlock & PageEditorBlock & PostEditorBlock & {
 /** Attributes of the CorePostTerms Block Type */
 export type CorePostTermsAttributes = {
   __typename?: 'CorePostTermsAttributes';
-  /** The &quot;backgroundColor&quot; field on the &quot;CorePostTermsAttributes&quot; block or block attributes */
+  /** The &quot;backgroundColor&quot; field on the &quot;CorePostTerms&quot; block */
   backgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CorePostTermsAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CorePostTerms&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontFamily&quot; field on the &quot;CorePostTermsAttributes&quot; block or block attributes */
+  /** The &quot;fontFamily&quot; field on the &quot;CorePostTerms&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CorePostTermsAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CorePostTerms&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;gradient&quot; field on the &quot;CorePostTermsAttributes&quot; block or block attributes */
+  /** The &quot;gradient&quot; field on the &quot;CorePostTerms&quot; block */
   gradient?: Maybe<Scalars['String']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CorePostTermsAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CorePostTerms&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CorePostTermsAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CorePostTerms&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;prefix&quot; field on the &quot;CorePostTermsAttributes&quot; block or block attributes */
-  prefix: Scalars['String']['output'];
-  /** The &quot;separator&quot; field on the &quot;CorePostTermsAttributes&quot; block or block attributes */
-  separator: Scalars['String']['output'];
-  /** The &quot;style&quot; field on the &quot;CorePostTermsAttributes&quot; block or block attributes */
+  /** The &quot;prefix&quot; field on the &quot;CorePostTerms&quot; block */
+  prefix?: Maybe<Scalars['String']['output']>;
+  /** The &quot;separator&quot; field on the &quot;CorePostTerms&quot; block */
+  separator?: Maybe<Scalars['String']['output']>;
+  /** The &quot;style&quot; field on the &quot;CorePostTerms&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;suffix&quot; field on the &quot;CorePostTermsAttributes&quot; block or block attributes */
-  suffix: Scalars['String']['output'];
-  /** The &quot;term&quot; field on the &quot;CorePostTermsAttributes&quot; block or block attributes */
+  /** The &quot;suffix&quot; field on the &quot;CorePostTerms&quot; block */
+  suffix?: Maybe<Scalars['String']['output']>;
+  /** The &quot;term&quot; field on the &quot;CorePostTerms&quot; block */
   term?: Maybe<Scalars['String']['output']>;
-  /** The &quot;textAlign&quot; field on the &quot;CorePostTermsAttributes&quot; block or block attributes */
+  /** The &quot;textAlign&quot; field on the &quot;CorePostTerms&quot; block */
   textAlign?: Maybe<Scalars['String']['output']>;
-  /** The &quot;textColor&quot; field on the &quot;CorePostTermsAttributes&quot; block or block attributes */
+  /** The &quot;textColor&quot; field on the &quot;CorePostTerms&quot; block */
   textColor?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CorePostTitle = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CorePostTitle = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CorePostTitle';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -5229,40 +5172,40 @@ export type CorePostTitle = EditorBlock & PageEditorBlock & PostEditorBlock & {
 /** Attributes of the CorePostTitle Block Type */
 export type CorePostTitleAttributes = {
   __typename?: 'CorePostTitleAttributes';
-  /** The &quot;align&quot; field on the &quot;CorePostTitleAttributes&quot; block or block attributes */
+  /** The &quot;align&quot; field on the &quot;CorePostTitle&quot; block */
   align?: Maybe<Scalars['String']['output']>;
-  /** The &quot;backgroundColor&quot; field on the &quot;CorePostTitleAttributes&quot; block or block attributes */
+  /** The &quot;backgroundColor&quot; field on the &quot;CorePostTitle&quot; block */
   backgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CorePostTitleAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CorePostTitle&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontFamily&quot; field on the &quot;CorePostTitleAttributes&quot; block or block attributes */
+  /** The &quot;fontFamily&quot; field on the &quot;CorePostTitle&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CorePostTitleAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CorePostTitle&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;gradient&quot; field on the &quot;CorePostTitleAttributes&quot; block or block attributes */
+  /** The &quot;gradient&quot; field on the &quot;CorePostTitle&quot; block */
   gradient?: Maybe<Scalars['String']['output']>;
-  /** The &quot;isLink&quot; field on the &quot;CorePostTitleAttributes&quot; block or block attributes */
-  isLink: Scalars['Boolean']['output'];
-  /** The &quot;level&quot; field on the &quot;CorePostTitleAttributes&quot; block or block attributes */
-  level: Scalars['Float']['output'];
-  /** The &quot;linkTarget&quot; field on the &quot;CorePostTitleAttributes&quot; block or block attributes */
-  linkTarget: Scalars['String']['output'];
-  /** The &quot;lock&quot; field on the &quot;CorePostTitleAttributes&quot; block or block attributes */
+  /** The &quot;isLink&quot; field on the &quot;CorePostTitle&quot; block */
+  isLink?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;level&quot; field on the &quot;CorePostTitle&quot; block */
+  level?: Maybe<Scalars['Float']['output']>;
+  /** The &quot;linkTarget&quot; field on the &quot;CorePostTitle&quot; block */
+  linkTarget?: Maybe<Scalars['String']['output']>;
+  /** The &quot;lock&quot; field on the &quot;CorePostTitle&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CorePostTitleAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CorePostTitle&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;rel&quot; field on the &quot;CorePostTitleAttributes&quot; block or block attributes */
-  rel: Scalars['String']['output'];
-  /** The &quot;style&quot; field on the &quot;CorePostTitleAttributes&quot; block or block attributes */
+  /** The &quot;rel&quot; field on the &quot;CorePostTitle&quot; block */
+  rel?: Maybe<Scalars['String']['output']>;
+  /** The &quot;style&quot; field on the &quot;CorePostTitle&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;textAlign&quot; field on the &quot;CorePostTitleAttributes&quot; block or block attributes */
+  /** The &quot;textAlign&quot; field on the &quot;CorePostTitle&quot; block */
   textAlign?: Maybe<Scalars['String']['output']>;
-  /** The &quot;textColor&quot; field on the &quot;CorePostTitleAttributes&quot; block or block attributes */
+  /** The &quot;textColor&quot; field on the &quot;CorePostTitle&quot; block */
   textColor?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CorePreformatted = BlockWithSupportsAnchor & EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CorePreformatted = BlockWithSupportsAnchor & DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CorePreformatted';
   /** The anchor field for the block. */
   anchor?: Maybe<Scalars['String']['output']>;
@@ -5293,30 +5236,28 @@ export type CorePreformattedAttributes = BlockWithSupportsAnchor & {
   __typename?: 'CorePreformattedAttributes';
   /** The anchor field for the block. */
   anchor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;backgroundColor&quot; field on the &quot;CorePreformattedAttributes&quot; block or block attributes */
+  /** The &quot;backgroundColor&quot; field on the &quot;CorePreformatted&quot; block */
   backgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CorePreformattedAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CorePreformatted&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;content&quot; field on the &quot;CorePreformattedAttributes&quot; block or block attributes */
-  content?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontFamily&quot; field on the &quot;CorePreformattedAttributes&quot; block or block attributes */
+  /** The &quot;fontFamily&quot; field on the &quot;CorePreformatted&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CorePreformattedAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CorePreformatted&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;gradient&quot; field on the &quot;CorePreformattedAttributes&quot; block or block attributes */
+  /** The &quot;gradient&quot; field on the &quot;CorePreformatted&quot; block */
   gradient?: Maybe<Scalars['String']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CorePreformattedAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CorePreformatted&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CorePreformattedAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CorePreformatted&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;style&quot; field on the &quot;CorePreformattedAttributes&quot; block or block attributes */
+  /** The &quot;style&quot; field on the &quot;CorePreformatted&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;textColor&quot; field on the &quot;CorePreformattedAttributes&quot; block or block attributes */
+  /** The &quot;textColor&quot; field on the &quot;CorePreformatted&quot; block */
   textColor?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CorePullquote = BlockWithSupportsAnchor & EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CorePullquote = BlockWithSupportsAnchor & DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CorePullquote';
   /** The anchor field for the block. */
   anchor?: Maybe<Scalars['String']['output']>;
@@ -5345,40 +5286,36 @@ export type CorePullquote = BlockWithSupportsAnchor & EditorBlock & PageEditorBl
 /** Attributes of the CorePullquote Block Type */
 export type CorePullquoteAttributes = BlockWithSupportsAnchor & {
   __typename?: 'CorePullquoteAttributes';
-  /** The &quot;align&quot; field on the &quot;CorePullquoteAttributes&quot; block or block attributes */
+  /** The &quot;align&quot; field on the &quot;CorePullquote&quot; block */
   align?: Maybe<Scalars['String']['output']>;
   /** The anchor field for the block. */
   anchor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;backgroundColor&quot; field on the &quot;CorePullquoteAttributes&quot; block or block attributes */
+  /** The &quot;backgroundColor&quot; field on the &quot;CorePullquote&quot; block */
   backgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;borderColor&quot; field on the &quot;CorePullquoteAttributes&quot; block or block attributes */
+  /** The &quot;borderColor&quot; field on the &quot;CorePullquote&quot; block */
   borderColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;citation&quot; field on the &quot;CorePullquoteAttributes&quot; block or block attributes */
-  citation?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CorePullquoteAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CorePullquote&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontFamily&quot; field on the &quot;CorePullquoteAttributes&quot; block or block attributes */
+  /** The &quot;fontFamily&quot; field on the &quot;CorePullquote&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CorePullquoteAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CorePullquote&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;gradient&quot; field on the &quot;CorePullquoteAttributes&quot; block or block attributes */
+  /** The &quot;gradient&quot; field on the &quot;CorePullquote&quot; block */
   gradient?: Maybe<Scalars['String']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CorePullquoteAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CorePullquote&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CorePullquoteAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CorePullquote&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;style&quot; field on the &quot;CorePullquoteAttributes&quot; block or block attributes */
+  /** The &quot;style&quot; field on the &quot;CorePullquote&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;textAlign&quot; field on the &quot;CorePullquoteAttributes&quot; block or block attributes */
+  /** The &quot;textAlign&quot; field on the &quot;CorePullquote&quot; block */
   textAlign?: Maybe<Scalars['String']['output']>;
-  /** The &quot;textColor&quot; field on the &quot;CorePullquoteAttributes&quot; block or block attributes */
+  /** The &quot;textColor&quot; field on the &quot;CorePullquote&quot; block */
   textColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;value&quot; field on the &quot;CorePullquoteAttributes&quot; block or block attributes */
-  value?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreQuery = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreQuery = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreQuery';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -5405,30 +5342,30 @@ export type CoreQuery = EditorBlock & PageEditorBlock & PostEditorBlock & {
 /** Attributes of the CoreQuery Block Type */
 export type CoreQueryAttributes = {
   __typename?: 'CoreQueryAttributes';
-  /** The &quot;align&quot; field on the &quot;CoreQueryAttributes&quot; block or block attributes */
+  /** The &quot;align&quot; field on the &quot;CoreQuery&quot; block */
   align?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CoreQueryAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreQuery&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;enhancedPagination&quot; field on the &quot;CoreQueryAttributes&quot; block or block attributes */
-  enhancedPagination: Scalars['Boolean']['output'];
-  /** The &quot;layout&quot; field on the &quot;CoreQueryAttributes&quot; block or block attributes */
+  /** The &quot;enhancedPagination&quot; field on the &quot;CoreQuery&quot; block */
+  enhancedPagination?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;layout&quot; field on the &quot;CoreQuery&quot; block */
   layout?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CoreQueryAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CoreQuery&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreQueryAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreQuery&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;namespace&quot; field on the &quot;CoreQueryAttributes&quot; block or block attributes */
+  /** The &quot;namespace&quot; field on the &quot;CoreQuery&quot; block */
   namespace?: Maybe<Scalars['String']['output']>;
-  /** The &quot;query&quot; field on the &quot;CoreQueryAttributes&quot; block or block attributes */
-  query: Scalars['BlockAttributesObject']['output'];
-  /** The &quot;queryId&quot; field on the &quot;CoreQueryAttributes&quot; block or block attributes */
+  /** The &quot;query&quot; field on the &quot;CoreQuery&quot; block */
+  query?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;queryId&quot; field on the &quot;CoreQuery&quot; block */
   queryId?: Maybe<Scalars['Float']['output']>;
-  /** The &quot;tagName&quot; field on the &quot;CoreQueryAttributes&quot; block or block attributes */
-  tagName: Scalars['String']['output'];
+  /** The &quot;tagName&quot; field on the &quot;CoreQuery&quot; block */
+  tagName?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreQueryNoResults = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreQueryNoResults = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreQueryNoResults';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -5455,30 +5392,30 @@ export type CoreQueryNoResults = EditorBlock & PageEditorBlock & PostEditorBlock
 /** Attributes of the CoreQueryNoResults Block Type */
 export type CoreQueryNoResultsAttributes = {
   __typename?: 'CoreQueryNoResultsAttributes';
-  /** The &quot;align&quot; field on the &quot;CoreQueryNoResultsAttributes&quot; block or block attributes */
+  /** The &quot;align&quot; field on the &quot;CoreQueryNoResults&quot; block */
   align?: Maybe<Scalars['String']['output']>;
-  /** The &quot;backgroundColor&quot; field on the &quot;CoreQueryNoResultsAttributes&quot; block or block attributes */
+  /** The &quot;backgroundColor&quot; field on the &quot;CoreQueryNoResults&quot; block */
   backgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CoreQueryNoResultsAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreQueryNoResults&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontFamily&quot; field on the &quot;CoreQueryNoResultsAttributes&quot; block or block attributes */
+  /** The &quot;fontFamily&quot; field on the &quot;CoreQueryNoResults&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CoreQueryNoResultsAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CoreQueryNoResults&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;gradient&quot; field on the &quot;CoreQueryNoResultsAttributes&quot; block or block attributes */
+  /** The &quot;gradient&quot; field on the &quot;CoreQueryNoResults&quot; block */
   gradient?: Maybe<Scalars['String']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CoreQueryNoResultsAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CoreQueryNoResults&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreQueryNoResultsAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreQueryNoResults&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;style&quot; field on the &quot;CoreQueryNoResultsAttributes&quot; block or block attributes */
+  /** The &quot;style&quot; field on the &quot;CoreQueryNoResults&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;textColor&quot; field on the &quot;CoreQueryNoResultsAttributes&quot; block or block attributes */
+  /** The &quot;textColor&quot; field on the &quot;CoreQueryNoResults&quot; block */
   textColor?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreQueryPagination = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreQueryPagination = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreQueryPagination';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -5505,36 +5442,36 @@ export type CoreQueryPagination = EditorBlock & PageEditorBlock & PostEditorBloc
 /** Attributes of the CoreQueryPagination Block Type */
 export type CoreQueryPaginationAttributes = {
   __typename?: 'CoreQueryPaginationAttributes';
-  /** The &quot;align&quot; field on the &quot;CoreQueryPaginationAttributes&quot; block or block attributes */
+  /** The &quot;align&quot; field on the &quot;CoreQueryPagination&quot; block */
   align?: Maybe<Scalars['String']['output']>;
-  /** The &quot;backgroundColor&quot; field on the &quot;CoreQueryPaginationAttributes&quot; block or block attributes */
+  /** The &quot;backgroundColor&quot; field on the &quot;CoreQueryPagination&quot; block */
   backgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CoreQueryPaginationAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreQueryPagination&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontFamily&quot; field on the &quot;CoreQueryPaginationAttributes&quot; block or block attributes */
+  /** The &quot;fontFamily&quot; field on the &quot;CoreQueryPagination&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CoreQueryPaginationAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CoreQueryPagination&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;gradient&quot; field on the &quot;CoreQueryPaginationAttributes&quot; block or block attributes */
+  /** The &quot;gradient&quot; field on the &quot;CoreQueryPagination&quot; block */
   gradient?: Maybe<Scalars['String']['output']>;
-  /** The &quot;layout&quot; field on the &quot;CoreQueryPaginationAttributes&quot; block or block attributes */
+  /** The &quot;layout&quot; field on the &quot;CoreQueryPagination&quot; block */
   layout?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CoreQueryPaginationAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CoreQueryPagination&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreQueryPaginationAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreQueryPagination&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;paginationArrow&quot; field on the &quot;CoreQueryPaginationAttributes&quot; block or block attributes */
-  paginationArrow: Scalars['String']['output'];
-  /** The &quot;showLabel&quot; field on the &quot;CoreQueryPaginationAttributes&quot; block or block attributes */
-  showLabel: Scalars['Boolean']['output'];
-  /** The &quot;style&quot; field on the &quot;CoreQueryPaginationAttributes&quot; block or block attributes */
+  /** The &quot;paginationArrow&quot; field on the &quot;CoreQueryPagination&quot; block */
+  paginationArrow?: Maybe<Scalars['String']['output']>;
+  /** The &quot;showLabel&quot; field on the &quot;CoreQueryPagination&quot; block */
+  showLabel?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;style&quot; field on the &quot;CoreQueryPagination&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;textColor&quot; field on the &quot;CoreQueryPaginationAttributes&quot; block or block attributes */
+  /** The &quot;textColor&quot; field on the &quot;CoreQueryPagination&quot; block */
   textColor?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreQueryPaginationNext = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreQueryPaginationNext = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreQueryPaginationNext';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -5561,28 +5498,28 @@ export type CoreQueryPaginationNext = EditorBlock & PageEditorBlock & PostEditor
 /** Attributes of the CoreQueryPaginationNext Block Type */
 export type CoreQueryPaginationNextAttributes = {
   __typename?: 'CoreQueryPaginationNextAttributes';
-  /** The &quot;backgroundColor&quot; field on the &quot;CoreQueryPaginationNextAttributes&quot; block or block attributes */
+  /** The &quot;backgroundColor&quot; field on the &quot;CoreQueryPaginationNext&quot; block */
   backgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CoreQueryPaginationNextAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreQueryPaginationNext&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontFamily&quot; field on the &quot;CoreQueryPaginationNextAttributes&quot; block or block attributes */
+  /** The &quot;fontFamily&quot; field on the &quot;CoreQueryPaginationNext&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CoreQueryPaginationNextAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CoreQueryPaginationNext&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;gradient&quot; field on the &quot;CoreQueryPaginationNextAttributes&quot; block or block attributes */
+  /** The &quot;gradient&quot; field on the &quot;CoreQueryPaginationNext&quot; block */
   gradient?: Maybe<Scalars['String']['output']>;
-  /** The &quot;label&quot; field on the &quot;CoreQueryPaginationNextAttributes&quot; block or block attributes */
+  /** The &quot;label&quot; field on the &quot;CoreQueryPaginationNext&quot; block */
   label?: Maybe<Scalars['String']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CoreQueryPaginationNextAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CoreQueryPaginationNext&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreQueryPaginationNextAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreQueryPaginationNext&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;style&quot; field on the &quot;CoreQueryPaginationNextAttributes&quot; block or block attributes */
+  /** The &quot;style&quot; field on the &quot;CoreQueryPaginationNext&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreQueryPaginationNumbers = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreQueryPaginationNumbers = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreQueryPaginationNumbers';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -5609,28 +5546,28 @@ export type CoreQueryPaginationNumbers = EditorBlock & PageEditorBlock & PostEdi
 /** Attributes of the CoreQueryPaginationNumbers Block Type */
 export type CoreQueryPaginationNumbersAttributes = {
   __typename?: 'CoreQueryPaginationNumbersAttributes';
-  /** The &quot;backgroundColor&quot; field on the &quot;CoreQueryPaginationNumbersAttributes&quot; block or block attributes */
+  /** The &quot;backgroundColor&quot; field on the &quot;CoreQueryPaginationNumbers&quot; block */
   backgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CoreQueryPaginationNumbersAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreQueryPaginationNumbers&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontFamily&quot; field on the &quot;CoreQueryPaginationNumbersAttributes&quot; block or block attributes */
+  /** The &quot;fontFamily&quot; field on the &quot;CoreQueryPaginationNumbers&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CoreQueryPaginationNumbersAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CoreQueryPaginationNumbers&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;gradient&quot; field on the &quot;CoreQueryPaginationNumbersAttributes&quot; block or block attributes */
+  /** The &quot;gradient&quot; field on the &quot;CoreQueryPaginationNumbers&quot; block */
   gradient?: Maybe<Scalars['String']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CoreQueryPaginationNumbersAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CoreQueryPaginationNumbers&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreQueryPaginationNumbersAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreQueryPaginationNumbers&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;midSize&quot; field on the &quot;CoreQueryPaginationNumbersAttributes&quot; block or block attributes */
-  midSize: Scalars['Float']['output'];
-  /** The &quot;style&quot; field on the &quot;CoreQueryPaginationNumbersAttributes&quot; block or block attributes */
+  /** The &quot;midSize&quot; field on the &quot;CoreQueryPaginationNumbers&quot; block */
+  midSize?: Maybe<Scalars['Float']['output']>;
+  /** The &quot;style&quot; field on the &quot;CoreQueryPaginationNumbers&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreQueryPaginationPrevious = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreQueryPaginationPrevious = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreQueryPaginationPrevious';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -5657,28 +5594,28 @@ export type CoreQueryPaginationPrevious = EditorBlock & PageEditorBlock & PostEd
 /** Attributes of the CoreQueryPaginationPrevious Block Type */
 export type CoreQueryPaginationPreviousAttributes = {
   __typename?: 'CoreQueryPaginationPreviousAttributes';
-  /** The &quot;backgroundColor&quot; field on the &quot;CoreQueryPaginationPreviousAttributes&quot; block or block attributes */
+  /** The &quot;backgroundColor&quot; field on the &quot;CoreQueryPaginationPrevious&quot; block */
   backgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CoreQueryPaginationPreviousAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreQueryPaginationPrevious&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontFamily&quot; field on the &quot;CoreQueryPaginationPreviousAttributes&quot; block or block attributes */
+  /** The &quot;fontFamily&quot; field on the &quot;CoreQueryPaginationPrevious&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CoreQueryPaginationPreviousAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CoreQueryPaginationPrevious&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;gradient&quot; field on the &quot;CoreQueryPaginationPreviousAttributes&quot; block or block attributes */
+  /** The &quot;gradient&quot; field on the &quot;CoreQueryPaginationPrevious&quot; block */
   gradient?: Maybe<Scalars['String']['output']>;
-  /** The &quot;label&quot; field on the &quot;CoreQueryPaginationPreviousAttributes&quot; block or block attributes */
+  /** The &quot;label&quot; field on the &quot;CoreQueryPaginationPrevious&quot; block */
   label?: Maybe<Scalars['String']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CoreQueryPaginationPreviousAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CoreQueryPaginationPrevious&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreQueryPaginationPreviousAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreQueryPaginationPrevious&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;style&quot; field on the &quot;CoreQueryPaginationPreviousAttributes&quot; block or block attributes */
+  /** The &quot;style&quot; field on the &quot;CoreQueryPaginationPrevious&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreQueryTitle = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreQueryTitle = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreQueryTitle';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -5705,40 +5642,40 @@ export type CoreQueryTitle = EditorBlock & PageEditorBlock & PostEditorBlock & {
 /** Attributes of the CoreQueryTitle Block Type */
 export type CoreQueryTitleAttributes = {
   __typename?: 'CoreQueryTitleAttributes';
-  /** The &quot;align&quot; field on the &quot;CoreQueryTitleAttributes&quot; block or block attributes */
+  /** The &quot;align&quot; field on the &quot;CoreQueryTitle&quot; block */
   align?: Maybe<Scalars['String']['output']>;
-  /** The &quot;backgroundColor&quot; field on the &quot;CoreQueryTitleAttributes&quot; block or block attributes */
+  /** The &quot;backgroundColor&quot; field on the &quot;CoreQueryTitle&quot; block */
   backgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CoreQueryTitleAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreQueryTitle&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontFamily&quot; field on the &quot;CoreQueryTitleAttributes&quot; block or block attributes */
+  /** The &quot;fontFamily&quot; field on the &quot;CoreQueryTitle&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CoreQueryTitleAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CoreQueryTitle&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;gradient&quot; field on the &quot;CoreQueryTitleAttributes&quot; block or block attributes */
+  /** The &quot;gradient&quot; field on the &quot;CoreQueryTitle&quot; block */
   gradient?: Maybe<Scalars['String']['output']>;
-  /** The &quot;level&quot; field on the &quot;CoreQueryTitleAttributes&quot; block or block attributes */
-  level: Scalars['Float']['output'];
-  /** The &quot;lock&quot; field on the &quot;CoreQueryTitleAttributes&quot; block or block attributes */
+  /** The &quot;level&quot; field on the &quot;CoreQueryTitle&quot; block */
+  level?: Maybe<Scalars['Float']['output']>;
+  /** The &quot;lock&quot; field on the &quot;CoreQueryTitle&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreQueryTitleAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreQueryTitle&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;showPrefix&quot; field on the &quot;CoreQueryTitleAttributes&quot; block or block attributes */
-  showPrefix: Scalars['Boolean']['output'];
-  /** The &quot;showSearchTerm&quot; field on the &quot;CoreQueryTitleAttributes&quot; block or block attributes */
-  showSearchTerm: Scalars['Boolean']['output'];
-  /** The &quot;style&quot; field on the &quot;CoreQueryTitleAttributes&quot; block or block attributes */
+  /** The &quot;showPrefix&quot; field on the &quot;CoreQueryTitle&quot; block */
+  showPrefix?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;showSearchTerm&quot; field on the &quot;CoreQueryTitle&quot; block */
+  showSearchTerm?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;style&quot; field on the &quot;CoreQueryTitle&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;textAlign&quot; field on the &quot;CoreQueryTitleAttributes&quot; block or block attributes */
+  /** The &quot;textAlign&quot; field on the &quot;CoreQueryTitle&quot; block */
   textAlign?: Maybe<Scalars['String']['output']>;
-  /** The &quot;textColor&quot; field on the &quot;CoreQueryTitleAttributes&quot; block or block attributes */
+  /** The &quot;textColor&quot; field on the &quot;CoreQueryTitle&quot; block */
   textColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;type&quot; field on the &quot;CoreQueryTitleAttributes&quot; block or block attributes */
+  /** The &quot;type&quot; field on the &quot;CoreQueryTitle&quot; block */
   type?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreQuote = BlockWithSupportsAnchor & EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreQuote = BlockWithSupportsAnchor & DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreQuote';
   /** The anchor field for the block. */
   anchor?: Maybe<Scalars['String']['output']>;
@@ -5769,38 +5706,36 @@ export type CoreQuoteAttributes = BlockWithSupportsAnchor & {
   __typename?: 'CoreQuoteAttributes';
   /** The anchor field for the block. */
   anchor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;backgroundColor&quot; field on the &quot;CoreQuoteAttributes&quot; block or block attributes */
+  /** The &quot;backgroundColor&quot; field on the &quot;CoreQuote&quot; block */
   backgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;citation&quot; field on the &quot;CoreQuoteAttributes&quot; block or block attributes */
-  citation?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CoreQuoteAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreQuote&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;cssClassName&quot; field on the &quot;CoreQuoteAttributes&quot; block or block attributes */
+  /** The &quot;cssClassName&quot; field on the &quot;CoreQuote&quot; block */
   cssClassName?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontFamily&quot; field on the &quot;CoreQuoteAttributes&quot; block or block attributes */
+  /** The &quot;fontFamily&quot; field on the &quot;CoreQuote&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CoreQuoteAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CoreQuote&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;gradient&quot; field on the &quot;CoreQuoteAttributes&quot; block or block attributes */
+  /** The &quot;gradient&quot; field on the &quot;CoreQuote&quot; block */
   gradient?: Maybe<Scalars['String']['output']>;
-  /** The &quot;layout&quot; field on the &quot;CoreQuoteAttributes&quot; block or block attributes */
+  /** The &quot;layout&quot; field on the &quot;CoreQuote&quot; block */
   layout?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CoreQuoteAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CoreQuote&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreQuoteAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreQuote&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;style&quot; field on the &quot;CoreQuoteAttributes&quot; block or block attributes */
+  /** The &quot;style&quot; field on the &quot;CoreQuote&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;textAlign&quot; field on the &quot;CoreQuoteAttributes&quot; block or block attributes */
+  /** The &quot;textAlign&quot; field on the &quot;CoreQuote&quot; block */
   textAlign?: Maybe<Scalars['String']['output']>;
-  /** The &quot;textColor&quot; field on the &quot;CoreQuoteAttributes&quot; block or block attributes */
+  /** The &quot;textColor&quot; field on the &quot;CoreQuote&quot; block */
   textColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;value&quot; field on the &quot;CoreQuoteAttributes&quot; block or block attributes */
-  value: Scalars['String']['output'];
+  /** The &quot;value&quot; field on the &quot;CoreQuote&quot; block */
+  value?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreReadMore = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreReadMore = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreReadMore';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -5827,34 +5762,34 @@ export type CoreReadMore = EditorBlock & PageEditorBlock & PostEditorBlock & {
 /** Attributes of the CoreReadMore Block Type */
 export type CoreReadMoreAttributes = {
   __typename?: 'CoreReadMoreAttributes';
-  /** The &quot;backgroundColor&quot; field on the &quot;CoreReadMoreAttributes&quot; block or block attributes */
+  /** The &quot;backgroundColor&quot; field on the &quot;CoreReadMore&quot; block */
   backgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;borderColor&quot; field on the &quot;CoreReadMoreAttributes&quot; block or block attributes */
+  /** The &quot;borderColor&quot; field on the &quot;CoreReadMore&quot; block */
   borderColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CoreReadMoreAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreReadMore&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;content&quot; field on the &quot;CoreReadMoreAttributes&quot; block or block attributes */
+  /** The &quot;content&quot; field on the &quot;CoreReadMore&quot; block */
   content?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontFamily&quot; field on the &quot;CoreReadMoreAttributes&quot; block or block attributes */
+  /** The &quot;fontFamily&quot; field on the &quot;CoreReadMore&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CoreReadMoreAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CoreReadMore&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;gradient&quot; field on the &quot;CoreReadMoreAttributes&quot; block or block attributes */
+  /** The &quot;gradient&quot; field on the &quot;CoreReadMore&quot; block */
   gradient?: Maybe<Scalars['String']['output']>;
-  /** The &quot;linkTarget&quot; field on the &quot;CoreReadMoreAttributes&quot; block or block attributes */
-  linkTarget: Scalars['String']['output'];
-  /** The &quot;lock&quot; field on the &quot;CoreReadMoreAttributes&quot; block or block attributes */
+  /** The &quot;linkTarget&quot; field on the &quot;CoreReadMore&quot; block */
+  linkTarget?: Maybe<Scalars['String']['output']>;
+  /** The &quot;lock&quot; field on the &quot;CoreReadMore&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreReadMoreAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreReadMore&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;style&quot; field on the &quot;CoreReadMoreAttributes&quot; block or block attributes */
+  /** The &quot;style&quot; field on the &quot;CoreReadMore&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;textColor&quot; field on the &quot;CoreReadMoreAttributes&quot; block or block attributes */
+  /** The &quot;textColor&quot; field on the &quot;CoreReadMore&quot; block */
   textColor?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreRss = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreRss = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreRss';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -5881,34 +5816,34 @@ export type CoreRss = EditorBlock & PageEditorBlock & PostEditorBlock & {
 /** Attributes of the CoreRss Block Type */
 export type CoreRssAttributes = {
   __typename?: 'CoreRssAttributes';
-  /** The &quot;align&quot; field on the &quot;CoreRssAttributes&quot; block or block attributes */
+  /** The &quot;align&quot; field on the &quot;CoreRss&quot; block */
   align?: Maybe<Scalars['String']['output']>;
-  /** The &quot;blockLayout&quot; field on the &quot;CoreRssAttributes&quot; block or block attributes */
-  blockLayout: Scalars['String']['output'];
-  /** The &quot;className&quot; field on the &quot;CoreRssAttributes&quot; block or block attributes */
+  /** The &quot;blockLayout&quot; field on the &quot;CoreRss&quot; block */
+  blockLayout?: Maybe<Scalars['String']['output']>;
+  /** The &quot;className&quot; field on the &quot;CoreRss&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;columns&quot; field on the &quot;CoreRssAttributes&quot; block or block attributes */
-  columns: Scalars['Float']['output'];
-  /** The &quot;displayAuthor&quot; field on the &quot;CoreRssAttributes&quot; block or block attributes */
-  displayAuthor: Scalars['Boolean']['output'];
-  /** The &quot;displayDate&quot; field on the &quot;CoreRssAttributes&quot; block or block attributes */
-  displayDate: Scalars['Boolean']['output'];
-  /** The &quot;displayExcerpt&quot; field on the &quot;CoreRssAttributes&quot; block or block attributes */
-  displayExcerpt: Scalars['Boolean']['output'];
-  /** The &quot;excerptLength&quot; field on the &quot;CoreRssAttributes&quot; block or block attributes */
-  excerptLength: Scalars['Float']['output'];
-  /** The &quot;feedURL&quot; field on the &quot;CoreRssAttributes&quot; block or block attributes */
-  feedURL: Scalars['String']['output'];
-  /** The &quot;itemsToShow&quot; field on the &quot;CoreRssAttributes&quot; block or block attributes */
-  itemsToShow: Scalars['Float']['output'];
-  /** The &quot;lock&quot; field on the &quot;CoreRssAttributes&quot; block or block attributes */
+  /** The &quot;columns&quot; field on the &quot;CoreRss&quot; block */
+  columns?: Maybe<Scalars['Float']['output']>;
+  /** The &quot;displayAuthor&quot; field on the &quot;CoreRss&quot; block */
+  displayAuthor?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;displayDate&quot; field on the &quot;CoreRss&quot; block */
+  displayDate?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;displayExcerpt&quot; field on the &quot;CoreRss&quot; block */
+  displayExcerpt?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;excerptLength&quot; field on the &quot;CoreRss&quot; block */
+  excerptLength?: Maybe<Scalars['Float']['output']>;
+  /** The &quot;feedURL&quot; field on the &quot;CoreRss&quot; block */
+  feedURL?: Maybe<Scalars['String']['output']>;
+  /** The &quot;itemsToShow&quot; field on the &quot;CoreRss&quot; block */
+  itemsToShow?: Maybe<Scalars['Float']['output']>;
+  /** The &quot;lock&quot; field on the &quot;CoreRss&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreRssAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreRss&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreSearch = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreSearch = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreSearch';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -5935,52 +5870,52 @@ export type CoreSearch = EditorBlock & PageEditorBlock & PostEditorBlock & {
 /** Attributes of the CoreSearch Block Type */
 export type CoreSearchAttributes = {
   __typename?: 'CoreSearchAttributes';
-  /** The &quot;align&quot; field on the &quot;CoreSearchAttributes&quot; block or block attributes */
+  /** The &quot;align&quot; field on the &quot;CoreSearch&quot; block */
   align?: Maybe<Scalars['String']['output']>;
-  /** The &quot;backgroundColor&quot; field on the &quot;CoreSearchAttributes&quot; block or block attributes */
+  /** The &quot;backgroundColor&quot; field on the &quot;CoreSearch&quot; block */
   backgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;borderColor&quot; field on the &quot;CoreSearchAttributes&quot; block or block attributes */
+  /** The &quot;borderColor&quot; field on the &quot;CoreSearch&quot; block */
   borderColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;buttonPosition&quot; field on the &quot;CoreSearchAttributes&quot; block or block attributes */
-  buttonPosition: Scalars['String']['output'];
-  /** The &quot;buttonText&quot; field on the &quot;CoreSearchAttributes&quot; block or block attributes */
+  /** The &quot;buttonPosition&quot; field on the &quot;CoreSearch&quot; block */
+  buttonPosition?: Maybe<Scalars['String']['output']>;
+  /** The &quot;buttonText&quot; field on the &quot;CoreSearch&quot; block */
   buttonText?: Maybe<Scalars['String']['output']>;
-  /** The &quot;buttonUseIcon&quot; field on the &quot;CoreSearchAttributes&quot; block or block attributes */
-  buttonUseIcon: Scalars['Boolean']['output'];
-  /** The &quot;className&quot; field on the &quot;CoreSearchAttributes&quot; block or block attributes */
+  /** The &quot;buttonUseIcon&quot; field on the &quot;CoreSearch&quot; block */
+  buttonUseIcon?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;className&quot; field on the &quot;CoreSearch&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontFamily&quot; field on the &quot;CoreSearchAttributes&quot; block or block attributes */
+  /** The &quot;fontFamily&quot; field on the &quot;CoreSearch&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CoreSearchAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CoreSearch&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;gradient&quot; field on the &quot;CoreSearchAttributes&quot; block or block attributes */
+  /** The &quot;gradient&quot; field on the &quot;CoreSearch&quot; block */
   gradient?: Maybe<Scalars['String']['output']>;
-  /** The &quot;isSearchFieldHidden&quot; field on the &quot;CoreSearchAttributes&quot; block or block attributes */
-  isSearchFieldHidden: Scalars['Boolean']['output'];
-  /** The &quot;label&quot; field on the &quot;CoreSearchAttributes&quot; block or block attributes */
+  /** The &quot;isSearchFieldHidden&quot; field on the &quot;CoreSearch&quot; block */
+  isSearchFieldHidden?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;label&quot; field on the &quot;CoreSearch&quot; block */
   label?: Maybe<Scalars['String']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CoreSearchAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CoreSearch&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreSearchAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreSearch&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;placeholder&quot; field on the &quot;CoreSearchAttributes&quot; block or block attributes */
-  placeholder: Scalars['String']['output'];
-  /** The &quot;query&quot; field on the &quot;CoreSearchAttributes&quot; block or block attributes */
-  query: Scalars['BlockAttributesObject']['output'];
-  /** The &quot;showLabel&quot; field on the &quot;CoreSearchAttributes&quot; block or block attributes */
-  showLabel: Scalars['Boolean']['output'];
-  /** The &quot;style&quot; field on the &quot;CoreSearchAttributes&quot; block or block attributes */
+  /** The &quot;placeholder&quot; field on the &quot;CoreSearch&quot; block */
+  placeholder?: Maybe<Scalars['String']['output']>;
+  /** The &quot;query&quot; field on the &quot;CoreSearch&quot; block */
+  query?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;showLabel&quot; field on the &quot;CoreSearch&quot; block */
+  showLabel?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;style&quot; field on the &quot;CoreSearch&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;textColor&quot; field on the &quot;CoreSearchAttributes&quot; block or block attributes */
+  /** The &quot;textColor&quot; field on the &quot;CoreSearch&quot; block */
   textColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;width&quot; field on the &quot;CoreSearchAttributes&quot; block or block attributes */
+  /** The &quot;width&quot; field on the &quot;CoreSearch&quot; block */
   width?: Maybe<Scalars['Float']['output']>;
-  /** The &quot;widthUnit&quot; field on the &quot;CoreSearchAttributes&quot; block or block attributes */
+  /** The &quot;widthUnit&quot; field on the &quot;CoreSearch&quot; block */
   widthUnit?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreSeparator = BlockWithSupportsAnchor & EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreSeparator = BlockWithSupportsAnchor & DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreSeparator';
   /** The anchor field for the block. */
   anchor?: Maybe<Scalars['String']['output']>;
@@ -6009,30 +5944,30 @@ export type CoreSeparator = BlockWithSupportsAnchor & EditorBlock & PageEditorBl
 /** Attributes of the CoreSeparator Block Type */
 export type CoreSeparatorAttributes = BlockWithSupportsAnchor & {
   __typename?: 'CoreSeparatorAttributes';
-  /** The &quot;align&quot; field on the &quot;CoreSeparatorAttributes&quot; block or block attributes */
+  /** The &quot;align&quot; field on the &quot;CoreSeparator&quot; block */
   align?: Maybe<Scalars['String']['output']>;
   /** The anchor field for the block. */
   anchor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;backgroundColor&quot; field on the &quot;CoreSeparatorAttributes&quot; block or block attributes */
+  /** The &quot;backgroundColor&quot; field on the &quot;CoreSeparator&quot; block */
   backgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CoreSeparatorAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreSeparator&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;cssClassName&quot; field on the &quot;CoreSeparatorAttributes&quot; block or block attributes */
+  /** The &quot;cssClassName&quot; field on the &quot;CoreSeparator&quot; block */
   cssClassName?: Maybe<Scalars['String']['output']>;
-  /** The &quot;gradient&quot; field on the &quot;CoreSeparatorAttributes&quot; block or block attributes */
+  /** The &quot;gradient&quot; field on the &quot;CoreSeparator&quot; block */
   gradient?: Maybe<Scalars['String']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CoreSeparatorAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CoreSeparator&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreSeparatorAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreSeparator&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;opacity&quot; field on the &quot;CoreSeparatorAttributes&quot; block or block attributes */
-  opacity: Scalars['String']['output'];
-  /** The &quot;style&quot; field on the &quot;CoreSeparatorAttributes&quot; block or block attributes */
+  /** The &quot;opacity&quot; field on the &quot;CoreSeparator&quot; block */
+  opacity?: Maybe<Scalars['String']['output']>;
+  /** The &quot;style&quot; field on the &quot;CoreSeparator&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreShortcode = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreShortcode = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreShortcode';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -6059,16 +5994,16 @@ export type CoreShortcode = EditorBlock & PageEditorBlock & PostEditorBlock & {
 /** Attributes of the CoreShortcode Block Type */
 export type CoreShortcodeAttributes = {
   __typename?: 'CoreShortcodeAttributes';
-  /** The &quot;lock&quot; field on the &quot;CoreShortcodeAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CoreShortcode&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreShortcodeAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreShortcode&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;text&quot; field on the &quot;CoreShortcodeAttributes&quot; block or block attributes */
+  /** The &quot;text&quot; field on the &quot;CoreShortcode&quot; block */
   text?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreSiteLogo = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreSiteLogo = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreSiteLogo';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -6095,28 +6030,28 @@ export type CoreSiteLogo = EditorBlock & PageEditorBlock & PostEditorBlock & {
 /** Attributes of the CoreSiteLogo Block Type */
 export type CoreSiteLogoAttributes = {
   __typename?: 'CoreSiteLogoAttributes';
-  /** The &quot;align&quot; field on the &quot;CoreSiteLogoAttributes&quot; block or block attributes */
+  /** The &quot;align&quot; field on the &quot;CoreSiteLogo&quot; block */
   align?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CoreSiteLogoAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreSiteLogo&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;isLink&quot; field on the &quot;CoreSiteLogoAttributes&quot; block or block attributes */
-  isLink: Scalars['Boolean']['output'];
-  /** The &quot;linkTarget&quot; field on the &quot;CoreSiteLogoAttributes&quot; block or block attributes */
-  linkTarget: Scalars['String']['output'];
-  /** The &quot;lock&quot; field on the &quot;CoreSiteLogoAttributes&quot; block or block attributes */
+  /** The &quot;isLink&quot; field on the &quot;CoreSiteLogo&quot; block */
+  isLink?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;linkTarget&quot; field on the &quot;CoreSiteLogo&quot; block */
+  linkTarget?: Maybe<Scalars['String']['output']>;
+  /** The &quot;lock&quot; field on the &quot;CoreSiteLogo&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreSiteLogoAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreSiteLogo&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;shouldSyncIcon&quot; field on the &quot;CoreSiteLogoAttributes&quot; block or block attributes */
+  /** The &quot;shouldSyncIcon&quot; field on the &quot;CoreSiteLogo&quot; block */
   shouldSyncIcon?: Maybe<Scalars['Boolean']['output']>;
-  /** The &quot;style&quot; field on the &quot;CoreSiteLogoAttributes&quot; block or block attributes */
+  /** The &quot;style&quot; field on the &quot;CoreSiteLogo&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;width&quot; field on the &quot;CoreSiteLogoAttributes&quot; block or block attributes */
+  /** The &quot;width&quot; field on the &quot;CoreSiteLogo&quot; block */
   width?: Maybe<Scalars['Float']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreSiteTagline = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreSiteTagline = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreSiteTagline';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -6143,34 +6078,34 @@ export type CoreSiteTagline = EditorBlock & PageEditorBlock & PostEditorBlock & 
 /** Attributes of the CoreSiteTagline Block Type */
 export type CoreSiteTaglineAttributes = {
   __typename?: 'CoreSiteTaglineAttributes';
-  /** The &quot;align&quot; field on the &quot;CoreSiteTaglineAttributes&quot; block or block attributes */
+  /** The &quot;align&quot; field on the &quot;CoreSiteTagline&quot; block */
   align?: Maybe<Scalars['String']['output']>;
-  /** The &quot;backgroundColor&quot; field on the &quot;CoreSiteTaglineAttributes&quot; block or block attributes */
+  /** The &quot;backgroundColor&quot; field on the &quot;CoreSiteTagline&quot; block */
   backgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CoreSiteTaglineAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreSiteTagline&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontFamily&quot; field on the &quot;CoreSiteTaglineAttributes&quot; block or block attributes */
+  /** The &quot;fontFamily&quot; field on the &quot;CoreSiteTagline&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CoreSiteTaglineAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CoreSiteTagline&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;gradient&quot; field on the &quot;CoreSiteTaglineAttributes&quot; block or block attributes */
+  /** The &quot;gradient&quot; field on the &quot;CoreSiteTagline&quot; block */
   gradient?: Maybe<Scalars['String']['output']>;
-  /** The &quot;level&quot; field on the &quot;CoreSiteTaglineAttributes&quot; block or block attributes */
-  level: Scalars['Float']['output'];
-  /** The &quot;lock&quot; field on the &quot;CoreSiteTaglineAttributes&quot; block or block attributes */
+  /** The &quot;level&quot; field on the &quot;CoreSiteTagline&quot; block */
+  level?: Maybe<Scalars['Float']['output']>;
+  /** The &quot;lock&quot; field on the &quot;CoreSiteTagline&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreSiteTaglineAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreSiteTagline&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;style&quot; field on the &quot;CoreSiteTaglineAttributes&quot; block or block attributes */
+  /** The &quot;style&quot; field on the &quot;CoreSiteTagline&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;textAlign&quot; field on the &quot;CoreSiteTaglineAttributes&quot; block or block attributes */
+  /** The &quot;textAlign&quot; field on the &quot;CoreSiteTagline&quot; block */
   textAlign?: Maybe<Scalars['String']['output']>;
-  /** The &quot;textColor&quot; field on the &quot;CoreSiteTaglineAttributes&quot; block or block attributes */
+  /** The &quot;textColor&quot; field on the &quot;CoreSiteTagline&quot; block */
   textColor?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreSiteTitle = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreSiteTitle = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreSiteTitle';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -6197,38 +6132,38 @@ export type CoreSiteTitle = EditorBlock & PageEditorBlock & PostEditorBlock & {
 /** Attributes of the CoreSiteTitle Block Type */
 export type CoreSiteTitleAttributes = {
   __typename?: 'CoreSiteTitleAttributes';
-  /** The &quot;align&quot; field on the &quot;CoreSiteTitleAttributes&quot; block or block attributes */
+  /** The &quot;align&quot; field on the &quot;CoreSiteTitle&quot; block */
   align?: Maybe<Scalars['String']['output']>;
-  /** The &quot;backgroundColor&quot; field on the &quot;CoreSiteTitleAttributes&quot; block or block attributes */
+  /** The &quot;backgroundColor&quot; field on the &quot;CoreSiteTitle&quot; block */
   backgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CoreSiteTitleAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreSiteTitle&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontFamily&quot; field on the &quot;CoreSiteTitleAttributes&quot; block or block attributes */
+  /** The &quot;fontFamily&quot; field on the &quot;CoreSiteTitle&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CoreSiteTitleAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CoreSiteTitle&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;gradient&quot; field on the &quot;CoreSiteTitleAttributes&quot; block or block attributes */
+  /** The &quot;gradient&quot; field on the &quot;CoreSiteTitle&quot; block */
   gradient?: Maybe<Scalars['String']['output']>;
-  /** The &quot;isLink&quot; field on the &quot;CoreSiteTitleAttributes&quot; block or block attributes */
-  isLink: Scalars['Boolean']['output'];
-  /** The &quot;level&quot; field on the &quot;CoreSiteTitleAttributes&quot; block or block attributes */
-  level: Scalars['Float']['output'];
-  /** The &quot;linkTarget&quot; field on the &quot;CoreSiteTitleAttributes&quot; block or block attributes */
-  linkTarget: Scalars['String']['output'];
-  /** The &quot;lock&quot; field on the &quot;CoreSiteTitleAttributes&quot; block or block attributes */
+  /** The &quot;isLink&quot; field on the &quot;CoreSiteTitle&quot; block */
+  isLink?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;level&quot; field on the &quot;CoreSiteTitle&quot; block */
+  level?: Maybe<Scalars['Float']['output']>;
+  /** The &quot;linkTarget&quot; field on the &quot;CoreSiteTitle&quot; block */
+  linkTarget?: Maybe<Scalars['String']['output']>;
+  /** The &quot;lock&quot; field on the &quot;CoreSiteTitle&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreSiteTitleAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreSiteTitle&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;style&quot; field on the &quot;CoreSiteTitleAttributes&quot; block or block attributes */
+  /** The &quot;style&quot; field on the &quot;CoreSiteTitle&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;textAlign&quot; field on the &quot;CoreSiteTitleAttributes&quot; block or block attributes */
+  /** The &quot;textAlign&quot; field on the &quot;CoreSiteTitle&quot; block */
   textAlign?: Maybe<Scalars['String']['output']>;
-  /** The &quot;textColor&quot; field on the &quot;CoreSiteTitleAttributes&quot; block or block attributes */
+  /** The &quot;textColor&quot; field on the &quot;CoreSiteTitle&quot; block */
   textColor?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreSocialLink = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreSocialLink = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreSocialLink';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -6255,24 +6190,24 @@ export type CoreSocialLink = EditorBlock & PageEditorBlock & PostEditorBlock & {
 /** Attributes of the CoreSocialLink Block Type */
 export type CoreSocialLinkAttributes = {
   __typename?: 'CoreSocialLinkAttributes';
-  /** The &quot;className&quot; field on the &quot;CoreSocialLinkAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreSocialLink&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;label&quot; field on the &quot;CoreSocialLinkAttributes&quot; block or block attributes */
+  /** The &quot;label&quot; field on the &quot;CoreSocialLink&quot; block */
   label?: Maybe<Scalars['String']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CoreSocialLinkAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CoreSocialLink&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreSocialLinkAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreSocialLink&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;rel&quot; field on the &quot;CoreSocialLinkAttributes&quot; block or block attributes */
+  /** The &quot;rel&quot; field on the &quot;CoreSocialLink&quot; block */
   rel?: Maybe<Scalars['String']['output']>;
-  /** The &quot;service&quot; field on the &quot;CoreSocialLinkAttributes&quot; block or block attributes */
+  /** The &quot;service&quot; field on the &quot;CoreSocialLink&quot; block */
   service?: Maybe<Scalars['String']['output']>;
-  /** The &quot;url&quot; field on the &quot;CoreSocialLinkAttributes&quot; block or block attributes */
+  /** The &quot;url&quot; field on the &quot;CoreSocialLink&quot; block */
   url?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreSocialLinks = BlockWithSupportsAnchor & EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreSocialLinks = BlockWithSupportsAnchor & DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreSocialLinks';
   /** The anchor field for the block. */
   anchor?: Maybe<Scalars['String']['output']>;
@@ -6301,46 +6236,46 @@ export type CoreSocialLinks = BlockWithSupportsAnchor & EditorBlock & PageEditor
 /** Attributes of the CoreSocialLinks Block Type */
 export type CoreSocialLinksAttributes = BlockWithSupportsAnchor & {
   __typename?: 'CoreSocialLinksAttributes';
-  /** The &quot;align&quot; field on the &quot;CoreSocialLinksAttributes&quot; block or block attributes */
+  /** The &quot;align&quot; field on the &quot;CoreSocialLinks&quot; block */
   align?: Maybe<Scalars['String']['output']>;
   /** The anchor field for the block. */
   anchor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;backgroundColor&quot; field on the &quot;CoreSocialLinksAttributes&quot; block or block attributes */
+  /** The &quot;backgroundColor&quot; field on the &quot;CoreSocialLinks&quot; block */
   backgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CoreSocialLinksAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreSocialLinks&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;customIconBackgroundColor&quot; field on the &quot;CoreSocialLinksAttributes&quot; block or block attributes */
+  /** The &quot;customIconBackgroundColor&quot; field on the &quot;CoreSocialLinks&quot; block */
   customIconBackgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;customIconColor&quot; field on the &quot;CoreSocialLinksAttributes&quot; block or block attributes */
+  /** The &quot;customIconColor&quot; field on the &quot;CoreSocialLinks&quot; block */
   customIconColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;gradient&quot; field on the &quot;CoreSocialLinksAttributes&quot; block or block attributes */
+  /** The &quot;gradient&quot; field on the &quot;CoreSocialLinks&quot; block */
   gradient?: Maybe<Scalars['String']['output']>;
-  /** The &quot;iconBackgroundColor&quot; field on the &quot;CoreSocialLinksAttributes&quot; block or block attributes */
+  /** The &quot;iconBackgroundColor&quot; field on the &quot;CoreSocialLinks&quot; block */
   iconBackgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;iconBackgroundColorValue&quot; field on the &quot;CoreSocialLinksAttributes&quot; block or block attributes */
+  /** The &quot;iconBackgroundColorValue&quot; field on the &quot;CoreSocialLinks&quot; block */
   iconBackgroundColorValue?: Maybe<Scalars['String']['output']>;
-  /** The &quot;iconColor&quot; field on the &quot;CoreSocialLinksAttributes&quot; block or block attributes */
+  /** The &quot;iconColor&quot; field on the &quot;CoreSocialLinks&quot; block */
   iconColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;iconColorValue&quot; field on the &quot;CoreSocialLinksAttributes&quot; block or block attributes */
+  /** The &quot;iconColorValue&quot; field on the &quot;CoreSocialLinks&quot; block */
   iconColorValue?: Maybe<Scalars['String']['output']>;
-  /** The &quot;layout&quot; field on the &quot;CoreSocialLinksAttributes&quot; block or block attributes */
+  /** The &quot;layout&quot; field on the &quot;CoreSocialLinks&quot; block */
   layout?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CoreSocialLinksAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CoreSocialLinks&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreSocialLinksAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreSocialLinks&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;openInNewTab&quot; field on the &quot;CoreSocialLinksAttributes&quot; block or block attributes */
-  openInNewTab: Scalars['Boolean']['output'];
-  /** The &quot;showLabels&quot; field on the &quot;CoreSocialLinksAttributes&quot; block or block attributes */
-  showLabels: Scalars['Boolean']['output'];
-  /** The &quot;size&quot; field on the &quot;CoreSocialLinksAttributes&quot; block or block attributes */
+  /** The &quot;openInNewTab&quot; field on the &quot;CoreSocialLinks&quot; block */
+  openInNewTab?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;showLabels&quot; field on the &quot;CoreSocialLinks&quot; block */
+  showLabels?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;size&quot; field on the &quot;CoreSocialLinks&quot; block */
   size?: Maybe<Scalars['String']['output']>;
-  /** The &quot;style&quot; field on the &quot;CoreSocialLinksAttributes&quot; block or block attributes */
+  /** The &quot;style&quot; field on the &quot;CoreSocialLinks&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreSpacer = BlockWithSupportsAnchor & EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreSpacer = BlockWithSupportsAnchor & DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreSpacer';
   /** The anchor field for the block. */
   anchor?: Maybe<Scalars['String']['output']>;
@@ -6371,22 +6306,22 @@ export type CoreSpacerAttributes = BlockWithSupportsAnchor & {
   __typename?: 'CoreSpacerAttributes';
   /** The anchor field for the block. */
   anchor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CoreSpacerAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreSpacer&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;height&quot; field on the &quot;CoreSpacerAttributes&quot; block or block attributes */
-  height: Scalars['String']['output'];
-  /** The &quot;lock&quot; field on the &quot;CoreSpacerAttributes&quot; block or block attributes */
+  /** The &quot;height&quot; field on the &quot;CoreSpacer&quot; block */
+  height?: Maybe<Scalars['String']['output']>;
+  /** The &quot;lock&quot; field on the &quot;CoreSpacer&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreSpacerAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreSpacer&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;style&quot; field on the &quot;CoreSpacerAttributes&quot; block or block attributes */
+  /** The &quot;style&quot; field on the &quot;CoreSpacer&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;width&quot; field on the &quot;CoreSpacerAttributes&quot; block or block attributes */
+  /** The &quot;width&quot; field on the &quot;CoreSpacer&quot; block */
   width?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreTable = BlockWithSupportsAnchor & EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreTable = BlockWithSupportsAnchor & DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreTable';
   /** The anchor field for the block. */
   anchor?: Maybe<Scalars['String']['output']>;
@@ -6415,116 +6350,42 @@ export type CoreTable = BlockWithSupportsAnchor & EditorBlock & PageEditorBlock 
 /** Attributes of the CoreTable Block Type */
 export type CoreTableAttributes = BlockWithSupportsAnchor & {
   __typename?: 'CoreTableAttributes';
-  /** The &quot;align&quot; field on the &quot;CoreTableAttributes&quot; block or block attributes */
+  /** The &quot;align&quot; field on the &quot;CoreTable&quot; block */
   align?: Maybe<Scalars['String']['output']>;
   /** The anchor field for the block. */
   anchor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;backgroundColor&quot; field on the &quot;CoreTableAttributes&quot; block or block attributes */
+  /** The &quot;backgroundColor&quot; field on the &quot;CoreTable&quot; block */
   backgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;body&quot; field on the &quot;CoreTableAttributes&quot; block or block attributes */
-  body: Array<Maybe<CoreTableAttributesBody>>;
-  /** The &quot;borderColor&quot; field on the &quot;CoreTableAttributes&quot; block or block attributes */
+  /** The &quot;body&quot; field on the &quot;CoreTable&quot; block */
+  body?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;borderColor&quot; field on the &quot;CoreTable&quot; block */
   borderColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;caption&quot; field on the &quot;CoreTableAttributes&quot; block or block attributes */
-  caption?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CoreTableAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreTable&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontFamily&quot; field on the &quot;CoreTableAttributes&quot; block or block attributes */
+  /** The &quot;fontFamily&quot; field on the &quot;CoreTable&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CoreTableAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CoreTable&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;foot&quot; field on the &quot;CoreTableAttributes&quot; block or block attributes */
-  foot: Array<Maybe<CoreTableAttributesFoot>>;
-  /** The &quot;gradient&quot; field on the &quot;CoreTableAttributes&quot; block or block attributes */
+  /** The &quot;foot&quot; field on the &quot;CoreTable&quot; block */
+  foot?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;gradient&quot; field on the &quot;CoreTable&quot; block */
   gradient?: Maybe<Scalars['String']['output']>;
-  /** The &quot;hasFixedLayout&quot; field on the &quot;CoreTableAttributes&quot; block or block attributes */
-  hasFixedLayout: Scalars['Boolean']['output'];
-  /** The &quot;head&quot; field on the &quot;CoreTableAttributes&quot; block or block attributes */
-  head: Array<Maybe<CoreTableAttributesHead>>;
-  /** The &quot;lock&quot; field on the &quot;CoreTableAttributes&quot; block or block attributes */
+  /** The &quot;hasFixedLayout&quot; field on the &quot;CoreTable&quot; block */
+  hasFixedLayout?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;head&quot; field on the &quot;CoreTable&quot; block */
+  head?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;lock&quot; field on the &quot;CoreTable&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreTableAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreTable&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;style&quot; field on the &quot;CoreTableAttributes&quot; block or block attributes */
+  /** The &quot;style&quot; field on the &quot;CoreTable&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;textColor&quot; field on the &quot;CoreTableAttributes&quot; block or block attributes */
+  /** The &quot;textColor&quot; field on the &quot;CoreTable&quot; block */
   textColor?: Maybe<Scalars['String']['output']>;
 };
 
-/** The &quot;CoreTableAttributesBody&quot; field on the &quot;CoreTableAttributes&quot; block attribute field */
-export type CoreTableAttributesBody = {
-  __typename?: 'CoreTableAttributesBody';
-  /** The &quot;cells&quot; field on the &quot;CoreTableAttributesBody&quot; block attribute field */
-  cells: Array<Maybe<CoreTableAttributesBodyCells>>;
-};
-
-/** The &quot;CoreTableAttributesBodyCells&quot; field on the &quot;CoreTableAttributesBody&quot; block attribute field */
-export type CoreTableAttributesBodyCells = {
-  __typename?: 'CoreTableAttributesBodyCells';
-  /** The &quot;align&quot; field on the &quot;CoreTableAttributesBodyCells&quot; block attribute field */
-  align?: Maybe<Scalars['String']['output']>;
-  /** The &quot;colspan&quot; field on the &quot;CoreTableAttributesBodyCells&quot; block attribute field */
-  colspan?: Maybe<Scalars['String']['output']>;
-  /** The &quot;content&quot; field on the &quot;CoreTableAttributesBodyCells&quot; block attribute field */
-  content?: Maybe<Scalars['String']['output']>;
-  /** The &quot;rowspan&quot; field on the &quot;CoreTableAttributesBodyCells&quot; block attribute field */
-  rowspan?: Maybe<Scalars['String']['output']>;
-  /** The &quot;scope&quot; field on the &quot;CoreTableAttributesBodyCells&quot; block attribute field */
-  scope?: Maybe<Scalars['String']['output']>;
-  /** The &quot;tag&quot; field on the &quot;CoreTableAttributesBodyCells&quot; block attribute field */
-  tag: Scalars['String']['output'];
-};
-
-/** The &quot;CoreTableAttributesFoot&quot; field on the &quot;CoreTableAttributes&quot; block attribute field */
-export type CoreTableAttributesFoot = {
-  __typename?: 'CoreTableAttributesFoot';
-  /** The &quot;cells&quot; field on the &quot;CoreTableAttributesFoot&quot; block attribute field */
-  cells: Array<Maybe<CoreTableAttributesFootCells>>;
-};
-
-/** The &quot;CoreTableAttributesFootCells&quot; field on the &quot;CoreTableAttributesFoot&quot; block attribute field */
-export type CoreTableAttributesFootCells = {
-  __typename?: 'CoreTableAttributesFootCells';
-  /** The &quot;align&quot; field on the &quot;CoreTableAttributesFootCells&quot; block attribute field */
-  align?: Maybe<Scalars['String']['output']>;
-  /** The &quot;colspan&quot; field on the &quot;CoreTableAttributesFootCells&quot; block attribute field */
-  colspan?: Maybe<Scalars['String']['output']>;
-  /** The &quot;content&quot; field on the &quot;CoreTableAttributesFootCells&quot; block attribute field */
-  content?: Maybe<Scalars['String']['output']>;
-  /** The &quot;rowspan&quot; field on the &quot;CoreTableAttributesFootCells&quot; block attribute field */
-  rowspan?: Maybe<Scalars['String']['output']>;
-  /** The &quot;scope&quot; field on the &quot;CoreTableAttributesFootCells&quot; block attribute field */
-  scope?: Maybe<Scalars['String']['output']>;
-  /** The &quot;tag&quot; field on the &quot;CoreTableAttributesFootCells&quot; block attribute field */
-  tag: Scalars['String']['output'];
-};
-
-/** The &quot;CoreTableAttributesHead&quot; field on the &quot;CoreTableAttributes&quot; block attribute field */
-export type CoreTableAttributesHead = {
-  __typename?: 'CoreTableAttributesHead';
-  /** The &quot;cells&quot; field on the &quot;CoreTableAttributesHead&quot; block attribute field */
-  cells: Array<Maybe<CoreTableAttributesHeadCells>>;
-};
-
-/** The &quot;CoreTableAttributesHeadCells&quot; field on the &quot;CoreTableAttributesHead&quot; block attribute field */
-export type CoreTableAttributesHeadCells = {
-  __typename?: 'CoreTableAttributesHeadCells';
-  /** The &quot;align&quot; field on the &quot;CoreTableAttributesHeadCells&quot; block attribute field */
-  align?: Maybe<Scalars['String']['output']>;
-  /** The &quot;colspan&quot; field on the &quot;CoreTableAttributesHeadCells&quot; block attribute field */
-  colspan?: Maybe<Scalars['String']['output']>;
-  /** The &quot;content&quot; field on the &quot;CoreTableAttributesHeadCells&quot; block attribute field */
-  content?: Maybe<Scalars['String']['output']>;
-  /** The &quot;rowspan&quot; field on the &quot;CoreTableAttributesHeadCells&quot; block attribute field */
-  rowspan?: Maybe<Scalars['String']['output']>;
-  /** The &quot;scope&quot; field on the &quot;CoreTableAttributesHeadCells&quot; block attribute field */
-  scope?: Maybe<Scalars['String']['output']>;
-  /** The &quot;tag&quot; field on the &quot;CoreTableAttributesHeadCells&quot; block attribute field */
-  tag: Scalars['String']['output'];
-};
-
 /** A block used for editing the site */
-export type CoreTagCloud = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreTagCloud = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreTagCloud';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -6551,32 +6412,32 @@ export type CoreTagCloud = EditorBlock & PageEditorBlock & PostEditorBlock & {
 /** Attributes of the CoreTagCloud Block Type */
 export type CoreTagCloudAttributes = {
   __typename?: 'CoreTagCloudAttributes';
-  /** The &quot;align&quot; field on the &quot;CoreTagCloudAttributes&quot; block or block attributes */
+  /** The &quot;align&quot; field on the &quot;CoreTagCloud&quot; block */
   align?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CoreTagCloudAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreTagCloud&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontFamily&quot; field on the &quot;CoreTagCloudAttributes&quot; block or block attributes */
+  /** The &quot;fontFamily&quot; field on the &quot;CoreTagCloud&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;largestFontSize&quot; field on the &quot;CoreTagCloudAttributes&quot; block or block attributes */
-  largestFontSize: Scalars['String']['output'];
-  /** The &quot;lock&quot; field on the &quot;CoreTagCloudAttributes&quot; block or block attributes */
+  /** The &quot;largestFontSize&quot; field on the &quot;CoreTagCloud&quot; block */
+  largestFontSize?: Maybe<Scalars['String']['output']>;
+  /** The &quot;lock&quot; field on the &quot;CoreTagCloud&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreTagCloudAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreTagCloud&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;numberOfTags&quot; field on the &quot;CoreTagCloudAttributes&quot; block or block attributes */
-  numberOfTags: Scalars['Float']['output'];
-  /** The &quot;showTagCounts&quot; field on the &quot;CoreTagCloudAttributes&quot; block or block attributes */
-  showTagCounts: Scalars['Boolean']['output'];
-  /** The &quot;smallestFontSize&quot; field on the &quot;CoreTagCloudAttributes&quot; block or block attributes */
-  smallestFontSize: Scalars['String']['output'];
-  /** The &quot;style&quot; field on the &quot;CoreTagCloudAttributes&quot; block or block attributes */
+  /** The &quot;numberOfTags&quot; field on the &quot;CoreTagCloud&quot; block */
+  numberOfTags?: Maybe<Scalars['Float']['output']>;
+  /** The &quot;showTagCounts&quot; field on the &quot;CoreTagCloud&quot; block */
+  showTagCounts?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;smallestFontSize&quot; field on the &quot;CoreTagCloud&quot; block */
+  smallestFontSize?: Maybe<Scalars['String']['output']>;
+  /** The &quot;style&quot; field on the &quot;CoreTagCloud&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;taxonomy&quot; field on the &quot;CoreTagCloudAttributes&quot; block or block attributes */
-  taxonomy: Scalars['String']['output'];
+  /** The &quot;taxonomy&quot; field on the &quot;CoreTagCloud&quot; block */
+  taxonomy?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreTemplatePart = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreTemplatePart = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreTemplatePart';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -6603,26 +6464,26 @@ export type CoreTemplatePart = EditorBlock & PageEditorBlock & PostEditorBlock &
 /** Attributes of the CoreTemplatePart Block Type */
 export type CoreTemplatePartAttributes = {
   __typename?: 'CoreTemplatePartAttributes';
-  /** The &quot;align&quot; field on the &quot;CoreTemplatePartAttributes&quot; block or block attributes */
+  /** The &quot;align&quot; field on the &quot;CoreTemplatePart&quot; block */
   align?: Maybe<Scalars['String']['output']>;
-  /** The &quot;area&quot; field on the &quot;CoreTemplatePartAttributes&quot; block or block attributes */
+  /** The &quot;area&quot; field on the &quot;CoreTemplatePart&quot; block */
   area?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CoreTemplatePartAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreTemplatePart&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CoreTemplatePartAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CoreTemplatePart&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreTemplatePartAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreTemplatePart&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;slug&quot; field on the &quot;CoreTemplatePartAttributes&quot; block or block attributes */
+  /** The &quot;slug&quot; field on the &quot;CoreTemplatePart&quot; block */
   slug?: Maybe<Scalars['String']['output']>;
-  /** The &quot;tagName&quot; field on the &quot;CoreTemplatePartAttributes&quot; block or block attributes */
+  /** The &quot;tagName&quot; field on the &quot;CoreTemplatePart&quot; block */
   tagName?: Maybe<Scalars['String']['output']>;
-  /** The &quot;theme&quot; field on the &quot;CoreTemplatePartAttributes&quot; block or block attributes */
+  /** The &quot;theme&quot; field on the &quot;CoreTemplatePart&quot; block */
   theme?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreTermDescription = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreTermDescription = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreTermDescription';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -6649,30 +6510,30 @@ export type CoreTermDescription = EditorBlock & PageEditorBlock & PostEditorBloc
 /** Attributes of the CoreTermDescription Block Type */
 export type CoreTermDescriptionAttributes = {
   __typename?: 'CoreTermDescriptionAttributes';
-  /** The &quot;align&quot; field on the &quot;CoreTermDescriptionAttributes&quot; block or block attributes */
+  /** The &quot;align&quot; field on the &quot;CoreTermDescription&quot; block */
   align?: Maybe<Scalars['String']['output']>;
-  /** The &quot;backgroundColor&quot; field on the &quot;CoreTermDescriptionAttributes&quot; block or block attributes */
+  /** The &quot;backgroundColor&quot; field on the &quot;CoreTermDescription&quot; block */
   backgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CoreTermDescriptionAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreTermDescription&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontFamily&quot; field on the &quot;CoreTermDescriptionAttributes&quot; block or block attributes */
+  /** The &quot;fontFamily&quot; field on the &quot;CoreTermDescription&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CoreTermDescriptionAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CoreTermDescription&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CoreTermDescriptionAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CoreTermDescription&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreTermDescriptionAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreTermDescription&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;style&quot; field on the &quot;CoreTermDescriptionAttributes&quot; block or block attributes */
+  /** The &quot;style&quot; field on the &quot;CoreTermDescription&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;textAlign&quot; field on the &quot;CoreTermDescriptionAttributes&quot; block or block attributes */
+  /** The &quot;textAlign&quot; field on the &quot;CoreTermDescription&quot; block */
   textAlign?: Maybe<Scalars['String']['output']>;
-  /** The &quot;textColor&quot; field on the &quot;CoreTermDescriptionAttributes&quot; block or block attributes */
+  /** The &quot;textColor&quot; field on the &quot;CoreTermDescription&quot; block */
   textColor?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreTextColumns = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreTextColumns = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreTextColumns';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -6699,29 +6560,22 @@ export type CoreTextColumns = EditorBlock & PageEditorBlock & PostEditorBlock & 
 /** Attributes of the CoreTextColumns Block Type */
 export type CoreTextColumnsAttributes = {
   __typename?: 'CoreTextColumnsAttributes';
-  /** The &quot;className&quot; field on the &quot;CoreTextColumnsAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreTextColumns&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;columns&quot; field on the &quot;CoreTextColumnsAttributes&quot; block or block attributes */
-  columns: Scalars['Float']['output'];
-  /** The &quot;content&quot; field on the &quot;CoreTextColumnsAttributes&quot; block or block attributes */
-  content: Array<Maybe<CoreTextColumnsAttributesContent>>;
-  /** The &quot;lock&quot; field on the &quot;CoreTextColumnsAttributes&quot; block or block attributes */
+  /** The &quot;columns&quot; field on the &quot;CoreTextColumns&quot; block */
+  columns?: Maybe<Scalars['Float']['output']>;
+  /** The &quot;content&quot; field on the &quot;CoreTextColumns&quot; block */
+  content?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;lock&quot; field on the &quot;CoreTextColumns&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreTextColumnsAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreTextColumns&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;width&quot; field on the &quot;CoreTextColumnsAttributes&quot; block or block attributes */
+  /** The &quot;width&quot; field on the &quot;CoreTextColumns&quot; block */
   width?: Maybe<Scalars['String']['output']>;
 };
 
-/** The &quot;CoreTextColumnsAttributesContent&quot; field on the &quot;CoreTextColumnsAttributes&quot; block attribute field */
-export type CoreTextColumnsAttributesContent = {
-  __typename?: 'CoreTextColumnsAttributesContent';
-  /** The &quot;children&quot; field on the &quot;CoreTextColumnsAttributesContent&quot; block attribute field */
-  children?: Maybe<Scalars['String']['output']>;
-};
-
 /** A block used for editing the site */
-export type CoreVerse = BlockWithSupportsAnchor & EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreVerse = BlockWithSupportsAnchor & DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreVerse';
   /** The anchor field for the block. */
   anchor?: Maybe<Scalars['String']['output']>;
@@ -6752,34 +6606,32 @@ export type CoreVerseAttributes = BlockWithSupportsAnchor & {
   __typename?: 'CoreVerseAttributes';
   /** The anchor field for the block. */
   anchor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;backgroundColor&quot; field on the &quot;CoreVerseAttributes&quot; block or block attributes */
+  /** The &quot;backgroundColor&quot; field on the &quot;CoreVerse&quot; block */
   backgroundColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;borderColor&quot; field on the &quot;CoreVerseAttributes&quot; block or block attributes */
+  /** The &quot;borderColor&quot; field on the &quot;CoreVerse&quot; block */
   borderColor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CoreVerseAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreVerse&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;content&quot; field on the &quot;CoreVerseAttributes&quot; block or block attributes */
-  content?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontFamily&quot; field on the &quot;CoreVerseAttributes&quot; block or block attributes */
+  /** The &quot;fontFamily&quot; field on the &quot;CoreVerse&quot; block */
   fontFamily?: Maybe<Scalars['String']['output']>;
-  /** The &quot;fontSize&quot; field on the &quot;CoreVerseAttributes&quot; block or block attributes */
+  /** The &quot;fontSize&quot; field on the &quot;CoreVerse&quot; block */
   fontSize?: Maybe<Scalars['String']['output']>;
-  /** The &quot;gradient&quot; field on the &quot;CoreVerseAttributes&quot; block or block attributes */
+  /** The &quot;gradient&quot; field on the &quot;CoreVerse&quot; block */
   gradient?: Maybe<Scalars['String']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CoreVerseAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CoreVerse&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreVerseAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreVerse&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;style&quot; field on the &quot;CoreVerseAttributes&quot; block or block attributes */
+  /** The &quot;style&quot; field on the &quot;CoreVerse&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;textAlign&quot; field on the &quot;CoreVerseAttributes&quot; block or block attributes */
+  /** The &quot;textAlign&quot; field on the &quot;CoreVerse&quot; block */
   textAlign?: Maybe<Scalars['String']['output']>;
-  /** The &quot;textColor&quot; field on the &quot;CoreVerseAttributes&quot; block or block attributes */
+  /** The &quot;textColor&quot; field on the &quot;CoreVerse&quot; block */
   textColor?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreVideo = BlockWithSupportsAnchor & EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreVideo = BlockWithSupportsAnchor & DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreVideo';
   /** The anchor field for the block. */
   anchor?: Maybe<Scalars['String']['output']>;
@@ -6808,44 +6660,42 @@ export type CoreVideo = BlockWithSupportsAnchor & EditorBlock & PageEditorBlock 
 /** Attributes of the CoreVideo Block Type */
 export type CoreVideoAttributes = BlockWithSupportsAnchor & {
   __typename?: 'CoreVideoAttributes';
-  /** The &quot;align&quot; field on the &quot;CoreVideoAttributes&quot; block or block attributes */
+  /** The &quot;align&quot; field on the &quot;CoreVideo&quot; block */
   align?: Maybe<Scalars['String']['output']>;
   /** The anchor field for the block. */
   anchor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;autoplay&quot; field on the &quot;CoreVideoAttributes&quot; block or block attributes */
+  /** The &quot;autoplay&quot; field on the &quot;CoreVideo&quot; block */
   autoplay?: Maybe<Scalars['Boolean']['output']>;
-  /** The &quot;caption&quot; field on the &quot;CoreVideoAttributes&quot; block or block attributes */
-  caption?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;CoreVideoAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreVideo&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;controls&quot; field on the &quot;CoreVideoAttributes&quot; block or block attributes */
-  controls: Scalars['Boolean']['output'];
-  /** The &quot;id&quot; field on the &quot;CoreVideoAttributes&quot; block or block attributes */
+  /** The &quot;controls&quot; field on the &quot;CoreVideo&quot; block */
+  controls?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;id&quot; field on the &quot;CoreVideo&quot; block */
   id?: Maybe<Scalars['Float']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CoreVideoAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CoreVideo&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;loop&quot; field on the &quot;CoreVideoAttributes&quot; block or block attributes */
+  /** The &quot;loop&quot; field on the &quot;CoreVideo&quot; block */
   loop?: Maybe<Scalars['Boolean']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreVideoAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreVideo&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;muted&quot; field on the &quot;CoreVideoAttributes&quot; block or block attributes */
+  /** The &quot;muted&quot; field on the &quot;CoreVideo&quot; block */
   muted?: Maybe<Scalars['Boolean']['output']>;
-  /** The &quot;playsInline&quot; field on the &quot;CoreVideoAttributes&quot; block or block attributes */
+  /** The &quot;playsInline&quot; field on the &quot;CoreVideo&quot; block */
   playsInline?: Maybe<Scalars['Boolean']['output']>;
-  /** The &quot;poster&quot; field on the &quot;CoreVideoAttributes&quot; block or block attributes */
+  /** The &quot;poster&quot; field on the &quot;CoreVideo&quot; block */
   poster?: Maybe<Scalars['String']['output']>;
-  /** The &quot;preload&quot; field on the &quot;CoreVideoAttributes&quot; block or block attributes */
-  preload: Scalars['String']['output'];
-  /** The &quot;src&quot; field on the &quot;CoreVideoAttributes&quot; block or block attributes */
+  /** The &quot;preload&quot; field on the &quot;CoreVideo&quot; block */
+  preload?: Maybe<Scalars['String']['output']>;
+  /** The &quot;src&quot; field on the &quot;CoreVideo&quot; block */
   src?: Maybe<Scalars['String']['output']>;
-  /** The &quot;style&quot; field on the &quot;CoreVideoAttributes&quot; block or block attributes */
+  /** The &quot;style&quot; field on the &quot;CoreVideo&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;tracks&quot; field on the &quot;CoreVideoAttributes&quot; block or block attributes */
-  tracks: Array<Maybe<Scalars['BlockAttributesObject']['output']>>;
+  /** The &quot;tracks&quot; field on the &quot;CoreVideo&quot; block */
+  tracks?: Maybe<Scalars['BlockAttributesObject']['output']>;
 };
 
 /** A block used for editing the site */
-export type CoreWidgetGroup = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type CoreWidgetGroup = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'CoreWidgetGroup';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -6872,13 +6722,13 @@ export type CoreWidgetGroup = EditorBlock & PageEditorBlock & PostEditorBlock & 
 /** Attributes of the CoreWidgetGroup Block Type */
 export type CoreWidgetGroupAttributes = {
   __typename?: 'CoreWidgetGroupAttributes';
-  /** The &quot;className&quot; field on the &quot;CoreWidgetGroupAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;CoreWidgetGroup&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;lock&quot; field on the &quot;CoreWidgetGroupAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;CoreWidgetGroup&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;CoreWidgetGroupAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;CoreWidgetGroup&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;title&quot; field on the &quot;CoreWidgetGroupAttributes&quot; block or block attributes */
+  /** The &quot;title&quot; field on the &quot;CoreWidgetGroup&quot; block */
   title?: Maybe<Scalars['String']['output']>;
 };
 
@@ -6944,6 +6794,96 @@ export type CreateCommentPayload = {
   success?: Maybe<Scalars['Boolean']['output']>;
 };
 
+/** Input for the createDelhi_university mutation. */
+export type CreateDelhi_UniversityInput = {
+  /** The userId to assign as the author of the object */
+  authorId?: InputMaybe<Scalars['ID']['input']>;
+  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: InputMaybe<Scalars['String']['input']>;
+  /** The comment status for the object */
+  commentStatus?: InputMaybe<Scalars['String']['input']>;
+  /** The content of the object */
+  content?: InputMaybe<Scalars['String']['input']>;
+  /** The date of the object. Preferable to enter as year/month/day (e.g. 01/31/2017) as it will rearrange date as fit if it is not specified. Incomplete dates may have unintended results for example, "2017" as the input will use current date with timestamp 20:17  */
+  date?: InputMaybe<Scalars['String']['input']>;
+  /** The excerpt of the object */
+  excerpt?: InputMaybe<Scalars['String']['input']>;
+  /** A field used for ordering posts. This is typically used with nav menu items or for special ordering of hierarchical content types. */
+  menuOrder?: InputMaybe<Scalars['Int']['input']>;
+  /** The ID of the parent object */
+  parentId?: InputMaybe<Scalars['ID']['input']>;
+  /** The password used to protect the content of the object */
+  password?: InputMaybe<Scalars['String']['input']>;
+  /** The ping status for the object */
+  pingStatus?: InputMaybe<Scalars['String']['input']>;
+  /** URLs that have been pinged. */
+  pinged?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Set connections between the delhi_university and postFormats */
+  postFormats?: InputMaybe<Delhi_UniversityPostFormatsInput>;
+  /** The slug of the object */
+  slug?: InputMaybe<Scalars['String']['input']>;
+  /** The status of the object */
+  status?: InputMaybe<PostStatusEnum>;
+  /** The title of the object */
+  title?: InputMaybe<Scalars['String']['input']>;
+  /** URLs queued to be pinged. */
+  toPing?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+/** The payload for the createDelhi_university mutation. */
+export type CreateDelhi_UniversityPayload = {
+  __typename?: 'CreateDelhi_universityPayload';
+  /** If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: Maybe<Scalars['String']['output']>;
+  /** The Post object mutation type. */
+  delhi_university?: Maybe<Delhi_University>;
+};
+
+/** Input for the createGgsipu mutation. */
+export type CreateGgsipuInput = {
+  /** The userId to assign as the author of the object */
+  authorId?: InputMaybe<Scalars['ID']['input']>;
+  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: InputMaybe<Scalars['String']['input']>;
+  /** The comment status for the object */
+  commentStatus?: InputMaybe<Scalars['String']['input']>;
+  /** The content of the object */
+  content?: InputMaybe<Scalars['String']['input']>;
+  /** The date of the object. Preferable to enter as year/month/day (e.g. 01/31/2017) as it will rearrange date as fit if it is not specified. Incomplete dates may have unintended results for example, "2017" as the input will use current date with timestamp 20:17  */
+  date?: InputMaybe<Scalars['String']['input']>;
+  /** The excerpt of the object */
+  excerpt?: InputMaybe<Scalars['String']['input']>;
+  /** A field used for ordering posts. This is typically used with nav menu items or for special ordering of hierarchical content types. */
+  menuOrder?: InputMaybe<Scalars['Int']['input']>;
+  /** The ID of the parent object */
+  parentId?: InputMaybe<Scalars['ID']['input']>;
+  /** The password used to protect the content of the object */
+  password?: InputMaybe<Scalars['String']['input']>;
+  /** The ping status for the object */
+  pingStatus?: InputMaybe<Scalars['String']['input']>;
+  /** URLs that have been pinged. */
+  pinged?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Set connections between the ggsipu and postFormats */
+  postFormats?: InputMaybe<GgsipuPostFormatsInput>;
+  /** The slug of the object */
+  slug?: InputMaybe<Scalars['String']['input']>;
+  /** The status of the object */
+  status?: InputMaybe<PostStatusEnum>;
+  /** The title of the object */
+  title?: InputMaybe<Scalars['String']['input']>;
+  /** URLs queued to be pinged. */
+  toPing?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+/** The payload for the createGgsipu mutation. */
+export type CreateGgsipuPayload = {
+  __typename?: 'CreateGgsipuPayload';
+  /** If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: Maybe<Scalars['String']['output']>;
+  /** The Post object mutation type. */
+  ggsipu?: Maybe<Ggsipu>;
+};
+
 /** Input for the createGraphqlDocumentGroup mutation. */
 export type CreateGraphqlDocumentGroupInput = {
   /** The slug that the graphql_document_group will be an alias of */
@@ -7006,6 +6946,137 @@ export type CreateGraphqlDocumentPayload = {
   graphqlDocument?: Maybe<GraphqlDocument>;
 };
 
+/** Input for the createKuk mutation. */
+export type CreateKukInput = {
+  /** The userId to assign as the author of the object */
+  authorId?: InputMaybe<Scalars['ID']['input']>;
+  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: InputMaybe<Scalars['String']['input']>;
+  /** The comment status for the object */
+  commentStatus?: InputMaybe<Scalars['String']['input']>;
+  /** The content of the object */
+  content?: InputMaybe<Scalars['String']['input']>;
+  /** The date of the object. Preferable to enter as year/month/day (e.g. 01/31/2017) as it will rearrange date as fit if it is not specified. Incomplete dates may have unintended results for example, "2017" as the input will use current date with timestamp 20:17  */
+  date?: InputMaybe<Scalars['String']['input']>;
+  /** The excerpt of the object */
+  excerpt?: InputMaybe<Scalars['String']['input']>;
+  /** A field used for ordering posts. This is typically used with nav menu items or for special ordering of hierarchical content types. */
+  menuOrder?: InputMaybe<Scalars['Int']['input']>;
+  /** The password used to protect the content of the object */
+  password?: InputMaybe<Scalars['String']['input']>;
+  /** The ping status for the object */
+  pingStatus?: InputMaybe<Scalars['String']['input']>;
+  /** URLs that have been pinged. */
+  pinged?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Set connections between the kuk and postFormats */
+  postFormats?: InputMaybe<KukPostFormatsInput>;
+  /** The slug of the object */
+  slug?: InputMaybe<Scalars['String']['input']>;
+  /** The status of the object */
+  status?: InputMaybe<PostStatusEnum>;
+  /** The title of the object */
+  title?: InputMaybe<Scalars['String']['input']>;
+  /** URLs queued to be pinged. */
+  toPing?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+/** The payload for the createKuk mutation. */
+export type CreateKukPayload = {
+  __typename?: 'CreateKukPayload';
+  /** If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: Maybe<Scalars['String']['output']>;
+  /** The Post object mutation type. */
+  kuk?: Maybe<Kuk>;
+};
+
+/** Input for the createLpu mutation. */
+export type CreateLpuInput = {
+  /** The userId to assign as the author of the object */
+  authorId?: InputMaybe<Scalars['ID']['input']>;
+  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: InputMaybe<Scalars['String']['input']>;
+  /** The comment status for the object */
+  commentStatus?: InputMaybe<Scalars['String']['input']>;
+  /** The content of the object */
+  content?: InputMaybe<Scalars['String']['input']>;
+  /** The date of the object. Preferable to enter as year/month/day (e.g. 01/31/2017) as it will rearrange date as fit if it is not specified. Incomplete dates may have unintended results for example, "2017" as the input will use current date with timestamp 20:17  */
+  date?: InputMaybe<Scalars['String']['input']>;
+  /** The excerpt of the object */
+  excerpt?: InputMaybe<Scalars['String']['input']>;
+  /** A field used for ordering posts. This is typically used with nav menu items or for special ordering of hierarchical content types. */
+  menuOrder?: InputMaybe<Scalars['Int']['input']>;
+  /** The ID of the parent object */
+  parentId?: InputMaybe<Scalars['ID']['input']>;
+  /** The password used to protect the content of the object */
+  password?: InputMaybe<Scalars['String']['input']>;
+  /** The ping status for the object */
+  pingStatus?: InputMaybe<Scalars['String']['input']>;
+  /** URLs that have been pinged. */
+  pinged?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Set connections between the lpu and postFormats */
+  postFormats?: InputMaybe<LpuPostFormatsInput>;
+  /** The slug of the object */
+  slug?: InputMaybe<Scalars['String']['input']>;
+  /** The status of the object */
+  status?: InputMaybe<PostStatusEnum>;
+  /** The title of the object */
+  title?: InputMaybe<Scalars['String']['input']>;
+  /** URLs queued to be pinged. */
+  toPing?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+/** The payload for the createLpu mutation. */
+export type CreateLpuPayload = {
+  __typename?: 'CreateLpuPayload';
+  /** If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: Maybe<Scalars['String']['output']>;
+  /** The Post object mutation type. */
+  lpu?: Maybe<Lpu>;
+};
+
+/** Input for the createMakaut mutation. */
+export type CreateMakautInput = {
+  /** The userId to assign as the author of the object */
+  authorId?: InputMaybe<Scalars['ID']['input']>;
+  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: InputMaybe<Scalars['String']['input']>;
+  /** The comment status for the object */
+  commentStatus?: InputMaybe<Scalars['String']['input']>;
+  /** The content of the object */
+  content?: InputMaybe<Scalars['String']['input']>;
+  /** The date of the object. Preferable to enter as year/month/day (e.g. 01/31/2017) as it will rearrange date as fit if it is not specified. Incomplete dates may have unintended results for example, "2017" as the input will use current date with timestamp 20:17  */
+  date?: InputMaybe<Scalars['String']['input']>;
+  /** The excerpt of the object */
+  excerpt?: InputMaybe<Scalars['String']['input']>;
+  /** A field used for ordering posts. This is typically used with nav menu items or for special ordering of hierarchical content types. */
+  menuOrder?: InputMaybe<Scalars['Int']['input']>;
+  /** The password used to protect the content of the object */
+  password?: InputMaybe<Scalars['String']['input']>;
+  /** The ping status for the object */
+  pingStatus?: InputMaybe<Scalars['String']['input']>;
+  /** URLs that have been pinged. */
+  pinged?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Set connections between the makaut and postFormats */
+  postFormats?: InputMaybe<MakautPostFormatsInput>;
+  /** The slug of the object */
+  slug?: InputMaybe<Scalars['String']['input']>;
+  /** The status of the object */
+  status?: InputMaybe<PostStatusEnum>;
+  /** The title of the object */
+  title?: InputMaybe<Scalars['String']['input']>;
+  /** URLs queued to be pinged. */
+  toPing?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+/** The payload for the createMakaut mutation. */
+export type CreateMakautPayload = {
+  __typename?: 'CreateMakautPayload';
+  /** If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: Maybe<Scalars['String']['output']>;
+  /** The Post object mutation type. */
+  makaut?: Maybe<Makaut>;
+};
+
 /** Input for the createMediaItem mutation. */
 export type CreateMediaItemInput = {
   /** Alternative text to display when mediaItem is not displayed */
@@ -7047,6 +7118,49 @@ export type CreateMediaItemPayload = {
   clientMutationId?: Maybe<Scalars['String']['output']>;
   /** The MediaItem object mutation type. */
   mediaItem?: Maybe<MediaItem>;
+};
+
+/** Input for the createMumbai_university mutation. */
+export type CreateMumbai_UniversityInput = {
+  /** The userId to assign as the author of the object */
+  authorId?: InputMaybe<Scalars['ID']['input']>;
+  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: InputMaybe<Scalars['String']['input']>;
+  /** The comment status for the object */
+  commentStatus?: InputMaybe<Scalars['String']['input']>;
+  /** The content of the object */
+  content?: InputMaybe<Scalars['String']['input']>;
+  /** The date of the object. Preferable to enter as year/month/day (e.g. 01/31/2017) as it will rearrange date as fit if it is not specified. Incomplete dates may have unintended results for example, "2017" as the input will use current date with timestamp 20:17  */
+  date?: InputMaybe<Scalars['String']['input']>;
+  /** The excerpt of the object */
+  excerpt?: InputMaybe<Scalars['String']['input']>;
+  /** A field used for ordering posts. This is typically used with nav menu items or for special ordering of hierarchical content types. */
+  menuOrder?: InputMaybe<Scalars['Int']['input']>;
+  /** The password used to protect the content of the object */
+  password?: InputMaybe<Scalars['String']['input']>;
+  /** The ping status for the object */
+  pingStatus?: InputMaybe<Scalars['String']['input']>;
+  /** URLs that have been pinged. */
+  pinged?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Set connections between the mumbai_university and postFormats */
+  postFormats?: InputMaybe<Mumbai_UniversityPostFormatsInput>;
+  /** The slug of the object */
+  slug?: InputMaybe<Scalars['String']['input']>;
+  /** The status of the object */
+  status?: InputMaybe<PostStatusEnum>;
+  /** The title of the object */
+  title?: InputMaybe<Scalars['String']['input']>;
+  /** URLs queued to be pinged. */
+  toPing?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+/** The payload for the createMumbai_university mutation. */
+export type CreateMumbai_UniversityPayload = {
+  __typename?: 'CreateMumbai_universityPayload';
+  /** If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: Maybe<Scalars['String']['output']>;
+  /** The Post object mutation type. */
+  mumbai_university?: Maybe<Mumbai_University>;
 };
 
 /** Input for the createPage mutation. */
@@ -7175,6 +7289,49 @@ export type CreatePostPayload = {
   clientMutationId?: Maybe<Scalars['String']['output']>;
   /** The Post object mutation type. */
   post?: Maybe<Post>;
+};
+
+/** Input for the createRgpv mutation. */
+export type CreateRgpvInput = {
+  /** The userId to assign as the author of the object */
+  authorId?: InputMaybe<Scalars['ID']['input']>;
+  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: InputMaybe<Scalars['String']['input']>;
+  /** The comment status for the object */
+  commentStatus?: InputMaybe<Scalars['String']['input']>;
+  /** The content of the object */
+  content?: InputMaybe<Scalars['String']['input']>;
+  /** The date of the object. Preferable to enter as year/month/day (e.g. 01/31/2017) as it will rearrange date as fit if it is not specified. Incomplete dates may have unintended results for example, "2017" as the input will use current date with timestamp 20:17  */
+  date?: InputMaybe<Scalars['String']['input']>;
+  /** The excerpt of the object */
+  excerpt?: InputMaybe<Scalars['String']['input']>;
+  /** A field used for ordering posts. This is typically used with nav menu items or for special ordering of hierarchical content types. */
+  menuOrder?: InputMaybe<Scalars['Int']['input']>;
+  /** The password used to protect the content of the object */
+  password?: InputMaybe<Scalars['String']['input']>;
+  /** The ping status for the object */
+  pingStatus?: InputMaybe<Scalars['String']['input']>;
+  /** URLs that have been pinged. */
+  pinged?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Set connections between the rgpv and postFormats */
+  postFormats?: InputMaybe<RgpvPostFormatsInput>;
+  /** The slug of the object */
+  slug?: InputMaybe<Scalars['String']['input']>;
+  /** The status of the object */
+  status?: InputMaybe<PostStatusEnum>;
+  /** The title of the object */
+  title?: InputMaybe<Scalars['String']['input']>;
+  /** URLs queued to be pinged. */
+  toPing?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+/** The payload for the createRgpv mutation. */
+export type CreateRgpvPayload = {
+  __typename?: 'CreateRgpvPayload';
+  /** If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: Maybe<Scalars['String']['output']>;
+  /** The Post object mutation type. */
+  rgpv?: Maybe<Rgpv>;
 };
 
 /** Input for the createTag mutation. */
@@ -7371,6 +7528,52 @@ export type DeleteCommentPayload = {
   deletedId?: Maybe<Scalars['ID']['output']>;
 };
 
+/** Input for the deleteDelhi_university mutation. */
+export type DeleteDelhi_UniversityInput = {
+  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: InputMaybe<Scalars['String']['input']>;
+  /** Whether the object should be force deleted instead of being moved to the trash */
+  forceDelete?: InputMaybe<Scalars['Boolean']['input']>;
+  /** The ID of the delhi_university to delete */
+  id: Scalars['ID']['input'];
+  /** Override the edit lock when another user is editing the post */
+  ignoreEditLock?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** The payload for the deleteDelhi_university mutation. */
+export type DeleteDelhi_UniversityPayload = {
+  __typename?: 'DeleteDelhi_universityPayload';
+  /** If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: Maybe<Scalars['String']['output']>;
+  /** The ID of the deleted object */
+  deletedId?: Maybe<Scalars['ID']['output']>;
+  /** The object before it was deleted */
+  delhi_university?: Maybe<Delhi_University>;
+};
+
+/** Input for the deleteGgsipu mutation. */
+export type DeleteGgsipuInput = {
+  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: InputMaybe<Scalars['String']['input']>;
+  /** Whether the object should be force deleted instead of being moved to the trash */
+  forceDelete?: InputMaybe<Scalars['Boolean']['input']>;
+  /** The ID of the ggsipu to delete */
+  id: Scalars['ID']['input'];
+  /** Override the edit lock when another user is editing the post */
+  ignoreEditLock?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** The payload for the deleteGgsipu mutation. */
+export type DeleteGgsipuPayload = {
+  __typename?: 'DeleteGgsipuPayload';
+  /** If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: Maybe<Scalars['String']['output']>;
+  /** The ID of the deleted object */
+  deletedId?: Maybe<Scalars['ID']['output']>;
+  /** The object before it was deleted */
+  ggsipu?: Maybe<Ggsipu>;
+};
+
 /** Input for the deleteGraphqlDocumentGroup mutation. */
 export type DeleteGraphqlDocumentGroupInput = {
   /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
@@ -7413,6 +7616,75 @@ export type DeleteGraphqlDocumentPayload = {
   graphqlDocument?: Maybe<GraphqlDocument>;
 };
 
+/** Input for the deleteKuk mutation. */
+export type DeleteKukInput = {
+  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: InputMaybe<Scalars['String']['input']>;
+  /** Whether the object should be force deleted instead of being moved to the trash */
+  forceDelete?: InputMaybe<Scalars['Boolean']['input']>;
+  /** The ID of the kuk to delete */
+  id: Scalars['ID']['input'];
+  /** Override the edit lock when another user is editing the post */
+  ignoreEditLock?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** The payload for the deleteKuk mutation. */
+export type DeleteKukPayload = {
+  __typename?: 'DeleteKukPayload';
+  /** If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: Maybe<Scalars['String']['output']>;
+  /** The ID of the deleted object */
+  deletedId?: Maybe<Scalars['ID']['output']>;
+  /** The object before it was deleted */
+  kuk?: Maybe<Kuk>;
+};
+
+/** Input for the deleteLpu mutation. */
+export type DeleteLpuInput = {
+  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: InputMaybe<Scalars['String']['input']>;
+  /** Whether the object should be force deleted instead of being moved to the trash */
+  forceDelete?: InputMaybe<Scalars['Boolean']['input']>;
+  /** The ID of the lpu to delete */
+  id: Scalars['ID']['input'];
+  /** Override the edit lock when another user is editing the post */
+  ignoreEditLock?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** The payload for the deleteLpu mutation. */
+export type DeleteLpuPayload = {
+  __typename?: 'DeleteLpuPayload';
+  /** If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: Maybe<Scalars['String']['output']>;
+  /** The ID of the deleted object */
+  deletedId?: Maybe<Scalars['ID']['output']>;
+  /** The object before it was deleted */
+  lpu?: Maybe<Lpu>;
+};
+
+/** Input for the deleteMakaut mutation. */
+export type DeleteMakautInput = {
+  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: InputMaybe<Scalars['String']['input']>;
+  /** Whether the object should be force deleted instead of being moved to the trash */
+  forceDelete?: InputMaybe<Scalars['Boolean']['input']>;
+  /** The ID of the makaut to delete */
+  id: Scalars['ID']['input'];
+  /** Override the edit lock when another user is editing the post */
+  ignoreEditLock?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** The payload for the deleteMakaut mutation. */
+export type DeleteMakautPayload = {
+  __typename?: 'DeleteMakautPayload';
+  /** If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: Maybe<Scalars['String']['output']>;
+  /** The ID of the deleted object */
+  deletedId?: Maybe<Scalars['ID']['output']>;
+  /** The object before it was deleted */
+  makaut?: Maybe<Makaut>;
+};
+
 /** Input for the deleteMediaItem mutation. */
 export type DeleteMediaItemInput = {
   /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
@@ -7432,6 +7704,29 @@ export type DeleteMediaItemPayload = {
   deletedId?: Maybe<Scalars['ID']['output']>;
   /** The mediaItem before it was deleted */
   mediaItem?: Maybe<MediaItem>;
+};
+
+/** Input for the deleteMumbai_university mutation. */
+export type DeleteMumbai_UniversityInput = {
+  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: InputMaybe<Scalars['String']['input']>;
+  /** Whether the object should be force deleted instead of being moved to the trash */
+  forceDelete?: InputMaybe<Scalars['Boolean']['input']>;
+  /** The ID of the mumbai_university to delete */
+  id: Scalars['ID']['input'];
+  /** Override the edit lock when another user is editing the post */
+  ignoreEditLock?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** The payload for the deleteMumbai_university mutation. */
+export type DeleteMumbai_UniversityPayload = {
+  __typename?: 'DeleteMumbai_universityPayload';
+  /** If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: Maybe<Scalars['String']['output']>;
+  /** The ID of the deleted object */
+  deletedId?: Maybe<Scalars['ID']['output']>;
+  /** The object before it was deleted */
+  mumbai_university?: Maybe<Mumbai_University>;
 };
 
 /** Input for the deletePage mutation. */
@@ -7499,6 +7794,29 @@ export type DeletePostPayload = {
   post?: Maybe<Post>;
 };
 
+/** Input for the deleteRgpv mutation. */
+export type DeleteRgpvInput = {
+  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: InputMaybe<Scalars['String']['input']>;
+  /** Whether the object should be force deleted instead of being moved to the trash */
+  forceDelete?: InputMaybe<Scalars['Boolean']['input']>;
+  /** The ID of the rgpv to delete */
+  id: Scalars['ID']['input'];
+  /** Override the edit lock when another user is editing the post */
+  ignoreEditLock?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** The payload for the deleteRgpv mutation. */
+export type DeleteRgpvPayload = {
+  __typename?: 'DeleteRgpvPayload';
+  /** If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: Maybe<Scalars['String']['output']>;
+  /** The ID of the deleted object */
+  deletedId?: Maybe<Scalars['ID']['output']>;
+  /** The object before it was deleted */
+  rgpv?: Maybe<Rgpv>;
+};
+
 /** Input for the deleteTag mutation. */
 export type DeleteTagInput = {
   /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
@@ -7560,6 +7878,654 @@ export type DeleteUserReactionPostPayload = {
   deletedId?: Maybe<Scalars['ID']['output']>;
   /** The object before it was deleted */
   userReactionPost?: Maybe<UserReactionPost>;
+};
+
+/** Edge between a Node and a connected delhi_university */
+export type DelhiUniversityConnectionEdge = {
+  /** Opaque reference to the nodes position in the connection. Value can be used with pagination args. */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The connected delhi_university Node */
+  node: Delhi_University;
+};
+
+/** EditorBlock Interface for DelhiUniversity Block Type */
+export type DelhiUniversityEditorBlock = {
+  /** The API version of the Gutenberg Block */
+  apiVersion?: Maybe<Scalars['Int']['output']>;
+  /** The name of the category the Block belongs to */
+  blockEditorCategoryName?: Maybe<Scalars['String']['output']>;
+  /** The id of the Block */
+  clientId?: Maybe<Scalars['String']['output']>;
+  /** CSS Classnames to apply to the block */
+  cssClassNames?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  /** The inner blocks of the Block */
+  innerBlocks?: Maybe<Array<Maybe<EditorBlock>>>;
+  /** Whether the block is Dynamic (server rendered) */
+  isDynamic: Scalars['Boolean']['output'];
+  /** The name of the Block */
+  name?: Maybe<Scalars['String']['output']>;
+  /** The parent id of the Block */
+  parentClientId?: Maybe<Scalars['String']['output']>;
+  /** The rendered HTML for the block */
+  renderedHtml?: Maybe<Scalars['String']['output']>;
+};
+
+/** The delhi_university type */
+export type Delhi_University = ContentNode & DatabaseIdentifier & HierarchicalContentNode & HierarchicalNode & MenuItemLinkable & Node & NodeWithAuthor & NodeWithComments & NodeWithContentEditor & NodeWithEditorBlocks & NodeWithExcerpt & NodeWithFeaturedImage & NodeWithPageAttributes & NodeWithRevisions & NodeWithTemplate & NodeWithTitle & NodeWithTrackbacks & Previewable & UniformResourceIdentifiable & {
+  __typename?: 'Delhi_university';
+  /** Returns ancestors of the node. Default ordered as lowest (closest to the child) to highest (closest to the root). */
+  ancestors?: Maybe<HierarchicalContentNodeToContentNodeAncestorsConnection>;
+  /** Connection between the NodeWithAuthor type and the User type */
+  author?: Maybe<NodeWithAuthorToUserConnectionEdge>;
+  /** The database identifier of the author of the node */
+  authorDatabaseId?: Maybe<Scalars['Int']['output']>;
+  /** The globally unique identifier of the author of the node */
+  authorId?: Maybe<Scalars['ID']['output']>;
+  /** Connection between the HierarchicalContentNode type and the ContentNode type */
+  children?: Maybe<HierarchicalContentNodeToContentNodeChildrenConnection>;
+  /** The number of comments. Even though WPGraphQL denotes this field as an integer, in WordPress this field should be saved as a numeric string for compatibility. */
+  commentCount?: Maybe<Scalars['Int']['output']>;
+  /** Whether the comments are open or closed for this particular post. */
+  commentStatus?: Maybe<Scalars['String']['output']>;
+  /** Connection between the Delhi_university type and the Comment type */
+  comments?: Maybe<Delhi_UniversityToCommentConnection>;
+  /** @deprecated Deprecated in favor of using Next.js pages */
+  conditionalTags?: Maybe<ConditionalTags>;
+  /** The content of the post. */
+  content?: Maybe<Scalars['String']['output']>;
+  /** Connection between the ContentNode type and the ContentType type */
+  contentType?: Maybe<ContentNodeToContentTypeConnectionEdge>;
+  /** The name of the Content Type the node belongs to */
+  contentTypeName: Scalars['String']['output'];
+  /** The unique identifier stored in the database */
+  databaseId: Scalars['Int']['output'];
+  /** Post publishing date. */
+  date?: Maybe<Scalars['String']['output']>;
+  /** The publishing date set in GMT. */
+  dateGmt?: Maybe<Scalars['String']['output']>;
+  /**
+   * The id field matches the WP_Post-&gt;ID field.
+   * @deprecated Deprecated in favor of the databaseId field
+   */
+  delhi_universityId: Scalars['Int']['output'];
+  /** The desired slug of the post */
+  desiredSlug?: Maybe<Scalars['String']['output']>;
+  /** If a user has edited the node within the past 15 seconds, this will return the user that last edited. Null if the edit lock doesn&#039;t exist or is greater than 15 seconds */
+  editingLockedBy?: Maybe<ContentNodeToEditLockConnectionEdge>;
+  /** List of editor blocks */
+  editorBlocks?: Maybe<Array<Maybe<EditorBlock>>>;
+  /** The RSS enclosure for the object */
+  enclosure?: Maybe<Scalars['String']['output']>;
+  /** Connection between the ContentNode type and the EnqueuedScript type */
+  enqueuedScripts?: Maybe<ContentNodeToEnqueuedScriptConnection>;
+  /** Connection between the ContentNode type and the EnqueuedStylesheet type */
+  enqueuedStylesheets?: Maybe<ContentNodeToEnqueuedStylesheetConnection>;
+  /** The excerpt of the post. */
+  excerpt?: Maybe<Scalars['String']['output']>;
+  /** Connection between the NodeWithFeaturedImage type and the MediaItem type */
+  featuredImage?: Maybe<NodeWithFeaturedImageToMediaItemConnectionEdge>;
+  /** The database identifier for the featured image node assigned to the content node */
+  featuredImageDatabaseId?: Maybe<Scalars['Int']['output']>;
+  /** Globally unique ID of the featured image assigned to the node */
+  featuredImageId?: Maybe<Scalars['ID']['output']>;
+  /** The global unique identifier for this post. This currently matches the value stored in WP_Post-&gt;guid and the guid column in the &quot;post_objects&quot; database table. */
+  guid?: Maybe<Scalars['String']['output']>;
+  /** Whether the delhi_university object is password protected. */
+  hasPassword?: Maybe<Scalars['Boolean']['output']>;
+  /** The globally unique identifier of the delhi_university object. */
+  id: Scalars['ID']['output'];
+  /** Whether the node is a Comment */
+  isComment: Scalars['Boolean']['output'];
+  /** Whether the node is a Content Node */
+  isContentNode: Scalars['Boolean']['output'];
+  /** Whether the node represents the front page. */
+  isFrontPage: Scalars['Boolean']['output'];
+  /** Whether  the node represents the blog page. */
+  isPostsPage: Scalars['Boolean']['output'];
+  /** Whether the object is a node in the preview state */
+  isPreview?: Maybe<Scalars['Boolean']['output']>;
+  /** Whether the object is restricted from the current viewer */
+  isRestricted?: Maybe<Scalars['Boolean']['output']>;
+  /** True if the node is a revision of another node */
+  isRevision?: Maybe<Scalars['Boolean']['output']>;
+  /** Whether the node is a Term */
+  isTermNode: Scalars['Boolean']['output'];
+  /** The user that most recently edited the node */
+  lastEditedBy?: Maybe<ContentNodeToEditLastConnectionEdge>;
+  /** The permalink of the post */
+  link?: Maybe<Scalars['String']['output']>;
+  /** A field used for ordering posts. This is typically used with nav menu items or for special ordering of hierarchical content types. */
+  menuOrder?: Maybe<Scalars['Int']['output']>;
+  /** The local modified time for a post. If a post was recently updated the modified field will change to match the corresponding time. */
+  modified?: Maybe<Scalars['String']['output']>;
+  /** The GMT modified time for a post. If a post was recently updated the modified field will change to match the corresponding time in GMT. */
+  modifiedGmt?: Maybe<Scalars['String']['output']>;
+  /** The parent of the node. The parent object can be of various types */
+  parent?: Maybe<HierarchicalContentNodeToParentContentNodeConnectionEdge>;
+  /** Database id of the parent node */
+  parentDatabaseId?: Maybe<Scalars['Int']['output']>;
+  /** The globally unique identifier of the parent node. */
+  parentId?: Maybe<Scalars['ID']['output']>;
+  /** The password for the delhi_university object. */
+  password?: Maybe<Scalars['String']['output']>;
+  /** Whether the pings are open or closed for this particular post. */
+  pingStatus?: Maybe<Scalars['String']['output']>;
+  /** URLs that have been pinged. */
+  pinged?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  /** Connection between the Delhi_university type and the postFormat type */
+  postFormats?: Maybe<Delhi_UniversityToPostFormatConnection>;
+  /** Connection between the Delhi_university type and the delhi_university type */
+  preview?: Maybe<Delhi_UniversityToPreviewConnectionEdge>;
+  /** The database id of the preview node */
+  previewRevisionDatabaseId?: Maybe<Scalars['Int']['output']>;
+  /** Whether the object is a node in the preview state */
+  previewRevisionId?: Maybe<Scalars['ID']['output']>;
+  /** If the current node is a revision, this field exposes the node this is a revision of. Returns null if the node is not a revision of another node. */
+  revisionOf?: Maybe<NodeWithRevisionsToContentNodeConnectionEdge>;
+  /** Connection between the Delhi_university type and the delhi_university type */
+  revisions?: Maybe<Delhi_UniversityToRevisionConnection>;
+  /** The uri slug for the post. This is equivalent to the WP_Post-&gt;post_name field and the post_name column in the database for the &quot;post_objects&quot; table. */
+  slug?: Maybe<Scalars['String']['output']>;
+  /** The current status of the object */
+  status?: Maybe<Scalars['String']['output']>;
+  /** The template assigned to a node of content */
+  template?: Maybe<ContentTemplate>;
+  templates?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  /** Connection between the Delhi_university type and the TermNode type */
+  terms?: Maybe<Delhi_UniversityToTermNodeConnection>;
+  /** The title of the post. This is currently just the raw title. An amendment to support rendered title needs to be made. */
+  title?: Maybe<Scalars['String']['output']>;
+  /** URLs queued to be pinged. */
+  toPing?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  /** The unique resource identifier path */
+  uri?: Maybe<Scalars['String']['output']>;
+};
+
+
+/** The delhi_university type */
+export type Delhi_UniversityAncestorsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<HierarchicalContentNodeToContentNodeAncestorsConnectionWhereArgs>;
+};
+
+
+/** The delhi_university type */
+export type Delhi_UniversityChildrenArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<HierarchicalContentNodeToContentNodeChildrenConnectionWhereArgs>;
+};
+
+
+/** The delhi_university type */
+export type Delhi_UniversityCommentsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<Delhi_UniversityToCommentConnectionWhereArgs>;
+};
+
+
+/** The delhi_university type */
+export type Delhi_UniversityContentArgs = {
+  format?: InputMaybe<PostObjectFieldFormatEnum>;
+};
+
+
+/** The delhi_university type */
+export type Delhi_UniversityEditorBlocksArgs = {
+  flat?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+/** The delhi_university type */
+export type Delhi_UniversityEnqueuedScriptsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+/** The delhi_university type */
+export type Delhi_UniversityEnqueuedStylesheetsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+/** The delhi_university type */
+export type Delhi_UniversityExcerptArgs = {
+  format?: InputMaybe<PostObjectFieldFormatEnum>;
+};
+
+
+/** The delhi_university type */
+export type Delhi_UniversityPostFormatsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<Delhi_UniversityToPostFormatConnectionWhereArgs>;
+};
+
+
+/** The delhi_university type */
+export type Delhi_UniversityRevisionsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<Delhi_UniversityToRevisionConnectionWhereArgs>;
+};
+
+
+/** The delhi_university type */
+export type Delhi_UniversityTermsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<Delhi_UniversityToTermNodeConnectionWhereArgs>;
+};
+
+
+/** The delhi_university type */
+export type Delhi_UniversityTitleArgs = {
+  format?: InputMaybe<PostObjectFieldFormatEnum>;
+};
+
+/** Page Info on the connected DelhiUniversityConnectionEdge */
+export type Delhi_UniversityConnectionPageInfo = {
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** The Type of Identifier used to fetch a single resource. Default is ID. */
+export enum Delhi_UniversityIdType {
+  /** Identify a resource by the Database ID. */
+  DatabaseId = 'DATABASE_ID',
+  /** Identify a resource by the (hashed) Global ID. */
+  Id = 'ID',
+  /** Identify a resource by the URI. */
+  Uri = 'URI'
+}
+
+/** Set relationships between the delhi_university to postFormats */
+export type Delhi_UniversityPostFormatsInput = {
+  /** If true, this will append the postFormat to existing related postFormats. If false, this will replace existing relationships. Default true. */
+  append?: InputMaybe<Scalars['Boolean']['input']>;
+  /** The input list of items to set. */
+  nodes?: InputMaybe<Array<InputMaybe<Delhi_UniversityPostFormatsNodeInput>>>;
+};
+
+/** List of postFormats to connect the delhi_university to. If an ID is set, it will be used to create the connection. If not, it will look for a slug. If neither are valid existing terms, and the site is configured to allow terms to be created during post mutations, a term will be created using the Name if it exists in the input, then fallback to the slug if it exists. */
+export type Delhi_UniversityPostFormatsNodeInput = {
+  /** The description of the postFormat. This field is used to set a description of the postFormat if a new one is created during the mutation. */
+  description?: InputMaybe<Scalars['String']['input']>;
+  /** The ID of the postFormat. If present, this will be used to connect to the delhi_university. If no existing postFormat exists with this ID, no connection will be made. */
+  id?: InputMaybe<Scalars['ID']['input']>;
+  /** The name of the postFormat. This field is used to create a new term, if term creation is enabled in nested mutations, and if one does not already exist with the provided slug or ID or if a slug or ID is not provided. If no name is included and a term is created, the creation will fallback to the slug field. */
+  name?: InputMaybe<Scalars['String']['input']>;
+  /** The slug of the postFormat. If no ID is present, this field will be used to make a connection. If no existing term exists with this slug, this field will be used as a fallback to the Name field when creating a new term to connect to, if term creation is enabled as a nested mutation. */
+  slug?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** Connection between the Delhi_university type and the Comment type */
+export type Delhi_UniversityToCommentConnection = CommentConnection & Connection & {
+  __typename?: 'Delhi_universityToCommentConnection';
+  /** Edges for the Delhi_universityToCommentConnection connection */
+  edges: Array<Delhi_UniversityToCommentConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<Comment>;
+  /** Information about pagination in a connection. */
+  pageInfo: Delhi_UniversityToCommentConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type Delhi_UniversityToCommentConnectionEdge = CommentConnectionEdge & Edge & {
+  __typename?: 'Delhi_universityToCommentConnectionEdge';
+  /** A cursor for use in pagination */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The item at the end of the edge */
+  node: Comment;
+};
+
+/** Page Info on the &quot;Delhi_universityToCommentConnection&quot; */
+export type Delhi_UniversityToCommentConnectionPageInfo = CommentConnectionPageInfo & PageInfo & WpPageInfo & {
+  __typename?: 'Delhi_universityToCommentConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Arguments for filtering the Delhi_universityToCommentConnection connection */
+export type Delhi_UniversityToCommentConnectionWhereArgs = {
+  /** Comment author email address. */
+  authorEmail?: InputMaybe<Scalars['String']['input']>;
+  /** Array of author IDs to include comments for. */
+  authorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of author IDs to exclude comments for. */
+  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Comment author URL. */
+  authorUrl?: InputMaybe<Scalars['String']['input']>;
+  /** Array of comment IDs to include. */
+  commentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of IDs of users whose unapproved comments will be returned by the query regardless of status. */
+  commentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Include comments of a given type. */
+  commentType?: InputMaybe<Scalars['String']['input']>;
+  /** Include comments from a given array of comment types. */
+  commentTypeIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Exclude comments from a given array of comment types. */
+  commentTypeNotIn?: InputMaybe<Scalars['String']['input']>;
+  /** Content object author ID to limit results by. */
+  contentAuthor?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of author IDs to retrieve comments for. */
+  contentAuthorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of author IDs *not* to retrieve comments for. */
+  contentAuthorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Limit results to those affiliated with a given content object ID. */
+  contentId?: InputMaybe<Scalars['ID']['input']>;
+  /** Array of content object IDs to include affiliated comments for. */
+  contentIdIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of content object IDs to exclude affiliated comments for. */
+  contentIdNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Content object name (i.e. slug ) to retrieve affiliated comments for. */
+  contentName?: InputMaybe<Scalars['String']['input']>;
+  /** Content Object parent ID to retrieve affiliated comments for. */
+  contentParent?: InputMaybe<Scalars['Int']['input']>;
+  /** Array of content object statuses to retrieve affiliated comments for. Pass 'any' to match any value. */
+  contentStatus?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
+  /** Content object type or array of types to retrieve affiliated comments for. Pass 'any' to match any value. */
+  contentType?: InputMaybe<Array<InputMaybe<ContentTypeEnum>>>;
+  /** Array of IDs or email addresses of users whose unapproved comments will be returned by the query regardless of $status. Default empty */
+  includeUnapproved?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Karma score to retrieve matching comments for. */
+  karma?: InputMaybe<Scalars['Int']['input']>;
+  /** The cardinality of the order of the connection */
+  order?: InputMaybe<OrderEnum>;
+  /** Field to order the comments by. */
+  orderby?: InputMaybe<CommentsConnectionOrderbyEnum>;
+  /** Parent ID of comment to retrieve children of. */
+  parent?: InputMaybe<Scalars['Int']['input']>;
+  /** Array of parent IDs of comments to retrieve children for. */
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of parent IDs of comments *not* to retrieve children for. */
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Search term(s) to retrieve matching comments for. */
+  search?: InputMaybe<Scalars['String']['input']>;
+  /** Comment status to limit results by. */
+  status?: InputMaybe<Scalars['String']['input']>;
+  /** Include comments for a specific user ID. */
+  userId?: InputMaybe<Scalars['ID']['input']>;
+};
+
+/** Connection between the Delhi_university type and the postFormat type */
+export type Delhi_UniversityToPostFormatConnection = Connection & PostFormatConnection & {
+  __typename?: 'Delhi_universityToPostFormatConnection';
+  /** Edges for the Delhi_universityToPostFormatConnection connection */
+  edges: Array<Delhi_UniversityToPostFormatConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<PostFormat>;
+  /** Information about pagination in a connection. */
+  pageInfo: Delhi_UniversityToPostFormatConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type Delhi_UniversityToPostFormatConnectionEdge = Edge & PostFormatConnectionEdge & {
+  __typename?: 'Delhi_universityToPostFormatConnectionEdge';
+  /** A cursor for use in pagination */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The item at the end of the edge */
+  node: PostFormat;
+};
+
+/** Page Info on the &quot;Delhi_universityToPostFormatConnection&quot; */
+export type Delhi_UniversityToPostFormatConnectionPageInfo = PageInfo & PostFormatConnectionPageInfo & WpPageInfo & {
+  __typename?: 'Delhi_universityToPostFormatConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Arguments for filtering the Delhi_universityToPostFormatConnection connection */
+export type Delhi_UniversityToPostFormatConnectionWhereArgs = {
+  /** Unique cache key to be produced when this query is stored in an object cache. Default is 'core'. */
+  cacheDomain?: InputMaybe<Scalars['String']['input']>;
+  /** Term ID to retrieve child terms of. If multiple taxonomies are passed, $child_of is ignored. Default 0. */
+  childOf?: InputMaybe<Scalars['Int']['input']>;
+  /** True to limit results to terms that have no children. This parameter has no effect on non-hierarchical taxonomies. Default false. */
+  childless?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Retrieve terms where the description is LIKE the input value. Default empty. */
+  descriptionLike?: InputMaybe<Scalars['String']['input']>;
+  /** Array of term ids to exclude. If $include is non-empty, $exclude is ignored. Default empty array. */
+  exclude?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of term ids to exclude along with all of their descendant terms. If $include is non-empty, $exclude_tree is ignored. Default empty array. */
+  excludeTree?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Whether to hide terms not assigned to any posts. Accepts true or false. Default false */
+  hideEmpty?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Whether to include terms that have non-empty descendants (even if $hide_empty is set to true). Default true. */
+  hierarchical?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Array of term ids to include. Default empty array. */
+  include?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of names to return term(s) for. Default empty. */
+  name?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Retrieve terms where the name is LIKE the input value. Default empty. */
+  nameLike?: InputMaybe<Scalars['String']['input']>;
+  /** Array of object IDs. Results will be limited to terms associated with these objects. */
+  objectIds?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Direction the connection should be ordered in */
+  order?: InputMaybe<OrderEnum>;
+  /** Field(s) to order terms by. Defaults to 'name'. */
+  orderby?: InputMaybe<TermObjectsConnectionOrderbyEnum>;
+  /** Whether to pad the quantity of a term's children in the quantity of each term's "count" object variable. Default false. */
+  padCounts?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Parent term ID to retrieve direct-child terms of. Default empty. */
+  parent?: InputMaybe<Scalars['Int']['input']>;
+  /** Search criteria to match terms. Will be SQL-formatted with wildcards before and after. Default empty. */
+  search?: InputMaybe<Scalars['String']['input']>;
+  /** Array of slugs to return term(s) for. Default empty. */
+  slug?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomyId?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Whether to prime meta caches for matched terms. Default true. */
+  updateTermMetaCache?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** Connection between the Delhi_university type and the delhi_university type */
+export type Delhi_UniversityToPreviewConnectionEdge = DelhiUniversityConnectionEdge & Edge & OneToOneConnection & {
+  __typename?: 'Delhi_universityToPreviewConnectionEdge';
+  /** Opaque reference to the nodes position in the connection. Value can be used with pagination args. */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The node of the connection, without the edges */
+  node: Delhi_University;
+};
+
+/** Connection between the Delhi_university type and the delhi_university type */
+export type Delhi_UniversityToRevisionConnection = Connection & {
+  __typename?: 'Delhi_universityToRevisionConnection';
+  /** Edges for the Delhi_universityToRevisionConnection connection */
+  edges: Array<Delhi_UniversityToRevisionConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<Delhi_University>;
+  /** Information about pagination in a connection. */
+  pageInfo: Delhi_UniversityToRevisionConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type Delhi_UniversityToRevisionConnectionEdge = DelhiUniversityConnectionEdge & Edge & {
+  __typename?: 'Delhi_universityToRevisionConnectionEdge';
+  /** A cursor for use in pagination */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The item at the end of the edge */
+  node: Delhi_University;
+};
+
+/** Page Info on the &quot;Delhi_universityToRevisionConnection&quot; */
+export type Delhi_UniversityToRevisionConnectionPageInfo = Delhi_UniversityConnectionPageInfo & PageInfo & WpPageInfo & {
+  __typename?: 'Delhi_universityToRevisionConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Arguments for filtering the Delhi_universityToRevisionConnection connection */
+export type Delhi_UniversityToRevisionConnectionWhereArgs = {
+  /** The user that's connected as the author of the object. Use the userId for the author object. */
+  author?: InputMaybe<Scalars['Int']['input']>;
+  /** Find objects connected to author(s) in the array of author's userIds */
+  authorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Find objects connected to the author by the author's nicename */
+  authorName?: InputMaybe<Scalars['String']['input']>;
+  /** Find objects NOT connected to author(s) in the array of author's userIds */
+  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Filter the connection based on dates */
+  dateQuery?: InputMaybe<DateQueryInput>;
+  /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
+  hasPassword?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Specific database ID of the object */
+  id?: InputMaybe<Scalars['Int']['input']>;
+  /** Array of IDs for the objects to retrieve */
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Get objects with a specific mimeType property */
+  mimeType?: InputMaybe<MimeTypeEnum>;
+  /** Slug / post_name of the object */
+  name?: InputMaybe<Scalars['String']['input']>;
+  /** Specify objects to retrieve. Use slugs */
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** What parameter to use to order the objects by. */
+  orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
+  /** Use ID to return only children. Use 0 to return only top-level items */
+  parent?: InputMaybe<Scalars['ID']['input']>;
+  /** Specify objects whose parent is in an array */
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Specify posts whose parent is not in an array */
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Show posts with a specific password. */
+  password?: InputMaybe<Scalars['String']['input']>;
+  /** Show Posts based on a keyword search */
+  search?: InputMaybe<Scalars['String']['input']>;
+  /** Retrieve posts where post status is in an array. */
+  stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
+  /** Show posts with a specific status. */
+  status?: InputMaybe<PostStatusEnum>;
+  /** Title of the object */
+  title?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** Connection between the Delhi_university type and the TermNode type */
+export type Delhi_UniversityToTermNodeConnection = Connection & TermNodeConnection & {
+  __typename?: 'Delhi_universityToTermNodeConnection';
+  /** Edges for the Delhi_universityToTermNodeConnection connection */
+  edges: Array<Delhi_UniversityToTermNodeConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<TermNode>;
+  /** Information about pagination in a connection. */
+  pageInfo: Delhi_UniversityToTermNodeConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type Delhi_UniversityToTermNodeConnectionEdge = Edge & TermNodeConnectionEdge & {
+  __typename?: 'Delhi_universityToTermNodeConnectionEdge';
+  /** A cursor for use in pagination */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The item at the end of the edge */
+  node: TermNode;
+};
+
+/** Page Info on the &quot;Delhi_universityToTermNodeConnection&quot; */
+export type Delhi_UniversityToTermNodeConnectionPageInfo = PageInfo & TermNodeConnectionPageInfo & WpPageInfo & {
+  __typename?: 'Delhi_universityToTermNodeConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Arguments for filtering the Delhi_universityToTermNodeConnection connection */
+export type Delhi_UniversityToTermNodeConnectionWhereArgs = {
+  /** Unique cache key to be produced when this query is stored in an object cache. Default is 'core'. */
+  cacheDomain?: InputMaybe<Scalars['String']['input']>;
+  /** Term ID to retrieve child terms of. If multiple taxonomies are passed, $child_of is ignored. Default 0. */
+  childOf?: InputMaybe<Scalars['Int']['input']>;
+  /** True to limit results to terms that have no children. This parameter has no effect on non-hierarchical taxonomies. Default false. */
+  childless?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Retrieve terms where the description is LIKE the input value. Default empty. */
+  descriptionLike?: InputMaybe<Scalars['String']['input']>;
+  /** Array of term ids to exclude. If $include is non-empty, $exclude is ignored. Default empty array. */
+  exclude?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of term ids to exclude along with all of their descendant terms. If $include is non-empty, $exclude_tree is ignored. Default empty array. */
+  excludeTree?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Whether to hide terms not assigned to any posts. Accepts true or false. Default false */
+  hideEmpty?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Whether to include terms that have non-empty descendants (even if $hide_empty is set to true). Default true. */
+  hierarchical?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Array of term ids to include. Default empty array. */
+  include?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of names to return term(s) for. Default empty. */
+  name?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Retrieve terms where the name is LIKE the input value. Default empty. */
+  nameLike?: InputMaybe<Scalars['String']['input']>;
+  /** Array of object IDs. Results will be limited to terms associated with these objects. */
+  objectIds?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Direction the connection should be ordered in */
+  order?: InputMaybe<OrderEnum>;
+  /** Field(s) to order terms by. Defaults to 'name'. */
+  orderby?: InputMaybe<TermObjectsConnectionOrderbyEnum>;
+  /** Whether to pad the quantity of a term's children in the quantity of each term's "count" object variable. Default false. */
+  padCounts?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Parent term ID to retrieve direct-child terms of. Default empty. */
+  parent?: InputMaybe<Scalars['Int']['input']>;
+  /** Search criteria to match terms. Will be SQL-formatted with wildcards before and after. Default empty. */
+  search?: InputMaybe<Scalars['String']['input']>;
+  /** Array of slugs to return term(s) for. Default empty. */
+  slug?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** The Taxonomy to filter terms by */
+  taxonomies?: InputMaybe<Array<InputMaybe<TaxonomyEnum>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomyId?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Whether to prime meta caches for matched terms. Default true. */
+  updateTermMetaCache?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 /** The discussion setting type */
@@ -7813,6 +8779,1050 @@ export type GenerateAuthorizationCodePayload = {
   code?: Maybe<Scalars['String']['output']>;
   /** Error encountered during user authentication, if any */
   error?: Maybe<Scalars['String']['output']>;
+};
+
+/** A block used for editing the site */
+export type GenerateblocksButton = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
+  __typename?: 'GenerateblocksButton';
+  /** The API version of the Gutenberg Block */
+  apiVersion?: Maybe<Scalars['Int']['output']>;
+  /** Attributes of the GenerateblocksButton Block Type */
+  attributes?: Maybe<GenerateblocksButtonAttributes>;
+  /** The name of the category the Block belongs to */
+  blockEditorCategoryName?: Maybe<Scalars['String']['output']>;
+  /** The id of the Block */
+  clientId?: Maybe<Scalars['String']['output']>;
+  /** CSS Classnames to apply to the block */
+  cssClassNames?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  /** The inner blocks of the Block */
+  innerBlocks?: Maybe<Array<Maybe<EditorBlock>>>;
+  /** Whether the block is Dynamic (server rendered) */
+  isDynamic: Scalars['Boolean']['output'];
+  /** The name of the block */
+  name?: Maybe<Scalars['String']['output']>;
+  /** The parent id of the Block */
+  parentClientId?: Maybe<Scalars['String']['output']>;
+  /** The rendered HTML for the block */
+  renderedHtml?: Maybe<Scalars['String']['output']>;
+};
+
+/** Attributes of the GenerateblocksButton Block Type */
+export type GenerateblocksButtonAttributes = {
+  __typename?: 'GenerateblocksButtonAttributes';
+  /** The &quot;className&quot; field on the &quot;GenerateblocksButton&quot; block */
+  className?: Maybe<Scalars['String']['output']>;
+  /** The &quot;lock&quot; field on the &quot;GenerateblocksButton&quot; block */
+  lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;metadata&quot; field on the &quot;GenerateblocksButton&quot; block */
+  metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
+};
+
+/** A block used for editing the site */
+export type GenerateblocksButtonContainer = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
+  __typename?: 'GenerateblocksButtonContainer';
+  /** The API version of the Gutenberg Block */
+  apiVersion?: Maybe<Scalars['Int']['output']>;
+  /** Attributes of the GenerateblocksButtonContainer Block Type */
+  attributes?: Maybe<GenerateblocksButtonContainerAttributes>;
+  /** The name of the category the Block belongs to */
+  blockEditorCategoryName?: Maybe<Scalars['String']['output']>;
+  /** The id of the Block */
+  clientId?: Maybe<Scalars['String']['output']>;
+  /** CSS Classnames to apply to the block */
+  cssClassNames?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  /** The inner blocks of the Block */
+  innerBlocks?: Maybe<Array<Maybe<EditorBlock>>>;
+  /** Whether the block is Dynamic (server rendered) */
+  isDynamic: Scalars['Boolean']['output'];
+  /** The name of the block */
+  name?: Maybe<Scalars['String']['output']>;
+  /** The parent id of the Block */
+  parentClientId?: Maybe<Scalars['String']['output']>;
+  /** The rendered HTML for the block */
+  renderedHtml?: Maybe<Scalars['String']['output']>;
+};
+
+/** Attributes of the GenerateblocksButtonContainer Block Type */
+export type GenerateblocksButtonContainerAttributes = {
+  __typename?: 'GenerateblocksButtonContainerAttributes';
+  /** The &quot;className&quot; field on the &quot;GenerateblocksButtonContainer&quot; block */
+  className?: Maybe<Scalars['String']['output']>;
+  /** The &quot;lock&quot; field on the &quot;GenerateblocksButtonContainer&quot; block */
+  lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;metadata&quot; field on the &quot;GenerateblocksButtonContainer&quot; block */
+  metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
+};
+
+/** A block used for editing the site */
+export type GenerateblocksContainer = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
+  __typename?: 'GenerateblocksContainer';
+  /** The API version of the Gutenberg Block */
+  apiVersion?: Maybe<Scalars['Int']['output']>;
+  /** Attributes of the GenerateblocksContainer Block Type */
+  attributes?: Maybe<GenerateblocksContainerAttributes>;
+  /** The name of the category the Block belongs to */
+  blockEditorCategoryName?: Maybe<Scalars['String']['output']>;
+  /** The id of the Block */
+  clientId?: Maybe<Scalars['String']['output']>;
+  /** CSS Classnames to apply to the block */
+  cssClassNames?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  /** The inner blocks of the Block */
+  innerBlocks?: Maybe<Array<Maybe<EditorBlock>>>;
+  /** Whether the block is Dynamic (server rendered) */
+  isDynamic: Scalars['Boolean']['output'];
+  /** The name of the block */
+  name?: Maybe<Scalars['String']['output']>;
+  /** The parent id of the Block */
+  parentClientId?: Maybe<Scalars['String']['output']>;
+  /** The rendered HTML for the block */
+  renderedHtml?: Maybe<Scalars['String']['output']>;
+};
+
+/** Attributes of the GenerateblocksContainer Block Type */
+export type GenerateblocksContainerAttributes = {
+  __typename?: 'GenerateblocksContainerAttributes';
+  /** The &quot;className&quot; field on the &quot;GenerateblocksContainer&quot; block */
+  className?: Maybe<Scalars['String']['output']>;
+  /** The &quot;lock&quot; field on the &quot;GenerateblocksContainer&quot; block */
+  lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;metadata&quot; field on the &quot;GenerateblocksContainer&quot; block */
+  metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
+};
+
+/** A block used for editing the site */
+export type GenerateblocksGrid = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
+  __typename?: 'GenerateblocksGrid';
+  /** The API version of the Gutenberg Block */
+  apiVersion?: Maybe<Scalars['Int']['output']>;
+  /** Attributes of the GenerateblocksGrid Block Type */
+  attributes?: Maybe<GenerateblocksGridAttributes>;
+  /** The name of the category the Block belongs to */
+  blockEditorCategoryName?: Maybe<Scalars['String']['output']>;
+  /** The id of the Block */
+  clientId?: Maybe<Scalars['String']['output']>;
+  /** CSS Classnames to apply to the block */
+  cssClassNames?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  /** The inner blocks of the Block */
+  innerBlocks?: Maybe<Array<Maybe<EditorBlock>>>;
+  /** Whether the block is Dynamic (server rendered) */
+  isDynamic: Scalars['Boolean']['output'];
+  /** The name of the block */
+  name?: Maybe<Scalars['String']['output']>;
+  /** The parent id of the Block */
+  parentClientId?: Maybe<Scalars['String']['output']>;
+  /** The rendered HTML for the block */
+  renderedHtml?: Maybe<Scalars['String']['output']>;
+};
+
+/** Attributes of the GenerateblocksGrid Block Type */
+export type GenerateblocksGridAttributes = {
+  __typename?: 'GenerateblocksGridAttributes';
+  /** The &quot;className&quot; field on the &quot;GenerateblocksGrid&quot; block */
+  className?: Maybe<Scalars['String']['output']>;
+  /** The &quot;lock&quot; field on the &quot;GenerateblocksGrid&quot; block */
+  lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;metadata&quot; field on the &quot;GenerateblocksGrid&quot; block */
+  metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
+};
+
+/** A block used for editing the site */
+export type GenerateblocksHeadline = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
+  __typename?: 'GenerateblocksHeadline';
+  /** The API version of the Gutenberg Block */
+  apiVersion?: Maybe<Scalars['Int']['output']>;
+  /** Attributes of the GenerateblocksHeadline Block Type */
+  attributes?: Maybe<GenerateblocksHeadlineAttributes>;
+  /** The name of the category the Block belongs to */
+  blockEditorCategoryName?: Maybe<Scalars['String']['output']>;
+  /** The id of the Block */
+  clientId?: Maybe<Scalars['String']['output']>;
+  /** CSS Classnames to apply to the block */
+  cssClassNames?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  /** The inner blocks of the Block */
+  innerBlocks?: Maybe<Array<Maybe<EditorBlock>>>;
+  /** Whether the block is Dynamic (server rendered) */
+  isDynamic: Scalars['Boolean']['output'];
+  /** The name of the block */
+  name?: Maybe<Scalars['String']['output']>;
+  /** The parent id of the Block */
+  parentClientId?: Maybe<Scalars['String']['output']>;
+  /** The rendered HTML for the block */
+  renderedHtml?: Maybe<Scalars['String']['output']>;
+};
+
+/** Attributes of the GenerateblocksHeadline Block Type */
+export type GenerateblocksHeadlineAttributes = {
+  __typename?: 'GenerateblocksHeadlineAttributes';
+  /** The &quot;className&quot; field on the &quot;GenerateblocksHeadline&quot; block */
+  className?: Maybe<Scalars['String']['output']>;
+  /** The &quot;lock&quot; field on the &quot;GenerateblocksHeadline&quot; block */
+  lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;metadata&quot; field on the &quot;GenerateblocksHeadline&quot; block */
+  metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
+};
+
+/** A block used for editing the site */
+export type GenerateblocksImage = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
+  __typename?: 'GenerateblocksImage';
+  /** The API version of the Gutenberg Block */
+  apiVersion?: Maybe<Scalars['Int']['output']>;
+  /** Attributes of the GenerateblocksImage Block Type */
+  attributes?: Maybe<GenerateblocksImageAttributes>;
+  /** The name of the category the Block belongs to */
+  blockEditorCategoryName?: Maybe<Scalars['String']['output']>;
+  /** The id of the Block */
+  clientId?: Maybe<Scalars['String']['output']>;
+  /** CSS Classnames to apply to the block */
+  cssClassNames?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  /** The inner blocks of the Block */
+  innerBlocks?: Maybe<Array<Maybe<EditorBlock>>>;
+  /** Whether the block is Dynamic (server rendered) */
+  isDynamic: Scalars['Boolean']['output'];
+  /** The name of the block */
+  name?: Maybe<Scalars['String']['output']>;
+  /** The parent id of the Block */
+  parentClientId?: Maybe<Scalars['String']['output']>;
+  /** The rendered HTML for the block */
+  renderedHtml?: Maybe<Scalars['String']['output']>;
+};
+
+/** Attributes of the GenerateblocksImage Block Type */
+export type GenerateblocksImageAttributes = {
+  __typename?: 'GenerateblocksImageAttributes';
+  /** The &quot;align&quot; field on the &quot;GenerateblocksImage&quot; block */
+  align?: Maybe<Scalars['String']['output']>;
+  /** The &quot;alignment&quot; field on the &quot;GenerateblocksImage&quot; block */
+  alignment?: Maybe<Scalars['String']['output']>;
+  /** The &quot;alignmentMobile&quot; field on the &quot;GenerateblocksImage&quot; block */
+  alignmentMobile?: Maybe<Scalars['String']['output']>;
+  /** The &quot;alignmentTablet&quot; field on the &quot;GenerateblocksImage&quot; block */
+  alignmentTablet?: Maybe<Scalars['String']['output']>;
+  /** The &quot;alt&quot; field on the &quot;GenerateblocksImage&quot; block */
+  alt?: Maybe<Scalars['String']['output']>;
+  /** The &quot;anchor&quot; field on the &quot;GenerateblocksImage&quot; block */
+  anchor?: Maybe<Scalars['String']['output']>;
+  /** The &quot;blockVersion&quot; field on the &quot;GenerateblocksImage&quot; block */
+  blockVersion?: Maybe<Scalars['Float']['output']>;
+  /** The &quot;borderColor&quot; field on the &quot;GenerateblocksImage&quot; block */
+  borderColor?: Maybe<Scalars['String']['output']>;
+  /** The &quot;className&quot; field on the &quot;GenerateblocksImage&quot; block */
+  className?: Maybe<Scalars['String']['output']>;
+  /** The &quot;height&quot; field on the &quot;GenerateblocksImage&quot; block */
+  height?: Maybe<Scalars['String']['output']>;
+  /** The &quot;heightMobile&quot; field on the &quot;GenerateblocksImage&quot; block */
+  heightMobile?: Maybe<Scalars['String']['output']>;
+  /** The &quot;heightTablet&quot; field on the &quot;GenerateblocksImage&quot; block */
+  heightTablet?: Maybe<Scalars['String']['output']>;
+  /** The &quot;href&quot; field on the &quot;GenerateblocksImage&quot; block */
+  href?: Maybe<Scalars['String']['output']>;
+  /** The &quot;lock&quot; field on the &quot;GenerateblocksImage&quot; block */
+  lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;mediaId&quot; field on the &quot;GenerateblocksImage&quot; block */
+  mediaId?: Maybe<Scalars['Float']['output']>;
+  /** The &quot;mediaUrl&quot; field on the &quot;GenerateblocksImage&quot; block */
+  mediaUrl?: Maybe<Scalars['String']['output']>;
+  /** The &quot;metadata&quot; field on the &quot;GenerateblocksImage&quot; block */
+  metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;objectFit&quot; field on the &quot;GenerateblocksImage&quot; block */
+  objectFit?: Maybe<Scalars['String']['output']>;
+  /** The &quot;objectFitMobile&quot; field on the &quot;GenerateblocksImage&quot; block */
+  objectFitMobile?: Maybe<Scalars['String']['output']>;
+  /** The &quot;objectFitTablet&quot; field on the &quot;GenerateblocksImage&quot; block */
+  objectFitTablet?: Maybe<Scalars['String']['output']>;
+  /** The &quot;openInNewWindow&quot; field on the &quot;GenerateblocksImage&quot; block */
+  openInNewWindow?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;relNoFollow&quot; field on the &quot;GenerateblocksImage&quot; block */
+  relNoFollow?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;relSponsored&quot; field on the &quot;GenerateblocksImage&quot; block */
+  relSponsored?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;sizeSlug&quot; field on the &quot;GenerateblocksImage&quot; block */
+  sizeSlug?: Maybe<Scalars['String']['output']>;
+  /** The &quot;title&quot; field on the &quot;GenerateblocksImage&quot; block */
+  title?: Maybe<Scalars['String']['output']>;
+  /** The &quot;uniqueId&quot; field on the &quot;GenerateblocksImage&quot; block */
+  uniqueId?: Maybe<Scalars['String']['output']>;
+  /** The &quot;width&quot; field on the &quot;GenerateblocksImage&quot; block */
+  width?: Maybe<Scalars['String']['output']>;
+  /** The &quot;widthMobile&quot; field on the &quot;GenerateblocksImage&quot; block */
+  widthMobile?: Maybe<Scalars['String']['output']>;
+  /** The &quot;widthTablet&quot; field on the &quot;GenerateblocksImage&quot; block */
+  widthTablet?: Maybe<Scalars['String']['output']>;
+};
+
+/** A block used for editing the site */
+export type GenerateblocksQueryLoop = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
+  __typename?: 'GenerateblocksQueryLoop';
+  /** The API version of the Gutenberg Block */
+  apiVersion?: Maybe<Scalars['Int']['output']>;
+  /** Attributes of the GenerateblocksQueryLoop Block Type */
+  attributes?: Maybe<GenerateblocksQueryLoopAttributes>;
+  /** The name of the category the Block belongs to */
+  blockEditorCategoryName?: Maybe<Scalars['String']['output']>;
+  /** The id of the Block */
+  clientId?: Maybe<Scalars['String']['output']>;
+  /** CSS Classnames to apply to the block */
+  cssClassNames?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  /** The inner blocks of the Block */
+  innerBlocks?: Maybe<Array<Maybe<EditorBlock>>>;
+  /** Whether the block is Dynamic (server rendered) */
+  isDynamic: Scalars['Boolean']['output'];
+  /** The name of the block */
+  name?: Maybe<Scalars['String']['output']>;
+  /** The parent id of the Block */
+  parentClientId?: Maybe<Scalars['String']['output']>;
+  /** The rendered HTML for the block */
+  renderedHtml?: Maybe<Scalars['String']['output']>;
+};
+
+/** Attributes of the GenerateblocksQueryLoop Block Type */
+export type GenerateblocksQueryLoopAttributes = {
+  __typename?: 'GenerateblocksQueryLoopAttributes';
+  /** The &quot;className&quot; field on the &quot;GenerateblocksQueryLoop&quot; block */
+  className?: Maybe<Scalars['String']['output']>;
+  /** The &quot;lock&quot; field on the &quot;GenerateblocksQueryLoop&quot; block */
+  lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;metadata&quot; field on the &quot;GenerateblocksQueryLoop&quot; block */
+  metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
+};
+
+/** A block used for editing the site */
+export type GeneratepressDynamicContent = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
+  __typename?: 'GeneratepressDynamicContent';
+  /** The API version of the Gutenberg Block */
+  apiVersion?: Maybe<Scalars['Int']['output']>;
+  /** Attributes of the GeneratepressDynamicContent Block Type */
+  attributes?: Maybe<GeneratepressDynamicContentAttributes>;
+  /** The name of the category the Block belongs to */
+  blockEditorCategoryName?: Maybe<Scalars['String']['output']>;
+  /** The id of the Block */
+  clientId?: Maybe<Scalars['String']['output']>;
+  /** CSS Classnames to apply to the block */
+  cssClassNames?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  /** The inner blocks of the Block */
+  innerBlocks?: Maybe<Array<Maybe<EditorBlock>>>;
+  /** Whether the block is Dynamic (server rendered) */
+  isDynamic: Scalars['Boolean']['output'];
+  /** The name of the block */
+  name?: Maybe<Scalars['String']['output']>;
+  /** The parent id of the Block */
+  parentClientId?: Maybe<Scalars['String']['output']>;
+  /** The rendered HTML for the block */
+  renderedHtml?: Maybe<Scalars['String']['output']>;
+};
+
+/** Attributes of the GeneratepressDynamicContent Block Type */
+export type GeneratepressDynamicContentAttributes = {
+  __typename?: 'GeneratepressDynamicContentAttributes';
+  /** The &quot;className&quot; field on the &quot;GeneratepressDynamicContent&quot; block */
+  className?: Maybe<Scalars['String']['output']>;
+  /** The &quot;contentType&quot; field on the &quot;GeneratepressDynamicContent&quot; block */
+  contentType?: Maybe<Scalars['String']['output']>;
+  /** The &quot;customMoreLink&quot; field on the &quot;GeneratepressDynamicContent&quot; block */
+  customMoreLink?: Maybe<Scalars['String']['output']>;
+  /** The &quot;excerptLength&quot; field on the &quot;GeneratepressDynamicContent&quot; block */
+  excerptLength?: Maybe<Scalars['Float']['output']>;
+  /** The &quot;lock&quot; field on the &quot;GeneratepressDynamicContent&quot; block */
+  lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;metadata&quot; field on the &quot;GeneratepressDynamicContent&quot; block */
+  metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;useThemeMoreLink&quot; field on the &quot;GeneratepressDynamicContent&quot; block */
+  useThemeMoreLink?: Maybe<Scalars['Boolean']['output']>;
+};
+
+/** A block used for editing the site */
+export type GeneratepressDynamicImage = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
+  __typename?: 'GeneratepressDynamicImage';
+  /** The API version of the Gutenberg Block */
+  apiVersion?: Maybe<Scalars['Int']['output']>;
+  /** Attributes of the GeneratepressDynamicImage Block Type */
+  attributes?: Maybe<GeneratepressDynamicImageAttributes>;
+  /** The name of the category the Block belongs to */
+  blockEditorCategoryName?: Maybe<Scalars['String']['output']>;
+  /** The id of the Block */
+  clientId?: Maybe<Scalars['String']['output']>;
+  /** CSS Classnames to apply to the block */
+  cssClassNames?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  /** The inner blocks of the Block */
+  innerBlocks?: Maybe<Array<Maybe<EditorBlock>>>;
+  /** Whether the block is Dynamic (server rendered) */
+  isDynamic: Scalars['Boolean']['output'];
+  /** The name of the block */
+  name?: Maybe<Scalars['String']['output']>;
+  /** The parent id of the Block */
+  parentClientId?: Maybe<Scalars['String']['output']>;
+  /** The rendered HTML for the block */
+  renderedHtml?: Maybe<Scalars['String']['output']>;
+};
+
+/** Attributes of the GeneratepressDynamicImage Block Type */
+export type GeneratepressDynamicImageAttributes = {
+  __typename?: 'GeneratepressDynamicImageAttributes';
+  /** The &quot;customField&quot; field on the &quot;GeneratepressDynamicImage&quot; block */
+  customField?: Maybe<Scalars['String']['output']>;
+  /** The &quot;gpDynamicSourceInSameTerm&quot; field on the &quot;GeneratepressDynamicImage&quot; block */
+  gpDynamicSourceInSameTerm?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;imageSource&quot; field on the &quot;GeneratepressDynamicImage&quot; block */
+  imageSource?: Maybe<Scalars['String']['output']>;
+  /** The &quot;imageType&quot; field on the &quot;GeneratepressDynamicImage&quot; block */
+  imageType?: Maybe<Scalars['String']['output']>;
+};
+
+/** The ggsipu type */
+export type Ggsipu = ContentNode & DatabaseIdentifier & HierarchicalContentNode & HierarchicalNode & MenuItemLinkable & Node & NodeWithAuthor & NodeWithComments & NodeWithContentEditor & NodeWithEditorBlocks & NodeWithExcerpt & NodeWithFeaturedImage & NodeWithGgsipuEditorBlocks & NodeWithPageAttributes & NodeWithRevisions & NodeWithTemplate & NodeWithTitle & NodeWithTrackbacks & Previewable & UniformResourceIdentifiable & {
+  __typename?: 'Ggsipu';
+  /** Returns ancestors of the node. Default ordered as lowest (closest to the child) to highest (closest to the root). */
+  ancestors?: Maybe<HierarchicalContentNodeToContentNodeAncestorsConnection>;
+  /** Connection between the NodeWithAuthor type and the User type */
+  author?: Maybe<NodeWithAuthorToUserConnectionEdge>;
+  /** The database identifier of the author of the node */
+  authorDatabaseId?: Maybe<Scalars['Int']['output']>;
+  /** The globally unique identifier of the author of the node */
+  authorId?: Maybe<Scalars['ID']['output']>;
+  /** Connection between the HierarchicalContentNode type and the ContentNode type */
+  children?: Maybe<HierarchicalContentNodeToContentNodeChildrenConnection>;
+  /** The number of comments. Even though WPGraphQL denotes this field as an integer, in WordPress this field should be saved as a numeric string for compatibility. */
+  commentCount?: Maybe<Scalars['Int']['output']>;
+  /** Whether the comments are open or closed for this particular post. */
+  commentStatus?: Maybe<Scalars['String']['output']>;
+  /** Connection between the Ggsipu type and the Comment type */
+  comments?: Maybe<GgsipuToCommentConnection>;
+  /** @deprecated Deprecated in favor of using Next.js pages */
+  conditionalTags?: Maybe<ConditionalTags>;
+  /** The content of the post. */
+  content?: Maybe<Scalars['String']['output']>;
+  /** Connection between the ContentNode type and the ContentType type */
+  contentType?: Maybe<ContentNodeToContentTypeConnectionEdge>;
+  /** The name of the Content Type the node belongs to */
+  contentTypeName: Scalars['String']['output'];
+  /** The unique identifier stored in the database */
+  databaseId: Scalars['Int']['output'];
+  /** Post publishing date. */
+  date?: Maybe<Scalars['String']['output']>;
+  /** The publishing date set in GMT. */
+  dateGmt?: Maybe<Scalars['String']['output']>;
+  /** The desired slug of the post */
+  desiredSlug?: Maybe<Scalars['String']['output']>;
+  /** If a user has edited the node within the past 15 seconds, this will return the user that last edited. Null if the edit lock doesn&#039;t exist or is greater than 15 seconds */
+  editingLockedBy?: Maybe<ContentNodeToEditLockConnectionEdge>;
+  /** List of Ggsipu editor blocks */
+  editorBlocks?: Maybe<Array<Maybe<GgsipuEditorBlock>>>;
+  /** The RSS enclosure for the object */
+  enclosure?: Maybe<Scalars['String']['output']>;
+  /** Connection between the ContentNode type and the EnqueuedScript type */
+  enqueuedScripts?: Maybe<ContentNodeToEnqueuedScriptConnection>;
+  /** Connection between the ContentNode type and the EnqueuedStylesheet type */
+  enqueuedStylesheets?: Maybe<ContentNodeToEnqueuedStylesheetConnection>;
+  /** The excerpt of the post. */
+  excerpt?: Maybe<Scalars['String']['output']>;
+  /** Connection between the NodeWithFeaturedImage type and the MediaItem type */
+  featuredImage?: Maybe<NodeWithFeaturedImageToMediaItemConnectionEdge>;
+  /** The database identifier for the featured image node assigned to the content node */
+  featuredImageDatabaseId?: Maybe<Scalars['Int']['output']>;
+  /** Globally unique ID of the featured image assigned to the node */
+  featuredImageId?: Maybe<Scalars['ID']['output']>;
+  /**
+   * The id field matches the WP_Post-&gt;ID field.
+   * @deprecated Deprecated in favor of the databaseId field
+   */
+  ggsipuId: Scalars['Int']['output'];
+  /** The global unique identifier for this post. This currently matches the value stored in WP_Post-&gt;guid and the guid column in the &quot;post_objects&quot; database table. */
+  guid?: Maybe<Scalars['String']['output']>;
+  /** Whether the ggsipu object is password protected. */
+  hasPassword?: Maybe<Scalars['Boolean']['output']>;
+  /** The globally unique identifier of the ggsipu object. */
+  id: Scalars['ID']['output'];
+  /** Whether the node is a Comment */
+  isComment: Scalars['Boolean']['output'];
+  /** Whether the node is a Content Node */
+  isContentNode: Scalars['Boolean']['output'];
+  /** Whether the node represents the front page. */
+  isFrontPage: Scalars['Boolean']['output'];
+  /** Whether  the node represents the blog page. */
+  isPostsPage: Scalars['Boolean']['output'];
+  /** Whether the object is a node in the preview state */
+  isPreview?: Maybe<Scalars['Boolean']['output']>;
+  /** Whether the object is restricted from the current viewer */
+  isRestricted?: Maybe<Scalars['Boolean']['output']>;
+  /** True if the node is a revision of another node */
+  isRevision?: Maybe<Scalars['Boolean']['output']>;
+  /** Whether the node is a Term */
+  isTermNode: Scalars['Boolean']['output'];
+  /** The user that most recently edited the node */
+  lastEditedBy?: Maybe<ContentNodeToEditLastConnectionEdge>;
+  /** The permalink of the post */
+  link?: Maybe<Scalars['String']['output']>;
+  /** A field used for ordering posts. This is typically used with nav menu items or for special ordering of hierarchical content types. */
+  menuOrder?: Maybe<Scalars['Int']['output']>;
+  /** The local modified time for a post. If a post was recently updated the modified field will change to match the corresponding time. */
+  modified?: Maybe<Scalars['String']['output']>;
+  /** The GMT modified time for a post. If a post was recently updated the modified field will change to match the corresponding time in GMT. */
+  modifiedGmt?: Maybe<Scalars['String']['output']>;
+  /** The parent of the node. The parent object can be of various types */
+  parent?: Maybe<HierarchicalContentNodeToParentContentNodeConnectionEdge>;
+  /** Database id of the parent node */
+  parentDatabaseId?: Maybe<Scalars['Int']['output']>;
+  /** The globally unique identifier of the parent node. */
+  parentId?: Maybe<Scalars['ID']['output']>;
+  /** The password for the ggsipu object. */
+  password?: Maybe<Scalars['String']['output']>;
+  /** Whether the pings are open or closed for this particular post. */
+  pingStatus?: Maybe<Scalars['String']['output']>;
+  /** URLs that have been pinged. */
+  pinged?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  /** Connection between the Ggsipu type and the postFormat type */
+  postFormats?: Maybe<GgsipuToPostFormatConnection>;
+  /** Connection between the Ggsipu type and the ggsipu type */
+  preview?: Maybe<GgsipuToPreviewConnectionEdge>;
+  /** The database id of the preview node */
+  previewRevisionDatabaseId?: Maybe<Scalars['Int']['output']>;
+  /** Whether the object is a node in the preview state */
+  previewRevisionId?: Maybe<Scalars['ID']['output']>;
+  /** If the current node is a revision, this field exposes the node this is a revision of. Returns null if the node is not a revision of another node. */
+  revisionOf?: Maybe<NodeWithRevisionsToContentNodeConnectionEdge>;
+  /** Connection between the Ggsipu type and the ggsipu type */
+  revisions?: Maybe<GgsipuToRevisionConnection>;
+  /** The uri slug for the post. This is equivalent to the WP_Post-&gt;post_name field and the post_name column in the database for the &quot;post_objects&quot; table. */
+  slug?: Maybe<Scalars['String']['output']>;
+  /** The current status of the object */
+  status?: Maybe<Scalars['String']['output']>;
+  /** The template assigned to a node of content */
+  template?: Maybe<ContentTemplate>;
+  templates?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  /** Connection between the Ggsipu type and the TermNode type */
+  terms?: Maybe<GgsipuToTermNodeConnection>;
+  /** The title of the post. This is currently just the raw title. An amendment to support rendered title needs to be made. */
+  title?: Maybe<Scalars['String']['output']>;
+  /** URLs queued to be pinged. */
+  toPing?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  /** The unique resource identifier path */
+  uri?: Maybe<Scalars['String']['output']>;
+};
+
+
+/** The ggsipu type */
+export type GgsipuAncestorsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<HierarchicalContentNodeToContentNodeAncestorsConnectionWhereArgs>;
+};
+
+
+/** The ggsipu type */
+export type GgsipuChildrenArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<HierarchicalContentNodeToContentNodeChildrenConnectionWhereArgs>;
+};
+
+
+/** The ggsipu type */
+export type GgsipuCommentsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<GgsipuToCommentConnectionWhereArgs>;
+};
+
+
+/** The ggsipu type */
+export type GgsipuContentArgs = {
+  format?: InputMaybe<PostObjectFieldFormatEnum>;
+};
+
+
+/** The ggsipu type */
+export type GgsipuEditorBlocksArgs = {
+  flat?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+/** The ggsipu type */
+export type GgsipuEnqueuedScriptsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+/** The ggsipu type */
+export type GgsipuEnqueuedStylesheetsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+/** The ggsipu type */
+export type GgsipuExcerptArgs = {
+  format?: InputMaybe<PostObjectFieldFormatEnum>;
+};
+
+
+/** The ggsipu type */
+export type GgsipuPostFormatsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<GgsipuToPostFormatConnectionWhereArgs>;
+};
+
+
+/** The ggsipu type */
+export type GgsipuRevisionsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<GgsipuToRevisionConnectionWhereArgs>;
+};
+
+
+/** The ggsipu type */
+export type GgsipuTermsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<GgsipuToTermNodeConnectionWhereArgs>;
+};
+
+
+/** The ggsipu type */
+export type GgsipuTitleArgs = {
+  format?: InputMaybe<PostObjectFieldFormatEnum>;
+};
+
+/** Connection to ggsipu Nodes */
+export type GgsipuConnection = {
+  /** A list of edges (relational context) between RootQuery and connected ggsipu Nodes */
+  edges: Array<GgsipuConnectionEdge>;
+  /** A list of connected ggsipu Nodes */
+  nodes: Array<Ggsipu>;
+  /** Information about pagination in a connection. */
+  pageInfo: GgsipuConnectionPageInfo;
+};
+
+/** Edge between a Node and a connected ggsipu */
+export type GgsipuConnectionEdge = {
+  /** Opaque reference to the nodes position in the connection. Value can be used with pagination args. */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The connected ggsipu Node */
+  node: Ggsipu;
+};
+
+/** Page Info on the connected GgsipuConnectionEdge */
+export type GgsipuConnectionPageInfo = {
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** EditorBlock Interface for Ggsipu Block Type */
+export type GgsipuEditorBlock = {
+  /** The API version of the Gutenberg Block */
+  apiVersion?: Maybe<Scalars['Int']['output']>;
+  /** The name of the category the Block belongs to */
+  blockEditorCategoryName?: Maybe<Scalars['String']['output']>;
+  /** The id of the Block */
+  clientId?: Maybe<Scalars['String']['output']>;
+  /** CSS Classnames to apply to the block */
+  cssClassNames?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  /** The inner blocks of the Block */
+  innerBlocks?: Maybe<Array<Maybe<EditorBlock>>>;
+  /** Whether the block is Dynamic (server rendered) */
+  isDynamic: Scalars['Boolean']['output'];
+  /** The name of the Block */
+  name?: Maybe<Scalars['String']['output']>;
+  /** The parent id of the Block */
+  parentClientId?: Maybe<Scalars['String']['output']>;
+  /** The rendered HTML for the block */
+  renderedHtml?: Maybe<Scalars['String']['output']>;
+};
+
+/** The Type of Identifier used to fetch a single resource. Default is ID. */
+export enum GgsipuIdType {
+  /** Identify a resource by the Database ID. */
+  DatabaseId = 'DATABASE_ID',
+  /** Identify a resource by the (hashed) Global ID. */
+  Id = 'ID',
+  /** Identify a resource by the URI. */
+  Uri = 'URI'
+}
+
+/** Set relationships between the ggsipu to postFormats */
+export type GgsipuPostFormatsInput = {
+  /** If true, this will append the postFormat to existing related postFormats. If false, this will replace existing relationships. Default true. */
+  append?: InputMaybe<Scalars['Boolean']['input']>;
+  /** The input list of items to set. */
+  nodes?: InputMaybe<Array<InputMaybe<GgsipuPostFormatsNodeInput>>>;
+};
+
+/** List of postFormats to connect the ggsipu to. If an ID is set, it will be used to create the connection. If not, it will look for a slug. If neither are valid existing terms, and the site is configured to allow terms to be created during post mutations, a term will be created using the Name if it exists in the input, then fallback to the slug if it exists. */
+export type GgsipuPostFormatsNodeInput = {
+  /** The description of the postFormat. This field is used to set a description of the postFormat if a new one is created during the mutation. */
+  description?: InputMaybe<Scalars['String']['input']>;
+  /** The ID of the postFormat. If present, this will be used to connect to the ggsipu. If no existing postFormat exists with this ID, no connection will be made. */
+  id?: InputMaybe<Scalars['ID']['input']>;
+  /** The name of the postFormat. This field is used to create a new term, if term creation is enabled in nested mutations, and if one does not already exist with the provided slug or ID or if a slug or ID is not provided. If no name is included and a term is created, the creation will fallback to the slug field. */
+  name?: InputMaybe<Scalars['String']['input']>;
+  /** The slug of the postFormat. If no ID is present, this field will be used to make a connection. If no existing term exists with this slug, this field will be used as a fallback to the Name field when creating a new term to connect to, if term creation is enabled as a nested mutation. */
+  slug?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** Connection between the Ggsipu type and the Comment type */
+export type GgsipuToCommentConnection = CommentConnection & Connection & {
+  __typename?: 'GgsipuToCommentConnection';
+  /** Edges for the GgsipuToCommentConnection connection */
+  edges: Array<GgsipuToCommentConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<Comment>;
+  /** Information about pagination in a connection. */
+  pageInfo: GgsipuToCommentConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type GgsipuToCommentConnectionEdge = CommentConnectionEdge & Edge & {
+  __typename?: 'GgsipuToCommentConnectionEdge';
+  /** A cursor for use in pagination */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The item at the end of the edge */
+  node: Comment;
+};
+
+/** Page Info on the &quot;GgsipuToCommentConnection&quot; */
+export type GgsipuToCommentConnectionPageInfo = CommentConnectionPageInfo & PageInfo & WpPageInfo & {
+  __typename?: 'GgsipuToCommentConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Arguments for filtering the GgsipuToCommentConnection connection */
+export type GgsipuToCommentConnectionWhereArgs = {
+  /** Comment author email address. */
+  authorEmail?: InputMaybe<Scalars['String']['input']>;
+  /** Array of author IDs to include comments for. */
+  authorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of author IDs to exclude comments for. */
+  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Comment author URL. */
+  authorUrl?: InputMaybe<Scalars['String']['input']>;
+  /** Array of comment IDs to include. */
+  commentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of IDs of users whose unapproved comments will be returned by the query regardless of status. */
+  commentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Include comments of a given type. */
+  commentType?: InputMaybe<Scalars['String']['input']>;
+  /** Include comments from a given array of comment types. */
+  commentTypeIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Exclude comments from a given array of comment types. */
+  commentTypeNotIn?: InputMaybe<Scalars['String']['input']>;
+  /** Content object author ID to limit results by. */
+  contentAuthor?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of author IDs to retrieve comments for. */
+  contentAuthorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of author IDs *not* to retrieve comments for. */
+  contentAuthorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Limit results to those affiliated with a given content object ID. */
+  contentId?: InputMaybe<Scalars['ID']['input']>;
+  /** Array of content object IDs to include affiliated comments for. */
+  contentIdIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of content object IDs to exclude affiliated comments for. */
+  contentIdNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Content object name (i.e. slug ) to retrieve affiliated comments for. */
+  contentName?: InputMaybe<Scalars['String']['input']>;
+  /** Content Object parent ID to retrieve affiliated comments for. */
+  contentParent?: InputMaybe<Scalars['Int']['input']>;
+  /** Array of content object statuses to retrieve affiliated comments for. Pass 'any' to match any value. */
+  contentStatus?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
+  /** Content object type or array of types to retrieve affiliated comments for. Pass 'any' to match any value. */
+  contentType?: InputMaybe<Array<InputMaybe<ContentTypeEnum>>>;
+  /** Array of IDs or email addresses of users whose unapproved comments will be returned by the query regardless of $status. Default empty */
+  includeUnapproved?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Karma score to retrieve matching comments for. */
+  karma?: InputMaybe<Scalars['Int']['input']>;
+  /** The cardinality of the order of the connection */
+  order?: InputMaybe<OrderEnum>;
+  /** Field to order the comments by. */
+  orderby?: InputMaybe<CommentsConnectionOrderbyEnum>;
+  /** Parent ID of comment to retrieve children of. */
+  parent?: InputMaybe<Scalars['Int']['input']>;
+  /** Array of parent IDs of comments to retrieve children for. */
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of parent IDs of comments *not* to retrieve children for. */
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Search term(s) to retrieve matching comments for. */
+  search?: InputMaybe<Scalars['String']['input']>;
+  /** Comment status to limit results by. */
+  status?: InputMaybe<Scalars['String']['input']>;
+  /** Include comments for a specific user ID. */
+  userId?: InputMaybe<Scalars['ID']['input']>;
+};
+
+/** Connection between the Ggsipu type and the postFormat type */
+export type GgsipuToPostFormatConnection = Connection & PostFormatConnection & {
+  __typename?: 'GgsipuToPostFormatConnection';
+  /** Edges for the GgsipuToPostFormatConnection connection */
+  edges: Array<GgsipuToPostFormatConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<PostFormat>;
+  /** Information about pagination in a connection. */
+  pageInfo: GgsipuToPostFormatConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type GgsipuToPostFormatConnectionEdge = Edge & PostFormatConnectionEdge & {
+  __typename?: 'GgsipuToPostFormatConnectionEdge';
+  /** A cursor for use in pagination */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The item at the end of the edge */
+  node: PostFormat;
+};
+
+/** Page Info on the &quot;GgsipuToPostFormatConnection&quot; */
+export type GgsipuToPostFormatConnectionPageInfo = PageInfo & PostFormatConnectionPageInfo & WpPageInfo & {
+  __typename?: 'GgsipuToPostFormatConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Arguments for filtering the GgsipuToPostFormatConnection connection */
+export type GgsipuToPostFormatConnectionWhereArgs = {
+  /** Unique cache key to be produced when this query is stored in an object cache. Default is 'core'. */
+  cacheDomain?: InputMaybe<Scalars['String']['input']>;
+  /** Term ID to retrieve child terms of. If multiple taxonomies are passed, $child_of is ignored. Default 0. */
+  childOf?: InputMaybe<Scalars['Int']['input']>;
+  /** True to limit results to terms that have no children. This parameter has no effect on non-hierarchical taxonomies. Default false. */
+  childless?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Retrieve terms where the description is LIKE the input value. Default empty. */
+  descriptionLike?: InputMaybe<Scalars['String']['input']>;
+  /** Array of term ids to exclude. If $include is non-empty, $exclude is ignored. Default empty array. */
+  exclude?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of term ids to exclude along with all of their descendant terms. If $include is non-empty, $exclude_tree is ignored. Default empty array. */
+  excludeTree?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Whether to hide terms not assigned to any posts. Accepts true or false. Default false */
+  hideEmpty?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Whether to include terms that have non-empty descendants (even if $hide_empty is set to true). Default true. */
+  hierarchical?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Array of term ids to include. Default empty array. */
+  include?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of names to return term(s) for. Default empty. */
+  name?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Retrieve terms where the name is LIKE the input value. Default empty. */
+  nameLike?: InputMaybe<Scalars['String']['input']>;
+  /** Array of object IDs. Results will be limited to terms associated with these objects. */
+  objectIds?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Direction the connection should be ordered in */
+  order?: InputMaybe<OrderEnum>;
+  /** Field(s) to order terms by. Defaults to 'name'. */
+  orderby?: InputMaybe<TermObjectsConnectionOrderbyEnum>;
+  /** Whether to pad the quantity of a term's children in the quantity of each term's "count" object variable. Default false. */
+  padCounts?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Parent term ID to retrieve direct-child terms of. Default empty. */
+  parent?: InputMaybe<Scalars['Int']['input']>;
+  /** Search criteria to match terms. Will be SQL-formatted with wildcards before and after. Default empty. */
+  search?: InputMaybe<Scalars['String']['input']>;
+  /** Array of slugs to return term(s) for. Default empty. */
+  slug?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomyId?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Whether to prime meta caches for matched terms. Default true. */
+  updateTermMetaCache?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** Connection between the Ggsipu type and the ggsipu type */
+export type GgsipuToPreviewConnectionEdge = Edge & GgsipuConnectionEdge & OneToOneConnection & {
+  __typename?: 'GgsipuToPreviewConnectionEdge';
+  /** Opaque reference to the nodes position in the connection. Value can be used with pagination args. */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The node of the connection, without the edges */
+  node: Ggsipu;
+};
+
+/** Connection between the Ggsipu type and the ggsipu type */
+export type GgsipuToRevisionConnection = Connection & GgsipuConnection & {
+  __typename?: 'GgsipuToRevisionConnection';
+  /** Edges for the GgsipuToRevisionConnection connection */
+  edges: Array<GgsipuToRevisionConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<Ggsipu>;
+  /** Information about pagination in a connection. */
+  pageInfo: GgsipuToRevisionConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type GgsipuToRevisionConnectionEdge = Edge & GgsipuConnectionEdge & {
+  __typename?: 'GgsipuToRevisionConnectionEdge';
+  /** A cursor for use in pagination */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The item at the end of the edge */
+  node: Ggsipu;
+};
+
+/** Page Info on the &quot;GgsipuToRevisionConnection&quot; */
+export type GgsipuToRevisionConnectionPageInfo = GgsipuConnectionPageInfo & PageInfo & WpPageInfo & {
+  __typename?: 'GgsipuToRevisionConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Arguments for filtering the GgsipuToRevisionConnection connection */
+export type GgsipuToRevisionConnectionWhereArgs = {
+  /** The user that's connected as the author of the object. Use the userId for the author object. */
+  author?: InputMaybe<Scalars['Int']['input']>;
+  /** Find objects connected to author(s) in the array of author's userIds */
+  authorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Find objects connected to the author by the author's nicename */
+  authorName?: InputMaybe<Scalars['String']['input']>;
+  /** Find objects NOT connected to author(s) in the array of author's userIds */
+  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Filter the connection based on dates */
+  dateQuery?: InputMaybe<DateQueryInput>;
+  /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
+  hasPassword?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Specific database ID of the object */
+  id?: InputMaybe<Scalars['Int']['input']>;
+  /** Array of IDs for the objects to retrieve */
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Get objects with a specific mimeType property */
+  mimeType?: InputMaybe<MimeTypeEnum>;
+  /** Slug / post_name of the object */
+  name?: InputMaybe<Scalars['String']['input']>;
+  /** Specify objects to retrieve. Use slugs */
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** What parameter to use to order the objects by. */
+  orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
+  /** Use ID to return only children. Use 0 to return only top-level items */
+  parent?: InputMaybe<Scalars['ID']['input']>;
+  /** Specify objects whose parent is in an array */
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Specify posts whose parent is not in an array */
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Show posts with a specific password. */
+  password?: InputMaybe<Scalars['String']['input']>;
+  /** Show Posts based on a keyword search */
+  search?: InputMaybe<Scalars['String']['input']>;
+  /** Retrieve posts where post status is in an array. */
+  stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
+  /** Show posts with a specific status. */
+  status?: InputMaybe<PostStatusEnum>;
+  /** Title of the object */
+  title?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** Connection between the Ggsipu type and the TermNode type */
+export type GgsipuToTermNodeConnection = Connection & TermNodeConnection & {
+  __typename?: 'GgsipuToTermNodeConnection';
+  /** Edges for the GgsipuToTermNodeConnection connection */
+  edges: Array<GgsipuToTermNodeConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<TermNode>;
+  /** Information about pagination in a connection. */
+  pageInfo: GgsipuToTermNodeConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type GgsipuToTermNodeConnectionEdge = Edge & TermNodeConnectionEdge & {
+  __typename?: 'GgsipuToTermNodeConnectionEdge';
+  /** A cursor for use in pagination */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The item at the end of the edge */
+  node: TermNode;
+};
+
+/** Page Info on the &quot;GgsipuToTermNodeConnection&quot; */
+export type GgsipuToTermNodeConnectionPageInfo = PageInfo & TermNodeConnectionPageInfo & WpPageInfo & {
+  __typename?: 'GgsipuToTermNodeConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Arguments for filtering the GgsipuToTermNodeConnection connection */
+export type GgsipuToTermNodeConnectionWhereArgs = {
+  /** Unique cache key to be produced when this query is stored in an object cache. Default is 'core'. */
+  cacheDomain?: InputMaybe<Scalars['String']['input']>;
+  /** Term ID to retrieve child terms of. If multiple taxonomies are passed, $child_of is ignored. Default 0. */
+  childOf?: InputMaybe<Scalars['Int']['input']>;
+  /** True to limit results to terms that have no children. This parameter has no effect on non-hierarchical taxonomies. Default false. */
+  childless?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Retrieve terms where the description is LIKE the input value. Default empty. */
+  descriptionLike?: InputMaybe<Scalars['String']['input']>;
+  /** Array of term ids to exclude. If $include is non-empty, $exclude is ignored. Default empty array. */
+  exclude?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of term ids to exclude along with all of their descendant terms. If $include is non-empty, $exclude_tree is ignored. Default empty array. */
+  excludeTree?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Whether to hide terms not assigned to any posts. Accepts true or false. Default false */
+  hideEmpty?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Whether to include terms that have non-empty descendants (even if $hide_empty is set to true). Default true. */
+  hierarchical?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Array of term ids to include. Default empty array. */
+  include?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of names to return term(s) for. Default empty. */
+  name?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Retrieve terms where the name is LIKE the input value. Default empty. */
+  nameLike?: InputMaybe<Scalars['String']['input']>;
+  /** Array of object IDs. Results will be limited to terms associated with these objects. */
+  objectIds?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Direction the connection should be ordered in */
+  order?: InputMaybe<OrderEnum>;
+  /** Field(s) to order terms by. Defaults to 'name'. */
+  orderby?: InputMaybe<TermObjectsConnectionOrderbyEnum>;
+  /** Whether to pad the quantity of a term's children in the quantity of each term's "count" object variable. Default false. */
+  padCounts?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Parent term ID to retrieve direct-child terms of. Default empty. */
+  parent?: InputMaybe<Scalars['Int']['input']>;
+  /** Search criteria to match terms. Will be SQL-formatted with wildcards before and after. Default empty. */
+  search?: InputMaybe<Scalars['String']['input']>;
+  /** Array of slugs to return term(s) for. Default empty. */
+  slug?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** The Taxonomy to filter terms by */
+  taxonomies?: InputMaybe<Array<InputMaybe<TaxonomyEnum>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomyId?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Whether to prime meta caches for matched terms. Default true. */
+  updateTermMetaCache?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 /** Types of styles to load */
@@ -8912,8 +10922,1366 @@ export type HierarchicalTermNodeEnqueuedStylesheetsArgs = {
   last?: InputMaybe<Scalars['Int']['input']>;
 };
 
+/** The kuk type */
+export type Kuk = ContentNode & DatabaseIdentifier & MenuItemLinkable & Node & NodeWithAuthor & NodeWithComments & NodeWithContentEditor & NodeWithEditorBlocks & NodeWithExcerpt & NodeWithFeaturedImage & NodeWithKukEditorBlocks & NodeWithPageAttributes & NodeWithRevisions & NodeWithTemplate & NodeWithTitle & NodeWithTrackbacks & Previewable & UniformResourceIdentifiable & {
+  __typename?: 'Kuk';
+  /**
+   * The ancestors of the content node.
+   * @deprecated This content type is not hierarchical and typically will not have ancestors
+   */
+  ancestors?: Maybe<KukToKukConnection>;
+  /** Connection between the NodeWithAuthor type and the User type */
+  author?: Maybe<NodeWithAuthorToUserConnectionEdge>;
+  /** The database identifier of the author of the node */
+  authorDatabaseId?: Maybe<Scalars['Int']['output']>;
+  /** The globally unique identifier of the author of the node */
+  authorId?: Maybe<Scalars['ID']['output']>;
+  /** The number of comments. Even though WPGraphQL denotes this field as an integer, in WordPress this field should be saved as a numeric string for compatibility. */
+  commentCount?: Maybe<Scalars['Int']['output']>;
+  /** Whether the comments are open or closed for this particular post. */
+  commentStatus?: Maybe<Scalars['String']['output']>;
+  /** Connection between the Kuk type and the Comment type */
+  comments?: Maybe<KukToCommentConnection>;
+  /** @deprecated Deprecated in favor of using Next.js pages */
+  conditionalTags?: Maybe<ConditionalTags>;
+  /** The content of the post. */
+  content?: Maybe<Scalars['String']['output']>;
+  /** Connection between the ContentNode type and the ContentType type */
+  contentType?: Maybe<ContentNodeToContentTypeConnectionEdge>;
+  /** The name of the Content Type the node belongs to */
+  contentTypeName: Scalars['String']['output'];
+  /** The unique identifier stored in the database */
+  databaseId: Scalars['Int']['output'];
+  /** Post publishing date. */
+  date?: Maybe<Scalars['String']['output']>;
+  /** The publishing date set in GMT. */
+  dateGmt?: Maybe<Scalars['String']['output']>;
+  /** The desired slug of the post */
+  desiredSlug?: Maybe<Scalars['String']['output']>;
+  /** If a user has edited the node within the past 15 seconds, this will return the user that last edited. Null if the edit lock doesn&#039;t exist or is greater than 15 seconds */
+  editingLockedBy?: Maybe<ContentNodeToEditLockConnectionEdge>;
+  /** List of Kuk editor blocks */
+  editorBlocks?: Maybe<Array<Maybe<KukEditorBlock>>>;
+  /** The RSS enclosure for the object */
+  enclosure?: Maybe<Scalars['String']['output']>;
+  /** Connection between the ContentNode type and the EnqueuedScript type */
+  enqueuedScripts?: Maybe<ContentNodeToEnqueuedScriptConnection>;
+  /** Connection between the ContentNode type and the EnqueuedStylesheet type */
+  enqueuedStylesheets?: Maybe<ContentNodeToEnqueuedStylesheetConnection>;
+  /** The excerpt of the post. */
+  excerpt?: Maybe<Scalars['String']['output']>;
+  /** Connection between the NodeWithFeaturedImage type and the MediaItem type */
+  featuredImage?: Maybe<NodeWithFeaturedImageToMediaItemConnectionEdge>;
+  /** The database identifier for the featured image node assigned to the content node */
+  featuredImageDatabaseId?: Maybe<Scalars['Int']['output']>;
+  /** Globally unique ID of the featured image assigned to the node */
+  featuredImageId?: Maybe<Scalars['ID']['output']>;
+  /** The global unique identifier for this post. This currently matches the value stored in WP_Post-&gt;guid and the guid column in the &quot;post_objects&quot; database table. */
+  guid?: Maybe<Scalars['String']['output']>;
+  /** Whether the kuk object is password protected. */
+  hasPassword?: Maybe<Scalars['Boolean']['output']>;
+  /** The globally unique identifier of the kuk object. */
+  id: Scalars['ID']['output'];
+  /** Whether the node is a Comment */
+  isComment: Scalars['Boolean']['output'];
+  /** Whether the node is a Content Node */
+  isContentNode: Scalars['Boolean']['output'];
+  /** Whether the node represents the front page. */
+  isFrontPage: Scalars['Boolean']['output'];
+  /** Whether  the node represents the blog page. */
+  isPostsPage: Scalars['Boolean']['output'];
+  /** Whether the object is a node in the preview state */
+  isPreview?: Maybe<Scalars['Boolean']['output']>;
+  /** Whether the object is restricted from the current viewer */
+  isRestricted?: Maybe<Scalars['Boolean']['output']>;
+  /** True if the node is a revision of another node */
+  isRevision?: Maybe<Scalars['Boolean']['output']>;
+  /** Whether the node is a Term */
+  isTermNode: Scalars['Boolean']['output'];
+  /**
+   * The id field matches the WP_Post-&gt;ID field.
+   * @deprecated Deprecated in favor of the databaseId field
+   */
+  kukId: Scalars['Int']['output'];
+  /** The user that most recently edited the node */
+  lastEditedBy?: Maybe<ContentNodeToEditLastConnectionEdge>;
+  /** The permalink of the post */
+  link?: Maybe<Scalars['String']['output']>;
+  /** A field used for ordering posts. This is typically used with nav menu items or for special ordering of hierarchical content types. */
+  menuOrder?: Maybe<Scalars['Int']['output']>;
+  /** The local modified time for a post. If a post was recently updated the modified field will change to match the corresponding time. */
+  modified?: Maybe<Scalars['String']['output']>;
+  /** The GMT modified time for a post. If a post was recently updated the modified field will change to match the corresponding time in GMT. */
+  modifiedGmt?: Maybe<Scalars['String']['output']>;
+  /**
+   * The parent of the content node.
+   * @deprecated This content type is not hierarchical and typically will not have a parent
+   */
+  parent?: Maybe<KukToParentConnectionEdge>;
+  /** The password for the kuk object. */
+  password?: Maybe<Scalars['String']['output']>;
+  /** Whether the pings are open or closed for this particular post. */
+  pingStatus?: Maybe<Scalars['String']['output']>;
+  /** URLs that have been pinged. */
+  pinged?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  /** Connection between the Kuk type and the postFormat type */
+  postFormats?: Maybe<KukToPostFormatConnection>;
+  /** Connection between the Kuk type and the kuk type */
+  preview?: Maybe<KukToPreviewConnectionEdge>;
+  /** The database id of the preview node */
+  previewRevisionDatabaseId?: Maybe<Scalars['Int']['output']>;
+  /** Whether the object is a node in the preview state */
+  previewRevisionId?: Maybe<Scalars['ID']['output']>;
+  /** If the current node is a revision, this field exposes the node this is a revision of. Returns null if the node is not a revision of another node. */
+  revisionOf?: Maybe<NodeWithRevisionsToContentNodeConnectionEdge>;
+  /** Connection between the Kuk type and the kuk type */
+  revisions?: Maybe<KukToRevisionConnection>;
+  /** The uri slug for the post. This is equivalent to the WP_Post-&gt;post_name field and the post_name column in the database for the &quot;post_objects&quot; table. */
+  slug?: Maybe<Scalars['String']['output']>;
+  /** The current status of the object */
+  status?: Maybe<Scalars['String']['output']>;
+  /** The template assigned to the node */
+  template?: Maybe<ContentTemplate>;
+  templates?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  /** Connection between the Kuk type and the TermNode type */
+  terms?: Maybe<KukToTermNodeConnection>;
+  /** The title of the post. This is currently just the raw title. An amendment to support rendered title needs to be made. */
+  title?: Maybe<Scalars['String']['output']>;
+  /** URLs queued to be pinged. */
+  toPing?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  /** The unique resource identifier path */
+  uri?: Maybe<Scalars['String']['output']>;
+};
+
+
+/** The kuk type */
+export type KukAncestorsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+/** The kuk type */
+export type KukCommentsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<KukToCommentConnectionWhereArgs>;
+};
+
+
+/** The kuk type */
+export type KukContentArgs = {
+  format?: InputMaybe<PostObjectFieldFormatEnum>;
+};
+
+
+/** The kuk type */
+export type KukEditorBlocksArgs = {
+  flat?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+/** The kuk type */
+export type KukEnqueuedScriptsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+/** The kuk type */
+export type KukEnqueuedStylesheetsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+/** The kuk type */
+export type KukExcerptArgs = {
+  format?: InputMaybe<PostObjectFieldFormatEnum>;
+};
+
+
+/** The kuk type */
+export type KukPostFormatsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<KukToPostFormatConnectionWhereArgs>;
+};
+
+
+/** The kuk type */
+export type KukRevisionsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<KukToRevisionConnectionWhereArgs>;
+};
+
+
+/** The kuk type */
+export type KukTermsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<KukToTermNodeConnectionWhereArgs>;
+};
+
+
+/** The kuk type */
+export type KukTitleArgs = {
+  format?: InputMaybe<PostObjectFieldFormatEnum>;
+};
+
+/** Connection to kuk Nodes */
+export type KukConnection = {
+  /** A list of edges (relational context) between RootQuery and connected kuk Nodes */
+  edges: Array<KukConnectionEdge>;
+  /** A list of connected kuk Nodes */
+  nodes: Array<Kuk>;
+  /** Information about pagination in a connection. */
+  pageInfo: KukConnectionPageInfo;
+};
+
+/** Edge between a Node and a connected kuk */
+export type KukConnectionEdge = {
+  /** Opaque reference to the nodes position in the connection. Value can be used with pagination args. */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The connected kuk Node */
+  node: Kuk;
+};
+
+/** Page Info on the connected KukConnectionEdge */
+export type KukConnectionPageInfo = {
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** EditorBlock Interface for Kuk Block Type */
+export type KukEditorBlock = {
+  /** The API version of the Gutenberg Block */
+  apiVersion?: Maybe<Scalars['Int']['output']>;
+  /** The name of the category the Block belongs to */
+  blockEditorCategoryName?: Maybe<Scalars['String']['output']>;
+  /** The id of the Block */
+  clientId?: Maybe<Scalars['String']['output']>;
+  /** CSS Classnames to apply to the block */
+  cssClassNames?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  /** The inner blocks of the Block */
+  innerBlocks?: Maybe<Array<Maybe<EditorBlock>>>;
+  /** Whether the block is Dynamic (server rendered) */
+  isDynamic: Scalars['Boolean']['output'];
+  /** The name of the Block */
+  name?: Maybe<Scalars['String']['output']>;
+  /** The parent id of the Block */
+  parentClientId?: Maybe<Scalars['String']['output']>;
+  /** The rendered HTML for the block */
+  renderedHtml?: Maybe<Scalars['String']['output']>;
+};
+
+/** The Type of Identifier used to fetch a single resource. Default is ID. */
+export enum KukIdType {
+  /** Identify a resource by the Database ID. */
+  DatabaseId = 'DATABASE_ID',
+  /** Identify a resource by the (hashed) Global ID. */
+  Id = 'ID',
+  /** Identify a resource by the slug. Available to non-hierarchcial Types where the slug is a unique identifier. */
+  Slug = 'SLUG',
+  /** Identify a resource by the URI. */
+  Uri = 'URI'
+}
+
+/** Set relationships between the kuk to postFormats */
+export type KukPostFormatsInput = {
+  /** If true, this will append the postFormat to existing related postFormats. If false, this will replace existing relationships. Default true. */
+  append?: InputMaybe<Scalars['Boolean']['input']>;
+  /** The input list of items to set. */
+  nodes?: InputMaybe<Array<InputMaybe<KukPostFormatsNodeInput>>>;
+};
+
+/** List of postFormats to connect the kuk to. If an ID is set, it will be used to create the connection. If not, it will look for a slug. If neither are valid existing terms, and the site is configured to allow terms to be created during post mutations, a term will be created using the Name if it exists in the input, then fallback to the slug if it exists. */
+export type KukPostFormatsNodeInput = {
+  /** The description of the postFormat. This field is used to set a description of the postFormat if a new one is created during the mutation. */
+  description?: InputMaybe<Scalars['String']['input']>;
+  /** The ID of the postFormat. If present, this will be used to connect to the kuk. If no existing postFormat exists with this ID, no connection will be made. */
+  id?: InputMaybe<Scalars['ID']['input']>;
+  /** The name of the postFormat. This field is used to create a new term, if term creation is enabled in nested mutations, and if one does not already exist with the provided slug or ID or if a slug or ID is not provided. If no name is included and a term is created, the creation will fallback to the slug field. */
+  name?: InputMaybe<Scalars['String']['input']>;
+  /** The slug of the postFormat. If no ID is present, this field will be used to make a connection. If no existing term exists with this slug, this field will be used as a fallback to the Name field when creating a new term to connect to, if term creation is enabled as a nested mutation. */
+  slug?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** Connection between the Kuk type and the Comment type */
+export type KukToCommentConnection = CommentConnection & Connection & {
+  __typename?: 'KukToCommentConnection';
+  /** Edges for the KukToCommentConnection connection */
+  edges: Array<KukToCommentConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<Comment>;
+  /** Information about pagination in a connection. */
+  pageInfo: KukToCommentConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type KukToCommentConnectionEdge = CommentConnectionEdge & Edge & {
+  __typename?: 'KukToCommentConnectionEdge';
+  /** A cursor for use in pagination */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The item at the end of the edge */
+  node: Comment;
+};
+
+/** Page Info on the &quot;KukToCommentConnection&quot; */
+export type KukToCommentConnectionPageInfo = CommentConnectionPageInfo & PageInfo & WpPageInfo & {
+  __typename?: 'KukToCommentConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Arguments for filtering the KukToCommentConnection connection */
+export type KukToCommentConnectionWhereArgs = {
+  /** Comment author email address. */
+  authorEmail?: InputMaybe<Scalars['String']['input']>;
+  /** Array of author IDs to include comments for. */
+  authorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of author IDs to exclude comments for. */
+  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Comment author URL. */
+  authorUrl?: InputMaybe<Scalars['String']['input']>;
+  /** Array of comment IDs to include. */
+  commentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of IDs of users whose unapproved comments will be returned by the query regardless of status. */
+  commentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Include comments of a given type. */
+  commentType?: InputMaybe<Scalars['String']['input']>;
+  /** Include comments from a given array of comment types. */
+  commentTypeIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Exclude comments from a given array of comment types. */
+  commentTypeNotIn?: InputMaybe<Scalars['String']['input']>;
+  /** Content object author ID to limit results by. */
+  contentAuthor?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of author IDs to retrieve comments for. */
+  contentAuthorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of author IDs *not* to retrieve comments for. */
+  contentAuthorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Limit results to those affiliated with a given content object ID. */
+  contentId?: InputMaybe<Scalars['ID']['input']>;
+  /** Array of content object IDs to include affiliated comments for. */
+  contentIdIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of content object IDs to exclude affiliated comments for. */
+  contentIdNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Content object name (i.e. slug ) to retrieve affiliated comments for. */
+  contentName?: InputMaybe<Scalars['String']['input']>;
+  /** Content Object parent ID to retrieve affiliated comments for. */
+  contentParent?: InputMaybe<Scalars['Int']['input']>;
+  /** Array of content object statuses to retrieve affiliated comments for. Pass 'any' to match any value. */
+  contentStatus?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
+  /** Content object type or array of types to retrieve affiliated comments for. Pass 'any' to match any value. */
+  contentType?: InputMaybe<Array<InputMaybe<ContentTypeEnum>>>;
+  /** Array of IDs or email addresses of users whose unapproved comments will be returned by the query regardless of $status. Default empty */
+  includeUnapproved?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Karma score to retrieve matching comments for. */
+  karma?: InputMaybe<Scalars['Int']['input']>;
+  /** The cardinality of the order of the connection */
+  order?: InputMaybe<OrderEnum>;
+  /** Field to order the comments by. */
+  orderby?: InputMaybe<CommentsConnectionOrderbyEnum>;
+  /** Parent ID of comment to retrieve children of. */
+  parent?: InputMaybe<Scalars['Int']['input']>;
+  /** Array of parent IDs of comments to retrieve children for. */
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of parent IDs of comments *not* to retrieve children for. */
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Search term(s) to retrieve matching comments for. */
+  search?: InputMaybe<Scalars['String']['input']>;
+  /** Comment status to limit results by. */
+  status?: InputMaybe<Scalars['String']['input']>;
+  /** Include comments for a specific user ID. */
+  userId?: InputMaybe<Scalars['ID']['input']>;
+};
+
+/** Connection between the Kuk type and the kuk type */
+export type KukToKukConnection = Connection & KukConnection & {
+  __typename?: 'KukToKukConnection';
+  /** Edges for the KukToKukConnection connection */
+  edges: Array<KukToKukConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<Kuk>;
+  /** Information about pagination in a connection. */
+  pageInfo: KukToKukConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type KukToKukConnectionEdge = Edge & KukConnectionEdge & {
+  __typename?: 'KukToKukConnectionEdge';
+  /**
+   * A cursor for use in pagination
+   * @deprecated This content type is not hierarchical and typically will not have ancestors
+   */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /**
+   * The item at the end of the edge
+   * @deprecated This content type is not hierarchical and typically will not have ancestors
+   */
+  node: Kuk;
+};
+
+/** Page Info on the &quot;KukToKukConnection&quot; */
+export type KukToKukConnectionPageInfo = KukConnectionPageInfo & PageInfo & WpPageInfo & {
+  __typename?: 'KukToKukConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Connection between the Kuk type and the kuk type */
+export type KukToParentConnectionEdge = Edge & KukConnectionEdge & OneToOneConnection & {
+  __typename?: 'KukToParentConnectionEdge';
+  /** Opaque reference to the nodes position in the connection. Value can be used with pagination args. */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /**
+   * The node of the connection, without the edges
+   * @deprecated This content type is not hierarchical and typically will not have a parent
+   */
+  node: Kuk;
+};
+
+/** Connection between the Kuk type and the postFormat type */
+export type KukToPostFormatConnection = Connection & PostFormatConnection & {
+  __typename?: 'KukToPostFormatConnection';
+  /** Edges for the KukToPostFormatConnection connection */
+  edges: Array<KukToPostFormatConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<PostFormat>;
+  /** Information about pagination in a connection. */
+  pageInfo: KukToPostFormatConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type KukToPostFormatConnectionEdge = Edge & PostFormatConnectionEdge & {
+  __typename?: 'KukToPostFormatConnectionEdge';
+  /** A cursor for use in pagination */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The item at the end of the edge */
+  node: PostFormat;
+};
+
+/** Page Info on the &quot;KukToPostFormatConnection&quot; */
+export type KukToPostFormatConnectionPageInfo = PageInfo & PostFormatConnectionPageInfo & WpPageInfo & {
+  __typename?: 'KukToPostFormatConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Arguments for filtering the KukToPostFormatConnection connection */
+export type KukToPostFormatConnectionWhereArgs = {
+  /** Unique cache key to be produced when this query is stored in an object cache. Default is 'core'. */
+  cacheDomain?: InputMaybe<Scalars['String']['input']>;
+  /** Term ID to retrieve child terms of. If multiple taxonomies are passed, $child_of is ignored. Default 0. */
+  childOf?: InputMaybe<Scalars['Int']['input']>;
+  /** True to limit results to terms that have no children. This parameter has no effect on non-hierarchical taxonomies. Default false. */
+  childless?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Retrieve terms where the description is LIKE the input value. Default empty. */
+  descriptionLike?: InputMaybe<Scalars['String']['input']>;
+  /** Array of term ids to exclude. If $include is non-empty, $exclude is ignored. Default empty array. */
+  exclude?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of term ids to exclude along with all of their descendant terms. If $include is non-empty, $exclude_tree is ignored. Default empty array. */
+  excludeTree?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Whether to hide terms not assigned to any posts. Accepts true or false. Default false */
+  hideEmpty?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Whether to include terms that have non-empty descendants (even if $hide_empty is set to true). Default true. */
+  hierarchical?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Array of term ids to include. Default empty array. */
+  include?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of names to return term(s) for. Default empty. */
+  name?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Retrieve terms where the name is LIKE the input value. Default empty. */
+  nameLike?: InputMaybe<Scalars['String']['input']>;
+  /** Array of object IDs. Results will be limited to terms associated with these objects. */
+  objectIds?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Direction the connection should be ordered in */
+  order?: InputMaybe<OrderEnum>;
+  /** Field(s) to order terms by. Defaults to 'name'. */
+  orderby?: InputMaybe<TermObjectsConnectionOrderbyEnum>;
+  /** Whether to pad the quantity of a term's children in the quantity of each term's "count" object variable. Default false. */
+  padCounts?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Parent term ID to retrieve direct-child terms of. Default empty. */
+  parent?: InputMaybe<Scalars['Int']['input']>;
+  /** Search criteria to match terms. Will be SQL-formatted with wildcards before and after. Default empty. */
+  search?: InputMaybe<Scalars['String']['input']>;
+  /** Array of slugs to return term(s) for. Default empty. */
+  slug?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomyId?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Whether to prime meta caches for matched terms. Default true. */
+  updateTermMetaCache?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** Connection between the Kuk type and the kuk type */
+export type KukToPreviewConnectionEdge = Edge & KukConnectionEdge & OneToOneConnection & {
+  __typename?: 'KukToPreviewConnectionEdge';
+  /** Opaque reference to the nodes position in the connection. Value can be used with pagination args. */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The node of the connection, without the edges */
+  node: Kuk;
+};
+
+/** Connection between the Kuk type and the kuk type */
+export type KukToRevisionConnection = Connection & KukConnection & {
+  __typename?: 'KukToRevisionConnection';
+  /** Edges for the KukToRevisionConnection connection */
+  edges: Array<KukToRevisionConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<Kuk>;
+  /** Information about pagination in a connection. */
+  pageInfo: KukToRevisionConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type KukToRevisionConnectionEdge = Edge & KukConnectionEdge & {
+  __typename?: 'KukToRevisionConnectionEdge';
+  /** A cursor for use in pagination */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The item at the end of the edge */
+  node: Kuk;
+};
+
+/** Page Info on the &quot;KukToRevisionConnection&quot; */
+export type KukToRevisionConnectionPageInfo = KukConnectionPageInfo & PageInfo & WpPageInfo & {
+  __typename?: 'KukToRevisionConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Arguments for filtering the KukToRevisionConnection connection */
+export type KukToRevisionConnectionWhereArgs = {
+  /** The user that's connected as the author of the object. Use the userId for the author object. */
+  author?: InputMaybe<Scalars['Int']['input']>;
+  /** Find objects connected to author(s) in the array of author's userIds */
+  authorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Find objects connected to the author by the author's nicename */
+  authorName?: InputMaybe<Scalars['String']['input']>;
+  /** Find objects NOT connected to author(s) in the array of author's userIds */
+  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Filter the connection based on dates */
+  dateQuery?: InputMaybe<DateQueryInput>;
+  /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
+  hasPassword?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Specific database ID of the object */
+  id?: InputMaybe<Scalars['Int']['input']>;
+  /** Array of IDs for the objects to retrieve */
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Get objects with a specific mimeType property */
+  mimeType?: InputMaybe<MimeTypeEnum>;
+  /** Slug / post_name of the object */
+  name?: InputMaybe<Scalars['String']['input']>;
+  /** Specify objects to retrieve. Use slugs */
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** What parameter to use to order the objects by. */
+  orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
+  /** Use ID to return only children. Use 0 to return only top-level items */
+  parent?: InputMaybe<Scalars['ID']['input']>;
+  /** Specify objects whose parent is in an array */
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Specify posts whose parent is not in an array */
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Show posts with a specific password. */
+  password?: InputMaybe<Scalars['String']['input']>;
+  /** Show Posts based on a keyword search */
+  search?: InputMaybe<Scalars['String']['input']>;
+  /** Retrieve posts where post status is in an array. */
+  stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
+  /** Show posts with a specific status. */
+  status?: InputMaybe<PostStatusEnum>;
+  /** Title of the object */
+  title?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** Connection between the Kuk type and the TermNode type */
+export type KukToTermNodeConnection = Connection & TermNodeConnection & {
+  __typename?: 'KukToTermNodeConnection';
+  /** Edges for the KukToTermNodeConnection connection */
+  edges: Array<KukToTermNodeConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<TermNode>;
+  /** Information about pagination in a connection. */
+  pageInfo: KukToTermNodeConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type KukToTermNodeConnectionEdge = Edge & TermNodeConnectionEdge & {
+  __typename?: 'KukToTermNodeConnectionEdge';
+  /** A cursor for use in pagination */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The item at the end of the edge */
+  node: TermNode;
+};
+
+/** Page Info on the &quot;KukToTermNodeConnection&quot; */
+export type KukToTermNodeConnectionPageInfo = PageInfo & TermNodeConnectionPageInfo & WpPageInfo & {
+  __typename?: 'KukToTermNodeConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Arguments for filtering the KukToTermNodeConnection connection */
+export type KukToTermNodeConnectionWhereArgs = {
+  /** Unique cache key to be produced when this query is stored in an object cache. Default is 'core'. */
+  cacheDomain?: InputMaybe<Scalars['String']['input']>;
+  /** Term ID to retrieve child terms of. If multiple taxonomies are passed, $child_of is ignored. Default 0. */
+  childOf?: InputMaybe<Scalars['Int']['input']>;
+  /** True to limit results to terms that have no children. This parameter has no effect on non-hierarchical taxonomies. Default false. */
+  childless?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Retrieve terms where the description is LIKE the input value. Default empty. */
+  descriptionLike?: InputMaybe<Scalars['String']['input']>;
+  /** Array of term ids to exclude. If $include is non-empty, $exclude is ignored. Default empty array. */
+  exclude?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of term ids to exclude along with all of their descendant terms. If $include is non-empty, $exclude_tree is ignored. Default empty array. */
+  excludeTree?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Whether to hide terms not assigned to any posts. Accepts true or false. Default false */
+  hideEmpty?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Whether to include terms that have non-empty descendants (even if $hide_empty is set to true). Default true. */
+  hierarchical?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Array of term ids to include. Default empty array. */
+  include?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of names to return term(s) for. Default empty. */
+  name?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Retrieve terms where the name is LIKE the input value. Default empty. */
+  nameLike?: InputMaybe<Scalars['String']['input']>;
+  /** Array of object IDs. Results will be limited to terms associated with these objects. */
+  objectIds?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Direction the connection should be ordered in */
+  order?: InputMaybe<OrderEnum>;
+  /** Field(s) to order terms by. Defaults to 'name'. */
+  orderby?: InputMaybe<TermObjectsConnectionOrderbyEnum>;
+  /** Whether to pad the quantity of a term's children in the quantity of each term's "count" object variable. Default false. */
+  padCounts?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Parent term ID to retrieve direct-child terms of. Default empty. */
+  parent?: InputMaybe<Scalars['Int']['input']>;
+  /** Search criteria to match terms. Will be SQL-formatted with wildcards before and after. Default empty. */
+  search?: InputMaybe<Scalars['String']['input']>;
+  /** Array of slugs to return term(s) for. Default empty. */
+  slug?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** The Taxonomy to filter terms by */
+  taxonomies?: InputMaybe<Array<InputMaybe<TaxonomyEnum>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomyId?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Whether to prime meta caches for matched terms. Default true. */
+  updateTermMetaCache?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** The lpu type */
+export type Lpu = ContentNode & DatabaseIdentifier & HierarchicalContentNode & HierarchicalNode & MenuItemLinkable & Node & NodeWithAuthor & NodeWithComments & NodeWithContentEditor & NodeWithEditorBlocks & NodeWithExcerpt & NodeWithFeaturedImage & NodeWithLpuEditorBlocks & NodeWithPageAttributes & NodeWithRevisions & NodeWithTemplate & NodeWithTitle & NodeWithTrackbacks & Previewable & UniformResourceIdentifiable & {
+  __typename?: 'Lpu';
+  /** Returns ancestors of the node. Default ordered as lowest (closest to the child) to highest (closest to the root). */
+  ancestors?: Maybe<HierarchicalContentNodeToContentNodeAncestorsConnection>;
+  /** Connection between the NodeWithAuthor type and the User type */
+  author?: Maybe<NodeWithAuthorToUserConnectionEdge>;
+  /** The database identifier of the author of the node */
+  authorDatabaseId?: Maybe<Scalars['Int']['output']>;
+  /** The globally unique identifier of the author of the node */
+  authorId?: Maybe<Scalars['ID']['output']>;
+  /** Connection between the HierarchicalContentNode type and the ContentNode type */
+  children?: Maybe<HierarchicalContentNodeToContentNodeChildrenConnection>;
+  /** The number of comments. Even though WPGraphQL denotes this field as an integer, in WordPress this field should be saved as a numeric string for compatibility. */
+  commentCount?: Maybe<Scalars['Int']['output']>;
+  /** Whether the comments are open or closed for this particular post. */
+  commentStatus?: Maybe<Scalars['String']['output']>;
+  /** Connection between the Lpu type and the Comment type */
+  comments?: Maybe<LpuToCommentConnection>;
+  /** @deprecated Deprecated in favor of using Next.js pages */
+  conditionalTags?: Maybe<ConditionalTags>;
+  /** The content of the post. */
+  content?: Maybe<Scalars['String']['output']>;
+  /** Connection between the ContentNode type and the ContentType type */
+  contentType?: Maybe<ContentNodeToContentTypeConnectionEdge>;
+  /** The name of the Content Type the node belongs to */
+  contentTypeName: Scalars['String']['output'];
+  /** The unique identifier stored in the database */
+  databaseId: Scalars['Int']['output'];
+  /** Post publishing date. */
+  date?: Maybe<Scalars['String']['output']>;
+  /** The publishing date set in GMT. */
+  dateGmt?: Maybe<Scalars['String']['output']>;
+  /** The desired slug of the post */
+  desiredSlug?: Maybe<Scalars['String']['output']>;
+  /** If a user has edited the node within the past 15 seconds, this will return the user that last edited. Null if the edit lock doesn&#039;t exist or is greater than 15 seconds */
+  editingLockedBy?: Maybe<ContentNodeToEditLockConnectionEdge>;
+  /** List of Lpu editor blocks */
+  editorBlocks?: Maybe<Array<Maybe<LpuEditorBlock>>>;
+  /** The RSS enclosure for the object */
+  enclosure?: Maybe<Scalars['String']['output']>;
+  /** Connection between the ContentNode type and the EnqueuedScript type */
+  enqueuedScripts?: Maybe<ContentNodeToEnqueuedScriptConnection>;
+  /** Connection between the ContentNode type and the EnqueuedStylesheet type */
+  enqueuedStylesheets?: Maybe<ContentNodeToEnqueuedStylesheetConnection>;
+  /** The excerpt of the post. */
+  excerpt?: Maybe<Scalars['String']['output']>;
+  /** Connection between the NodeWithFeaturedImage type and the MediaItem type */
+  featuredImage?: Maybe<NodeWithFeaturedImageToMediaItemConnectionEdge>;
+  /** The database identifier for the featured image node assigned to the content node */
+  featuredImageDatabaseId?: Maybe<Scalars['Int']['output']>;
+  /** Globally unique ID of the featured image assigned to the node */
+  featuredImageId?: Maybe<Scalars['ID']['output']>;
+  /** The global unique identifier for this post. This currently matches the value stored in WP_Post-&gt;guid and the guid column in the &quot;post_objects&quot; database table. */
+  guid?: Maybe<Scalars['String']['output']>;
+  /** Whether the lpu object is password protected. */
+  hasPassword?: Maybe<Scalars['Boolean']['output']>;
+  /** The globally unique identifier of the lpu object. */
+  id: Scalars['ID']['output'];
+  /** Whether the node is a Comment */
+  isComment: Scalars['Boolean']['output'];
+  /** Whether the node is a Content Node */
+  isContentNode: Scalars['Boolean']['output'];
+  /** Whether the node represents the front page. */
+  isFrontPage: Scalars['Boolean']['output'];
+  /** Whether  the node represents the blog page. */
+  isPostsPage: Scalars['Boolean']['output'];
+  /** Whether the object is a node in the preview state */
+  isPreview?: Maybe<Scalars['Boolean']['output']>;
+  /** Whether the object is restricted from the current viewer */
+  isRestricted?: Maybe<Scalars['Boolean']['output']>;
+  /** True if the node is a revision of another node */
+  isRevision?: Maybe<Scalars['Boolean']['output']>;
+  /** Whether the node is a Term */
+  isTermNode: Scalars['Boolean']['output'];
+  /** The user that most recently edited the node */
+  lastEditedBy?: Maybe<ContentNodeToEditLastConnectionEdge>;
+  /** The permalink of the post */
+  link?: Maybe<Scalars['String']['output']>;
+  /**
+   * The id field matches the WP_Post-&gt;ID field.
+   * @deprecated Deprecated in favor of the databaseId field
+   */
+  lpuId: Scalars['Int']['output'];
+  /** A field used for ordering posts. This is typically used with nav menu items or for special ordering of hierarchical content types. */
+  menuOrder?: Maybe<Scalars['Int']['output']>;
+  /** The local modified time for a post. If a post was recently updated the modified field will change to match the corresponding time. */
+  modified?: Maybe<Scalars['String']['output']>;
+  /** The GMT modified time for a post. If a post was recently updated the modified field will change to match the corresponding time in GMT. */
+  modifiedGmt?: Maybe<Scalars['String']['output']>;
+  /** The parent of the node. The parent object can be of various types */
+  parent?: Maybe<HierarchicalContentNodeToParentContentNodeConnectionEdge>;
+  /** Database id of the parent node */
+  parentDatabaseId?: Maybe<Scalars['Int']['output']>;
+  /** The globally unique identifier of the parent node. */
+  parentId?: Maybe<Scalars['ID']['output']>;
+  /** The password for the lpu object. */
+  password?: Maybe<Scalars['String']['output']>;
+  /** Whether the pings are open or closed for this particular post. */
+  pingStatus?: Maybe<Scalars['String']['output']>;
+  /** URLs that have been pinged. */
+  pinged?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  /** Connection between the Lpu type and the postFormat type */
+  postFormats?: Maybe<LpuToPostFormatConnection>;
+  /** Connection between the Lpu type and the lpu type */
+  preview?: Maybe<LpuToPreviewConnectionEdge>;
+  /** The database id of the preview node */
+  previewRevisionDatabaseId?: Maybe<Scalars['Int']['output']>;
+  /** Whether the object is a node in the preview state */
+  previewRevisionId?: Maybe<Scalars['ID']['output']>;
+  /** If the current node is a revision, this field exposes the node this is a revision of. Returns null if the node is not a revision of another node. */
+  revisionOf?: Maybe<NodeWithRevisionsToContentNodeConnectionEdge>;
+  /** Connection between the Lpu type and the lpu type */
+  revisions?: Maybe<LpuToRevisionConnection>;
+  /** The uri slug for the post. This is equivalent to the WP_Post-&gt;post_name field and the post_name column in the database for the &quot;post_objects&quot; table. */
+  slug?: Maybe<Scalars['String']['output']>;
+  /** The current status of the object */
+  status?: Maybe<Scalars['String']['output']>;
+  /** The template assigned to a node of content */
+  template?: Maybe<ContentTemplate>;
+  templates?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  /** Connection between the Lpu type and the TermNode type */
+  terms?: Maybe<LpuToTermNodeConnection>;
+  /** The title of the post. This is currently just the raw title. An amendment to support rendered title needs to be made. */
+  title?: Maybe<Scalars['String']['output']>;
+  /** URLs queued to be pinged. */
+  toPing?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  /** The unique resource identifier path */
+  uri?: Maybe<Scalars['String']['output']>;
+};
+
+
+/** The lpu type */
+export type LpuAncestorsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<HierarchicalContentNodeToContentNodeAncestorsConnectionWhereArgs>;
+};
+
+
+/** The lpu type */
+export type LpuChildrenArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<HierarchicalContentNodeToContentNodeChildrenConnectionWhereArgs>;
+};
+
+
+/** The lpu type */
+export type LpuCommentsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<LpuToCommentConnectionWhereArgs>;
+};
+
+
+/** The lpu type */
+export type LpuContentArgs = {
+  format?: InputMaybe<PostObjectFieldFormatEnum>;
+};
+
+
+/** The lpu type */
+export type LpuEditorBlocksArgs = {
+  flat?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+/** The lpu type */
+export type LpuEnqueuedScriptsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+/** The lpu type */
+export type LpuEnqueuedStylesheetsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+/** The lpu type */
+export type LpuExcerptArgs = {
+  format?: InputMaybe<PostObjectFieldFormatEnum>;
+};
+
+
+/** The lpu type */
+export type LpuPostFormatsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<LpuToPostFormatConnectionWhereArgs>;
+};
+
+
+/** The lpu type */
+export type LpuRevisionsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<LpuToRevisionConnectionWhereArgs>;
+};
+
+
+/** The lpu type */
+export type LpuTermsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<LpuToTermNodeConnectionWhereArgs>;
+};
+
+
+/** The lpu type */
+export type LpuTitleArgs = {
+  format?: InputMaybe<PostObjectFieldFormatEnum>;
+};
+
+/** Connection to lpu Nodes */
+export type LpuConnection = {
+  /** A list of edges (relational context) between RootQuery and connected lpu Nodes */
+  edges: Array<LpuConnectionEdge>;
+  /** A list of connected lpu Nodes */
+  nodes: Array<Lpu>;
+  /** Information about pagination in a connection. */
+  pageInfo: LpuConnectionPageInfo;
+};
+
+/** Edge between a Node and a connected lpu */
+export type LpuConnectionEdge = {
+  /** Opaque reference to the nodes position in the connection. Value can be used with pagination args. */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The connected lpu Node */
+  node: Lpu;
+};
+
+/** Page Info on the connected LpuConnectionEdge */
+export type LpuConnectionPageInfo = {
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** EditorBlock Interface for Lpu Block Type */
+export type LpuEditorBlock = {
+  /** The API version of the Gutenberg Block */
+  apiVersion?: Maybe<Scalars['Int']['output']>;
+  /** The name of the category the Block belongs to */
+  blockEditorCategoryName?: Maybe<Scalars['String']['output']>;
+  /** The id of the Block */
+  clientId?: Maybe<Scalars['String']['output']>;
+  /** CSS Classnames to apply to the block */
+  cssClassNames?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  /** The inner blocks of the Block */
+  innerBlocks?: Maybe<Array<Maybe<EditorBlock>>>;
+  /** Whether the block is Dynamic (server rendered) */
+  isDynamic: Scalars['Boolean']['output'];
+  /** The name of the Block */
+  name?: Maybe<Scalars['String']['output']>;
+  /** The parent id of the Block */
+  parentClientId?: Maybe<Scalars['String']['output']>;
+  /** The rendered HTML for the block */
+  renderedHtml?: Maybe<Scalars['String']['output']>;
+};
+
+/** The Type of Identifier used to fetch a single resource. Default is ID. */
+export enum LpuIdType {
+  /** Identify a resource by the Database ID. */
+  DatabaseId = 'DATABASE_ID',
+  /** Identify a resource by the (hashed) Global ID. */
+  Id = 'ID',
+  /** Identify a resource by the URI. */
+  Uri = 'URI'
+}
+
+/** Set relationships between the lpu to postFormats */
+export type LpuPostFormatsInput = {
+  /** If true, this will append the postFormat to existing related postFormats. If false, this will replace existing relationships. Default true. */
+  append?: InputMaybe<Scalars['Boolean']['input']>;
+  /** The input list of items to set. */
+  nodes?: InputMaybe<Array<InputMaybe<LpuPostFormatsNodeInput>>>;
+};
+
+/** List of postFormats to connect the lpu to. If an ID is set, it will be used to create the connection. If not, it will look for a slug. If neither are valid existing terms, and the site is configured to allow terms to be created during post mutations, a term will be created using the Name if it exists in the input, then fallback to the slug if it exists. */
+export type LpuPostFormatsNodeInput = {
+  /** The description of the postFormat. This field is used to set a description of the postFormat if a new one is created during the mutation. */
+  description?: InputMaybe<Scalars['String']['input']>;
+  /** The ID of the postFormat. If present, this will be used to connect to the lpu. If no existing postFormat exists with this ID, no connection will be made. */
+  id?: InputMaybe<Scalars['ID']['input']>;
+  /** The name of the postFormat. This field is used to create a new term, if term creation is enabled in nested mutations, and if one does not already exist with the provided slug or ID or if a slug or ID is not provided. If no name is included and a term is created, the creation will fallback to the slug field. */
+  name?: InputMaybe<Scalars['String']['input']>;
+  /** The slug of the postFormat. If no ID is present, this field will be used to make a connection. If no existing term exists with this slug, this field will be used as a fallback to the Name field when creating a new term to connect to, if term creation is enabled as a nested mutation. */
+  slug?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** Connection between the Lpu type and the Comment type */
+export type LpuToCommentConnection = CommentConnection & Connection & {
+  __typename?: 'LpuToCommentConnection';
+  /** Edges for the LpuToCommentConnection connection */
+  edges: Array<LpuToCommentConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<Comment>;
+  /** Information about pagination in a connection. */
+  pageInfo: LpuToCommentConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type LpuToCommentConnectionEdge = CommentConnectionEdge & Edge & {
+  __typename?: 'LpuToCommentConnectionEdge';
+  /** A cursor for use in pagination */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The item at the end of the edge */
+  node: Comment;
+};
+
+/** Page Info on the &quot;LpuToCommentConnection&quot; */
+export type LpuToCommentConnectionPageInfo = CommentConnectionPageInfo & PageInfo & WpPageInfo & {
+  __typename?: 'LpuToCommentConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Arguments for filtering the LpuToCommentConnection connection */
+export type LpuToCommentConnectionWhereArgs = {
+  /** Comment author email address. */
+  authorEmail?: InputMaybe<Scalars['String']['input']>;
+  /** Array of author IDs to include comments for. */
+  authorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of author IDs to exclude comments for. */
+  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Comment author URL. */
+  authorUrl?: InputMaybe<Scalars['String']['input']>;
+  /** Array of comment IDs to include. */
+  commentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of IDs of users whose unapproved comments will be returned by the query regardless of status. */
+  commentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Include comments of a given type. */
+  commentType?: InputMaybe<Scalars['String']['input']>;
+  /** Include comments from a given array of comment types. */
+  commentTypeIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Exclude comments from a given array of comment types. */
+  commentTypeNotIn?: InputMaybe<Scalars['String']['input']>;
+  /** Content object author ID to limit results by. */
+  contentAuthor?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of author IDs to retrieve comments for. */
+  contentAuthorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of author IDs *not* to retrieve comments for. */
+  contentAuthorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Limit results to those affiliated with a given content object ID. */
+  contentId?: InputMaybe<Scalars['ID']['input']>;
+  /** Array of content object IDs to include affiliated comments for. */
+  contentIdIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of content object IDs to exclude affiliated comments for. */
+  contentIdNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Content object name (i.e. slug ) to retrieve affiliated comments for. */
+  contentName?: InputMaybe<Scalars['String']['input']>;
+  /** Content Object parent ID to retrieve affiliated comments for. */
+  contentParent?: InputMaybe<Scalars['Int']['input']>;
+  /** Array of content object statuses to retrieve affiliated comments for. Pass 'any' to match any value. */
+  contentStatus?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
+  /** Content object type or array of types to retrieve affiliated comments for. Pass 'any' to match any value. */
+  contentType?: InputMaybe<Array<InputMaybe<ContentTypeEnum>>>;
+  /** Array of IDs or email addresses of users whose unapproved comments will be returned by the query regardless of $status. Default empty */
+  includeUnapproved?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Karma score to retrieve matching comments for. */
+  karma?: InputMaybe<Scalars['Int']['input']>;
+  /** The cardinality of the order of the connection */
+  order?: InputMaybe<OrderEnum>;
+  /** Field to order the comments by. */
+  orderby?: InputMaybe<CommentsConnectionOrderbyEnum>;
+  /** Parent ID of comment to retrieve children of. */
+  parent?: InputMaybe<Scalars['Int']['input']>;
+  /** Array of parent IDs of comments to retrieve children for. */
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of parent IDs of comments *not* to retrieve children for. */
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Search term(s) to retrieve matching comments for. */
+  search?: InputMaybe<Scalars['String']['input']>;
+  /** Comment status to limit results by. */
+  status?: InputMaybe<Scalars['String']['input']>;
+  /** Include comments for a specific user ID. */
+  userId?: InputMaybe<Scalars['ID']['input']>;
+};
+
+/** Connection between the Lpu type and the postFormat type */
+export type LpuToPostFormatConnection = Connection & PostFormatConnection & {
+  __typename?: 'LpuToPostFormatConnection';
+  /** Edges for the LpuToPostFormatConnection connection */
+  edges: Array<LpuToPostFormatConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<PostFormat>;
+  /** Information about pagination in a connection. */
+  pageInfo: LpuToPostFormatConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type LpuToPostFormatConnectionEdge = Edge & PostFormatConnectionEdge & {
+  __typename?: 'LpuToPostFormatConnectionEdge';
+  /** A cursor for use in pagination */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The item at the end of the edge */
+  node: PostFormat;
+};
+
+/** Page Info on the &quot;LpuToPostFormatConnection&quot; */
+export type LpuToPostFormatConnectionPageInfo = PageInfo & PostFormatConnectionPageInfo & WpPageInfo & {
+  __typename?: 'LpuToPostFormatConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Arguments for filtering the LpuToPostFormatConnection connection */
+export type LpuToPostFormatConnectionWhereArgs = {
+  /** Unique cache key to be produced when this query is stored in an object cache. Default is 'core'. */
+  cacheDomain?: InputMaybe<Scalars['String']['input']>;
+  /** Term ID to retrieve child terms of. If multiple taxonomies are passed, $child_of is ignored. Default 0. */
+  childOf?: InputMaybe<Scalars['Int']['input']>;
+  /** True to limit results to terms that have no children. This parameter has no effect on non-hierarchical taxonomies. Default false. */
+  childless?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Retrieve terms where the description is LIKE the input value. Default empty. */
+  descriptionLike?: InputMaybe<Scalars['String']['input']>;
+  /** Array of term ids to exclude. If $include is non-empty, $exclude is ignored. Default empty array. */
+  exclude?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of term ids to exclude along with all of their descendant terms. If $include is non-empty, $exclude_tree is ignored. Default empty array. */
+  excludeTree?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Whether to hide terms not assigned to any posts. Accepts true or false. Default false */
+  hideEmpty?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Whether to include terms that have non-empty descendants (even if $hide_empty is set to true). Default true. */
+  hierarchical?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Array of term ids to include. Default empty array. */
+  include?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of names to return term(s) for. Default empty. */
+  name?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Retrieve terms where the name is LIKE the input value. Default empty. */
+  nameLike?: InputMaybe<Scalars['String']['input']>;
+  /** Array of object IDs. Results will be limited to terms associated with these objects. */
+  objectIds?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Direction the connection should be ordered in */
+  order?: InputMaybe<OrderEnum>;
+  /** Field(s) to order terms by. Defaults to 'name'. */
+  orderby?: InputMaybe<TermObjectsConnectionOrderbyEnum>;
+  /** Whether to pad the quantity of a term's children in the quantity of each term's "count" object variable. Default false. */
+  padCounts?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Parent term ID to retrieve direct-child terms of. Default empty. */
+  parent?: InputMaybe<Scalars['Int']['input']>;
+  /** Search criteria to match terms. Will be SQL-formatted with wildcards before and after. Default empty. */
+  search?: InputMaybe<Scalars['String']['input']>;
+  /** Array of slugs to return term(s) for. Default empty. */
+  slug?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomyId?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Whether to prime meta caches for matched terms. Default true. */
+  updateTermMetaCache?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** Connection between the Lpu type and the lpu type */
+export type LpuToPreviewConnectionEdge = Edge & LpuConnectionEdge & OneToOneConnection & {
+  __typename?: 'LpuToPreviewConnectionEdge';
+  /** Opaque reference to the nodes position in the connection. Value can be used with pagination args. */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The node of the connection, without the edges */
+  node: Lpu;
+};
+
+/** Connection between the Lpu type and the lpu type */
+export type LpuToRevisionConnection = Connection & LpuConnection & {
+  __typename?: 'LpuToRevisionConnection';
+  /** Edges for the LpuToRevisionConnection connection */
+  edges: Array<LpuToRevisionConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<Lpu>;
+  /** Information about pagination in a connection. */
+  pageInfo: LpuToRevisionConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type LpuToRevisionConnectionEdge = Edge & LpuConnectionEdge & {
+  __typename?: 'LpuToRevisionConnectionEdge';
+  /** A cursor for use in pagination */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The item at the end of the edge */
+  node: Lpu;
+};
+
+/** Page Info on the &quot;LpuToRevisionConnection&quot; */
+export type LpuToRevisionConnectionPageInfo = LpuConnectionPageInfo & PageInfo & WpPageInfo & {
+  __typename?: 'LpuToRevisionConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Arguments for filtering the LpuToRevisionConnection connection */
+export type LpuToRevisionConnectionWhereArgs = {
+  /** The user that's connected as the author of the object. Use the userId for the author object. */
+  author?: InputMaybe<Scalars['Int']['input']>;
+  /** Find objects connected to author(s) in the array of author's userIds */
+  authorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Find objects connected to the author by the author's nicename */
+  authorName?: InputMaybe<Scalars['String']['input']>;
+  /** Find objects NOT connected to author(s) in the array of author's userIds */
+  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Filter the connection based on dates */
+  dateQuery?: InputMaybe<DateQueryInput>;
+  /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
+  hasPassword?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Specific database ID of the object */
+  id?: InputMaybe<Scalars['Int']['input']>;
+  /** Array of IDs for the objects to retrieve */
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Get objects with a specific mimeType property */
+  mimeType?: InputMaybe<MimeTypeEnum>;
+  /** Slug / post_name of the object */
+  name?: InputMaybe<Scalars['String']['input']>;
+  /** Specify objects to retrieve. Use slugs */
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** What parameter to use to order the objects by. */
+  orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
+  /** Use ID to return only children. Use 0 to return only top-level items */
+  parent?: InputMaybe<Scalars['ID']['input']>;
+  /** Specify objects whose parent is in an array */
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Specify posts whose parent is not in an array */
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Show posts with a specific password. */
+  password?: InputMaybe<Scalars['String']['input']>;
+  /** Show Posts based on a keyword search */
+  search?: InputMaybe<Scalars['String']['input']>;
+  /** Retrieve posts where post status is in an array. */
+  stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
+  /** Show posts with a specific status. */
+  status?: InputMaybe<PostStatusEnum>;
+  /** Title of the object */
+  title?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** Connection between the Lpu type and the TermNode type */
+export type LpuToTermNodeConnection = Connection & TermNodeConnection & {
+  __typename?: 'LpuToTermNodeConnection';
+  /** Edges for the LpuToTermNodeConnection connection */
+  edges: Array<LpuToTermNodeConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<TermNode>;
+  /** Information about pagination in a connection. */
+  pageInfo: LpuToTermNodeConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type LpuToTermNodeConnectionEdge = Edge & TermNodeConnectionEdge & {
+  __typename?: 'LpuToTermNodeConnectionEdge';
+  /** A cursor for use in pagination */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The item at the end of the edge */
+  node: TermNode;
+};
+
+/** Page Info on the &quot;LpuToTermNodeConnection&quot; */
+export type LpuToTermNodeConnectionPageInfo = PageInfo & TermNodeConnectionPageInfo & WpPageInfo & {
+  __typename?: 'LpuToTermNodeConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Arguments for filtering the LpuToTermNodeConnection connection */
+export type LpuToTermNodeConnectionWhereArgs = {
+  /** Unique cache key to be produced when this query is stored in an object cache. Default is 'core'. */
+  cacheDomain?: InputMaybe<Scalars['String']['input']>;
+  /** Term ID to retrieve child terms of. If multiple taxonomies are passed, $child_of is ignored. Default 0. */
+  childOf?: InputMaybe<Scalars['Int']['input']>;
+  /** True to limit results to terms that have no children. This parameter has no effect on non-hierarchical taxonomies. Default false. */
+  childless?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Retrieve terms where the description is LIKE the input value. Default empty. */
+  descriptionLike?: InputMaybe<Scalars['String']['input']>;
+  /** Array of term ids to exclude. If $include is non-empty, $exclude is ignored. Default empty array. */
+  exclude?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of term ids to exclude along with all of their descendant terms. If $include is non-empty, $exclude_tree is ignored. Default empty array. */
+  excludeTree?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Whether to hide terms not assigned to any posts. Accepts true or false. Default false */
+  hideEmpty?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Whether to include terms that have non-empty descendants (even if $hide_empty is set to true). Default true. */
+  hierarchical?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Array of term ids to include. Default empty array. */
+  include?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of names to return term(s) for. Default empty. */
+  name?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Retrieve terms where the name is LIKE the input value. Default empty. */
+  nameLike?: InputMaybe<Scalars['String']['input']>;
+  /** Array of object IDs. Results will be limited to terms associated with these objects. */
+  objectIds?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Direction the connection should be ordered in */
+  order?: InputMaybe<OrderEnum>;
+  /** Field(s) to order terms by. Defaults to 'name'. */
+  orderby?: InputMaybe<TermObjectsConnectionOrderbyEnum>;
+  /** Whether to pad the quantity of a term's children in the quantity of each term's "count" object variable. Default false. */
+  padCounts?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Parent term ID to retrieve direct-child terms of. Default empty. */
+  parent?: InputMaybe<Scalars['Int']['input']>;
+  /** Search criteria to match terms. Will be SQL-formatted with wildcards before and after. Default empty. */
+  search?: InputMaybe<Scalars['String']['input']>;
+  /** Array of slugs to return term(s) for. Default empty. */
+  slug?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** The Taxonomy to filter terms by */
+  taxonomies?: InputMaybe<Array<InputMaybe<TaxonomyEnum>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomyId?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Whether to prime meta caches for matched terms. Default true. */
+  updateTermMetaCache?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
 /** A block used for editing the site */
-export type MailpoetSubscriptionFormBlock = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type MailpoetSubscriptionFormBlock = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'MailpoetSubscriptionFormBlock';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -8940,16 +12308,16 @@ export type MailpoetSubscriptionFormBlock = EditorBlock & PageEditorBlock & Post
 /** Attributes of the MailpoetSubscriptionFormBlock Block Type */
 export type MailpoetSubscriptionFormBlockAttributes = {
   __typename?: 'MailpoetSubscriptionFormBlockAttributes';
-  /** The &quot;className&quot; field on the &quot;MailpoetSubscriptionFormBlockAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;MailpoetSubscriptionFormBlock&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;lock&quot; field on the &quot;MailpoetSubscriptionFormBlockAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;MailpoetSubscriptionFormBlock&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;MailpoetSubscriptionFormBlockAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;MailpoetSubscriptionFormBlock&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
 };
 
 /** A block used for editing the site */
-export type MailpoetSubscriptionFormBlockRender = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type MailpoetSubscriptionFormBlockRender = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'MailpoetSubscriptionFormBlockRender';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -8976,14 +12344,714 @@ export type MailpoetSubscriptionFormBlockRender = EditorBlock & PageEditorBlock 
 /** Attributes of the MailpoetSubscriptionFormBlockRender Block Type */
 export type MailpoetSubscriptionFormBlockRenderAttributes = {
   __typename?: 'MailpoetSubscriptionFormBlockRenderAttributes';
-  /** The &quot;className&quot; field on the &quot;MailpoetSubscriptionFormBlockRenderAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;MailpoetSubscriptionFormBlockRender&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;formId&quot; field on the &quot;MailpoetSubscriptionFormBlockRenderAttributes&quot; block or block attributes */
+  /** The &quot;formId&quot; field on the &quot;MailpoetSubscriptionFormBlockRender&quot; block */
   formId?: Maybe<Scalars['Float']['output']>;
-  /** The &quot;lock&quot; field on the &quot;MailpoetSubscriptionFormBlockRenderAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;MailpoetSubscriptionFormBlockRender&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;MailpoetSubscriptionFormBlockRenderAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;MailpoetSubscriptionFormBlockRender&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
+};
+
+/** The makaut type */
+export type Makaut = ContentNode & DatabaseIdentifier & MenuItemLinkable & Node & NodeWithAuthor & NodeWithComments & NodeWithContentEditor & NodeWithEditorBlocks & NodeWithExcerpt & NodeWithFeaturedImage & NodeWithMakautEditorBlocks & NodeWithPageAttributes & NodeWithRevisions & NodeWithTemplate & NodeWithTitle & NodeWithTrackbacks & Previewable & UniformResourceIdentifiable & {
+  __typename?: 'Makaut';
+  /**
+   * The ancestors of the content node.
+   * @deprecated This content type is not hierarchical and typically will not have ancestors
+   */
+  ancestors?: Maybe<MakautToMakautConnection>;
+  /** Connection between the NodeWithAuthor type and the User type */
+  author?: Maybe<NodeWithAuthorToUserConnectionEdge>;
+  /** The database identifier of the author of the node */
+  authorDatabaseId?: Maybe<Scalars['Int']['output']>;
+  /** The globally unique identifier of the author of the node */
+  authorId?: Maybe<Scalars['ID']['output']>;
+  /** The number of comments. Even though WPGraphQL denotes this field as an integer, in WordPress this field should be saved as a numeric string for compatibility. */
+  commentCount?: Maybe<Scalars['Int']['output']>;
+  /** Whether the comments are open or closed for this particular post. */
+  commentStatus?: Maybe<Scalars['String']['output']>;
+  /** Connection between the Makaut type and the Comment type */
+  comments?: Maybe<MakautToCommentConnection>;
+  /** @deprecated Deprecated in favor of using Next.js pages */
+  conditionalTags?: Maybe<ConditionalTags>;
+  /** The content of the post. */
+  content?: Maybe<Scalars['String']['output']>;
+  /** Connection between the ContentNode type and the ContentType type */
+  contentType?: Maybe<ContentNodeToContentTypeConnectionEdge>;
+  /** The name of the Content Type the node belongs to */
+  contentTypeName: Scalars['String']['output'];
+  /** The unique identifier stored in the database */
+  databaseId: Scalars['Int']['output'];
+  /** Post publishing date. */
+  date?: Maybe<Scalars['String']['output']>;
+  /** The publishing date set in GMT. */
+  dateGmt?: Maybe<Scalars['String']['output']>;
+  /** The desired slug of the post */
+  desiredSlug?: Maybe<Scalars['String']['output']>;
+  /** If a user has edited the node within the past 15 seconds, this will return the user that last edited. Null if the edit lock doesn&#039;t exist or is greater than 15 seconds */
+  editingLockedBy?: Maybe<ContentNodeToEditLockConnectionEdge>;
+  /** List of Makaut editor blocks */
+  editorBlocks?: Maybe<Array<Maybe<MakautEditorBlock>>>;
+  /** The RSS enclosure for the object */
+  enclosure?: Maybe<Scalars['String']['output']>;
+  /** Connection between the ContentNode type and the EnqueuedScript type */
+  enqueuedScripts?: Maybe<ContentNodeToEnqueuedScriptConnection>;
+  /** Connection between the ContentNode type and the EnqueuedStylesheet type */
+  enqueuedStylesheets?: Maybe<ContentNodeToEnqueuedStylesheetConnection>;
+  /** The excerpt of the post. */
+  excerpt?: Maybe<Scalars['String']['output']>;
+  /** Connection between the NodeWithFeaturedImage type and the MediaItem type */
+  featuredImage?: Maybe<NodeWithFeaturedImageToMediaItemConnectionEdge>;
+  /** The database identifier for the featured image node assigned to the content node */
+  featuredImageDatabaseId?: Maybe<Scalars['Int']['output']>;
+  /** Globally unique ID of the featured image assigned to the node */
+  featuredImageId?: Maybe<Scalars['ID']['output']>;
+  /** The global unique identifier for this post. This currently matches the value stored in WP_Post-&gt;guid and the guid column in the &quot;post_objects&quot; database table. */
+  guid?: Maybe<Scalars['String']['output']>;
+  /** Whether the makaut object is password protected. */
+  hasPassword?: Maybe<Scalars['Boolean']['output']>;
+  /** The globally unique identifier of the makaut object. */
+  id: Scalars['ID']['output'];
+  /** Whether the node is a Comment */
+  isComment: Scalars['Boolean']['output'];
+  /** Whether the node is a Content Node */
+  isContentNode: Scalars['Boolean']['output'];
+  /** Whether the node represents the front page. */
+  isFrontPage: Scalars['Boolean']['output'];
+  /** Whether  the node represents the blog page. */
+  isPostsPage: Scalars['Boolean']['output'];
+  /** Whether the object is a node in the preview state */
+  isPreview?: Maybe<Scalars['Boolean']['output']>;
+  /** Whether the object is restricted from the current viewer */
+  isRestricted?: Maybe<Scalars['Boolean']['output']>;
+  /** True if the node is a revision of another node */
+  isRevision?: Maybe<Scalars['Boolean']['output']>;
+  /** Whether the node is a Term */
+  isTermNode: Scalars['Boolean']['output'];
+  /** The user that most recently edited the node */
+  lastEditedBy?: Maybe<ContentNodeToEditLastConnectionEdge>;
+  /** The permalink of the post */
+  link?: Maybe<Scalars['String']['output']>;
+  /**
+   * The id field matches the WP_Post-&gt;ID field.
+   * @deprecated Deprecated in favor of the databaseId field
+   */
+  makautId: Scalars['Int']['output'];
+  /** A field used for ordering posts. This is typically used with nav menu items or for special ordering of hierarchical content types. */
+  menuOrder?: Maybe<Scalars['Int']['output']>;
+  /** The local modified time for a post. If a post was recently updated the modified field will change to match the corresponding time. */
+  modified?: Maybe<Scalars['String']['output']>;
+  /** The GMT modified time for a post. If a post was recently updated the modified field will change to match the corresponding time in GMT. */
+  modifiedGmt?: Maybe<Scalars['String']['output']>;
+  /**
+   * The parent of the content node.
+   * @deprecated This content type is not hierarchical and typically will not have a parent
+   */
+  parent?: Maybe<MakautToParentConnectionEdge>;
+  /** The password for the makaut object. */
+  password?: Maybe<Scalars['String']['output']>;
+  /** Whether the pings are open or closed for this particular post. */
+  pingStatus?: Maybe<Scalars['String']['output']>;
+  /** URLs that have been pinged. */
+  pinged?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  /** Connection between the Makaut type and the postFormat type */
+  postFormats?: Maybe<MakautToPostFormatConnection>;
+  /** Connection between the Makaut type and the makaut type */
+  preview?: Maybe<MakautToPreviewConnectionEdge>;
+  /** The database id of the preview node */
+  previewRevisionDatabaseId?: Maybe<Scalars['Int']['output']>;
+  /** Whether the object is a node in the preview state */
+  previewRevisionId?: Maybe<Scalars['ID']['output']>;
+  /** If the current node is a revision, this field exposes the node this is a revision of. Returns null if the node is not a revision of another node. */
+  revisionOf?: Maybe<NodeWithRevisionsToContentNodeConnectionEdge>;
+  /** Connection between the Makaut type and the makaut type */
+  revisions?: Maybe<MakautToRevisionConnection>;
+  /** The uri slug for the post. This is equivalent to the WP_Post-&gt;post_name field and the post_name column in the database for the &quot;post_objects&quot; table. */
+  slug?: Maybe<Scalars['String']['output']>;
+  /** The current status of the object */
+  status?: Maybe<Scalars['String']['output']>;
+  /** The template assigned to the node */
+  template?: Maybe<ContentTemplate>;
+  templates?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  /** Connection between the Makaut type and the TermNode type */
+  terms?: Maybe<MakautToTermNodeConnection>;
+  /** The title of the post. This is currently just the raw title. An amendment to support rendered title needs to be made. */
+  title?: Maybe<Scalars['String']['output']>;
+  /** URLs queued to be pinged. */
+  toPing?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  /** The unique resource identifier path */
+  uri?: Maybe<Scalars['String']['output']>;
+};
+
+
+/** The makaut type */
+export type MakautAncestorsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+/** The makaut type */
+export type MakautCommentsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<MakautToCommentConnectionWhereArgs>;
+};
+
+
+/** The makaut type */
+export type MakautContentArgs = {
+  format?: InputMaybe<PostObjectFieldFormatEnum>;
+};
+
+
+/** The makaut type */
+export type MakautEditorBlocksArgs = {
+  flat?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+/** The makaut type */
+export type MakautEnqueuedScriptsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+/** The makaut type */
+export type MakautEnqueuedStylesheetsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+/** The makaut type */
+export type MakautExcerptArgs = {
+  format?: InputMaybe<PostObjectFieldFormatEnum>;
+};
+
+
+/** The makaut type */
+export type MakautPostFormatsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<MakautToPostFormatConnectionWhereArgs>;
+};
+
+
+/** The makaut type */
+export type MakautRevisionsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<MakautToRevisionConnectionWhereArgs>;
+};
+
+
+/** The makaut type */
+export type MakautTermsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<MakautToTermNodeConnectionWhereArgs>;
+};
+
+
+/** The makaut type */
+export type MakautTitleArgs = {
+  format?: InputMaybe<PostObjectFieldFormatEnum>;
+};
+
+/** Connection to makaut Nodes */
+export type MakautConnection = {
+  /** A list of edges (relational context) between RootQuery and connected makaut Nodes */
+  edges: Array<MakautConnectionEdge>;
+  /** A list of connected makaut Nodes */
+  nodes: Array<Makaut>;
+  /** Information about pagination in a connection. */
+  pageInfo: MakautConnectionPageInfo;
+};
+
+/** Edge between a Node and a connected makaut */
+export type MakautConnectionEdge = {
+  /** Opaque reference to the nodes position in the connection. Value can be used with pagination args. */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The connected makaut Node */
+  node: Makaut;
+};
+
+/** Page Info on the connected MakautConnectionEdge */
+export type MakautConnectionPageInfo = {
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** EditorBlock Interface for Makaut Block Type */
+export type MakautEditorBlock = {
+  /** The API version of the Gutenberg Block */
+  apiVersion?: Maybe<Scalars['Int']['output']>;
+  /** The name of the category the Block belongs to */
+  blockEditorCategoryName?: Maybe<Scalars['String']['output']>;
+  /** The id of the Block */
+  clientId?: Maybe<Scalars['String']['output']>;
+  /** CSS Classnames to apply to the block */
+  cssClassNames?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  /** The inner blocks of the Block */
+  innerBlocks?: Maybe<Array<Maybe<EditorBlock>>>;
+  /** Whether the block is Dynamic (server rendered) */
+  isDynamic: Scalars['Boolean']['output'];
+  /** The name of the Block */
+  name?: Maybe<Scalars['String']['output']>;
+  /** The parent id of the Block */
+  parentClientId?: Maybe<Scalars['String']['output']>;
+  /** The rendered HTML for the block */
+  renderedHtml?: Maybe<Scalars['String']['output']>;
+};
+
+/** The Type of Identifier used to fetch a single resource. Default is ID. */
+export enum MakautIdType {
+  /** Identify a resource by the Database ID. */
+  DatabaseId = 'DATABASE_ID',
+  /** Identify a resource by the (hashed) Global ID. */
+  Id = 'ID',
+  /** Identify a resource by the slug. Available to non-hierarchcial Types where the slug is a unique identifier. */
+  Slug = 'SLUG',
+  /** Identify a resource by the URI. */
+  Uri = 'URI'
+}
+
+/** Set relationships between the makaut to postFormats */
+export type MakautPostFormatsInput = {
+  /** If true, this will append the postFormat to existing related postFormats. If false, this will replace existing relationships. Default true. */
+  append?: InputMaybe<Scalars['Boolean']['input']>;
+  /** The input list of items to set. */
+  nodes?: InputMaybe<Array<InputMaybe<MakautPostFormatsNodeInput>>>;
+};
+
+/** List of postFormats to connect the makaut to. If an ID is set, it will be used to create the connection. If not, it will look for a slug. If neither are valid existing terms, and the site is configured to allow terms to be created during post mutations, a term will be created using the Name if it exists in the input, then fallback to the slug if it exists. */
+export type MakautPostFormatsNodeInput = {
+  /** The description of the postFormat. This field is used to set a description of the postFormat if a new one is created during the mutation. */
+  description?: InputMaybe<Scalars['String']['input']>;
+  /** The ID of the postFormat. If present, this will be used to connect to the makaut. If no existing postFormat exists with this ID, no connection will be made. */
+  id?: InputMaybe<Scalars['ID']['input']>;
+  /** The name of the postFormat. This field is used to create a new term, if term creation is enabled in nested mutations, and if one does not already exist with the provided slug or ID or if a slug or ID is not provided. If no name is included and a term is created, the creation will fallback to the slug field. */
+  name?: InputMaybe<Scalars['String']['input']>;
+  /** The slug of the postFormat. If no ID is present, this field will be used to make a connection. If no existing term exists with this slug, this field will be used as a fallback to the Name field when creating a new term to connect to, if term creation is enabled as a nested mutation. */
+  slug?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** Connection between the Makaut type and the Comment type */
+export type MakautToCommentConnection = CommentConnection & Connection & {
+  __typename?: 'MakautToCommentConnection';
+  /** Edges for the MakautToCommentConnection connection */
+  edges: Array<MakautToCommentConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<Comment>;
+  /** Information about pagination in a connection. */
+  pageInfo: MakautToCommentConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type MakautToCommentConnectionEdge = CommentConnectionEdge & Edge & {
+  __typename?: 'MakautToCommentConnectionEdge';
+  /** A cursor for use in pagination */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The item at the end of the edge */
+  node: Comment;
+};
+
+/** Page Info on the &quot;MakautToCommentConnection&quot; */
+export type MakautToCommentConnectionPageInfo = CommentConnectionPageInfo & PageInfo & WpPageInfo & {
+  __typename?: 'MakautToCommentConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Arguments for filtering the MakautToCommentConnection connection */
+export type MakautToCommentConnectionWhereArgs = {
+  /** Comment author email address. */
+  authorEmail?: InputMaybe<Scalars['String']['input']>;
+  /** Array of author IDs to include comments for. */
+  authorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of author IDs to exclude comments for. */
+  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Comment author URL. */
+  authorUrl?: InputMaybe<Scalars['String']['input']>;
+  /** Array of comment IDs to include. */
+  commentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of IDs of users whose unapproved comments will be returned by the query regardless of status. */
+  commentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Include comments of a given type. */
+  commentType?: InputMaybe<Scalars['String']['input']>;
+  /** Include comments from a given array of comment types. */
+  commentTypeIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Exclude comments from a given array of comment types. */
+  commentTypeNotIn?: InputMaybe<Scalars['String']['input']>;
+  /** Content object author ID to limit results by. */
+  contentAuthor?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of author IDs to retrieve comments for. */
+  contentAuthorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of author IDs *not* to retrieve comments for. */
+  contentAuthorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Limit results to those affiliated with a given content object ID. */
+  contentId?: InputMaybe<Scalars['ID']['input']>;
+  /** Array of content object IDs to include affiliated comments for. */
+  contentIdIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of content object IDs to exclude affiliated comments for. */
+  contentIdNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Content object name (i.e. slug ) to retrieve affiliated comments for. */
+  contentName?: InputMaybe<Scalars['String']['input']>;
+  /** Content Object parent ID to retrieve affiliated comments for. */
+  contentParent?: InputMaybe<Scalars['Int']['input']>;
+  /** Array of content object statuses to retrieve affiliated comments for. Pass 'any' to match any value. */
+  contentStatus?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
+  /** Content object type or array of types to retrieve affiliated comments for. Pass 'any' to match any value. */
+  contentType?: InputMaybe<Array<InputMaybe<ContentTypeEnum>>>;
+  /** Array of IDs or email addresses of users whose unapproved comments will be returned by the query regardless of $status. Default empty */
+  includeUnapproved?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Karma score to retrieve matching comments for. */
+  karma?: InputMaybe<Scalars['Int']['input']>;
+  /** The cardinality of the order of the connection */
+  order?: InputMaybe<OrderEnum>;
+  /** Field to order the comments by. */
+  orderby?: InputMaybe<CommentsConnectionOrderbyEnum>;
+  /** Parent ID of comment to retrieve children of. */
+  parent?: InputMaybe<Scalars['Int']['input']>;
+  /** Array of parent IDs of comments to retrieve children for. */
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of parent IDs of comments *not* to retrieve children for. */
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Search term(s) to retrieve matching comments for. */
+  search?: InputMaybe<Scalars['String']['input']>;
+  /** Comment status to limit results by. */
+  status?: InputMaybe<Scalars['String']['input']>;
+  /** Include comments for a specific user ID. */
+  userId?: InputMaybe<Scalars['ID']['input']>;
+};
+
+/** Connection between the Makaut type and the makaut type */
+export type MakautToMakautConnection = Connection & MakautConnection & {
+  __typename?: 'MakautToMakautConnection';
+  /** Edges for the MakautToMakautConnection connection */
+  edges: Array<MakautToMakautConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<Makaut>;
+  /** Information about pagination in a connection. */
+  pageInfo: MakautToMakautConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type MakautToMakautConnectionEdge = Edge & MakautConnectionEdge & {
+  __typename?: 'MakautToMakautConnectionEdge';
+  /**
+   * A cursor for use in pagination
+   * @deprecated This content type is not hierarchical and typically will not have ancestors
+   */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /**
+   * The item at the end of the edge
+   * @deprecated This content type is not hierarchical and typically will not have ancestors
+   */
+  node: Makaut;
+};
+
+/** Page Info on the &quot;MakautToMakautConnection&quot; */
+export type MakautToMakautConnectionPageInfo = MakautConnectionPageInfo & PageInfo & WpPageInfo & {
+  __typename?: 'MakautToMakautConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Connection between the Makaut type and the makaut type */
+export type MakautToParentConnectionEdge = Edge & MakautConnectionEdge & OneToOneConnection & {
+  __typename?: 'MakautToParentConnectionEdge';
+  /** Opaque reference to the nodes position in the connection. Value can be used with pagination args. */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /**
+   * The node of the connection, without the edges
+   * @deprecated This content type is not hierarchical and typically will not have a parent
+   */
+  node: Makaut;
+};
+
+/** Connection between the Makaut type and the postFormat type */
+export type MakautToPostFormatConnection = Connection & PostFormatConnection & {
+  __typename?: 'MakautToPostFormatConnection';
+  /** Edges for the MakautToPostFormatConnection connection */
+  edges: Array<MakautToPostFormatConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<PostFormat>;
+  /** Information about pagination in a connection. */
+  pageInfo: MakautToPostFormatConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type MakautToPostFormatConnectionEdge = Edge & PostFormatConnectionEdge & {
+  __typename?: 'MakautToPostFormatConnectionEdge';
+  /** A cursor for use in pagination */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The item at the end of the edge */
+  node: PostFormat;
+};
+
+/** Page Info on the &quot;MakautToPostFormatConnection&quot; */
+export type MakautToPostFormatConnectionPageInfo = PageInfo & PostFormatConnectionPageInfo & WpPageInfo & {
+  __typename?: 'MakautToPostFormatConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Arguments for filtering the MakautToPostFormatConnection connection */
+export type MakautToPostFormatConnectionWhereArgs = {
+  /** Unique cache key to be produced when this query is stored in an object cache. Default is 'core'. */
+  cacheDomain?: InputMaybe<Scalars['String']['input']>;
+  /** Term ID to retrieve child terms of. If multiple taxonomies are passed, $child_of is ignored. Default 0. */
+  childOf?: InputMaybe<Scalars['Int']['input']>;
+  /** True to limit results to terms that have no children. This parameter has no effect on non-hierarchical taxonomies. Default false. */
+  childless?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Retrieve terms where the description is LIKE the input value. Default empty. */
+  descriptionLike?: InputMaybe<Scalars['String']['input']>;
+  /** Array of term ids to exclude. If $include is non-empty, $exclude is ignored. Default empty array. */
+  exclude?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of term ids to exclude along with all of their descendant terms. If $include is non-empty, $exclude_tree is ignored. Default empty array. */
+  excludeTree?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Whether to hide terms not assigned to any posts. Accepts true or false. Default false */
+  hideEmpty?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Whether to include terms that have non-empty descendants (even if $hide_empty is set to true). Default true. */
+  hierarchical?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Array of term ids to include. Default empty array. */
+  include?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of names to return term(s) for. Default empty. */
+  name?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Retrieve terms where the name is LIKE the input value. Default empty. */
+  nameLike?: InputMaybe<Scalars['String']['input']>;
+  /** Array of object IDs. Results will be limited to terms associated with these objects. */
+  objectIds?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Direction the connection should be ordered in */
+  order?: InputMaybe<OrderEnum>;
+  /** Field(s) to order terms by. Defaults to 'name'. */
+  orderby?: InputMaybe<TermObjectsConnectionOrderbyEnum>;
+  /** Whether to pad the quantity of a term's children in the quantity of each term's "count" object variable. Default false. */
+  padCounts?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Parent term ID to retrieve direct-child terms of. Default empty. */
+  parent?: InputMaybe<Scalars['Int']['input']>;
+  /** Search criteria to match terms. Will be SQL-formatted with wildcards before and after. Default empty. */
+  search?: InputMaybe<Scalars['String']['input']>;
+  /** Array of slugs to return term(s) for. Default empty. */
+  slug?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomyId?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Whether to prime meta caches for matched terms. Default true. */
+  updateTermMetaCache?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** Connection between the Makaut type and the makaut type */
+export type MakautToPreviewConnectionEdge = Edge & MakautConnectionEdge & OneToOneConnection & {
+  __typename?: 'MakautToPreviewConnectionEdge';
+  /** Opaque reference to the nodes position in the connection. Value can be used with pagination args. */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The node of the connection, without the edges */
+  node: Makaut;
+};
+
+/** Connection between the Makaut type and the makaut type */
+export type MakautToRevisionConnection = Connection & MakautConnection & {
+  __typename?: 'MakautToRevisionConnection';
+  /** Edges for the MakautToRevisionConnection connection */
+  edges: Array<MakautToRevisionConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<Makaut>;
+  /** Information about pagination in a connection. */
+  pageInfo: MakautToRevisionConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type MakautToRevisionConnectionEdge = Edge & MakautConnectionEdge & {
+  __typename?: 'MakautToRevisionConnectionEdge';
+  /** A cursor for use in pagination */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The item at the end of the edge */
+  node: Makaut;
+};
+
+/** Page Info on the &quot;MakautToRevisionConnection&quot; */
+export type MakautToRevisionConnectionPageInfo = MakautConnectionPageInfo & PageInfo & WpPageInfo & {
+  __typename?: 'MakautToRevisionConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Arguments for filtering the MakautToRevisionConnection connection */
+export type MakautToRevisionConnectionWhereArgs = {
+  /** The user that's connected as the author of the object. Use the userId for the author object. */
+  author?: InputMaybe<Scalars['Int']['input']>;
+  /** Find objects connected to author(s) in the array of author's userIds */
+  authorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Find objects connected to the author by the author's nicename */
+  authorName?: InputMaybe<Scalars['String']['input']>;
+  /** Find objects NOT connected to author(s) in the array of author's userIds */
+  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Filter the connection based on dates */
+  dateQuery?: InputMaybe<DateQueryInput>;
+  /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
+  hasPassword?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Specific database ID of the object */
+  id?: InputMaybe<Scalars['Int']['input']>;
+  /** Array of IDs for the objects to retrieve */
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Get objects with a specific mimeType property */
+  mimeType?: InputMaybe<MimeTypeEnum>;
+  /** Slug / post_name of the object */
+  name?: InputMaybe<Scalars['String']['input']>;
+  /** Specify objects to retrieve. Use slugs */
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** What parameter to use to order the objects by. */
+  orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
+  /** Use ID to return only children. Use 0 to return only top-level items */
+  parent?: InputMaybe<Scalars['ID']['input']>;
+  /** Specify objects whose parent is in an array */
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Specify posts whose parent is not in an array */
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Show posts with a specific password. */
+  password?: InputMaybe<Scalars['String']['input']>;
+  /** Show Posts based on a keyword search */
+  search?: InputMaybe<Scalars['String']['input']>;
+  /** Retrieve posts where post status is in an array. */
+  stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
+  /** Show posts with a specific status. */
+  status?: InputMaybe<PostStatusEnum>;
+  /** Title of the object */
+  title?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** Connection between the Makaut type and the TermNode type */
+export type MakautToTermNodeConnection = Connection & TermNodeConnection & {
+  __typename?: 'MakautToTermNodeConnection';
+  /** Edges for the MakautToTermNodeConnection connection */
+  edges: Array<MakautToTermNodeConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<TermNode>;
+  /** Information about pagination in a connection. */
+  pageInfo: MakautToTermNodeConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type MakautToTermNodeConnectionEdge = Edge & TermNodeConnectionEdge & {
+  __typename?: 'MakautToTermNodeConnectionEdge';
+  /** A cursor for use in pagination */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The item at the end of the edge */
+  node: TermNode;
+};
+
+/** Page Info on the &quot;MakautToTermNodeConnection&quot; */
+export type MakautToTermNodeConnectionPageInfo = PageInfo & TermNodeConnectionPageInfo & WpPageInfo & {
+  __typename?: 'MakautToTermNodeConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Arguments for filtering the MakautToTermNodeConnection connection */
+export type MakautToTermNodeConnectionWhereArgs = {
+  /** Unique cache key to be produced when this query is stored in an object cache. Default is 'core'. */
+  cacheDomain?: InputMaybe<Scalars['String']['input']>;
+  /** Term ID to retrieve child terms of. If multiple taxonomies are passed, $child_of is ignored. Default 0. */
+  childOf?: InputMaybe<Scalars['Int']['input']>;
+  /** True to limit results to terms that have no children. This parameter has no effect on non-hierarchical taxonomies. Default false. */
+  childless?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Retrieve terms where the description is LIKE the input value. Default empty. */
+  descriptionLike?: InputMaybe<Scalars['String']['input']>;
+  /** Array of term ids to exclude. If $include is non-empty, $exclude is ignored. Default empty array. */
+  exclude?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of term ids to exclude along with all of their descendant terms. If $include is non-empty, $exclude_tree is ignored. Default empty array. */
+  excludeTree?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Whether to hide terms not assigned to any posts. Accepts true or false. Default false */
+  hideEmpty?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Whether to include terms that have non-empty descendants (even if $hide_empty is set to true). Default true. */
+  hierarchical?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Array of term ids to include. Default empty array. */
+  include?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of names to return term(s) for. Default empty. */
+  name?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Retrieve terms where the name is LIKE the input value. Default empty. */
+  nameLike?: InputMaybe<Scalars['String']['input']>;
+  /** Array of object IDs. Results will be limited to terms associated with these objects. */
+  objectIds?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Direction the connection should be ordered in */
+  order?: InputMaybe<OrderEnum>;
+  /** Field(s) to order terms by. Defaults to 'name'. */
+  orderby?: InputMaybe<TermObjectsConnectionOrderbyEnum>;
+  /** Whether to pad the quantity of a term's children in the quantity of each term's "count" object variable. Default false. */
+  padCounts?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Parent term ID to retrieve direct-child terms of. Default empty. */
+  parent?: InputMaybe<Scalars['Int']['input']>;
+  /** Search criteria to match terms. Will be SQL-formatted with wildcards before and after. Default empty. */
+  search?: InputMaybe<Scalars['String']['input']>;
+  /** Array of slugs to return term(s) for. Default empty. */
+  slug?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** The Taxonomy to filter terms by */
+  taxonomies?: InputMaybe<Array<InputMaybe<TaxonomyEnum>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomyId?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Whether to prime meta caches for matched terms. Default true. */
+  updateTermMetaCache?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 /** File details for a Media Item */
@@ -9637,7 +13705,7 @@ export enum MenuItemNodeIdTypeEnum {
 }
 
 /** Deprecated in favor of MenuItemLinkeable Interface */
-export type MenuItemObjectUnion = Category | Page | Post | PostFormat | Tag | UserReactionPost;
+export type MenuItemObjectUnion = Category | Delhi_University | Ggsipu | Kuk | Lpu | Makaut | Mumbai_University | Page | Post | PostFormat | Rgpv | Tag | UserReactionPost;
 
 /** Connection between the MenuItem type and the Menu type */
 export type MenuItemToMenuConnectionEdge = Edge & MenuConnectionEdge & OneToOneConnection & {
@@ -9707,7 +13775,9 @@ export enum MenuLocationEnum {
   /** Put the menu in the footer location */
   Footer = 'FOOTER',
   /** Put the menu in the primary location */
-  Primary = 'PRIMARY'
+  Primary = 'PRIMARY',
+  /** Put the menu in the slideout location */
+  Slideout = 'SLIDEOUT'
 }
 
 /** The Type of Identifier used to fetch a single node. Default is "ID". To be used along with the "id" field. */
@@ -9953,7 +14023,697 @@ export enum MimeTypeEnum {
   VideoXMsWmx = 'VIDEO_X_MS_WMX'
 }
 
-/** The &quot;NcPageMeta&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;. */
+/** Edge between a Node and a connected mumbai_university */
+export type MumbaiUniversityConnectionEdge = {
+  /** Opaque reference to the nodes position in the connection. Value can be used with pagination args. */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The connected mumbai_university Node */
+  node: Mumbai_University;
+};
+
+/** EditorBlock Interface for MumbaiUniversity Block Type */
+export type MumbaiUniversityEditorBlock = {
+  /** The API version of the Gutenberg Block */
+  apiVersion?: Maybe<Scalars['Int']['output']>;
+  /** The name of the category the Block belongs to */
+  blockEditorCategoryName?: Maybe<Scalars['String']['output']>;
+  /** The id of the Block */
+  clientId?: Maybe<Scalars['String']['output']>;
+  /** CSS Classnames to apply to the block */
+  cssClassNames?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  /** The inner blocks of the Block */
+  innerBlocks?: Maybe<Array<Maybe<EditorBlock>>>;
+  /** Whether the block is Dynamic (server rendered) */
+  isDynamic: Scalars['Boolean']['output'];
+  /** The name of the Block */
+  name?: Maybe<Scalars['String']['output']>;
+  /** The parent id of the Block */
+  parentClientId?: Maybe<Scalars['String']['output']>;
+  /** The rendered HTML for the block */
+  renderedHtml?: Maybe<Scalars['String']['output']>;
+};
+
+/** The mumbai_university type */
+export type Mumbai_University = ContentNode & DatabaseIdentifier & MenuItemLinkable & Node & NodeWithAuthor & NodeWithComments & NodeWithContentEditor & NodeWithEditorBlocks & NodeWithExcerpt & NodeWithFeaturedImage & NodeWithPageAttributes & NodeWithRevisions & NodeWithTemplate & NodeWithTitle & NodeWithTrackbacks & Previewable & UniformResourceIdentifiable & {
+  __typename?: 'Mumbai_university';
+  /**
+   * The ancestors of the content node.
+   * @deprecated This content type is not hierarchical and typically will not have ancestors
+   */
+  ancestors?: Maybe<Mumbai_UniversityToMumbai_UniversityConnection>;
+  /** Connection between the NodeWithAuthor type and the User type */
+  author?: Maybe<NodeWithAuthorToUserConnectionEdge>;
+  /** The database identifier of the author of the node */
+  authorDatabaseId?: Maybe<Scalars['Int']['output']>;
+  /** The globally unique identifier of the author of the node */
+  authorId?: Maybe<Scalars['ID']['output']>;
+  /** The number of comments. Even though WPGraphQL denotes this field as an integer, in WordPress this field should be saved as a numeric string for compatibility. */
+  commentCount?: Maybe<Scalars['Int']['output']>;
+  /** Whether the comments are open or closed for this particular post. */
+  commentStatus?: Maybe<Scalars['String']['output']>;
+  /** Connection between the Mumbai_university type and the Comment type */
+  comments?: Maybe<Mumbai_UniversityToCommentConnection>;
+  /** @deprecated Deprecated in favor of using Next.js pages */
+  conditionalTags?: Maybe<ConditionalTags>;
+  /** The content of the post. */
+  content?: Maybe<Scalars['String']['output']>;
+  /** Connection between the ContentNode type and the ContentType type */
+  contentType?: Maybe<ContentNodeToContentTypeConnectionEdge>;
+  /** The name of the Content Type the node belongs to */
+  contentTypeName: Scalars['String']['output'];
+  /** The unique identifier stored in the database */
+  databaseId: Scalars['Int']['output'];
+  /** Post publishing date. */
+  date?: Maybe<Scalars['String']['output']>;
+  /** The publishing date set in GMT. */
+  dateGmt?: Maybe<Scalars['String']['output']>;
+  /** The desired slug of the post */
+  desiredSlug?: Maybe<Scalars['String']['output']>;
+  /** If a user has edited the node within the past 15 seconds, this will return the user that last edited. Null if the edit lock doesn&#039;t exist or is greater than 15 seconds */
+  editingLockedBy?: Maybe<ContentNodeToEditLockConnectionEdge>;
+  /** List of editor blocks */
+  editorBlocks?: Maybe<Array<Maybe<EditorBlock>>>;
+  /** The RSS enclosure for the object */
+  enclosure?: Maybe<Scalars['String']['output']>;
+  /** Connection between the ContentNode type and the EnqueuedScript type */
+  enqueuedScripts?: Maybe<ContentNodeToEnqueuedScriptConnection>;
+  /** Connection between the ContentNode type and the EnqueuedStylesheet type */
+  enqueuedStylesheets?: Maybe<ContentNodeToEnqueuedStylesheetConnection>;
+  /** The excerpt of the post. */
+  excerpt?: Maybe<Scalars['String']['output']>;
+  /** Connection between the NodeWithFeaturedImage type and the MediaItem type */
+  featuredImage?: Maybe<NodeWithFeaturedImageToMediaItemConnectionEdge>;
+  /** The database identifier for the featured image node assigned to the content node */
+  featuredImageDatabaseId?: Maybe<Scalars['Int']['output']>;
+  /** Globally unique ID of the featured image assigned to the node */
+  featuredImageId?: Maybe<Scalars['ID']['output']>;
+  /** The global unique identifier for this post. This currently matches the value stored in WP_Post-&gt;guid and the guid column in the &quot;post_objects&quot; database table. */
+  guid?: Maybe<Scalars['String']['output']>;
+  /** Whether the mumbai_university object is password protected. */
+  hasPassword?: Maybe<Scalars['Boolean']['output']>;
+  /** The globally unique identifier of the mumbai_university object. */
+  id: Scalars['ID']['output'];
+  /** Whether the node is a Comment */
+  isComment: Scalars['Boolean']['output'];
+  /** Whether the node is a Content Node */
+  isContentNode: Scalars['Boolean']['output'];
+  /** Whether the node represents the front page. */
+  isFrontPage: Scalars['Boolean']['output'];
+  /** Whether  the node represents the blog page. */
+  isPostsPage: Scalars['Boolean']['output'];
+  /** Whether the object is a node in the preview state */
+  isPreview?: Maybe<Scalars['Boolean']['output']>;
+  /** Whether the object is restricted from the current viewer */
+  isRestricted?: Maybe<Scalars['Boolean']['output']>;
+  /** True if the node is a revision of another node */
+  isRevision?: Maybe<Scalars['Boolean']['output']>;
+  /** Whether the node is a Term */
+  isTermNode: Scalars['Boolean']['output'];
+  /** The user that most recently edited the node */
+  lastEditedBy?: Maybe<ContentNodeToEditLastConnectionEdge>;
+  /** The permalink of the post */
+  link?: Maybe<Scalars['String']['output']>;
+  /** A field used for ordering posts. This is typically used with nav menu items or for special ordering of hierarchical content types. */
+  menuOrder?: Maybe<Scalars['Int']['output']>;
+  /** The local modified time for a post. If a post was recently updated the modified field will change to match the corresponding time. */
+  modified?: Maybe<Scalars['String']['output']>;
+  /** The GMT modified time for a post. If a post was recently updated the modified field will change to match the corresponding time in GMT. */
+  modifiedGmt?: Maybe<Scalars['String']['output']>;
+  /**
+   * The id field matches the WP_Post-&gt;ID field.
+   * @deprecated Deprecated in favor of the databaseId field
+   */
+  mumbai_universityId: Scalars['Int']['output'];
+  /**
+   * The parent of the content node.
+   * @deprecated This content type is not hierarchical and typically will not have a parent
+   */
+  parent?: Maybe<Mumbai_UniversityToParentConnectionEdge>;
+  /** The password for the mumbai_university object. */
+  password?: Maybe<Scalars['String']['output']>;
+  /** Whether the pings are open or closed for this particular post. */
+  pingStatus?: Maybe<Scalars['String']['output']>;
+  /** URLs that have been pinged. */
+  pinged?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  /** Connection between the Mumbai_university type and the postFormat type */
+  postFormats?: Maybe<Mumbai_UniversityToPostFormatConnection>;
+  /** Connection between the Mumbai_university type and the mumbai_university type */
+  preview?: Maybe<Mumbai_UniversityToPreviewConnectionEdge>;
+  /** The database id of the preview node */
+  previewRevisionDatabaseId?: Maybe<Scalars['Int']['output']>;
+  /** Whether the object is a node in the preview state */
+  previewRevisionId?: Maybe<Scalars['ID']['output']>;
+  /** If the current node is a revision, this field exposes the node this is a revision of. Returns null if the node is not a revision of another node. */
+  revisionOf?: Maybe<NodeWithRevisionsToContentNodeConnectionEdge>;
+  /** Connection between the Mumbai_university type and the mumbai_university type */
+  revisions?: Maybe<Mumbai_UniversityToRevisionConnection>;
+  /** The uri slug for the post. This is equivalent to the WP_Post-&gt;post_name field and the post_name column in the database for the &quot;post_objects&quot; table. */
+  slug?: Maybe<Scalars['String']['output']>;
+  /** The current status of the object */
+  status?: Maybe<Scalars['String']['output']>;
+  /** The template assigned to the node */
+  template?: Maybe<ContentTemplate>;
+  templates?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  /** Connection between the Mumbai_university type and the TermNode type */
+  terms?: Maybe<Mumbai_UniversityToTermNodeConnection>;
+  /** The title of the post. This is currently just the raw title. An amendment to support rendered title needs to be made. */
+  title?: Maybe<Scalars['String']['output']>;
+  /** URLs queued to be pinged. */
+  toPing?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  /** The unique resource identifier path */
+  uri?: Maybe<Scalars['String']['output']>;
+};
+
+
+/** The mumbai_university type */
+export type Mumbai_UniversityAncestorsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+/** The mumbai_university type */
+export type Mumbai_UniversityCommentsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<Mumbai_UniversityToCommentConnectionWhereArgs>;
+};
+
+
+/** The mumbai_university type */
+export type Mumbai_UniversityContentArgs = {
+  format?: InputMaybe<PostObjectFieldFormatEnum>;
+};
+
+
+/** The mumbai_university type */
+export type Mumbai_UniversityEditorBlocksArgs = {
+  flat?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+/** The mumbai_university type */
+export type Mumbai_UniversityEnqueuedScriptsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+/** The mumbai_university type */
+export type Mumbai_UniversityEnqueuedStylesheetsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+/** The mumbai_university type */
+export type Mumbai_UniversityExcerptArgs = {
+  format?: InputMaybe<PostObjectFieldFormatEnum>;
+};
+
+
+/** The mumbai_university type */
+export type Mumbai_UniversityPostFormatsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<Mumbai_UniversityToPostFormatConnectionWhereArgs>;
+};
+
+
+/** The mumbai_university type */
+export type Mumbai_UniversityRevisionsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<Mumbai_UniversityToRevisionConnectionWhereArgs>;
+};
+
+
+/** The mumbai_university type */
+export type Mumbai_UniversityTermsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<Mumbai_UniversityToTermNodeConnectionWhereArgs>;
+};
+
+
+/** The mumbai_university type */
+export type Mumbai_UniversityTitleArgs = {
+  format?: InputMaybe<PostObjectFieldFormatEnum>;
+};
+
+/** Page Info on the connected MumbaiUniversityConnectionEdge */
+export type Mumbai_UniversityConnectionPageInfo = {
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** The Type of Identifier used to fetch a single resource. Default is ID. */
+export enum Mumbai_UniversityIdType {
+  /** Identify a resource by the Database ID. */
+  DatabaseId = 'DATABASE_ID',
+  /** Identify a resource by the (hashed) Global ID. */
+  Id = 'ID',
+  /** Identify a resource by the slug. Available to non-hierarchcial Types where the slug is a unique identifier. */
+  Slug = 'SLUG',
+  /** Identify a resource by the URI. */
+  Uri = 'URI'
+}
+
+/** Set relationships between the mumbai_university to postFormats */
+export type Mumbai_UniversityPostFormatsInput = {
+  /** If true, this will append the postFormat to existing related postFormats. If false, this will replace existing relationships. Default true. */
+  append?: InputMaybe<Scalars['Boolean']['input']>;
+  /** The input list of items to set. */
+  nodes?: InputMaybe<Array<InputMaybe<Mumbai_UniversityPostFormatsNodeInput>>>;
+};
+
+/** List of postFormats to connect the mumbai_university to. If an ID is set, it will be used to create the connection. If not, it will look for a slug. If neither are valid existing terms, and the site is configured to allow terms to be created during post mutations, a term will be created using the Name if it exists in the input, then fallback to the slug if it exists. */
+export type Mumbai_UniversityPostFormatsNodeInput = {
+  /** The description of the postFormat. This field is used to set a description of the postFormat if a new one is created during the mutation. */
+  description?: InputMaybe<Scalars['String']['input']>;
+  /** The ID of the postFormat. If present, this will be used to connect to the mumbai_university. If no existing postFormat exists with this ID, no connection will be made. */
+  id?: InputMaybe<Scalars['ID']['input']>;
+  /** The name of the postFormat. This field is used to create a new term, if term creation is enabled in nested mutations, and if one does not already exist with the provided slug or ID or if a slug or ID is not provided. If no name is included and a term is created, the creation will fallback to the slug field. */
+  name?: InputMaybe<Scalars['String']['input']>;
+  /** The slug of the postFormat. If no ID is present, this field will be used to make a connection. If no existing term exists with this slug, this field will be used as a fallback to the Name field when creating a new term to connect to, if term creation is enabled as a nested mutation. */
+  slug?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** Connection between the Mumbai_university type and the Comment type */
+export type Mumbai_UniversityToCommentConnection = CommentConnection & Connection & {
+  __typename?: 'Mumbai_universityToCommentConnection';
+  /** Edges for the Mumbai_universityToCommentConnection connection */
+  edges: Array<Mumbai_UniversityToCommentConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<Comment>;
+  /** Information about pagination in a connection. */
+  pageInfo: Mumbai_UniversityToCommentConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type Mumbai_UniversityToCommentConnectionEdge = CommentConnectionEdge & Edge & {
+  __typename?: 'Mumbai_universityToCommentConnectionEdge';
+  /** A cursor for use in pagination */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The item at the end of the edge */
+  node: Comment;
+};
+
+/** Page Info on the &quot;Mumbai_universityToCommentConnection&quot; */
+export type Mumbai_UniversityToCommentConnectionPageInfo = CommentConnectionPageInfo & PageInfo & WpPageInfo & {
+  __typename?: 'Mumbai_universityToCommentConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Arguments for filtering the Mumbai_universityToCommentConnection connection */
+export type Mumbai_UniversityToCommentConnectionWhereArgs = {
+  /** Comment author email address. */
+  authorEmail?: InputMaybe<Scalars['String']['input']>;
+  /** Array of author IDs to include comments for. */
+  authorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of author IDs to exclude comments for. */
+  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Comment author URL. */
+  authorUrl?: InputMaybe<Scalars['String']['input']>;
+  /** Array of comment IDs to include. */
+  commentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of IDs of users whose unapproved comments will be returned by the query regardless of status. */
+  commentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Include comments of a given type. */
+  commentType?: InputMaybe<Scalars['String']['input']>;
+  /** Include comments from a given array of comment types. */
+  commentTypeIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Exclude comments from a given array of comment types. */
+  commentTypeNotIn?: InputMaybe<Scalars['String']['input']>;
+  /** Content object author ID to limit results by. */
+  contentAuthor?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of author IDs to retrieve comments for. */
+  contentAuthorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of author IDs *not* to retrieve comments for. */
+  contentAuthorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Limit results to those affiliated with a given content object ID. */
+  contentId?: InputMaybe<Scalars['ID']['input']>;
+  /** Array of content object IDs to include affiliated comments for. */
+  contentIdIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of content object IDs to exclude affiliated comments for. */
+  contentIdNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Content object name (i.e. slug ) to retrieve affiliated comments for. */
+  contentName?: InputMaybe<Scalars['String']['input']>;
+  /** Content Object parent ID to retrieve affiliated comments for. */
+  contentParent?: InputMaybe<Scalars['Int']['input']>;
+  /** Array of content object statuses to retrieve affiliated comments for. Pass 'any' to match any value. */
+  contentStatus?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
+  /** Content object type or array of types to retrieve affiliated comments for. Pass 'any' to match any value. */
+  contentType?: InputMaybe<Array<InputMaybe<ContentTypeEnum>>>;
+  /** Array of IDs or email addresses of users whose unapproved comments will be returned by the query regardless of $status. Default empty */
+  includeUnapproved?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Karma score to retrieve matching comments for. */
+  karma?: InputMaybe<Scalars['Int']['input']>;
+  /** The cardinality of the order of the connection */
+  order?: InputMaybe<OrderEnum>;
+  /** Field to order the comments by. */
+  orderby?: InputMaybe<CommentsConnectionOrderbyEnum>;
+  /** Parent ID of comment to retrieve children of. */
+  parent?: InputMaybe<Scalars['Int']['input']>;
+  /** Array of parent IDs of comments to retrieve children for. */
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of parent IDs of comments *not* to retrieve children for. */
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Search term(s) to retrieve matching comments for. */
+  search?: InputMaybe<Scalars['String']['input']>;
+  /** Comment status to limit results by. */
+  status?: InputMaybe<Scalars['String']['input']>;
+  /** Include comments for a specific user ID. */
+  userId?: InputMaybe<Scalars['ID']['input']>;
+};
+
+/** Connection between the Mumbai_university type and the mumbai_university type */
+export type Mumbai_UniversityToMumbai_UniversityConnection = Connection & {
+  __typename?: 'Mumbai_universityToMumbai_universityConnection';
+  /** Edges for the Mumbai_universityToMumbai_universityConnection connection */
+  edges: Array<Mumbai_UniversityToMumbai_UniversityConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<Mumbai_University>;
+  /** Information about pagination in a connection. */
+  pageInfo: Mumbai_UniversityToMumbai_UniversityConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type Mumbai_UniversityToMumbai_UniversityConnectionEdge = Edge & MumbaiUniversityConnectionEdge & {
+  __typename?: 'Mumbai_universityToMumbai_universityConnectionEdge';
+  /**
+   * A cursor for use in pagination
+   * @deprecated This content type is not hierarchical and typically will not have ancestors
+   */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /**
+   * The item at the end of the edge
+   * @deprecated This content type is not hierarchical and typically will not have ancestors
+   */
+  node: Mumbai_University;
+};
+
+/** Page Info on the &quot;Mumbai_universityToMumbai_universityConnection&quot; */
+export type Mumbai_UniversityToMumbai_UniversityConnectionPageInfo = Mumbai_UniversityConnectionPageInfo & PageInfo & WpPageInfo & {
+  __typename?: 'Mumbai_universityToMumbai_universityConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Connection between the Mumbai_university type and the mumbai_university type */
+export type Mumbai_UniversityToParentConnectionEdge = Edge & MumbaiUniversityConnectionEdge & OneToOneConnection & {
+  __typename?: 'Mumbai_universityToParentConnectionEdge';
+  /** Opaque reference to the nodes position in the connection. Value can be used with pagination args. */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /**
+   * The node of the connection, without the edges
+   * @deprecated This content type is not hierarchical and typically will not have a parent
+   */
+  node: Mumbai_University;
+};
+
+/** Connection between the Mumbai_university type and the postFormat type */
+export type Mumbai_UniversityToPostFormatConnection = Connection & PostFormatConnection & {
+  __typename?: 'Mumbai_universityToPostFormatConnection';
+  /** Edges for the Mumbai_universityToPostFormatConnection connection */
+  edges: Array<Mumbai_UniversityToPostFormatConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<PostFormat>;
+  /** Information about pagination in a connection. */
+  pageInfo: Mumbai_UniversityToPostFormatConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type Mumbai_UniversityToPostFormatConnectionEdge = Edge & PostFormatConnectionEdge & {
+  __typename?: 'Mumbai_universityToPostFormatConnectionEdge';
+  /** A cursor for use in pagination */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The item at the end of the edge */
+  node: PostFormat;
+};
+
+/** Page Info on the &quot;Mumbai_universityToPostFormatConnection&quot; */
+export type Mumbai_UniversityToPostFormatConnectionPageInfo = PageInfo & PostFormatConnectionPageInfo & WpPageInfo & {
+  __typename?: 'Mumbai_universityToPostFormatConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Arguments for filtering the Mumbai_universityToPostFormatConnection connection */
+export type Mumbai_UniversityToPostFormatConnectionWhereArgs = {
+  /** Unique cache key to be produced when this query is stored in an object cache. Default is 'core'. */
+  cacheDomain?: InputMaybe<Scalars['String']['input']>;
+  /** Term ID to retrieve child terms of. If multiple taxonomies are passed, $child_of is ignored. Default 0. */
+  childOf?: InputMaybe<Scalars['Int']['input']>;
+  /** True to limit results to terms that have no children. This parameter has no effect on non-hierarchical taxonomies. Default false. */
+  childless?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Retrieve terms where the description is LIKE the input value. Default empty. */
+  descriptionLike?: InputMaybe<Scalars['String']['input']>;
+  /** Array of term ids to exclude. If $include is non-empty, $exclude is ignored. Default empty array. */
+  exclude?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of term ids to exclude along with all of their descendant terms. If $include is non-empty, $exclude_tree is ignored. Default empty array. */
+  excludeTree?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Whether to hide terms not assigned to any posts. Accepts true or false. Default false */
+  hideEmpty?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Whether to include terms that have non-empty descendants (even if $hide_empty is set to true). Default true. */
+  hierarchical?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Array of term ids to include. Default empty array. */
+  include?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of names to return term(s) for. Default empty. */
+  name?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Retrieve terms where the name is LIKE the input value. Default empty. */
+  nameLike?: InputMaybe<Scalars['String']['input']>;
+  /** Array of object IDs. Results will be limited to terms associated with these objects. */
+  objectIds?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Direction the connection should be ordered in */
+  order?: InputMaybe<OrderEnum>;
+  /** Field(s) to order terms by. Defaults to 'name'. */
+  orderby?: InputMaybe<TermObjectsConnectionOrderbyEnum>;
+  /** Whether to pad the quantity of a term's children in the quantity of each term's "count" object variable. Default false. */
+  padCounts?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Parent term ID to retrieve direct-child terms of. Default empty. */
+  parent?: InputMaybe<Scalars['Int']['input']>;
+  /** Search criteria to match terms. Will be SQL-formatted with wildcards before and after. Default empty. */
+  search?: InputMaybe<Scalars['String']['input']>;
+  /** Array of slugs to return term(s) for. Default empty. */
+  slug?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomyId?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Whether to prime meta caches for matched terms. Default true. */
+  updateTermMetaCache?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** Connection between the Mumbai_university type and the mumbai_university type */
+export type Mumbai_UniversityToPreviewConnectionEdge = Edge & MumbaiUniversityConnectionEdge & OneToOneConnection & {
+  __typename?: 'Mumbai_universityToPreviewConnectionEdge';
+  /** Opaque reference to the nodes position in the connection. Value can be used with pagination args. */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The node of the connection, without the edges */
+  node: Mumbai_University;
+};
+
+/** Connection between the Mumbai_university type and the mumbai_university type */
+export type Mumbai_UniversityToRevisionConnection = Connection & {
+  __typename?: 'Mumbai_universityToRevisionConnection';
+  /** Edges for the Mumbai_universityToRevisionConnection connection */
+  edges: Array<Mumbai_UniversityToRevisionConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<Mumbai_University>;
+  /** Information about pagination in a connection. */
+  pageInfo: Mumbai_UniversityToRevisionConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type Mumbai_UniversityToRevisionConnectionEdge = Edge & MumbaiUniversityConnectionEdge & {
+  __typename?: 'Mumbai_universityToRevisionConnectionEdge';
+  /** A cursor for use in pagination */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The item at the end of the edge */
+  node: Mumbai_University;
+};
+
+/** Page Info on the &quot;Mumbai_universityToRevisionConnection&quot; */
+export type Mumbai_UniversityToRevisionConnectionPageInfo = Mumbai_UniversityConnectionPageInfo & PageInfo & WpPageInfo & {
+  __typename?: 'Mumbai_universityToRevisionConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Arguments for filtering the Mumbai_universityToRevisionConnection connection */
+export type Mumbai_UniversityToRevisionConnectionWhereArgs = {
+  /** The user that's connected as the author of the object. Use the userId for the author object. */
+  author?: InputMaybe<Scalars['Int']['input']>;
+  /** Find objects connected to author(s) in the array of author's userIds */
+  authorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Find objects connected to the author by the author's nicename */
+  authorName?: InputMaybe<Scalars['String']['input']>;
+  /** Find objects NOT connected to author(s) in the array of author's userIds */
+  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Filter the connection based on dates */
+  dateQuery?: InputMaybe<DateQueryInput>;
+  /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
+  hasPassword?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Specific database ID of the object */
+  id?: InputMaybe<Scalars['Int']['input']>;
+  /** Array of IDs for the objects to retrieve */
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Get objects with a specific mimeType property */
+  mimeType?: InputMaybe<MimeTypeEnum>;
+  /** Slug / post_name of the object */
+  name?: InputMaybe<Scalars['String']['input']>;
+  /** Specify objects to retrieve. Use slugs */
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** What parameter to use to order the objects by. */
+  orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
+  /** Use ID to return only children. Use 0 to return only top-level items */
+  parent?: InputMaybe<Scalars['ID']['input']>;
+  /** Specify objects whose parent is in an array */
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Specify posts whose parent is not in an array */
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Show posts with a specific password. */
+  password?: InputMaybe<Scalars['String']['input']>;
+  /** Show Posts based on a keyword search */
+  search?: InputMaybe<Scalars['String']['input']>;
+  /** Retrieve posts where post status is in an array. */
+  stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
+  /** Show posts with a specific status. */
+  status?: InputMaybe<PostStatusEnum>;
+  /** Title of the object */
+  title?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** Connection between the Mumbai_university type and the TermNode type */
+export type Mumbai_UniversityToTermNodeConnection = Connection & TermNodeConnection & {
+  __typename?: 'Mumbai_universityToTermNodeConnection';
+  /** Edges for the Mumbai_universityToTermNodeConnection connection */
+  edges: Array<Mumbai_UniversityToTermNodeConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<TermNode>;
+  /** Information about pagination in a connection. */
+  pageInfo: Mumbai_UniversityToTermNodeConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type Mumbai_UniversityToTermNodeConnectionEdge = Edge & TermNodeConnectionEdge & {
+  __typename?: 'Mumbai_universityToTermNodeConnectionEdge';
+  /** A cursor for use in pagination */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The item at the end of the edge */
+  node: TermNode;
+};
+
+/** Page Info on the &quot;Mumbai_universityToTermNodeConnection&quot; */
+export type Mumbai_UniversityToTermNodeConnectionPageInfo = PageInfo & TermNodeConnectionPageInfo & WpPageInfo & {
+  __typename?: 'Mumbai_universityToTermNodeConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Arguments for filtering the Mumbai_universityToTermNodeConnection connection */
+export type Mumbai_UniversityToTermNodeConnectionWhereArgs = {
+  /** Unique cache key to be produced when this query is stored in an object cache. Default is 'core'. */
+  cacheDomain?: InputMaybe<Scalars['String']['input']>;
+  /** Term ID to retrieve child terms of. If multiple taxonomies are passed, $child_of is ignored. Default 0. */
+  childOf?: InputMaybe<Scalars['Int']['input']>;
+  /** True to limit results to terms that have no children. This parameter has no effect on non-hierarchical taxonomies. Default false. */
+  childless?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Retrieve terms where the description is LIKE the input value. Default empty. */
+  descriptionLike?: InputMaybe<Scalars['String']['input']>;
+  /** Array of term ids to exclude. If $include is non-empty, $exclude is ignored. Default empty array. */
+  exclude?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of term ids to exclude along with all of their descendant terms. If $include is non-empty, $exclude_tree is ignored. Default empty array. */
+  excludeTree?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Whether to hide terms not assigned to any posts. Accepts true or false. Default false */
+  hideEmpty?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Whether to include terms that have non-empty descendants (even if $hide_empty is set to true). Default true. */
+  hierarchical?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Array of term ids to include. Default empty array. */
+  include?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of names to return term(s) for. Default empty. */
+  name?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Retrieve terms where the name is LIKE the input value. Default empty. */
+  nameLike?: InputMaybe<Scalars['String']['input']>;
+  /** Array of object IDs. Results will be limited to terms associated with these objects. */
+  objectIds?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Direction the connection should be ordered in */
+  order?: InputMaybe<OrderEnum>;
+  /** Field(s) to order terms by. Defaults to 'name'. */
+  orderby?: InputMaybe<TermObjectsConnectionOrderbyEnum>;
+  /** Whether to pad the quantity of a term's children in the quantity of each term's "count" object variable. Default false. */
+  padCounts?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Parent term ID to retrieve direct-child terms of. Default empty. */
+  parent?: InputMaybe<Scalars['Int']['input']>;
+  /** Search criteria to match terms. Will be SQL-formatted with wildcards before and after. Default empty. */
+  search?: InputMaybe<Scalars['String']['input']>;
+  /** Array of slugs to return term(s) for. Default empty. */
+  slug?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** The Taxonomy to filter terms by */
+  taxonomies?: InputMaybe<Array<InputMaybe<TaxonomyEnum>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomyId?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Whether to prime meta caches for matched terms. Default true. */
+  updateTermMetaCache?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** Added by WPGraphQL for ACF Redux */
 export type NcPageMeta = AcfFieldGroup & AcfFieldGroupFields & NcPageMeta_Fields & {
   __typename?: 'NcPageMeta';
   /**
@@ -9961,7 +14721,7 @@ export type NcPageMeta = AcfFieldGroup & AcfFieldGroupFields & NcPageMeta_Fields
    * @deprecated Use __typename instead
    */
   fieldGroupName?: Maybe<Scalars['String']['output']>;
-  /** Field of the &quot;true_false&quot; Field Type added to the schema as part of the &quot;NcPageMeta&quot; Field Group */
+  /** Field added to the schema as part of the &quot;NcPageMeta&quot; Field Group */
   isFullWithPage?: Maybe<Scalars['Boolean']['output']>;
 };
 
@@ -9972,11 +14732,11 @@ export type NcPageMeta_Fields = {
    * @deprecated Use __typename instead
    */
   fieldGroupName?: Maybe<Scalars['String']['output']>;
-  /** Field of the &quot;true_false&quot; Field Type added to the schema as part of the &quot;NcPageMeta&quot; Field Group */
+  /** Field added to the schema as part of the &quot;NcPageMeta&quot; Field Group */
   isFullWithPage?: Maybe<Scalars['Boolean']['output']>;
 };
 
-/** The &quot;NcPostMetaData&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;. */
+/** Added by WPGraphQL for ACF Redux */
 export type NcPostMetaData = AcfFieldGroup & AcfFieldGroupFields & NcPostMetaData_Fields & {
   __typename?: 'NcPostMetaData';
   /**
@@ -9984,17 +14744,17 @@ export type NcPostMetaData = AcfFieldGroup & AcfFieldGroupFields & NcPostMetaDat
    * @deprecated Use __typename instead
    */
   fieldGroupName?: Maybe<Scalars['String']['output']>;
-  /** Field of the &quot;number&quot; Field Type added to the schema as part of the &quot;NcPostMetaData&quot; Field Group */
+  /** Field added to the schema as part of the &quot;NcPostMetaData&quot; Field Group */
   likesCount?: Maybe<Scalars['Float']['output']>;
-  /** Field of the &quot;number&quot; Field Type added to the schema as part of the &quot;NcPostMetaData&quot; Field Group */
+  /** Field added to the schema as part of the &quot;NcPostMetaData&quot; Field Group */
   readingTime?: Maybe<Scalars['Float']['output']>;
-  /** Field of the &quot;number&quot; Field Type added to the schema as part of the &quot;NcPostMetaData&quot; Field Group */
+  /** Field added to the schema as part of the &quot;NcPostMetaData&quot; Field Group */
   savedsCount?: Maybe<Scalars['Float']['output']>;
-  /** Field of the &quot;true_false&quot; Field Type added to the schema as part of the &quot;NcPostMetaData&quot; Field Group */
+  /** Field added to the schema as part of the &quot;NcPostMetaData&quot; Field Group */
   showRightSidebar?: Maybe<Scalars['Boolean']['output']>;
   /** Applies to standard post format only */
   template?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
-  /** Field of the &quot;number&quot; Field Type added to the schema as part of the &quot;NcPostMetaData&quot; Field Group */
+  /** Field added to the schema as part of the &quot;NcPostMetaData&quot; Field Group */
   viewsCount?: Maybe<Scalars['Float']['output']>;
 };
 
@@ -10005,40 +14765,49 @@ export type NcPostMetaData_Fields = {
    * @deprecated Use __typename instead
    */
   fieldGroupName?: Maybe<Scalars['String']['output']>;
-  /** Field of the &quot;number&quot; Field Type added to the schema as part of the &quot;NcPostMetaData&quot; Field Group */
+  /** Field added to the schema as part of the &quot;NcPostMetaData&quot; Field Group */
   likesCount?: Maybe<Scalars['Float']['output']>;
-  /** Field of the &quot;number&quot; Field Type added to the schema as part of the &quot;NcPostMetaData&quot; Field Group */
+  /** Field added to the schema as part of the &quot;NcPostMetaData&quot; Field Group */
   readingTime?: Maybe<Scalars['Float']['output']>;
-  /** Field of the &quot;number&quot; Field Type added to the schema as part of the &quot;NcPostMetaData&quot; Field Group */
+  /** Field added to the schema as part of the &quot;NcPostMetaData&quot; Field Group */
   savedsCount?: Maybe<Scalars['Float']['output']>;
-  /** Field of the &quot;true_false&quot; Field Type added to the schema as part of the &quot;NcPostMetaData&quot; Field Group */
+  /** Field added to the schema as part of the &quot;NcPostMetaData&quot; Field Group */
   showRightSidebar?: Maybe<Scalars['Boolean']['output']>;
   /** Applies to standard post format only */
   template?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
-  /** Field of the &quot;number&quot; Field Type added to the schema as part of the &quot;NcPostMetaData&quot; Field Group */
+  /** Field added to the schema as part of the &quot;NcPostMetaData&quot; Field Group */
   viewsCount?: Maybe<Scalars['Float']['output']>;
 };
 
-/** The &quot;NcTaxonomyMeta&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;. */
+/** Added by WPGraphQL for ACF Redux */
 export type NcTaxonomyMeta = AcfFieldGroup & AcfFieldGroupFields & NcTaxonomyMeta_Fields & {
   __typename?: 'NcTaxonomyMeta';
-  /** Field of the &quot;select&quot; Field Type added to the schema as part of the &quot;NcTaxonomyMeta&quot; Field Group */
+  /** Field added to the schema as part of the &quot;NcTaxonomyMeta&quot; Field Group */
   color?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
-  /** Field of the &quot;image&quot; Field Type added to the schema as part of the &quot;NcTaxonomyMeta&quot; Field Group */
-  featuredImage?: Maybe<AcfMediaItemConnectionEdge>;
+  /** Field added to the schema as part of the &quot;NcTaxonomyMeta&quot; Field Group */
+  featuredImage?: Maybe<NcTaxonomyMetaFeaturedImageToMediaItemConnectionEdge>;
   /**
    * The name of the field group
    * @deprecated Use __typename instead
    */
   fieldGroupName?: Maybe<Scalars['String']['output']>;
+};
+
+/** Connection between the NcTaxonomyMeta type and the MediaItem type */
+export type NcTaxonomyMetaFeaturedImageToMediaItemConnectionEdge = Edge & MediaItemConnectionEdge & OneToOneConnection & {
+  __typename?: 'NcTaxonomyMetaFeaturedImageToMediaItemConnectionEdge';
+  /** Opaque reference to the nodes position in the connection. Value can be used with pagination args. */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The node of the connection, without the edges */
+  node: MediaItem;
 };
 
 /** Interface representing fields of the ACF &quot;NcTaxonomyMeta&quot; Field Group */
 export type NcTaxonomyMeta_Fields = {
-  /** Field of the &quot;select&quot; Field Type added to the schema as part of the &quot;NcTaxonomyMeta&quot; Field Group */
+  /** Field added to the schema as part of the &quot;NcTaxonomyMeta&quot; Field Group */
   color?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
-  /** Field of the &quot;image&quot; Field Type added to the schema as part of the &quot;NcTaxonomyMeta&quot; Field Group */
-  featuredImage?: Maybe<AcfMediaItemConnectionEdge>;
+  /** Field added to the schema as part of the &quot;NcTaxonomyMeta&quot; Field Group */
+  featuredImage?: Maybe<NcTaxonomyMetaFeaturedImageToMediaItemConnectionEdge>;
   /**
    * The name of the field group
    * @deprecated Use __typename instead
@@ -10046,97 +14815,115 @@ export type NcTaxonomyMeta_Fields = {
   fieldGroupName?: Maybe<Scalars['String']['output']>;
 };
 
-/** The &quot;NcUserMeta&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;. */
+/** Added by WPGraphQL for ACF Redux */
 export type NcUserMeta = AcfFieldGroup & AcfFieldGroupFields & NcUserMeta_Fields & {
   __typename?: 'NcUserMeta';
-  /** Field of the &quot;image&quot; Field Type added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
-  backgroundImage?: Maybe<AcfMediaItemConnectionEdge>;
+  /** Field added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
+  backgroundImage?: Maybe<NcUserMetaBackgroundImageToMediaItemConnectionEdge>;
   /** You should have an account here or something similar -  https://www.buymeacoffee.com */
   buymeacoffeUrl?: Maybe<Scalars['String']['output']>;
-  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
+  /** Field added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
   color?: Maybe<Scalars['String']['output']>;
-  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
+  /** Field added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
   facebookUrl?: Maybe<Scalars['String']['output']>;
-  /** Field of the &quot;image&quot; Field Type added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
-  featuredImage?: Maybe<AcfMediaItemConnectionEdge>;
+  /** Field added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
+  featuredImage?: Maybe<NcUserMetaFeaturedImageToMediaItemConnectionEdge>;
   /**
    * The name of the field group
    * @deprecated Use __typename instead
    */
   fieldGroupName?: Maybe<Scalars['String']['output']>;
-  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
+  /** Field added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
   githubUrl?: Maybe<Scalars['String']['output']>;
-  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
+  /** Field added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
   instagramUrl?: Maybe<Scalars['String']['output']>;
-  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
+  /** Field added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
   linkedinUrl?: Maybe<Scalars['String']['output']>;
-  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
+  /** Field added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
   mediumUrl?: Maybe<Scalars['String']['output']>;
   /** Job/Career of the user. Example: Web Developer, Designer, etc. */
   ncBio?: Maybe<Scalars['String']['output']>;
-  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
+  /** Field added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
   pinterestUrl?: Maybe<Scalars['String']['output']>;
-  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
+  /** Field added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
   tiktokUrl?: Maybe<Scalars['String']['output']>;
-  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
+  /** Field added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
   twitchUrl?: Maybe<Scalars['String']['output']>;
-  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
+  /** Field added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
   twitterUrl?: Maybe<Scalars['String']['output']>;
-  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
+  /** Field added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
   vimeoUrl?: Maybe<Scalars['String']['output']>;
-  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
+  /** Field added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
   websiteUrl?: Maybe<Scalars['String']['output']>;
-  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
+  /** Field added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
   youtubeUrl?: Maybe<Scalars['String']['output']>;
+};
+
+/** Connection between the NcUserMeta type and the MediaItem type */
+export type NcUserMetaBackgroundImageToMediaItemConnectionEdge = Edge & MediaItemConnectionEdge & OneToOneConnection & {
+  __typename?: 'NcUserMetaBackgroundImageToMediaItemConnectionEdge';
+  /** Opaque reference to the nodes position in the connection. Value can be used with pagination args. */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The node of the connection, without the edges */
+  node: MediaItem;
+};
+
+/** Connection between the NcUserMeta type and the MediaItem type */
+export type NcUserMetaFeaturedImageToMediaItemConnectionEdge = Edge & MediaItemConnectionEdge & OneToOneConnection & {
+  __typename?: 'NcUserMetaFeaturedImageToMediaItemConnectionEdge';
+  /** Opaque reference to the nodes position in the connection. Value can be used with pagination args. */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The node of the connection, without the edges */
+  node: MediaItem;
 };
 
 /** Interface representing fields of the ACF &quot;NcUserMeta&quot; Field Group */
 export type NcUserMeta_Fields = {
-  /** Field of the &quot;image&quot; Field Type added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
-  backgroundImage?: Maybe<AcfMediaItemConnectionEdge>;
+  /** Field added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
+  backgroundImage?: Maybe<NcUserMetaBackgroundImageToMediaItemConnectionEdge>;
   /** You should have an account here or something similar -  https://www.buymeacoffee.com */
   buymeacoffeUrl?: Maybe<Scalars['String']['output']>;
-  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
+  /** Field added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
   color?: Maybe<Scalars['String']['output']>;
-  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
+  /** Field added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
   facebookUrl?: Maybe<Scalars['String']['output']>;
-  /** Field of the &quot;image&quot; Field Type added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
-  featuredImage?: Maybe<AcfMediaItemConnectionEdge>;
+  /** Field added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
+  featuredImage?: Maybe<NcUserMetaFeaturedImageToMediaItemConnectionEdge>;
   /**
    * The name of the field group
    * @deprecated Use __typename instead
    */
   fieldGroupName?: Maybe<Scalars['String']['output']>;
-  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
+  /** Field added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
   githubUrl?: Maybe<Scalars['String']['output']>;
-  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
+  /** Field added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
   instagramUrl?: Maybe<Scalars['String']['output']>;
-  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
+  /** Field added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
   linkedinUrl?: Maybe<Scalars['String']['output']>;
-  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
+  /** Field added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
   mediumUrl?: Maybe<Scalars['String']['output']>;
   /** Job/Career of the user. Example: Web Developer, Designer, etc. */
   ncBio?: Maybe<Scalars['String']['output']>;
-  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
+  /** Field added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
   pinterestUrl?: Maybe<Scalars['String']['output']>;
-  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
+  /** Field added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
   tiktokUrl?: Maybe<Scalars['String']['output']>;
-  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
+  /** Field added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
   twitchUrl?: Maybe<Scalars['String']['output']>;
-  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
+  /** Field added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
   twitterUrl?: Maybe<Scalars['String']['output']>;
-  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
+  /** Field added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
   vimeoUrl?: Maybe<Scalars['String']['output']>;
-  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
+  /** Field added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
   websiteUrl?: Maybe<Scalars['String']['output']>;
-  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
+  /** Field added to the schema as part of the &quot;NcUserMeta&quot; Field Group */
   youtubeUrl?: Maybe<Scalars['String']['output']>;
 };
 
-/** The &quot;NcmazAudioUrl&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;. */
+/** Added by WPGraphQL for ACF Redux */
 export type NcmazAudioUrl = AcfFieldGroup & AcfFieldGroupFields & NcmazAudioUrl_Fields & {
   __typename?: 'NcmazAudioUrl';
-  /** Field of the &quot;url&quot; Field Type added to the schema as part of the &quot;NcmazAudioUrl&quot; Field Group */
+  /** Field added to the schema as part of the &quot;NcmazAudioUrl&quot; Field Group */
   audioUrl?: Maybe<Scalars['String']['output']>;
   /**
    * The name of the field group
@@ -10147,7 +14934,7 @@ export type NcmazAudioUrl = AcfFieldGroup & AcfFieldGroupFields & NcmazAudioUrl_
 
 /** Interface representing fields of the ACF &quot;NcmazAudioUrl&quot; Field Group */
 export type NcmazAudioUrl_Fields = {
-  /** Field of the &quot;url&quot; Field Type added to the schema as part of the &quot;NcmazAudioUrl&quot; Field Group */
+  /** Field added to the schema as part of the &quot;NcmazAudioUrl&quot; Field Group */
   audioUrl?: Maybe<Scalars['String']['output']>;
   /**
    * The name of the field group
@@ -10211,7 +14998,7 @@ export type NcmazFaustAddSubscriberToMailpoetPayload = {
 };
 
 /** A block used for editing the site */
-export type NcmazFaustBlockCta = BlockWithSupportsAnchor & EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type NcmazFaustBlockCta = BlockWithSupportsAnchor & DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'NcmazFaustBlockCta';
   /** The anchor field for the block. */
   anchor?: Maybe<Scalars['String']['output']>;
@@ -10240,22 +15027,22 @@ export type NcmazFaustBlockCta = BlockWithSupportsAnchor & EditorBlock & PageEdi
 /** Attributes of the NcmazFaustBlockCta Block Type */
 export type NcmazFaustBlockCtaAttributes = BlockWithSupportsAnchor & {
   __typename?: 'NcmazFaustBlockCtaAttributes';
-  /** The &quot;align&quot; field on the &quot;NcmazFaustBlockCtaAttributes&quot; block or block attributes */
+  /** The &quot;align&quot; field on the &quot;NcmazFaustBlockCta&quot; block */
   align?: Maybe<Scalars['String']['output']>;
   /** The anchor field for the block. */
   anchor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;NcmazFaustBlockCtaAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;NcmazFaustBlockCta&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;lock&quot; field on the &quot;NcmazFaustBlockCtaAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;NcmazFaustBlockCta&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;NcmazFaustBlockCtaAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;NcmazFaustBlockCta&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;style&quot; field on the &quot;NcmazFaustBlockCtaAttributes&quot; block or block attributes */
+  /** The &quot;style&quot; field on the &quot;NcmazFaustBlockCta&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
 };
 
 /** A block used for editing the site */
-export type NcmazFaustBlockGroup = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type NcmazFaustBlockGroup = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'NcmazFaustBlockGroup';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -10282,24 +15069,24 @@ export type NcmazFaustBlockGroup = EditorBlock & PageEditorBlock & PostEditorBlo
 /** Attributes of the NcmazFaustBlockGroup Block Type */
 export type NcmazFaustBlockGroupAttributes = {
   __typename?: 'NcmazFaustBlockGroupAttributes';
-  /** The &quot;align&quot; field on the &quot;NcmazFaustBlockGroupAttributes&quot; block or block attributes */
-  align: Scalars['String']['output'];
-  /** The &quot;className&quot; field on the &quot;NcmazFaustBlockGroupAttributes&quot; block or block attributes */
+  /** The &quot;align&quot; field on the &quot;NcmazFaustBlockGroup&quot; block */
+  align?: Maybe<Scalars['String']['output']>;
+  /** The &quot;className&quot; field on the &quot;NcmazFaustBlockGroup&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;hasBackground&quot; field on the &quot;NcmazFaustBlockGroupAttributes&quot; block or block attributes */
-  hasBackground: Scalars['Boolean']['output'];
-  /** The &quot;lock&quot; field on the &quot;NcmazFaustBlockGroupAttributes&quot; block or block attributes */
+  /** The &quot;hasBackground&quot; field on the &quot;NcmazFaustBlockGroup&quot; block */
+  hasBackground?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;lock&quot; field on the &quot;NcmazFaustBlockGroup&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;NcmazFaustBlockGroupAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;NcmazFaustBlockGroup&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;style&quot; field on the &quot;NcmazFaustBlockGroupAttributes&quot; block or block attributes */
-  style: Scalars['BlockAttributesObject']['output'];
-  /** The &quot;variation&quot; field on the &quot;NcmazFaustBlockGroupAttributes&quot; block or block attributes */
-  variation: Scalars['String']['output'];
+  /** The &quot;style&quot; field on the &quot;NcmazFaustBlockGroup&quot; block */
+  style?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;variation&quot; field on the &quot;NcmazFaustBlockGroup&quot; block */
+  variation?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type NcmazFaustBlockHeading = BlockWithSupportsAnchor & EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type NcmazFaustBlockHeading = BlockWithSupportsAnchor & DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'NcmazFaustBlockHeading';
   /** The anchor field for the block. */
   anchor?: Maybe<Scalars['String']['output']>;
@@ -10328,22 +15115,22 @@ export type NcmazFaustBlockHeading = BlockWithSupportsAnchor & EditorBlock & Pag
 /** Attributes of the NcmazFaustBlockHeading Block Type */
 export type NcmazFaustBlockHeadingAttributes = BlockWithSupportsAnchor & {
   __typename?: 'NcmazFaustBlockHeadingAttributes';
-  /** The &quot;align&quot; field on the &quot;NcmazFaustBlockHeadingAttributes&quot; block or block attributes */
+  /** The &quot;align&quot; field on the &quot;NcmazFaustBlockHeading&quot; block */
   align?: Maybe<Scalars['String']['output']>;
   /** The anchor field for the block. */
   anchor?: Maybe<Scalars['String']['output']>;
-  /** The &quot;className&quot; field on the &quot;NcmazFaustBlockHeadingAttributes&quot; block or block attributes */
+  /** The &quot;className&quot; field on the &quot;NcmazFaustBlockHeading&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;lock&quot; field on the &quot;NcmazFaustBlockHeadingAttributes&quot; block or block attributes */
+  /** The &quot;lock&quot; field on the &quot;NcmazFaustBlockHeading&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;NcmazFaustBlockHeadingAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;NcmazFaustBlockHeading&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;style&quot; field on the &quot;NcmazFaustBlockHeadingAttributes&quot; block or block attributes */
+  /** The &quot;style&quot; field on the &quot;NcmazFaustBlockHeading&quot; block */
   style?: Maybe<Scalars['BlockAttributesObject']['output']>;
 };
 
 /** A block used for editing the site */
-export type NcmazFaustBlockMagazine = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type NcmazFaustBlockMagazine = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'NcmazFaustBlockMagazine';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -10370,30 +15157,30 @@ export type NcmazFaustBlockMagazine = EditorBlock & PageEditorBlock & PostEditor
 /** Attributes of the NcmazFaustBlockMagazine Block Type */
 export type NcmazFaustBlockMagazineAttributes = {
   __typename?: 'NcmazFaustBlockMagazineAttributes';
-  /** The &quot;align&quot; field on the &quot;NcmazFaustBlockMagazineAttributes&quot; block or block attributes */
-  align: Scalars['String']['output'];
-  /** The &quot;blockVariation&quot; field on the &quot;NcmazFaustBlockMagazineAttributes&quot; block or block attributes */
-  blockVariation: Scalars['String']['output'];
-  /** The &quot;className&quot; field on the &quot;NcmazFaustBlockMagazineAttributes&quot; block or block attributes */
+  /** The &quot;align&quot; field on the &quot;NcmazFaustBlockMagazine&quot; block */
+  align?: Maybe<Scalars['String']['output']>;
+  /** The &quot;blockVariation&quot; field on the &quot;NcmazFaustBlockMagazine&quot; block */
+  blockVariation?: Maybe<Scalars['String']['output']>;
+  /** The &quot;className&quot; field on the &quot;NcmazFaustBlockMagazine&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;hasBackground&quot; field on the &quot;NcmazFaustBlockMagazineAttributes&quot; block or block attributes */
-  hasBackground: Scalars['Boolean']['output'];
-  /** The &quot;lock&quot; field on the &quot;NcmazFaustBlockMagazineAttributes&quot; block or block attributes */
+  /** The &quot;hasBackground&quot; field on the &quot;NcmazFaustBlockMagazine&quot; block */
+  hasBackground?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;lock&quot; field on the &quot;NcmazFaustBlockMagazine&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;NcmazFaustBlockMagazineAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;NcmazFaustBlockMagazine&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;queries&quot; field on the &quot;NcmazFaustBlockMagazineAttributes&quot; block or block attributes */
-  queries: Scalars['BlockAttributesObject']['output'];
-  /** The &quot;showLoadMore&quot; field on the &quot;NcmazFaustBlockMagazineAttributes&quot; block or block attributes */
-  showLoadMore: Scalars['Boolean']['output'];
-  /** The &quot;showViewAll&quot; field on the &quot;NcmazFaustBlockMagazineAttributes&quot; block or block attributes */
-  showViewAll: Scalars['Boolean']['output'];
-  /** The &quot;uniqueId&quot; field on the &quot;NcmazFaustBlockMagazineAttributes&quot; block or block attributes */
-  uniqueId: Scalars['String']['output'];
+  /** The &quot;queries&quot; field on the &quot;NcmazFaustBlockMagazine&quot; block */
+  queries?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;showLoadMore&quot; field on the &quot;NcmazFaustBlockMagazine&quot; block */
+  showLoadMore?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;showViewAll&quot; field on the &quot;NcmazFaustBlockMagazine&quot; block */
+  showViewAll?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;uniqueId&quot; field on the &quot;NcmazFaustBlockMagazine&quot; block */
+  uniqueId?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
-export type NcmazFaustBlockTerms = EditorBlock & PageEditorBlock & PostEditorBlock & {
+export type NcmazFaustBlockTerms = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
   __typename?: 'NcmazFaustBlockTerms';
   /** The API version of the Gutenberg Block */
   apiVersion?: Maybe<Scalars['Int']['output']>;
@@ -10420,29 +15207,29 @@ export type NcmazFaustBlockTerms = EditorBlock & PageEditorBlock & PostEditorBlo
 /** Attributes of the NcmazFaustBlockTerms Block Type */
 export type NcmazFaustBlockTermsAttributes = {
   __typename?: 'NcmazFaustBlockTermsAttributes';
-  /** The &quot;align&quot; field on the &quot;NcmazFaustBlockTermsAttributes&quot; block or block attributes */
-  align: Scalars['String']['output'];
-  /** The &quot;blockVariation&quot; field on the &quot;NcmazFaustBlockTermsAttributes&quot; block or block attributes */
-  blockVariation: Scalars['String']['output'];
-  /** The &quot;className&quot; field on the &quot;NcmazFaustBlockTermsAttributes&quot; block or block attributes */
+  /** The &quot;align&quot; field on the &quot;NcmazFaustBlockTerms&quot; block */
+  align?: Maybe<Scalars['String']['output']>;
+  /** The &quot;blockVariation&quot; field on the &quot;NcmazFaustBlockTerms&quot; block */
+  blockVariation?: Maybe<Scalars['String']['output']>;
+  /** The &quot;className&quot; field on the &quot;NcmazFaustBlockTerms&quot; block */
   className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;hasBackground&quot; field on the &quot;NcmazFaustBlockTermsAttributes&quot; block or block attributes */
-  hasBackground: Scalars['Boolean']['output'];
-  /** The &quot;lock&quot; field on the &quot;NcmazFaustBlockTermsAttributes&quot; block or block attributes */
+  /** The &quot;hasBackground&quot; field on the &quot;NcmazFaustBlockTerms&quot; block */
+  hasBackground?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;lock&quot; field on the &quot;NcmazFaustBlockTerms&quot; block */
   lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;metadata&quot; field on the &quot;NcmazFaustBlockTermsAttributes&quot; block or block attributes */
+  /** The &quot;metadata&quot; field on the &quot;NcmazFaustBlockTerms&quot; block */
   metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;numberOfTags&quot; field on the &quot;NcmazFaustBlockTermsAttributes&quot; block or block attributes */
-  numberOfTags: Scalars['Float']['output'];
-  /** The &quot;order&quot; field on the &quot;NcmazFaustBlockTermsAttributes&quot; block or block attributes */
-  order: Scalars['String']['output'];
-  /** The &quot;orderBy&quot; field on the &quot;NcmazFaustBlockTermsAttributes&quot; block or block attributes */
-  orderBy: Scalars['String']['output'];
-  /** The &quot;showTagCounts&quot; field on the &quot;NcmazFaustBlockTermsAttributes&quot; block or block attributes */
-  showTagCounts: Scalars['Boolean']['output'];
-  /** The &quot;taxonomy&quot; field on the &quot;NcmazFaustBlockTermsAttributes&quot; block or block attributes */
-  taxonomy: Scalars['String']['output'];
-  /** The &quot;uniqueId&quot; field on the &quot;NcmazFaustBlockTermsAttributes&quot; block or block attributes */
+  /** The &quot;numberOfTags&quot; field on the &quot;NcmazFaustBlockTerms&quot; block */
+  numberOfTags?: Maybe<Scalars['Float']['output']>;
+  /** The &quot;order&quot; field on the &quot;NcmazFaustBlockTerms&quot; block */
+  order?: Maybe<Scalars['String']['output']>;
+  /** The &quot;orderBy&quot; field on the &quot;NcmazFaustBlockTerms&quot; block */
+  orderBy?: Maybe<Scalars['String']['output']>;
+  /** The &quot;showTagCounts&quot; field on the &quot;NcmazFaustBlockTerms&quot; block */
+  showTagCounts?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;taxonomy&quot; field on the &quot;NcmazFaustBlockTerms&quot; block */
+  taxonomy?: Maybe<Scalars['String']['output']>;
+  /** The &quot;uniqueId&quot; field on the &quot;NcmazFaustBlockTerms&quot; block */
   uniqueId?: Maybe<Scalars['String']['output']>;
 };
 
@@ -10550,7 +15337,7 @@ export enum NcmazFcUserReactionPostUpdateResuiltEnum {
   Removed = 'REMOVED'
 }
 
-/** The &quot;NcmazGalleryImgs&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;. */
+/** Added by WPGraphQL for ACF Redux */
 export type NcmazGalleryImgs = AcfFieldGroup & AcfFieldGroupFields & NcmazGalleryImgs_Fields & {
   __typename?: 'NcmazGalleryImgs';
   /**
@@ -10558,22 +15345,94 @@ export type NcmazGalleryImgs = AcfFieldGroup & AcfFieldGroupFields & NcmazGaller
    * @deprecated Use __typename instead
    */
   fieldGroupName?: Maybe<Scalars['String']['output']>;
-  /** Field of the &quot;image&quot; Field Type added to the schema as part of the &quot;NcmazGalleryImgs&quot; Field Group */
-  image1?: Maybe<AcfMediaItemConnectionEdge>;
-  /** Field of the &quot;image&quot; Field Type added to the schema as part of the &quot;NcmazGalleryImgs&quot; Field Group */
-  image2?: Maybe<AcfMediaItemConnectionEdge>;
-  /** Field of the &quot;image&quot; Field Type added to the schema as part of the &quot;NcmazGalleryImgs&quot; Field Group */
-  image3?: Maybe<AcfMediaItemConnectionEdge>;
-  /** Field of the &quot;image&quot; Field Type added to the schema as part of the &quot;NcmazGalleryImgs&quot; Field Group */
-  image4?: Maybe<AcfMediaItemConnectionEdge>;
-  /** Field of the &quot;image&quot; Field Type added to the schema as part of the &quot;NcmazGalleryImgs&quot; Field Group */
-  image5?: Maybe<AcfMediaItemConnectionEdge>;
-  /** Field of the &quot;image&quot; Field Type added to the schema as part of the &quot;NcmazGalleryImgs&quot; Field Group */
-  image6?: Maybe<AcfMediaItemConnectionEdge>;
-  /** Field of the &quot;image&quot; Field Type added to the schema as part of the &quot;NcmazGalleryImgs&quot; Field Group */
-  image7?: Maybe<AcfMediaItemConnectionEdge>;
-  /** Field of the &quot;image&quot; Field Type added to the schema as part of the &quot;NcmazGalleryImgs&quot; Field Group */
-  image8?: Maybe<AcfMediaItemConnectionEdge>;
+  /** Field added to the schema as part of the &quot;NcmazGalleryImgs&quot; Field Group */
+  image1?: Maybe<NcmazGalleryImgsImage1ToMediaItemConnectionEdge>;
+  /** Field added to the schema as part of the &quot;NcmazGalleryImgs&quot; Field Group */
+  image2?: Maybe<NcmazGalleryImgsImage2ToMediaItemConnectionEdge>;
+  /** Field added to the schema as part of the &quot;NcmazGalleryImgs&quot; Field Group */
+  image3?: Maybe<NcmazGalleryImgsImage3ToMediaItemConnectionEdge>;
+  /** Field added to the schema as part of the &quot;NcmazGalleryImgs&quot; Field Group */
+  image4?: Maybe<NcmazGalleryImgsImage4ToMediaItemConnectionEdge>;
+  /** Field added to the schema as part of the &quot;NcmazGalleryImgs&quot; Field Group */
+  image5?: Maybe<NcmazGalleryImgsImage5ToMediaItemConnectionEdge>;
+  /** Field added to the schema as part of the &quot;NcmazGalleryImgs&quot; Field Group */
+  image6?: Maybe<NcmazGalleryImgsImage6ToMediaItemConnectionEdge>;
+  /** Field added to the schema as part of the &quot;NcmazGalleryImgs&quot; Field Group */
+  image7?: Maybe<NcmazGalleryImgsImage7ToMediaItemConnectionEdge>;
+  /** Field added to the schema as part of the &quot;NcmazGalleryImgs&quot; Field Group */
+  image8?: Maybe<NcmazGalleryImgsImage8ToMediaItemConnectionEdge>;
+};
+
+/** Connection between the NcmazGalleryImgs type and the MediaItem type */
+export type NcmazGalleryImgsImage1ToMediaItemConnectionEdge = Edge & MediaItemConnectionEdge & OneToOneConnection & {
+  __typename?: 'NcmazGalleryImgsImage1ToMediaItemConnectionEdge';
+  /** Opaque reference to the nodes position in the connection. Value can be used with pagination args. */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The node of the connection, without the edges */
+  node: MediaItem;
+};
+
+/** Connection between the NcmazGalleryImgs type and the MediaItem type */
+export type NcmazGalleryImgsImage2ToMediaItemConnectionEdge = Edge & MediaItemConnectionEdge & OneToOneConnection & {
+  __typename?: 'NcmazGalleryImgsImage2ToMediaItemConnectionEdge';
+  /** Opaque reference to the nodes position in the connection. Value can be used with pagination args. */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The node of the connection, without the edges */
+  node: MediaItem;
+};
+
+/** Connection between the NcmazGalleryImgs type and the MediaItem type */
+export type NcmazGalleryImgsImage3ToMediaItemConnectionEdge = Edge & MediaItemConnectionEdge & OneToOneConnection & {
+  __typename?: 'NcmazGalleryImgsImage3ToMediaItemConnectionEdge';
+  /** Opaque reference to the nodes position in the connection. Value can be used with pagination args. */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The node of the connection, without the edges */
+  node: MediaItem;
+};
+
+/** Connection between the NcmazGalleryImgs type and the MediaItem type */
+export type NcmazGalleryImgsImage4ToMediaItemConnectionEdge = Edge & MediaItemConnectionEdge & OneToOneConnection & {
+  __typename?: 'NcmazGalleryImgsImage4ToMediaItemConnectionEdge';
+  /** Opaque reference to the nodes position in the connection. Value can be used with pagination args. */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The node of the connection, without the edges */
+  node: MediaItem;
+};
+
+/** Connection between the NcmazGalleryImgs type and the MediaItem type */
+export type NcmazGalleryImgsImage5ToMediaItemConnectionEdge = Edge & MediaItemConnectionEdge & OneToOneConnection & {
+  __typename?: 'NcmazGalleryImgsImage5ToMediaItemConnectionEdge';
+  /** Opaque reference to the nodes position in the connection. Value can be used with pagination args. */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The node of the connection, without the edges */
+  node: MediaItem;
+};
+
+/** Connection between the NcmazGalleryImgs type and the MediaItem type */
+export type NcmazGalleryImgsImage6ToMediaItemConnectionEdge = Edge & MediaItemConnectionEdge & OneToOneConnection & {
+  __typename?: 'NcmazGalleryImgsImage6ToMediaItemConnectionEdge';
+  /** Opaque reference to the nodes position in the connection. Value can be used with pagination args. */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The node of the connection, without the edges */
+  node: MediaItem;
+};
+
+/** Connection between the NcmazGalleryImgs type and the MediaItem type */
+export type NcmazGalleryImgsImage7ToMediaItemConnectionEdge = Edge & MediaItemConnectionEdge & OneToOneConnection & {
+  __typename?: 'NcmazGalleryImgsImage7ToMediaItemConnectionEdge';
+  /** Opaque reference to the nodes position in the connection. Value can be used with pagination args. */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The node of the connection, without the edges */
+  node: MediaItem;
+};
+
+/** Connection between the NcmazGalleryImgs type and the MediaItem type */
+export type NcmazGalleryImgsImage8ToMediaItemConnectionEdge = Edge & MediaItemConnectionEdge & OneToOneConnection & {
+  __typename?: 'NcmazGalleryImgsImage8ToMediaItemConnectionEdge';
+  /** Opaque reference to the nodes position in the connection. Value can be used with pagination args. */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The node of the connection, without the edges */
+  node: MediaItem;
 };
 
 /** Interface representing fields of the ACF &quot;NcmazGalleryImgs&quot; Field Group */
@@ -10583,25 +15442,25 @@ export type NcmazGalleryImgs_Fields = {
    * @deprecated Use __typename instead
    */
   fieldGroupName?: Maybe<Scalars['String']['output']>;
-  /** Field of the &quot;image&quot; Field Type added to the schema as part of the &quot;NcmazGalleryImgs&quot; Field Group */
-  image1?: Maybe<AcfMediaItemConnectionEdge>;
-  /** Field of the &quot;image&quot; Field Type added to the schema as part of the &quot;NcmazGalleryImgs&quot; Field Group */
-  image2?: Maybe<AcfMediaItemConnectionEdge>;
-  /** Field of the &quot;image&quot; Field Type added to the schema as part of the &quot;NcmazGalleryImgs&quot; Field Group */
-  image3?: Maybe<AcfMediaItemConnectionEdge>;
-  /** Field of the &quot;image&quot; Field Type added to the schema as part of the &quot;NcmazGalleryImgs&quot; Field Group */
-  image4?: Maybe<AcfMediaItemConnectionEdge>;
-  /** Field of the &quot;image&quot; Field Type added to the schema as part of the &quot;NcmazGalleryImgs&quot; Field Group */
-  image5?: Maybe<AcfMediaItemConnectionEdge>;
-  /** Field of the &quot;image&quot; Field Type added to the schema as part of the &quot;NcmazGalleryImgs&quot; Field Group */
-  image6?: Maybe<AcfMediaItemConnectionEdge>;
-  /** Field of the &quot;image&quot; Field Type added to the schema as part of the &quot;NcmazGalleryImgs&quot; Field Group */
-  image7?: Maybe<AcfMediaItemConnectionEdge>;
-  /** Field of the &quot;image&quot; Field Type added to the schema as part of the &quot;NcmazGalleryImgs&quot; Field Group */
-  image8?: Maybe<AcfMediaItemConnectionEdge>;
+  /** Field added to the schema as part of the &quot;NcmazGalleryImgs&quot; Field Group */
+  image1?: Maybe<NcmazGalleryImgsImage1ToMediaItemConnectionEdge>;
+  /** Field added to the schema as part of the &quot;NcmazGalleryImgs&quot; Field Group */
+  image2?: Maybe<NcmazGalleryImgsImage2ToMediaItemConnectionEdge>;
+  /** Field added to the schema as part of the &quot;NcmazGalleryImgs&quot; Field Group */
+  image3?: Maybe<NcmazGalleryImgsImage3ToMediaItemConnectionEdge>;
+  /** Field added to the schema as part of the &quot;NcmazGalleryImgs&quot; Field Group */
+  image4?: Maybe<NcmazGalleryImgsImage4ToMediaItemConnectionEdge>;
+  /** Field added to the schema as part of the &quot;NcmazGalleryImgs&quot; Field Group */
+  image5?: Maybe<NcmazGalleryImgsImage5ToMediaItemConnectionEdge>;
+  /** Field added to the schema as part of the &quot;NcmazGalleryImgs&quot; Field Group */
+  image6?: Maybe<NcmazGalleryImgsImage6ToMediaItemConnectionEdge>;
+  /** Field added to the schema as part of the &quot;NcmazGalleryImgs&quot; Field Group */
+  image7?: Maybe<NcmazGalleryImgsImage7ToMediaItemConnectionEdge>;
+  /** Field added to the schema as part of the &quot;NcmazGalleryImgs&quot; Field Group */
+  image8?: Maybe<NcmazGalleryImgsImage8ToMediaItemConnectionEdge>;
 };
 
-/** The &quot;NcmazVideoUrl&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;. */
+/** Added by WPGraphQL for ACF Redux */
 export type NcmazVideoUrl = AcfFieldGroup & AcfFieldGroupFields & NcmazVideoUrl_Fields & {
   __typename?: 'NcmazVideoUrl';
   /**
@@ -10609,7 +15468,7 @@ export type NcmazVideoUrl = AcfFieldGroup & AcfFieldGroupFields & NcmazVideoUrl_
    * @deprecated Use __typename instead
    */
   fieldGroupName?: Maybe<Scalars['String']['output']>;
-  /** Field of the &quot;url&quot; Field Type added to the schema as part of the &quot;NcmazVideoUrl&quot; Field Group */
+  /** Field added to the schema as part of the &quot;NcmazVideoUrl&quot; Field Group */
   videoUrl?: Maybe<Scalars['String']['output']>;
 };
 
@@ -10620,11 +15479,11 @@ export type NcmazVideoUrl_Fields = {
    * @deprecated Use __typename instead
    */
   fieldGroupName?: Maybe<Scalars['String']['output']>;
-  /** Field of the &quot;url&quot; Field Type added to the schema as part of the &quot;NcmazVideoUrl&quot; Field Group */
+  /** Field added to the schema as part of the &quot;NcmazVideoUrl&quot; Field Group */
   videoUrl?: Maybe<Scalars['String']['output']>;
 };
 
-/** The &quot;NcmazfaustMenu&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;. */
+/** Added by WPGraphQL for ACF Redux */
 export type NcmazfaustMenu = AcfFieldGroup & AcfFieldGroupFields & NcmazfaustMenu_Fields & {
   __typename?: 'NcmazfaustMenu';
   /**
@@ -10634,19 +15493,52 @@ export type NcmazfaustMenu = AcfFieldGroup & AcfFieldGroupFields & NcmazfaustMen
   fieldGroupName?: Maybe<Scalars['String']['output']>;
   /** Option to display menu as mega menu. Mega menu will contain many menu columns inside and a few featured articles. Each level 1 submenu of this menu will represent a menu column, and the level 1 menus of that menu will be in that column. Up to 6 columns. */
   isMegaMenu?: Maybe<Scalars['Boolean']['output']>;
-  /** Field of the &quot;range&quot; Field Type added to the schema as part of the &quot;NcmazfaustMenu&quot; Field Group */
+  /** Field added to the schema as part of the &quot;NcmazfaustMenu&quot; Field Group */
   numberOfMenuColumns?: Maybe<Scalars['Float']['output']>;
   /** Select posts which will be show in the right side of the mega menu.The number of posts displayed will depend on the number of existing menu columns inside the mega menu. No menu column =&gt; Display up to 5 posts. One menu column =&gt; Display up to 4 postsTwo menu columns =&gt; Display up to 3 postsThree or four menu columns =&gt; Display up to 2 postsFive menu columns =&gt; Display up to 1 postSix menu columns =&gt; Will not display any posts */
-  posts?: Maybe<AcfContentNodeConnection>;
+  posts?: Maybe<NcmazfaustMenuPostsToContentNodeConnection>;
 };
 
 
-/** The &quot;NcmazfaustMenu&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;. */
+/** Added by WPGraphQL for ACF Redux */
 export type NcmazfaustMenuPostsArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   last?: InputMaybe<Scalars['Int']['input']>;
+};
+
+/** Connection between the NcmazfaustMenu type and the ContentNode type */
+export type NcmazfaustMenuPostsToContentNodeConnection = Connection & ContentNodeConnection & {
+  __typename?: 'NcmazfaustMenuPostsToContentNodeConnection';
+  /** Edges for the NcmazfaustMenuPostsToContentNodeConnection connection */
+  edges: Array<NcmazfaustMenuPostsToContentNodeConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<ContentNode>;
+  /** Information about pagination in a connection. */
+  pageInfo: NcmazfaustMenuPostsToContentNodeConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type NcmazfaustMenuPostsToContentNodeConnectionEdge = ContentNodeConnectionEdge & Edge & {
+  __typename?: 'NcmazfaustMenuPostsToContentNodeConnectionEdge';
+  /** A cursor for use in pagination */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The item at the end of the edge */
+  node: ContentNode;
+};
+
+/** Page Info on the &quot;NcmazfaustMenuPostsToContentNodeConnection&quot; */
+export type NcmazfaustMenuPostsToContentNodeConnectionPageInfo = ContentNodeConnectionPageInfo & PageInfo & WpPageInfo & {
+  __typename?: 'NcmazfaustMenuPostsToContentNodeConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
 };
 
 /** Interface representing fields of the ACF &quot;NcmazfaustMenu&quot; Field Group */
@@ -10658,10 +15550,10 @@ export type NcmazfaustMenu_Fields = {
   fieldGroupName?: Maybe<Scalars['String']['output']>;
   /** Option to display menu as mega menu. Mega menu will contain many menu columns inside and a few featured articles. Each level 1 submenu of this menu will represent a menu column, and the level 1 menus of that menu will be in that column. Up to 6 columns. */
   isMegaMenu?: Maybe<Scalars['Boolean']['output']>;
-  /** Field of the &quot;range&quot; Field Type added to the schema as part of the &quot;NcmazfaustMenu&quot; Field Group */
+  /** Field added to the schema as part of the &quot;NcmazfaustMenu&quot; Field Group */
   numberOfMenuColumns?: Maybe<Scalars['Float']['output']>;
   /** Select posts which will be show in the right side of the mega menu.The number of posts displayed will depend on the number of existing menu columns inside the mega menu. No menu column =&gt; Display up to 5 posts. One menu column =&gt; Display up to 4 postsTwo menu columns =&gt; Display up to 3 postsThree or four menu columns =&gt; Display up to 2 postsFive menu columns =&gt; Display up to 1 postSix menu columns =&gt; Will not display any posts */
-  posts?: Maybe<AcfContentNodeConnection>;
+  posts?: Maybe<NcmazfaustMenuPostsToContentNodeConnection>;
 };
 
 
@@ -10724,6 +15616,18 @@ export type NodeWithContentEditorContentArgs = {
   format?: InputMaybe<PostObjectFieldFormatEnum>;
 };
 
+/** Node that has DelhiUniversity content blocks associated with it */
+export type NodeWithDelhiUniversityEditorBlocks = {
+  /** List of DelhiUniversity editor blocks */
+  editorBlocks?: Maybe<Array<Maybe<DelhiUniversityEditorBlock>>>;
+};
+
+
+/** Node that has DelhiUniversity content blocks associated with it */
+export type NodeWithDelhiUniversityEditorBlocksEditorBlocksArgs = {
+  flat?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
 /** Node that has content blocks associated with it */
 export type NodeWithEditorBlocks = {
   /** List of editor blocks */
@@ -10769,6 +15673,66 @@ export type NodeWithFeaturedImageToMediaItemConnectionEdge = Edge & MediaItemCon
   cursor?: Maybe<Scalars['String']['output']>;
   /** The node of the connection, without the edges */
   node: MediaItem;
+};
+
+/** Node that has Ggsipu content blocks associated with it */
+export type NodeWithGgsipuEditorBlocks = {
+  /** List of Ggsipu editor blocks */
+  editorBlocks?: Maybe<Array<Maybe<GgsipuEditorBlock>>>;
+};
+
+
+/** Node that has Ggsipu content blocks associated with it */
+export type NodeWithGgsipuEditorBlocksEditorBlocksArgs = {
+  flat?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** Node that has Kuk content blocks associated with it */
+export type NodeWithKukEditorBlocks = {
+  /** List of Kuk editor blocks */
+  editorBlocks?: Maybe<Array<Maybe<KukEditorBlock>>>;
+};
+
+
+/** Node that has Kuk content blocks associated with it */
+export type NodeWithKukEditorBlocksEditorBlocksArgs = {
+  flat?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** Node that has Lpu content blocks associated with it */
+export type NodeWithLpuEditorBlocks = {
+  /** List of Lpu editor blocks */
+  editorBlocks?: Maybe<Array<Maybe<LpuEditorBlock>>>;
+};
+
+
+/** Node that has Lpu content blocks associated with it */
+export type NodeWithLpuEditorBlocksEditorBlocksArgs = {
+  flat?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** Node that has Makaut content blocks associated with it */
+export type NodeWithMakautEditorBlocks = {
+  /** List of Makaut editor blocks */
+  editorBlocks?: Maybe<Array<Maybe<MakautEditorBlock>>>;
+};
+
+
+/** Node that has Makaut content blocks associated with it */
+export type NodeWithMakautEditorBlocksEditorBlocksArgs = {
+  flat?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** Node that has MumbaiUniversity content blocks associated with it */
+export type NodeWithMumbaiUniversityEditorBlocks = {
+  /** List of MumbaiUniversity editor blocks */
+  editorBlocks?: Maybe<Array<Maybe<MumbaiUniversityEditorBlock>>>;
+};
+
+
+/** Node that has MumbaiUniversity content blocks associated with it */
+export type NodeWithMumbaiUniversityEditorBlocksEditorBlocksArgs = {
+  flat?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 /** A node that can have page attributes */
@@ -10820,6 +15784,18 @@ export type NodeWithRevisionsToContentNodeConnectionEdge = ContentNodeConnection
   cursor?: Maybe<Scalars['String']['output']>;
   /** The node of the connection, without the edges */
   node: ContentNode;
+};
+
+/** Node that has Rgpv content blocks associated with it */
+export type NodeWithRgpvEditorBlocks = {
+  /** List of Rgpv editor blocks */
+  editorBlocks?: Maybe<Array<Maybe<RgpvEditorBlock>>>;
+};
+
+
+/** Node that has Rgpv content blocks associated with it */
+export type NodeWithRgpvEditorBlocksEditorBlocksArgs = {
+  flat?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 /** A node that can have a template associated with it */
@@ -11399,6 +16375,322 @@ export enum PluginStatusEnum {
   Upgrade = 'UPGRADE'
 }
 
+/** A block used for editing the site */
+export type PodsPodsBlockField = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
+  __typename?: 'PodsPodsBlockField';
+  /** The API version of the Gutenberg Block */
+  apiVersion?: Maybe<Scalars['Int']['output']>;
+  /** Attributes of the PodsPodsBlockField Block Type */
+  attributes?: Maybe<PodsPodsBlockFieldAttributes>;
+  /** The name of the category the Block belongs to */
+  blockEditorCategoryName?: Maybe<Scalars['String']['output']>;
+  /** The id of the Block */
+  clientId?: Maybe<Scalars['String']['output']>;
+  /** CSS Classnames to apply to the block */
+  cssClassNames?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  /** The inner blocks of the Block */
+  innerBlocks?: Maybe<Array<Maybe<EditorBlock>>>;
+  /** Whether the block is Dynamic (server rendered) */
+  isDynamic: Scalars['Boolean']['output'];
+  /** The name of the block */
+  name?: Maybe<Scalars['String']['output']>;
+  /** The parent id of the Block */
+  parentClientId?: Maybe<Scalars['String']['output']>;
+  /** The rendered HTML for the block */
+  renderedHtml?: Maybe<Scalars['String']['output']>;
+};
+
+/** Attributes of the PodsPodsBlockField Block Type */
+export type PodsPodsBlockFieldAttributes = {
+  __typename?: 'PodsPodsBlockFieldAttributes';
+  /** The &quot;access_rights_help&quot; field on the &quot;PodsPodsBlockField&quot; block */
+  accessRightsHelp?: Maybe<Scalars['String']['output']>;
+  /** The &quot;align&quot; field on the &quot;PodsPodsBlockField&quot; block */
+  align?: Maybe<Scalars['String']['output']>;
+  /** The &quot;backgroundColor&quot; field on the &quot;PodsPodsBlockField&quot; block */
+  backgroundColor?: Maybe<Scalars['String']['output']>;
+  /** The &quot;className&quot; field on the &quot;PodsPodsBlockField&quot; block */
+  className?: Maybe<Scalars['String']['output']>;
+  /** The &quot;field&quot; field on the &quot;PodsPodsBlockField&quot; block */
+  field?: Maybe<Scalars['String']['output']>;
+  /** The &quot;fontSize&quot; field on the &quot;PodsPodsBlockField&quot; block */
+  fontSize?: Maybe<Scalars['String']['output']>;
+  /** The &quot;lock&quot; field on the &quot;PodsPodsBlockField&quot; block */
+  lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;metadata&quot; field on the &quot;PodsPodsBlockField&quot; block */
+  metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;name&quot; field on the &quot;PodsPodsBlockField&quot; block */
+  name?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;slug&quot; field on the &quot;PodsPodsBlockField&quot; block */
+  slug?: Maybe<Scalars['String']['output']>;
+  /** The &quot;style&quot; field on the &quot;PodsPodsBlockField&quot; block */
+  style?: Maybe<Scalars['String']['output']>;
+  /** The &quot;textColor&quot; field on the &quot;PodsPodsBlockField&quot; block */
+  textColor?: Maybe<Scalars['String']['output']>;
+};
+
+/** A block used for editing the site */
+export type PodsPodsBlockForm = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
+  __typename?: 'PodsPodsBlockForm';
+  /** The API version of the Gutenberg Block */
+  apiVersion?: Maybe<Scalars['Int']['output']>;
+  /** Attributes of the PodsPodsBlockForm Block Type */
+  attributes?: Maybe<PodsPodsBlockFormAttributes>;
+  /** The name of the category the Block belongs to */
+  blockEditorCategoryName?: Maybe<Scalars['String']['output']>;
+  /** The id of the Block */
+  clientId?: Maybe<Scalars['String']['output']>;
+  /** CSS Classnames to apply to the block */
+  cssClassNames?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  /** The inner blocks of the Block */
+  innerBlocks?: Maybe<Array<Maybe<EditorBlock>>>;
+  /** Whether the block is Dynamic (server rendered) */
+  isDynamic: Scalars['Boolean']['output'];
+  /** The name of the block */
+  name?: Maybe<Scalars['String']['output']>;
+  /** The parent id of the Block */
+  parentClientId?: Maybe<Scalars['String']['output']>;
+  /** The rendered HTML for the block */
+  renderedHtml?: Maybe<Scalars['String']['output']>;
+};
+
+/** Attributes of the PodsPodsBlockForm Block Type */
+export type PodsPodsBlockFormAttributes = {
+  __typename?: 'PodsPodsBlockFormAttributes';
+  /** The &quot;access_rights_form_key_help&quot; field on the &quot;PodsPodsBlockForm&quot; block */
+  accessRightsFormKeyHelp?: Maybe<Scalars['String']['output']>;
+  /** The &quot;access_rights_help&quot; field on the &quot;PodsPodsBlockForm&quot; block */
+  accessRightsHelp?: Maybe<Scalars['String']['output']>;
+  /** The &quot;align&quot; field on the &quot;PodsPodsBlockForm&quot; block */
+  align?: Maybe<Scalars['String']['output']>;
+  /** The &quot;backgroundColor&quot; field on the &quot;PodsPodsBlockForm&quot; block */
+  backgroundColor?: Maybe<Scalars['String']['output']>;
+  /** The &quot;className&quot; field on the &quot;PodsPodsBlockForm&quot; block */
+  className?: Maybe<Scalars['String']['output']>;
+  /** The &quot;fields&quot; field on the &quot;PodsPodsBlockForm&quot; block */
+  fields?: Maybe<Scalars['String']['output']>;
+  /** The &quot;fontSize&quot; field on the &quot;PodsPodsBlockForm&quot; block */
+  fontSize?: Maybe<Scalars['String']['output']>;
+  /** The &quot;form_key&quot; field on the &quot;PodsPodsBlockForm&quot; block */
+  formKey?: Maybe<Scalars['String']['output']>;
+  /** The &quot;form_output_type&quot; field on the &quot;PodsPodsBlockForm&quot; block */
+  formOutputType?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;label&quot; field on the &quot;PodsPodsBlockForm&quot; block */
+  label?: Maybe<Scalars['String']['output']>;
+  /** The &quot;lock&quot; field on the &quot;PodsPodsBlockForm&quot; block */
+  lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;metadata&quot; field on the &quot;PodsPodsBlockForm&quot; block */
+  metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;name&quot; field on the &quot;PodsPodsBlockForm&quot; block */
+  name?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;slug&quot; field on the &quot;PodsPodsBlockForm&quot; block */
+  slug?: Maybe<Scalars['String']['output']>;
+  /** The &quot;style&quot; field on the &quot;PodsPodsBlockForm&quot; block */
+  style?: Maybe<Scalars['String']['output']>;
+  /** The &quot;textColor&quot; field on the &quot;PodsPodsBlockForm&quot; block */
+  textColor?: Maybe<Scalars['String']['output']>;
+  /** The &quot;thank_you&quot; field on the &quot;PodsPodsBlockForm&quot; block */
+  thankYou?: Maybe<Scalars['String']['output']>;
+};
+
+/** A block used for editing the site */
+export type PodsPodsBlockList = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
+  __typename?: 'PodsPodsBlockList';
+  /** The API version of the Gutenberg Block */
+  apiVersion?: Maybe<Scalars['Int']['output']>;
+  /** Attributes of the PodsPodsBlockList Block Type */
+  attributes?: Maybe<PodsPodsBlockListAttributes>;
+  /** The name of the category the Block belongs to */
+  blockEditorCategoryName?: Maybe<Scalars['String']['output']>;
+  /** The id of the Block */
+  clientId?: Maybe<Scalars['String']['output']>;
+  /** CSS Classnames to apply to the block */
+  cssClassNames?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  /** The inner blocks of the Block */
+  innerBlocks?: Maybe<Array<Maybe<EditorBlock>>>;
+  /** Whether the block is Dynamic (server rendered) */
+  isDynamic: Scalars['Boolean']['output'];
+  /** The name of the block */
+  name?: Maybe<Scalars['String']['output']>;
+  /** The parent id of the Block */
+  parentClientId?: Maybe<Scalars['String']['output']>;
+  /** The rendered HTML for the block */
+  renderedHtml?: Maybe<Scalars['String']['output']>;
+};
+
+/** Attributes of the PodsPodsBlockList Block Type */
+export type PodsPodsBlockListAttributes = {
+  __typename?: 'PodsPodsBlockListAttributes';
+  /** The &quot;access_rights_help&quot; field on the &quot;PodsPodsBlockList&quot; block */
+  accessRightsHelp?: Maybe<Scalars['String']['output']>;
+  /** The &quot;align&quot; field on the &quot;PodsPodsBlockList&quot; block */
+  align?: Maybe<Scalars['String']['output']>;
+  /** The &quot;backgroundColor&quot; field on the &quot;PodsPodsBlockList&quot; block */
+  backgroundColor?: Maybe<Scalars['String']['output']>;
+  /** The &quot;cache_mode&quot; field on the &quot;PodsPodsBlockList&quot; block */
+  cacheMode?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;className&quot; field on the &quot;PodsPodsBlockList&quot; block */
+  className?: Maybe<Scalars['String']['output']>;
+  /** The &quot;content_after&quot; field on the &quot;PodsPodsBlockList&quot; block */
+  contentAfter?: Maybe<Scalars['String']['output']>;
+  /** The &quot;content_before&quot; field on the &quot;PodsPodsBlockList&quot; block */
+  contentBefore?: Maybe<Scalars['String']['output']>;
+  /** The &quot;expires&quot; field on the &quot;PodsPodsBlockList&quot; block */
+  expires?: Maybe<Scalars['Float']['output']>;
+  /** The &quot;filters&quot; field on the &quot;PodsPodsBlockList&quot; block */
+  filters?: Maybe<Scalars['String']['output']>;
+  /** The &quot;filters_enable&quot; field on the &quot;PodsPodsBlockList&quot; block */
+  filtersEnable?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;filters_label&quot; field on the &quot;PodsPodsBlockList&quot; block */
+  filtersLabel?: Maybe<Scalars['String']['output']>;
+  /** The &quot;filters_location&quot; field on the &quot;PodsPodsBlockList&quot; block */
+  filtersLocation?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;fontSize&quot; field on the &quot;PodsPodsBlockList&quot; block */
+  fontSize?: Maybe<Scalars['String']['output']>;
+  /** The &quot;limit&quot; field on the &quot;PodsPodsBlockList&quot; block */
+  limit?: Maybe<Scalars['Float']['output']>;
+  /** The &quot;lock&quot; field on the &quot;PodsPodsBlockList&quot; block */
+  lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;metadata&quot; field on the &quot;PodsPodsBlockList&quot; block */
+  metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;name&quot; field on the &quot;PodsPodsBlockList&quot; block */
+  name?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;not_found&quot; field on the &quot;PodsPodsBlockList&quot; block */
+  notFound?: Maybe<Scalars['String']['output']>;
+  /** The &quot;orderby&quot; field on the &quot;PodsPodsBlockList&quot; block */
+  orderby?: Maybe<Scalars['String']['output']>;
+  /** The &quot;pagination&quot; field on the &quot;PodsPodsBlockList&quot; block */
+  pagination?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;pagination_location&quot; field on the &quot;PodsPodsBlockList&quot; block */
+  paginationLocation?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;pagination_type&quot; field on the &quot;PodsPodsBlockList&quot; block */
+  paginationType?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;style&quot; field on the &quot;PodsPodsBlockList&quot; block */
+  style?: Maybe<Scalars['String']['output']>;
+  /** The &quot;template&quot; field on the &quot;PodsPodsBlockList&quot; block */
+  template?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;template_custom&quot; field on the &quot;PodsPodsBlockList&quot; block */
+  templateCustom?: Maybe<Scalars['String']['output']>;
+  /** The &quot;textColor&quot; field on the &quot;PodsPodsBlockList&quot; block */
+  textColor?: Maybe<Scalars['String']['output']>;
+  /** The &quot;where&quot; field on the &quot;PodsPodsBlockList&quot; block */
+  where?: Maybe<Scalars['String']['output']>;
+};
+
+/** A block used for editing the site */
+export type PodsPodsBlockSingle = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
+  __typename?: 'PodsPodsBlockSingle';
+  /** The API version of the Gutenberg Block */
+  apiVersion?: Maybe<Scalars['Int']['output']>;
+  /** Attributes of the PodsPodsBlockSingle Block Type */
+  attributes?: Maybe<PodsPodsBlockSingleAttributes>;
+  /** The name of the category the Block belongs to */
+  blockEditorCategoryName?: Maybe<Scalars['String']['output']>;
+  /** The id of the Block */
+  clientId?: Maybe<Scalars['String']['output']>;
+  /** CSS Classnames to apply to the block */
+  cssClassNames?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  /** The inner blocks of the Block */
+  innerBlocks?: Maybe<Array<Maybe<EditorBlock>>>;
+  /** Whether the block is Dynamic (server rendered) */
+  isDynamic: Scalars['Boolean']['output'];
+  /** The name of the block */
+  name?: Maybe<Scalars['String']['output']>;
+  /** The parent id of the Block */
+  parentClientId?: Maybe<Scalars['String']['output']>;
+  /** The rendered HTML for the block */
+  renderedHtml?: Maybe<Scalars['String']['output']>;
+};
+
+/** Attributes of the PodsPodsBlockSingle Block Type */
+export type PodsPodsBlockSingleAttributes = {
+  __typename?: 'PodsPodsBlockSingleAttributes';
+  /** The &quot;access_rights_help&quot; field on the &quot;PodsPodsBlockSingle&quot; block */
+  accessRightsHelp?: Maybe<Scalars['String']['output']>;
+  /** The &quot;align&quot; field on the &quot;PodsPodsBlockSingle&quot; block */
+  align?: Maybe<Scalars['String']['output']>;
+  /** The &quot;backgroundColor&quot; field on the &quot;PodsPodsBlockSingle&quot; block */
+  backgroundColor?: Maybe<Scalars['String']['output']>;
+  /** The &quot;className&quot; field on the &quot;PodsPodsBlockSingle&quot; block */
+  className?: Maybe<Scalars['String']['output']>;
+  /** The &quot;fontSize&quot; field on the &quot;PodsPodsBlockSingle&quot; block */
+  fontSize?: Maybe<Scalars['String']['output']>;
+  /** The &quot;lock&quot; field on the &quot;PodsPodsBlockSingle&quot; block */
+  lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;metadata&quot; field on the &quot;PodsPodsBlockSingle&quot; block */
+  metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;name&quot; field on the &quot;PodsPodsBlockSingle&quot; block */
+  name?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;slug&quot; field on the &quot;PodsPodsBlockSingle&quot; block */
+  slug?: Maybe<Scalars['String']['output']>;
+  /** The &quot;style&quot; field on the &quot;PodsPodsBlockSingle&quot; block */
+  style?: Maybe<Scalars['String']['output']>;
+  /** The &quot;template&quot; field on the &quot;PodsPodsBlockSingle&quot; block */
+  template?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;template_custom&quot; field on the &quot;PodsPodsBlockSingle&quot; block */
+  templateCustom?: Maybe<Scalars['String']['output']>;
+  /** The &quot;textColor&quot; field on the &quot;PodsPodsBlockSingle&quot; block */
+  textColor?: Maybe<Scalars['String']['output']>;
+};
+
+/** A block used for editing the site */
+export type PodsPodsBlockSingleListFields = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
+  __typename?: 'PodsPodsBlockSingleListFields';
+  /** The API version of the Gutenberg Block */
+  apiVersion?: Maybe<Scalars['Int']['output']>;
+  /** Attributes of the PodsPodsBlockSingleListFields Block Type */
+  attributes?: Maybe<PodsPodsBlockSingleListFieldsAttributes>;
+  /** The name of the category the Block belongs to */
+  blockEditorCategoryName?: Maybe<Scalars['String']['output']>;
+  /** The id of the Block */
+  clientId?: Maybe<Scalars['String']['output']>;
+  /** CSS Classnames to apply to the block */
+  cssClassNames?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  /** The inner blocks of the Block */
+  innerBlocks?: Maybe<Array<Maybe<EditorBlock>>>;
+  /** Whether the block is Dynamic (server rendered) */
+  isDynamic: Scalars['Boolean']['output'];
+  /** The name of the block */
+  name?: Maybe<Scalars['String']['output']>;
+  /** The parent id of the Block */
+  parentClientId?: Maybe<Scalars['String']['output']>;
+  /** The rendered HTML for the block */
+  renderedHtml?: Maybe<Scalars['String']['output']>;
+};
+
+/** Attributes of the PodsPodsBlockSingleListFields Block Type */
+export type PodsPodsBlockSingleListFieldsAttributes = {
+  __typename?: 'PodsPodsBlockSingleListFieldsAttributes';
+  /** The &quot;access_rights_help&quot; field on the &quot;PodsPodsBlockSingleListFields&quot; block */
+  accessRightsHelp?: Maybe<Scalars['String']['output']>;
+  /** The &quot;align&quot; field on the &quot;PodsPodsBlockSingleListFields&quot; block */
+  align?: Maybe<Scalars['String']['output']>;
+  /** The &quot;backgroundColor&quot; field on the &quot;PodsPodsBlockSingleListFields&quot; block */
+  backgroundColor?: Maybe<Scalars['String']['output']>;
+  /** The &quot;className&quot; field on the &quot;PodsPodsBlockSingleListFields&quot; block */
+  className?: Maybe<Scalars['String']['output']>;
+  /** The &quot;display_fields&quot; field on the &quot;PodsPodsBlockSingleListFields&quot; block */
+  displayFields?: Maybe<Scalars['String']['output']>;
+  /** The &quot;display_output_type&quot; field on the &quot;PodsPodsBlockSingleListFields&quot; block */
+  displayOutputType?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;exclude_fields&quot; field on the &quot;PodsPodsBlockSingleListFields&quot; block */
+  excludeFields?: Maybe<Scalars['String']['output']>;
+  /** The &quot;fontSize&quot; field on the &quot;PodsPodsBlockSingleListFields&quot; block */
+  fontSize?: Maybe<Scalars['String']['output']>;
+  /** The &quot;lock&quot; field on the &quot;PodsPodsBlockSingleListFields&quot; block */
+  lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;metadata&quot; field on the &quot;PodsPodsBlockSingleListFields&quot; block */
+  metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;name&quot; field on the &quot;PodsPodsBlockSingleListFields&quot; block */
+  name?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;slug&quot; field on the &quot;PodsPodsBlockSingleListFields&quot; block */
+  slug?: Maybe<Scalars['String']['output']>;
+  /** The &quot;style&quot; field on the &quot;PodsPodsBlockSingleListFields&quot; block */
+  style?: Maybe<Scalars['String']['output']>;
+  /** The &quot;textColor&quot; field on the &quot;PodsPodsBlockSingleListFields&quot; block */
+  textColor?: Maybe<Scalars['String']['output']>;
+};
+
 /** The post type */
 export type Post = ContentNode & DatabaseIdentifier & MenuItemLinkable & Node & NodeWithAuthor & NodeWithComments & NodeWithContentEditor & NodeWithEditorBlocks & NodeWithExcerpt & NodeWithFeaturedImage & NodeWithPostEditorBlocks & NodeWithRevisions & NodeWithTemplate & NodeWithTitle & NodeWithTrackbacks & Previewable & UniformResourceIdentifiable & WithAcfNcPostMetaData & WithAcfNcmazAudioUrl & WithAcfNcmazGalleryImgs & WithAcfNcmazVideoUrl & {
   __typename?: 'Post';
@@ -11736,12 +17028,16 @@ export type PostFormat = DatabaseIdentifier & MenuItemLinkable & Node & TermNode
   count?: Maybe<Scalars['Int']['output']>;
   /** The unique identifier stored in the database */
   databaseId: Scalars['Int']['output'];
+  /** Connection between the PostFormat type and the delhi_university type */
+  delhiUniversitys?: Maybe<PostFormatToDelhi_UniversityConnection>;
   /** The description of the object */
   description?: Maybe<Scalars['String']['output']>;
   /** Connection between the TermNode type and the EnqueuedScript type */
   enqueuedScripts?: Maybe<TermNodeToEnqueuedScriptConnection>;
   /** Connection between the TermNode type and the EnqueuedStylesheet type */
   enqueuedStylesheets?: Maybe<TermNodeToEnqueuedStylesheetConnection>;
+  /** Connection between the PostFormat type and the ggsipu type */
+  ggsipus?: Maybe<PostFormatToGgsipuConnection>;
   /** The globally unique ID for the object */
   id: Scalars['ID']['output'];
   /** Whether the node is a Comment */
@@ -11756,8 +17052,16 @@ export type PostFormat = DatabaseIdentifier & MenuItemLinkable & Node & TermNode
   isRestricted?: Maybe<Scalars['Boolean']['output']>;
   /** Whether the node is a Term */
   isTermNode: Scalars['Boolean']['output'];
+  /** Connection between the PostFormat type and the kuk type */
+  kuks?: Maybe<PostFormatToKukConnection>;
   /** The link to the term */
   link?: Maybe<Scalars['String']['output']>;
+  /** Connection between the PostFormat type and the lpu type */
+  lpus?: Maybe<PostFormatToLpuConnection>;
+  /** Connection between the PostFormat type and the makaut type */
+  makauts?: Maybe<PostFormatToMakautConnection>;
+  /** Connection between the PostFormat type and the mumbai_university type */
+  mumbaiUniversitys?: Maybe<PostFormatToMumbai_UniversityConnection>;
   /** The human friendly name of the object. */
   name?: Maybe<Scalars['String']['output']>;
   /**
@@ -11767,6 +17071,8 @@ export type PostFormat = DatabaseIdentifier & MenuItemLinkable & Node & TermNode
   postFormatId?: Maybe<Scalars['Int']['output']>;
   /** Connection between the PostFormat type and the post type */
   posts?: Maybe<PostFormatToPostConnection>;
+  /** Connection between the PostFormat type and the rgpv type */
+  rgpvs?: Maybe<PostFormatToRgpvConnection>;
   /** An alphanumeric identifier for the object unique to its type. */
   slug?: Maybe<Scalars['String']['output']>;
   /** Connection between the PostFormat type and the Taxonomy type */
@@ -11794,6 +17100,16 @@ export type PostFormatContentNodesArgs = {
 
 
 /** The postFormat type */
+export type PostFormatDelhiUniversitysArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<PostFormatToDelhi_UniversityConnectionWhereArgs>;
+};
+
+
+/** The postFormat type */
 export type PostFormatEnqueuedScriptsArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
@@ -11812,12 +17128,72 @@ export type PostFormatEnqueuedStylesheetsArgs = {
 
 
 /** The postFormat type */
+export type PostFormatGgsipusArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<PostFormatToGgsipuConnectionWhereArgs>;
+};
+
+
+/** The postFormat type */
+export type PostFormatKuksArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<PostFormatToKukConnectionWhereArgs>;
+};
+
+
+/** The postFormat type */
+export type PostFormatLpusArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<PostFormatToLpuConnectionWhereArgs>;
+};
+
+
+/** The postFormat type */
+export type PostFormatMakautsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<PostFormatToMakautConnectionWhereArgs>;
+};
+
+
+/** The postFormat type */
+export type PostFormatMumbaiUniversitysArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<PostFormatToMumbai_UniversityConnectionWhereArgs>;
+};
+
+
+/** The postFormat type */
 export type PostFormatPostsArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   last?: InputMaybe<Scalars['Int']['input']>;
   where?: InputMaybe<PostFormatToPostConnectionWhereArgs>;
+};
+
+
+/** The postFormat type */
+export type PostFormatRgpvsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<PostFormatToRgpvConnectionWhereArgs>;
 };
 
 /** Connection to postFormat Nodes */
@@ -11901,6 +17277,480 @@ export type PostFormatToContentNodeConnectionPageInfo = ContentNodeConnectionPag
 export type PostFormatToContentNodeConnectionWhereArgs = {
   /** The Types of content to filter */
   contentTypes?: InputMaybe<Array<InputMaybe<ContentTypesOfPostFormatEnum>>>;
+  /** Filter the connection based on dates */
+  dateQuery?: InputMaybe<DateQueryInput>;
+  /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
+  hasPassword?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Specific database ID of the object */
+  id?: InputMaybe<Scalars['Int']['input']>;
+  /** Array of IDs for the objects to retrieve */
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Get objects with a specific mimeType property */
+  mimeType?: InputMaybe<MimeTypeEnum>;
+  /** Slug / post_name of the object */
+  name?: InputMaybe<Scalars['String']['input']>;
+  /** Specify objects to retrieve. Use slugs */
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** What parameter to use to order the objects by. */
+  orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
+  /** Use ID to return only children. Use 0 to return only top-level items */
+  parent?: InputMaybe<Scalars['ID']['input']>;
+  /** Specify objects whose parent is in an array */
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Specify posts whose parent is not in an array */
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Show posts with a specific password. */
+  password?: InputMaybe<Scalars['String']['input']>;
+  /** Show Posts based on a keyword search */
+  search?: InputMaybe<Scalars['String']['input']>;
+  /** Retrieve posts where post status is in an array. */
+  stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
+  /** Show posts with a specific status. */
+  status?: InputMaybe<PostStatusEnum>;
+  /** Title of the object */
+  title?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** Connection between the PostFormat type and the delhi_university type */
+export type PostFormatToDelhi_UniversityConnection = Connection & {
+  __typename?: 'PostFormatToDelhi_universityConnection';
+  /** Edges for the PostFormatToDelhi_universityConnection connection */
+  edges: Array<PostFormatToDelhi_UniversityConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<Delhi_University>;
+  /** Information about pagination in a connection. */
+  pageInfo: PostFormatToDelhi_UniversityConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type PostFormatToDelhi_UniversityConnectionEdge = DelhiUniversityConnectionEdge & Edge & {
+  __typename?: 'PostFormatToDelhi_universityConnectionEdge';
+  /** A cursor for use in pagination */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The item at the end of the edge */
+  node: Delhi_University;
+};
+
+/** Page Info on the &quot;PostFormatToDelhi_universityConnection&quot; */
+export type PostFormatToDelhi_UniversityConnectionPageInfo = Delhi_UniversityConnectionPageInfo & PageInfo & WpPageInfo & {
+  __typename?: 'PostFormatToDelhi_universityConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Arguments for filtering the PostFormatToDelhi_universityConnection connection */
+export type PostFormatToDelhi_UniversityConnectionWhereArgs = {
+  /** The user that's connected as the author of the object. Use the userId for the author object. */
+  author?: InputMaybe<Scalars['Int']['input']>;
+  /** Find objects connected to author(s) in the array of author's userIds */
+  authorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Find objects connected to the author by the author's nicename */
+  authorName?: InputMaybe<Scalars['String']['input']>;
+  /** Find objects NOT connected to author(s) in the array of author's userIds */
+  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Filter the connection based on dates */
+  dateQuery?: InputMaybe<DateQueryInput>;
+  /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
+  hasPassword?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Specific database ID of the object */
+  id?: InputMaybe<Scalars['Int']['input']>;
+  /** Array of IDs for the objects to retrieve */
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Get objects with a specific mimeType property */
+  mimeType?: InputMaybe<MimeTypeEnum>;
+  /** Slug / post_name of the object */
+  name?: InputMaybe<Scalars['String']['input']>;
+  /** Specify objects to retrieve. Use slugs */
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** What parameter to use to order the objects by. */
+  orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
+  /** Use ID to return only children. Use 0 to return only top-level items */
+  parent?: InputMaybe<Scalars['ID']['input']>;
+  /** Specify objects whose parent is in an array */
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Specify posts whose parent is not in an array */
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Show posts with a specific password. */
+  password?: InputMaybe<Scalars['String']['input']>;
+  /** Show Posts based on a keyword search */
+  search?: InputMaybe<Scalars['String']['input']>;
+  /** Retrieve posts where post status is in an array. */
+  stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
+  /** Show posts with a specific status. */
+  status?: InputMaybe<PostStatusEnum>;
+  /** Title of the object */
+  title?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** Connection between the PostFormat type and the ggsipu type */
+export type PostFormatToGgsipuConnection = Connection & GgsipuConnection & {
+  __typename?: 'PostFormatToGgsipuConnection';
+  /** Edges for the PostFormatToGgsipuConnection connection */
+  edges: Array<PostFormatToGgsipuConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<Ggsipu>;
+  /** Information about pagination in a connection. */
+  pageInfo: PostFormatToGgsipuConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type PostFormatToGgsipuConnectionEdge = Edge & GgsipuConnectionEdge & {
+  __typename?: 'PostFormatToGgsipuConnectionEdge';
+  /** A cursor for use in pagination */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The item at the end of the edge */
+  node: Ggsipu;
+};
+
+/** Page Info on the &quot;PostFormatToGgsipuConnection&quot; */
+export type PostFormatToGgsipuConnectionPageInfo = GgsipuConnectionPageInfo & PageInfo & WpPageInfo & {
+  __typename?: 'PostFormatToGgsipuConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Arguments for filtering the PostFormatToGgsipuConnection connection */
+export type PostFormatToGgsipuConnectionWhereArgs = {
+  /** The user that's connected as the author of the object. Use the userId for the author object. */
+  author?: InputMaybe<Scalars['Int']['input']>;
+  /** Find objects connected to author(s) in the array of author's userIds */
+  authorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Find objects connected to the author by the author's nicename */
+  authorName?: InputMaybe<Scalars['String']['input']>;
+  /** Find objects NOT connected to author(s) in the array of author's userIds */
+  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Filter the connection based on dates */
+  dateQuery?: InputMaybe<DateQueryInput>;
+  /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
+  hasPassword?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Specific database ID of the object */
+  id?: InputMaybe<Scalars['Int']['input']>;
+  /** Array of IDs for the objects to retrieve */
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Get objects with a specific mimeType property */
+  mimeType?: InputMaybe<MimeTypeEnum>;
+  /** Slug / post_name of the object */
+  name?: InputMaybe<Scalars['String']['input']>;
+  /** Specify objects to retrieve. Use slugs */
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** What parameter to use to order the objects by. */
+  orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
+  /** Use ID to return only children. Use 0 to return only top-level items */
+  parent?: InputMaybe<Scalars['ID']['input']>;
+  /** Specify objects whose parent is in an array */
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Specify posts whose parent is not in an array */
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Show posts with a specific password. */
+  password?: InputMaybe<Scalars['String']['input']>;
+  /** Show Posts based on a keyword search */
+  search?: InputMaybe<Scalars['String']['input']>;
+  /** Retrieve posts where post status is in an array. */
+  stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
+  /** Show posts with a specific status. */
+  status?: InputMaybe<PostStatusEnum>;
+  /** Title of the object */
+  title?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** Connection between the PostFormat type and the kuk type */
+export type PostFormatToKukConnection = Connection & KukConnection & {
+  __typename?: 'PostFormatToKukConnection';
+  /** Edges for the PostFormatToKukConnection connection */
+  edges: Array<PostFormatToKukConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<Kuk>;
+  /** Information about pagination in a connection. */
+  pageInfo: PostFormatToKukConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type PostFormatToKukConnectionEdge = Edge & KukConnectionEdge & {
+  __typename?: 'PostFormatToKukConnectionEdge';
+  /** A cursor for use in pagination */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The item at the end of the edge */
+  node: Kuk;
+};
+
+/** Page Info on the &quot;PostFormatToKukConnection&quot; */
+export type PostFormatToKukConnectionPageInfo = KukConnectionPageInfo & PageInfo & WpPageInfo & {
+  __typename?: 'PostFormatToKukConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Arguments for filtering the PostFormatToKukConnection connection */
+export type PostFormatToKukConnectionWhereArgs = {
+  /** The user that's connected as the author of the object. Use the userId for the author object. */
+  author?: InputMaybe<Scalars['Int']['input']>;
+  /** Find objects connected to author(s) in the array of author's userIds */
+  authorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Find objects connected to the author by the author's nicename */
+  authorName?: InputMaybe<Scalars['String']['input']>;
+  /** Find objects NOT connected to author(s) in the array of author's userIds */
+  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Filter the connection based on dates */
+  dateQuery?: InputMaybe<DateQueryInput>;
+  /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
+  hasPassword?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Specific database ID of the object */
+  id?: InputMaybe<Scalars['Int']['input']>;
+  /** Array of IDs for the objects to retrieve */
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Get objects with a specific mimeType property */
+  mimeType?: InputMaybe<MimeTypeEnum>;
+  /** Slug / post_name of the object */
+  name?: InputMaybe<Scalars['String']['input']>;
+  /** Specify objects to retrieve. Use slugs */
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** What parameter to use to order the objects by. */
+  orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
+  /** Use ID to return only children. Use 0 to return only top-level items */
+  parent?: InputMaybe<Scalars['ID']['input']>;
+  /** Specify objects whose parent is in an array */
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Specify posts whose parent is not in an array */
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Show posts with a specific password. */
+  password?: InputMaybe<Scalars['String']['input']>;
+  /** Show Posts based on a keyword search */
+  search?: InputMaybe<Scalars['String']['input']>;
+  /** Retrieve posts where post status is in an array. */
+  stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
+  /** Show posts with a specific status. */
+  status?: InputMaybe<PostStatusEnum>;
+  /** Title of the object */
+  title?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** Connection between the PostFormat type and the lpu type */
+export type PostFormatToLpuConnection = Connection & LpuConnection & {
+  __typename?: 'PostFormatToLpuConnection';
+  /** Edges for the PostFormatToLpuConnection connection */
+  edges: Array<PostFormatToLpuConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<Lpu>;
+  /** Information about pagination in a connection. */
+  pageInfo: PostFormatToLpuConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type PostFormatToLpuConnectionEdge = Edge & LpuConnectionEdge & {
+  __typename?: 'PostFormatToLpuConnectionEdge';
+  /** A cursor for use in pagination */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The item at the end of the edge */
+  node: Lpu;
+};
+
+/** Page Info on the &quot;PostFormatToLpuConnection&quot; */
+export type PostFormatToLpuConnectionPageInfo = LpuConnectionPageInfo & PageInfo & WpPageInfo & {
+  __typename?: 'PostFormatToLpuConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Arguments for filtering the PostFormatToLpuConnection connection */
+export type PostFormatToLpuConnectionWhereArgs = {
+  /** The user that's connected as the author of the object. Use the userId for the author object. */
+  author?: InputMaybe<Scalars['Int']['input']>;
+  /** Find objects connected to author(s) in the array of author's userIds */
+  authorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Find objects connected to the author by the author's nicename */
+  authorName?: InputMaybe<Scalars['String']['input']>;
+  /** Find objects NOT connected to author(s) in the array of author's userIds */
+  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Filter the connection based on dates */
+  dateQuery?: InputMaybe<DateQueryInput>;
+  /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
+  hasPassword?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Specific database ID of the object */
+  id?: InputMaybe<Scalars['Int']['input']>;
+  /** Array of IDs for the objects to retrieve */
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Get objects with a specific mimeType property */
+  mimeType?: InputMaybe<MimeTypeEnum>;
+  /** Slug / post_name of the object */
+  name?: InputMaybe<Scalars['String']['input']>;
+  /** Specify objects to retrieve. Use slugs */
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** What parameter to use to order the objects by. */
+  orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
+  /** Use ID to return only children. Use 0 to return only top-level items */
+  parent?: InputMaybe<Scalars['ID']['input']>;
+  /** Specify objects whose parent is in an array */
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Specify posts whose parent is not in an array */
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Show posts with a specific password. */
+  password?: InputMaybe<Scalars['String']['input']>;
+  /** Show Posts based on a keyword search */
+  search?: InputMaybe<Scalars['String']['input']>;
+  /** Retrieve posts where post status is in an array. */
+  stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
+  /** Show posts with a specific status. */
+  status?: InputMaybe<PostStatusEnum>;
+  /** Title of the object */
+  title?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** Connection between the PostFormat type and the makaut type */
+export type PostFormatToMakautConnection = Connection & MakautConnection & {
+  __typename?: 'PostFormatToMakautConnection';
+  /** Edges for the PostFormatToMakautConnection connection */
+  edges: Array<PostFormatToMakautConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<Makaut>;
+  /** Information about pagination in a connection. */
+  pageInfo: PostFormatToMakautConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type PostFormatToMakautConnectionEdge = Edge & MakautConnectionEdge & {
+  __typename?: 'PostFormatToMakautConnectionEdge';
+  /** A cursor for use in pagination */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The item at the end of the edge */
+  node: Makaut;
+};
+
+/** Page Info on the &quot;PostFormatToMakautConnection&quot; */
+export type PostFormatToMakautConnectionPageInfo = MakautConnectionPageInfo & PageInfo & WpPageInfo & {
+  __typename?: 'PostFormatToMakautConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Arguments for filtering the PostFormatToMakautConnection connection */
+export type PostFormatToMakautConnectionWhereArgs = {
+  /** The user that's connected as the author of the object. Use the userId for the author object. */
+  author?: InputMaybe<Scalars['Int']['input']>;
+  /** Find objects connected to author(s) in the array of author's userIds */
+  authorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Find objects connected to the author by the author's nicename */
+  authorName?: InputMaybe<Scalars['String']['input']>;
+  /** Find objects NOT connected to author(s) in the array of author's userIds */
+  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Filter the connection based on dates */
+  dateQuery?: InputMaybe<DateQueryInput>;
+  /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
+  hasPassword?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Specific database ID of the object */
+  id?: InputMaybe<Scalars['Int']['input']>;
+  /** Array of IDs for the objects to retrieve */
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Get objects with a specific mimeType property */
+  mimeType?: InputMaybe<MimeTypeEnum>;
+  /** Slug / post_name of the object */
+  name?: InputMaybe<Scalars['String']['input']>;
+  /** Specify objects to retrieve. Use slugs */
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** What parameter to use to order the objects by. */
+  orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
+  /** Use ID to return only children. Use 0 to return only top-level items */
+  parent?: InputMaybe<Scalars['ID']['input']>;
+  /** Specify objects whose parent is in an array */
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Specify posts whose parent is not in an array */
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Show posts with a specific password. */
+  password?: InputMaybe<Scalars['String']['input']>;
+  /** Show Posts based on a keyword search */
+  search?: InputMaybe<Scalars['String']['input']>;
+  /** Retrieve posts where post status is in an array. */
+  stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
+  /** Show posts with a specific status. */
+  status?: InputMaybe<PostStatusEnum>;
+  /** Title of the object */
+  title?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** Connection between the PostFormat type and the mumbai_university type */
+export type PostFormatToMumbai_UniversityConnection = Connection & {
+  __typename?: 'PostFormatToMumbai_universityConnection';
+  /** Edges for the PostFormatToMumbai_universityConnection connection */
+  edges: Array<PostFormatToMumbai_UniversityConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<Mumbai_University>;
+  /** Information about pagination in a connection. */
+  pageInfo: PostFormatToMumbai_UniversityConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type PostFormatToMumbai_UniversityConnectionEdge = Edge & MumbaiUniversityConnectionEdge & {
+  __typename?: 'PostFormatToMumbai_universityConnectionEdge';
+  /** A cursor for use in pagination */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The item at the end of the edge */
+  node: Mumbai_University;
+};
+
+/** Page Info on the &quot;PostFormatToMumbai_universityConnection&quot; */
+export type PostFormatToMumbai_UniversityConnectionPageInfo = Mumbai_UniversityConnectionPageInfo & PageInfo & WpPageInfo & {
+  __typename?: 'PostFormatToMumbai_universityConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Arguments for filtering the PostFormatToMumbai_universityConnection connection */
+export type PostFormatToMumbai_UniversityConnectionWhereArgs = {
+  /** The user that's connected as the author of the object. Use the userId for the author object. */
+  author?: InputMaybe<Scalars['Int']['input']>;
+  /** Find objects connected to author(s) in the array of author's userIds */
+  authorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Find objects connected to the author by the author's nicename */
+  authorName?: InputMaybe<Scalars['String']['input']>;
+  /** Find objects NOT connected to author(s) in the array of author's userIds */
+  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
   /** Filter the connection based on dates */
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
@@ -12032,6 +17882,85 @@ export type PostFormatToPostConnectionWhereArgs = {
   tagSlugAnd?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   /** Array of tag slugs, used to include objects in ANY specified tags */
   tagSlugIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Title of the object */
+  title?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** Connection between the PostFormat type and the rgpv type */
+export type PostFormatToRgpvConnection = Connection & RgpvConnection & {
+  __typename?: 'PostFormatToRgpvConnection';
+  /** Edges for the PostFormatToRgpvConnection connection */
+  edges: Array<PostFormatToRgpvConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<Rgpv>;
+  /** Information about pagination in a connection. */
+  pageInfo: PostFormatToRgpvConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type PostFormatToRgpvConnectionEdge = Edge & RgpvConnectionEdge & {
+  __typename?: 'PostFormatToRgpvConnectionEdge';
+  /** A cursor for use in pagination */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The item at the end of the edge */
+  node: Rgpv;
+};
+
+/** Page Info on the &quot;PostFormatToRgpvConnection&quot; */
+export type PostFormatToRgpvConnectionPageInfo = PageInfo & RgpvConnectionPageInfo & WpPageInfo & {
+  __typename?: 'PostFormatToRgpvConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Arguments for filtering the PostFormatToRgpvConnection connection */
+export type PostFormatToRgpvConnectionWhereArgs = {
+  /** The user that's connected as the author of the object. Use the userId for the author object. */
+  author?: InputMaybe<Scalars['Int']['input']>;
+  /** Find objects connected to author(s) in the array of author's userIds */
+  authorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Find objects connected to the author by the author's nicename */
+  authorName?: InputMaybe<Scalars['String']['input']>;
+  /** Find objects NOT connected to author(s) in the array of author's userIds */
+  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Filter the connection based on dates */
+  dateQuery?: InputMaybe<DateQueryInput>;
+  /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
+  hasPassword?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Specific database ID of the object */
+  id?: InputMaybe<Scalars['Int']['input']>;
+  /** Array of IDs for the objects to retrieve */
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Get objects with a specific mimeType property */
+  mimeType?: InputMaybe<MimeTypeEnum>;
+  /** Slug / post_name of the object */
+  name?: InputMaybe<Scalars['String']['input']>;
+  /** Specify objects to retrieve. Use slugs */
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** What parameter to use to order the objects by. */
+  orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
+  /** Use ID to return only children. Use 0 to return only top-level items */
+  parent?: InputMaybe<Scalars['ID']['input']>;
+  /** Specify objects whose parent is in an array */
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Specify posts whose parent is not in an array */
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Show posts with a specific password. */
+  password?: InputMaybe<Scalars['String']['input']>;
+  /** Show Posts based on a keyword search */
+  search?: InputMaybe<Scalars['String']['input']>;
+  /** Retrieve posts where post status is in an array. */
+  stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
+  /** Show posts with a specific status. */
+  status?: InputMaybe<PostStatusEnum>;
   /** Title of the object */
   title?: InputMaybe<Scalars['String']['input']>;
 };
@@ -12924,6 +18853,706 @@ export type RestoreCommentPayload = {
   restoredId?: Maybe<Scalars['ID']['output']>;
 };
 
+/** The rgpv type */
+export type Rgpv = ContentNode & DatabaseIdentifier & MenuItemLinkable & Node & NodeWithAuthor & NodeWithComments & NodeWithContentEditor & NodeWithEditorBlocks & NodeWithExcerpt & NodeWithFeaturedImage & NodeWithPageAttributes & NodeWithRevisions & NodeWithRgpvEditorBlocks & NodeWithTemplate & NodeWithTitle & NodeWithTrackbacks & Previewable & UniformResourceIdentifiable & {
+  __typename?: 'Rgpv';
+  /**
+   * The ancestors of the content node.
+   * @deprecated This content type is not hierarchical and typically will not have ancestors
+   */
+  ancestors?: Maybe<RgpvToRgpvConnection>;
+  /** Connection between the NodeWithAuthor type and the User type */
+  author?: Maybe<NodeWithAuthorToUserConnectionEdge>;
+  /** The database identifier of the author of the node */
+  authorDatabaseId?: Maybe<Scalars['Int']['output']>;
+  /** The globally unique identifier of the author of the node */
+  authorId?: Maybe<Scalars['ID']['output']>;
+  /** The number of comments. Even though WPGraphQL denotes this field as an integer, in WordPress this field should be saved as a numeric string for compatibility. */
+  commentCount?: Maybe<Scalars['Int']['output']>;
+  /** Whether the comments are open or closed for this particular post. */
+  commentStatus?: Maybe<Scalars['String']['output']>;
+  /** Connection between the Rgpv type and the Comment type */
+  comments?: Maybe<RgpvToCommentConnection>;
+  /** @deprecated Deprecated in favor of using Next.js pages */
+  conditionalTags?: Maybe<ConditionalTags>;
+  /** The content of the post. */
+  content?: Maybe<Scalars['String']['output']>;
+  /** Connection between the ContentNode type and the ContentType type */
+  contentType?: Maybe<ContentNodeToContentTypeConnectionEdge>;
+  /** The name of the Content Type the node belongs to */
+  contentTypeName: Scalars['String']['output'];
+  /** The unique identifier stored in the database */
+  databaseId: Scalars['Int']['output'];
+  /** Post publishing date. */
+  date?: Maybe<Scalars['String']['output']>;
+  /** The publishing date set in GMT. */
+  dateGmt?: Maybe<Scalars['String']['output']>;
+  /** The desired slug of the post */
+  desiredSlug?: Maybe<Scalars['String']['output']>;
+  /** If a user has edited the node within the past 15 seconds, this will return the user that last edited. Null if the edit lock doesn&#039;t exist or is greater than 15 seconds */
+  editingLockedBy?: Maybe<ContentNodeToEditLockConnectionEdge>;
+  /** List of Rgpv editor blocks */
+  editorBlocks?: Maybe<Array<Maybe<RgpvEditorBlock>>>;
+  /** The RSS enclosure for the object */
+  enclosure?: Maybe<Scalars['String']['output']>;
+  /** Connection between the ContentNode type and the EnqueuedScript type */
+  enqueuedScripts?: Maybe<ContentNodeToEnqueuedScriptConnection>;
+  /** Connection between the ContentNode type and the EnqueuedStylesheet type */
+  enqueuedStylesheets?: Maybe<ContentNodeToEnqueuedStylesheetConnection>;
+  /** The excerpt of the post. */
+  excerpt?: Maybe<Scalars['String']['output']>;
+  /** Connection between the NodeWithFeaturedImage type and the MediaItem type */
+  featuredImage?: Maybe<NodeWithFeaturedImageToMediaItemConnectionEdge>;
+  /** The database identifier for the featured image node assigned to the content node */
+  featuredImageDatabaseId?: Maybe<Scalars['Int']['output']>;
+  /** Globally unique ID of the featured image assigned to the node */
+  featuredImageId?: Maybe<Scalars['ID']['output']>;
+  /** The global unique identifier for this post. This currently matches the value stored in WP_Post-&gt;guid and the guid column in the &quot;post_objects&quot; database table. */
+  guid?: Maybe<Scalars['String']['output']>;
+  /** Whether the rgpv object is password protected. */
+  hasPassword?: Maybe<Scalars['Boolean']['output']>;
+  /** The globally unique identifier of the rgpv object. */
+  id: Scalars['ID']['output'];
+  /** Whether the node is a Comment */
+  isComment: Scalars['Boolean']['output'];
+  /** Whether the node is a Content Node */
+  isContentNode: Scalars['Boolean']['output'];
+  /** Whether the node represents the front page. */
+  isFrontPage: Scalars['Boolean']['output'];
+  /** Whether  the node represents the blog page. */
+  isPostsPage: Scalars['Boolean']['output'];
+  /** Whether the object is a node in the preview state */
+  isPreview?: Maybe<Scalars['Boolean']['output']>;
+  /** Whether the object is restricted from the current viewer */
+  isRestricted?: Maybe<Scalars['Boolean']['output']>;
+  /** True if the node is a revision of another node */
+  isRevision?: Maybe<Scalars['Boolean']['output']>;
+  /** Whether the node is a Term */
+  isTermNode: Scalars['Boolean']['output'];
+  /** The user that most recently edited the node */
+  lastEditedBy?: Maybe<ContentNodeToEditLastConnectionEdge>;
+  /** The permalink of the post */
+  link?: Maybe<Scalars['String']['output']>;
+  /** A field used for ordering posts. This is typically used with nav menu items or for special ordering of hierarchical content types. */
+  menuOrder?: Maybe<Scalars['Int']['output']>;
+  /** The local modified time for a post. If a post was recently updated the modified field will change to match the corresponding time. */
+  modified?: Maybe<Scalars['String']['output']>;
+  /** The GMT modified time for a post. If a post was recently updated the modified field will change to match the corresponding time in GMT. */
+  modifiedGmt?: Maybe<Scalars['String']['output']>;
+  /**
+   * The parent of the content node.
+   * @deprecated This content type is not hierarchical and typically will not have a parent
+   */
+  parent?: Maybe<RgpvToParentConnectionEdge>;
+  /** The password for the rgpv object. */
+  password?: Maybe<Scalars['String']['output']>;
+  /** Whether the pings are open or closed for this particular post. */
+  pingStatus?: Maybe<Scalars['String']['output']>;
+  /** URLs that have been pinged. */
+  pinged?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  /** Connection between the Rgpv type and the postFormat type */
+  postFormats?: Maybe<RgpvToPostFormatConnection>;
+  /** Connection between the Rgpv type and the rgpv type */
+  preview?: Maybe<RgpvToPreviewConnectionEdge>;
+  /** The database id of the preview node */
+  previewRevisionDatabaseId?: Maybe<Scalars['Int']['output']>;
+  /** Whether the object is a node in the preview state */
+  previewRevisionId?: Maybe<Scalars['ID']['output']>;
+  /** If the current node is a revision, this field exposes the node this is a revision of. Returns null if the node is not a revision of another node. */
+  revisionOf?: Maybe<NodeWithRevisionsToContentNodeConnectionEdge>;
+  /** Connection between the Rgpv type and the rgpv type */
+  revisions?: Maybe<RgpvToRevisionConnection>;
+  /**
+   * The id field matches the WP_Post-&gt;ID field.
+   * @deprecated Deprecated in favor of the databaseId field
+   */
+  rgpvId: Scalars['Int']['output'];
+  /** The uri slug for the post. This is equivalent to the WP_Post-&gt;post_name field and the post_name column in the database for the &quot;post_objects&quot; table. */
+  slug?: Maybe<Scalars['String']['output']>;
+  /** The current status of the object */
+  status?: Maybe<Scalars['String']['output']>;
+  /** The template assigned to the node */
+  template?: Maybe<ContentTemplate>;
+  templates?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  /** Connection between the Rgpv type and the TermNode type */
+  terms?: Maybe<RgpvToTermNodeConnection>;
+  /** The title of the post. This is currently just the raw title. An amendment to support rendered title needs to be made. */
+  title?: Maybe<Scalars['String']['output']>;
+  /** URLs queued to be pinged. */
+  toPing?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  /** The unique resource identifier path */
+  uri?: Maybe<Scalars['String']['output']>;
+};
+
+
+/** The rgpv type */
+export type RgpvAncestorsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+/** The rgpv type */
+export type RgpvCommentsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<RgpvToCommentConnectionWhereArgs>;
+};
+
+
+/** The rgpv type */
+export type RgpvContentArgs = {
+  format?: InputMaybe<PostObjectFieldFormatEnum>;
+};
+
+
+/** The rgpv type */
+export type RgpvEditorBlocksArgs = {
+  flat?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+/** The rgpv type */
+export type RgpvEnqueuedScriptsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+/** The rgpv type */
+export type RgpvEnqueuedStylesheetsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+/** The rgpv type */
+export type RgpvExcerptArgs = {
+  format?: InputMaybe<PostObjectFieldFormatEnum>;
+};
+
+
+/** The rgpv type */
+export type RgpvPostFormatsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<RgpvToPostFormatConnectionWhereArgs>;
+};
+
+
+/** The rgpv type */
+export type RgpvRevisionsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<RgpvToRevisionConnectionWhereArgs>;
+};
+
+
+/** The rgpv type */
+export type RgpvTermsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<RgpvToTermNodeConnectionWhereArgs>;
+};
+
+
+/** The rgpv type */
+export type RgpvTitleArgs = {
+  format?: InputMaybe<PostObjectFieldFormatEnum>;
+};
+
+/** Connection to rgpv Nodes */
+export type RgpvConnection = {
+  /** A list of edges (relational context) between RootQuery and connected rgpv Nodes */
+  edges: Array<RgpvConnectionEdge>;
+  /** A list of connected rgpv Nodes */
+  nodes: Array<Rgpv>;
+  /** Information about pagination in a connection. */
+  pageInfo: RgpvConnectionPageInfo;
+};
+
+/** Edge between a Node and a connected rgpv */
+export type RgpvConnectionEdge = {
+  /** Opaque reference to the nodes position in the connection. Value can be used with pagination args. */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The connected rgpv Node */
+  node: Rgpv;
+};
+
+/** Page Info on the connected RgpvConnectionEdge */
+export type RgpvConnectionPageInfo = {
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** EditorBlock Interface for Rgpv Block Type */
+export type RgpvEditorBlock = {
+  /** The API version of the Gutenberg Block */
+  apiVersion?: Maybe<Scalars['Int']['output']>;
+  /** The name of the category the Block belongs to */
+  blockEditorCategoryName?: Maybe<Scalars['String']['output']>;
+  /** The id of the Block */
+  clientId?: Maybe<Scalars['String']['output']>;
+  /** CSS Classnames to apply to the block */
+  cssClassNames?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  /** The inner blocks of the Block */
+  innerBlocks?: Maybe<Array<Maybe<EditorBlock>>>;
+  /** Whether the block is Dynamic (server rendered) */
+  isDynamic: Scalars['Boolean']['output'];
+  /** The name of the Block */
+  name?: Maybe<Scalars['String']['output']>;
+  /** The parent id of the Block */
+  parentClientId?: Maybe<Scalars['String']['output']>;
+  /** The rendered HTML for the block */
+  renderedHtml?: Maybe<Scalars['String']['output']>;
+};
+
+/** The Type of Identifier used to fetch a single resource. Default is ID. */
+export enum RgpvIdType {
+  /** Identify a resource by the Database ID. */
+  DatabaseId = 'DATABASE_ID',
+  /** Identify a resource by the (hashed) Global ID. */
+  Id = 'ID',
+  /** Identify a resource by the slug. Available to non-hierarchcial Types where the slug is a unique identifier. */
+  Slug = 'SLUG',
+  /** Identify a resource by the URI. */
+  Uri = 'URI'
+}
+
+/** Set relationships between the rgpv to postFormats */
+export type RgpvPostFormatsInput = {
+  /** If true, this will append the postFormat to existing related postFormats. If false, this will replace existing relationships. Default true. */
+  append?: InputMaybe<Scalars['Boolean']['input']>;
+  /** The input list of items to set. */
+  nodes?: InputMaybe<Array<InputMaybe<RgpvPostFormatsNodeInput>>>;
+};
+
+/** List of postFormats to connect the rgpv to. If an ID is set, it will be used to create the connection. If not, it will look for a slug. If neither are valid existing terms, and the site is configured to allow terms to be created during post mutations, a term will be created using the Name if it exists in the input, then fallback to the slug if it exists. */
+export type RgpvPostFormatsNodeInput = {
+  /** The description of the postFormat. This field is used to set a description of the postFormat if a new one is created during the mutation. */
+  description?: InputMaybe<Scalars['String']['input']>;
+  /** The ID of the postFormat. If present, this will be used to connect to the rgpv. If no existing postFormat exists with this ID, no connection will be made. */
+  id?: InputMaybe<Scalars['ID']['input']>;
+  /** The name of the postFormat. This field is used to create a new term, if term creation is enabled in nested mutations, and if one does not already exist with the provided slug or ID or if a slug or ID is not provided. If no name is included and a term is created, the creation will fallback to the slug field. */
+  name?: InputMaybe<Scalars['String']['input']>;
+  /** The slug of the postFormat. If no ID is present, this field will be used to make a connection. If no existing term exists with this slug, this field will be used as a fallback to the Name field when creating a new term to connect to, if term creation is enabled as a nested mutation. */
+  slug?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** Connection between the Rgpv type and the Comment type */
+export type RgpvToCommentConnection = CommentConnection & Connection & {
+  __typename?: 'RgpvToCommentConnection';
+  /** Edges for the RgpvToCommentConnection connection */
+  edges: Array<RgpvToCommentConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<Comment>;
+  /** Information about pagination in a connection. */
+  pageInfo: RgpvToCommentConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type RgpvToCommentConnectionEdge = CommentConnectionEdge & Edge & {
+  __typename?: 'RgpvToCommentConnectionEdge';
+  /** A cursor for use in pagination */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The item at the end of the edge */
+  node: Comment;
+};
+
+/** Page Info on the &quot;RgpvToCommentConnection&quot; */
+export type RgpvToCommentConnectionPageInfo = CommentConnectionPageInfo & PageInfo & WpPageInfo & {
+  __typename?: 'RgpvToCommentConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Arguments for filtering the RgpvToCommentConnection connection */
+export type RgpvToCommentConnectionWhereArgs = {
+  /** Comment author email address. */
+  authorEmail?: InputMaybe<Scalars['String']['input']>;
+  /** Array of author IDs to include comments for. */
+  authorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of author IDs to exclude comments for. */
+  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Comment author URL. */
+  authorUrl?: InputMaybe<Scalars['String']['input']>;
+  /** Array of comment IDs to include. */
+  commentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of IDs of users whose unapproved comments will be returned by the query regardless of status. */
+  commentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Include comments of a given type. */
+  commentType?: InputMaybe<Scalars['String']['input']>;
+  /** Include comments from a given array of comment types. */
+  commentTypeIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Exclude comments from a given array of comment types. */
+  commentTypeNotIn?: InputMaybe<Scalars['String']['input']>;
+  /** Content object author ID to limit results by. */
+  contentAuthor?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of author IDs to retrieve comments for. */
+  contentAuthorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of author IDs *not* to retrieve comments for. */
+  contentAuthorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Limit results to those affiliated with a given content object ID. */
+  contentId?: InputMaybe<Scalars['ID']['input']>;
+  /** Array of content object IDs to include affiliated comments for. */
+  contentIdIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of content object IDs to exclude affiliated comments for. */
+  contentIdNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Content object name (i.e. slug ) to retrieve affiliated comments for. */
+  contentName?: InputMaybe<Scalars['String']['input']>;
+  /** Content Object parent ID to retrieve affiliated comments for. */
+  contentParent?: InputMaybe<Scalars['Int']['input']>;
+  /** Array of content object statuses to retrieve affiliated comments for. Pass 'any' to match any value. */
+  contentStatus?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
+  /** Content object type or array of types to retrieve affiliated comments for. Pass 'any' to match any value. */
+  contentType?: InputMaybe<Array<InputMaybe<ContentTypeEnum>>>;
+  /** Array of IDs or email addresses of users whose unapproved comments will be returned by the query regardless of $status. Default empty */
+  includeUnapproved?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Karma score to retrieve matching comments for. */
+  karma?: InputMaybe<Scalars['Int']['input']>;
+  /** The cardinality of the order of the connection */
+  order?: InputMaybe<OrderEnum>;
+  /** Field to order the comments by. */
+  orderby?: InputMaybe<CommentsConnectionOrderbyEnum>;
+  /** Parent ID of comment to retrieve children of. */
+  parent?: InputMaybe<Scalars['Int']['input']>;
+  /** Array of parent IDs of comments to retrieve children for. */
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of parent IDs of comments *not* to retrieve children for. */
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Search term(s) to retrieve matching comments for. */
+  search?: InputMaybe<Scalars['String']['input']>;
+  /** Comment status to limit results by. */
+  status?: InputMaybe<Scalars['String']['input']>;
+  /** Include comments for a specific user ID. */
+  userId?: InputMaybe<Scalars['ID']['input']>;
+};
+
+/** Connection between the Rgpv type and the rgpv type */
+export type RgpvToParentConnectionEdge = Edge & OneToOneConnection & RgpvConnectionEdge & {
+  __typename?: 'RgpvToParentConnectionEdge';
+  /** Opaque reference to the nodes position in the connection. Value can be used with pagination args. */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /**
+   * The node of the connection, without the edges
+   * @deprecated This content type is not hierarchical and typically will not have a parent
+   */
+  node: Rgpv;
+};
+
+/** Connection between the Rgpv type and the postFormat type */
+export type RgpvToPostFormatConnection = Connection & PostFormatConnection & {
+  __typename?: 'RgpvToPostFormatConnection';
+  /** Edges for the RgpvToPostFormatConnection connection */
+  edges: Array<RgpvToPostFormatConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<PostFormat>;
+  /** Information about pagination in a connection. */
+  pageInfo: RgpvToPostFormatConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type RgpvToPostFormatConnectionEdge = Edge & PostFormatConnectionEdge & {
+  __typename?: 'RgpvToPostFormatConnectionEdge';
+  /** A cursor for use in pagination */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The item at the end of the edge */
+  node: PostFormat;
+};
+
+/** Page Info on the &quot;RgpvToPostFormatConnection&quot; */
+export type RgpvToPostFormatConnectionPageInfo = PageInfo & PostFormatConnectionPageInfo & WpPageInfo & {
+  __typename?: 'RgpvToPostFormatConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Arguments for filtering the RgpvToPostFormatConnection connection */
+export type RgpvToPostFormatConnectionWhereArgs = {
+  /** Unique cache key to be produced when this query is stored in an object cache. Default is 'core'. */
+  cacheDomain?: InputMaybe<Scalars['String']['input']>;
+  /** Term ID to retrieve child terms of. If multiple taxonomies are passed, $child_of is ignored. Default 0. */
+  childOf?: InputMaybe<Scalars['Int']['input']>;
+  /** True to limit results to terms that have no children. This parameter has no effect on non-hierarchical taxonomies. Default false. */
+  childless?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Retrieve terms where the description is LIKE the input value. Default empty. */
+  descriptionLike?: InputMaybe<Scalars['String']['input']>;
+  /** Array of term ids to exclude. If $include is non-empty, $exclude is ignored. Default empty array. */
+  exclude?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of term ids to exclude along with all of their descendant terms. If $include is non-empty, $exclude_tree is ignored. Default empty array. */
+  excludeTree?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Whether to hide terms not assigned to any posts. Accepts true or false. Default false */
+  hideEmpty?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Whether to include terms that have non-empty descendants (even if $hide_empty is set to true). Default true. */
+  hierarchical?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Array of term ids to include. Default empty array. */
+  include?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of names to return term(s) for. Default empty. */
+  name?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Retrieve terms where the name is LIKE the input value. Default empty. */
+  nameLike?: InputMaybe<Scalars['String']['input']>;
+  /** Array of object IDs. Results will be limited to terms associated with these objects. */
+  objectIds?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Direction the connection should be ordered in */
+  order?: InputMaybe<OrderEnum>;
+  /** Field(s) to order terms by. Defaults to 'name'. */
+  orderby?: InputMaybe<TermObjectsConnectionOrderbyEnum>;
+  /** Whether to pad the quantity of a term's children in the quantity of each term's "count" object variable. Default false. */
+  padCounts?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Parent term ID to retrieve direct-child terms of. Default empty. */
+  parent?: InputMaybe<Scalars['Int']['input']>;
+  /** Search criteria to match terms. Will be SQL-formatted with wildcards before and after. Default empty. */
+  search?: InputMaybe<Scalars['String']['input']>;
+  /** Array of slugs to return term(s) for. Default empty. */
+  slug?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomyId?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Whether to prime meta caches for matched terms. Default true. */
+  updateTermMetaCache?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** Connection between the Rgpv type and the rgpv type */
+export type RgpvToPreviewConnectionEdge = Edge & OneToOneConnection & RgpvConnectionEdge & {
+  __typename?: 'RgpvToPreviewConnectionEdge';
+  /** Opaque reference to the nodes position in the connection. Value can be used with pagination args. */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The node of the connection, without the edges */
+  node: Rgpv;
+};
+
+/** Connection between the Rgpv type and the rgpv type */
+export type RgpvToRevisionConnection = Connection & RgpvConnection & {
+  __typename?: 'RgpvToRevisionConnection';
+  /** Edges for the RgpvToRevisionConnection connection */
+  edges: Array<RgpvToRevisionConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<Rgpv>;
+  /** Information about pagination in a connection. */
+  pageInfo: RgpvToRevisionConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type RgpvToRevisionConnectionEdge = Edge & RgpvConnectionEdge & {
+  __typename?: 'RgpvToRevisionConnectionEdge';
+  /** A cursor for use in pagination */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The item at the end of the edge */
+  node: Rgpv;
+};
+
+/** Page Info on the &quot;RgpvToRevisionConnection&quot; */
+export type RgpvToRevisionConnectionPageInfo = PageInfo & RgpvConnectionPageInfo & WpPageInfo & {
+  __typename?: 'RgpvToRevisionConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Arguments for filtering the RgpvToRevisionConnection connection */
+export type RgpvToRevisionConnectionWhereArgs = {
+  /** The user that's connected as the author of the object. Use the userId for the author object. */
+  author?: InputMaybe<Scalars['Int']['input']>;
+  /** Find objects connected to author(s) in the array of author's userIds */
+  authorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Find objects connected to the author by the author's nicename */
+  authorName?: InputMaybe<Scalars['String']['input']>;
+  /** Find objects NOT connected to author(s) in the array of author's userIds */
+  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Filter the connection based on dates */
+  dateQuery?: InputMaybe<DateQueryInput>;
+  /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
+  hasPassword?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Specific database ID of the object */
+  id?: InputMaybe<Scalars['Int']['input']>;
+  /** Array of IDs for the objects to retrieve */
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Get objects with a specific mimeType property */
+  mimeType?: InputMaybe<MimeTypeEnum>;
+  /** Slug / post_name of the object */
+  name?: InputMaybe<Scalars['String']['input']>;
+  /** Specify objects to retrieve. Use slugs */
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** What parameter to use to order the objects by. */
+  orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
+  /** Use ID to return only children. Use 0 to return only top-level items */
+  parent?: InputMaybe<Scalars['ID']['input']>;
+  /** Specify objects whose parent is in an array */
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Specify posts whose parent is not in an array */
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Show posts with a specific password. */
+  password?: InputMaybe<Scalars['String']['input']>;
+  /** Show Posts based on a keyword search */
+  search?: InputMaybe<Scalars['String']['input']>;
+  /** Retrieve posts where post status is in an array. */
+  stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
+  /** Show posts with a specific status. */
+  status?: InputMaybe<PostStatusEnum>;
+  /** Title of the object */
+  title?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** Connection between the Rgpv type and the rgpv type */
+export type RgpvToRgpvConnection = Connection & RgpvConnection & {
+  __typename?: 'RgpvToRgpvConnection';
+  /** Edges for the RgpvToRgpvConnection connection */
+  edges: Array<RgpvToRgpvConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<Rgpv>;
+  /** Information about pagination in a connection. */
+  pageInfo: RgpvToRgpvConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type RgpvToRgpvConnectionEdge = Edge & RgpvConnectionEdge & {
+  __typename?: 'RgpvToRgpvConnectionEdge';
+  /**
+   * A cursor for use in pagination
+   * @deprecated This content type is not hierarchical and typically will not have ancestors
+   */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /**
+   * The item at the end of the edge
+   * @deprecated This content type is not hierarchical and typically will not have ancestors
+   */
+  node: Rgpv;
+};
+
+/** Page Info on the &quot;RgpvToRgpvConnection&quot; */
+export type RgpvToRgpvConnectionPageInfo = PageInfo & RgpvConnectionPageInfo & WpPageInfo & {
+  __typename?: 'RgpvToRgpvConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Connection between the Rgpv type and the TermNode type */
+export type RgpvToTermNodeConnection = Connection & TermNodeConnection & {
+  __typename?: 'RgpvToTermNodeConnection';
+  /** Edges for the RgpvToTermNodeConnection connection */
+  edges: Array<RgpvToTermNodeConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<TermNode>;
+  /** Information about pagination in a connection. */
+  pageInfo: RgpvToTermNodeConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type RgpvToTermNodeConnectionEdge = Edge & TermNodeConnectionEdge & {
+  __typename?: 'RgpvToTermNodeConnectionEdge';
+  /** A cursor for use in pagination */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The item at the end of the edge */
+  node: TermNode;
+};
+
+/** Page Info on the &quot;RgpvToTermNodeConnection&quot; */
+export type RgpvToTermNodeConnectionPageInfo = PageInfo & TermNodeConnectionPageInfo & WpPageInfo & {
+  __typename?: 'RgpvToTermNodeConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Arguments for filtering the RgpvToTermNodeConnection connection */
+export type RgpvToTermNodeConnectionWhereArgs = {
+  /** Unique cache key to be produced when this query is stored in an object cache. Default is 'core'. */
+  cacheDomain?: InputMaybe<Scalars['String']['input']>;
+  /** Term ID to retrieve child terms of. If multiple taxonomies are passed, $child_of is ignored. Default 0. */
+  childOf?: InputMaybe<Scalars['Int']['input']>;
+  /** True to limit results to terms that have no children. This parameter has no effect on non-hierarchical taxonomies. Default false. */
+  childless?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Retrieve terms where the description is LIKE the input value. Default empty. */
+  descriptionLike?: InputMaybe<Scalars['String']['input']>;
+  /** Array of term ids to exclude. If $include is non-empty, $exclude is ignored. Default empty array. */
+  exclude?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of term ids to exclude along with all of their descendant terms. If $include is non-empty, $exclude_tree is ignored. Default empty array. */
+  excludeTree?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Whether to hide terms not assigned to any posts. Accepts true or false. Default false */
+  hideEmpty?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Whether to include terms that have non-empty descendants (even if $hide_empty is set to true). Default true. */
+  hierarchical?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Array of term ids to include. Default empty array. */
+  include?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of names to return term(s) for. Default empty. */
+  name?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Retrieve terms where the name is LIKE the input value. Default empty. */
+  nameLike?: InputMaybe<Scalars['String']['input']>;
+  /** Array of object IDs. Results will be limited to terms associated with these objects. */
+  objectIds?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Direction the connection should be ordered in */
+  order?: InputMaybe<OrderEnum>;
+  /** Field(s) to order terms by. Defaults to 'name'. */
+  orderby?: InputMaybe<TermObjectsConnectionOrderbyEnum>;
+  /** Whether to pad the quantity of a term's children in the quantity of each term's "count" object variable. Default false. */
+  padCounts?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Parent term ID to retrieve direct-child terms of. Default empty. */
+  parent?: InputMaybe<Scalars['Int']['input']>;
+  /** Search criteria to match terms. Will be SQL-formatted with wildcards before and after. Default empty. */
+  search?: InputMaybe<Scalars['String']['input']>;
+  /** Array of slugs to return term(s) for. Default empty. */
+  slug?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** The Taxonomy to filter terms by */
+  taxonomies?: InputMaybe<Array<InputMaybe<TaxonomyEnum>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomId?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Array of term taxonomy IDs, to match when querying terms. */
+  termTaxonomyId?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Whether to prime meta caches for matched terms. Default true. */
+  updateTermMetaCache?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
 /** The root mutation */
 export type RootMutation = {
   __typename?: 'RootMutation';
@@ -12931,18 +19560,32 @@ export type RootMutation = {
   createCategory?: Maybe<CreateCategoryPayload>;
   /** The createComment mutation */
   createComment?: Maybe<CreateCommentPayload>;
+  /** The createDelhi_university mutation */
+  createDelhi_university?: Maybe<CreateDelhi_UniversityPayload>;
+  /** The createGgsipu mutation */
+  createGgsipu?: Maybe<CreateGgsipuPayload>;
   /** The createGraphqlDocument mutation */
   createGraphqlDocument?: Maybe<CreateGraphqlDocumentPayload>;
   /** The createGraphqlDocumentGroup mutation */
   createGraphqlDocumentGroup?: Maybe<CreateGraphqlDocumentGroupPayload>;
+  /** The createKuk mutation */
+  createKuk?: Maybe<CreateKukPayload>;
+  /** The createLpu mutation */
+  createLpu?: Maybe<CreateLpuPayload>;
+  /** The createMakaut mutation */
+  createMakaut?: Maybe<CreateMakautPayload>;
   /** The createMediaItem mutation */
   createMediaItem?: Maybe<CreateMediaItemPayload>;
+  /** The createMumbai_university mutation */
+  createMumbai_university?: Maybe<CreateMumbai_UniversityPayload>;
   /** The createPage mutation */
   createPage?: Maybe<CreatePagePayload>;
   /** The createPost mutation */
   createPost?: Maybe<CreatePostPayload>;
   /** The createPostFormat mutation */
   createPostFormat?: Maybe<CreatePostFormatPayload>;
+  /** The createRgpv mutation */
+  createRgpv?: Maybe<CreateRgpvPayload>;
   /** The createTag mutation */
   createTag?: Maybe<CreateTagPayload>;
   /** The createUser mutation */
@@ -12953,18 +19596,32 @@ export type RootMutation = {
   deleteCategory?: Maybe<DeleteCategoryPayload>;
   /** The deleteComment mutation */
   deleteComment?: Maybe<DeleteCommentPayload>;
+  /** The deleteDelhi_university mutation */
+  deleteDelhi_university?: Maybe<DeleteDelhi_UniversityPayload>;
+  /** The deleteGgsipu mutation */
+  deleteGgsipu?: Maybe<DeleteGgsipuPayload>;
   /** The deleteGraphqlDocument mutation */
   deleteGraphqlDocument?: Maybe<DeleteGraphqlDocumentPayload>;
   /** The deleteGraphqlDocumentGroup mutation */
   deleteGraphqlDocumentGroup?: Maybe<DeleteGraphqlDocumentGroupPayload>;
+  /** The deleteKuk mutation */
+  deleteKuk?: Maybe<DeleteKukPayload>;
+  /** The deleteLpu mutation */
+  deleteLpu?: Maybe<DeleteLpuPayload>;
+  /** The deleteMakaut mutation */
+  deleteMakaut?: Maybe<DeleteMakautPayload>;
   /** The deleteMediaItem mutation */
   deleteMediaItem?: Maybe<DeleteMediaItemPayload>;
+  /** The deleteMumbai_university mutation */
+  deleteMumbai_university?: Maybe<DeleteMumbai_UniversityPayload>;
   /** The deletePage mutation */
   deletePage?: Maybe<DeletePagePayload>;
   /** The deletePost mutation */
   deletePost?: Maybe<DeletePostPayload>;
   /** The deletePostFormat mutation */
   deletePostFormat?: Maybe<DeletePostFormatPayload>;
+  /** The deleteRgpv mutation */
+  deleteRgpv?: Maybe<DeleteRgpvPayload>;
   /** The deleteTag mutation */
   deleteTag?: Maybe<DeleteTagPayload>;
   /** The deleteUser mutation */
@@ -12997,18 +19654,32 @@ export type RootMutation = {
   updateCategory?: Maybe<UpdateCategoryPayload>;
   /** The updateComment mutation */
   updateComment?: Maybe<UpdateCommentPayload>;
+  /** The updateDelhi_university mutation */
+  updateDelhi_university?: Maybe<UpdateDelhi_UniversityPayload>;
+  /** The updateGgsipu mutation */
+  updateGgsipu?: Maybe<UpdateGgsipuPayload>;
   /** The updateGraphqlDocument mutation */
   updateGraphqlDocument?: Maybe<UpdateGraphqlDocumentPayload>;
   /** The updateGraphqlDocumentGroup mutation */
   updateGraphqlDocumentGroup?: Maybe<UpdateGraphqlDocumentGroupPayload>;
+  /** The updateKuk mutation */
+  updateKuk?: Maybe<UpdateKukPayload>;
+  /** The updateLpu mutation */
+  updateLpu?: Maybe<UpdateLpuPayload>;
+  /** The updateMakaut mutation */
+  updateMakaut?: Maybe<UpdateMakautPayload>;
   /** The updateMediaItem mutation */
   updateMediaItem?: Maybe<UpdateMediaItemPayload>;
+  /** The updateMumbai_university mutation */
+  updateMumbai_university?: Maybe<UpdateMumbai_UniversityPayload>;
   /** The updatePage mutation */
   updatePage?: Maybe<UpdatePagePayload>;
   /** The updatePost mutation */
   updatePost?: Maybe<UpdatePostPayload>;
   /** The updatePostFormat mutation */
   updatePostFormat?: Maybe<UpdatePostFormatPayload>;
+  /** The updateRgpv mutation */
+  updateRgpv?: Maybe<UpdateRgpvPayload>;
   /** The updateSettings mutation */
   updateSettings?: Maybe<UpdateSettingsPayload>;
   /** The updateTag mutation */
@@ -13033,6 +19704,18 @@ export type RootMutationCreateCommentArgs = {
 
 
 /** The root mutation */
+export type RootMutationCreateDelhi_UniversityArgs = {
+  input: CreateDelhi_UniversityInput;
+};
+
+
+/** The root mutation */
+export type RootMutationCreateGgsipuArgs = {
+  input: CreateGgsipuInput;
+};
+
+
+/** The root mutation */
 export type RootMutationCreateGraphqlDocumentArgs = {
   input: CreateGraphqlDocumentInput;
 };
@@ -13045,8 +19728,32 @@ export type RootMutationCreateGraphqlDocumentGroupArgs = {
 
 
 /** The root mutation */
+export type RootMutationCreateKukArgs = {
+  input: CreateKukInput;
+};
+
+
+/** The root mutation */
+export type RootMutationCreateLpuArgs = {
+  input: CreateLpuInput;
+};
+
+
+/** The root mutation */
+export type RootMutationCreateMakautArgs = {
+  input: CreateMakautInput;
+};
+
+
+/** The root mutation */
 export type RootMutationCreateMediaItemArgs = {
   input: CreateMediaItemInput;
+};
+
+
+/** The root mutation */
+export type RootMutationCreateMumbai_UniversityArgs = {
+  input: CreateMumbai_UniversityInput;
 };
 
 
@@ -13065,6 +19772,12 @@ export type RootMutationCreatePostArgs = {
 /** The root mutation */
 export type RootMutationCreatePostFormatArgs = {
   input: CreatePostFormatInput;
+};
+
+
+/** The root mutation */
+export type RootMutationCreateRgpvArgs = {
+  input: CreateRgpvInput;
 };
 
 
@@ -13099,6 +19812,18 @@ export type RootMutationDeleteCommentArgs = {
 
 
 /** The root mutation */
+export type RootMutationDeleteDelhi_UniversityArgs = {
+  input: DeleteDelhi_UniversityInput;
+};
+
+
+/** The root mutation */
+export type RootMutationDeleteGgsipuArgs = {
+  input: DeleteGgsipuInput;
+};
+
+
+/** The root mutation */
 export type RootMutationDeleteGraphqlDocumentArgs = {
   input: DeleteGraphqlDocumentInput;
 };
@@ -13111,8 +19836,32 @@ export type RootMutationDeleteGraphqlDocumentGroupArgs = {
 
 
 /** The root mutation */
+export type RootMutationDeleteKukArgs = {
+  input: DeleteKukInput;
+};
+
+
+/** The root mutation */
+export type RootMutationDeleteLpuArgs = {
+  input: DeleteLpuInput;
+};
+
+
+/** The root mutation */
+export type RootMutationDeleteMakautArgs = {
+  input: DeleteMakautInput;
+};
+
+
+/** The root mutation */
 export type RootMutationDeleteMediaItemArgs = {
   input: DeleteMediaItemInput;
+};
+
+
+/** The root mutation */
+export type RootMutationDeleteMumbai_UniversityArgs = {
+  input: DeleteMumbai_UniversityInput;
 };
 
 
@@ -13131,6 +19880,12 @@ export type RootMutationDeletePostArgs = {
 /** The root mutation */
 export type RootMutationDeletePostFormatArgs = {
   input: DeletePostFormatInput;
+};
+
+
+/** The root mutation */
+export type RootMutationDeleteRgpvArgs = {
+  input: DeleteRgpvInput;
 };
 
 
@@ -13231,6 +19986,18 @@ export type RootMutationUpdateCommentArgs = {
 
 
 /** The root mutation */
+export type RootMutationUpdateDelhi_UniversityArgs = {
+  input: UpdateDelhi_UniversityInput;
+};
+
+
+/** The root mutation */
+export type RootMutationUpdateGgsipuArgs = {
+  input: UpdateGgsipuInput;
+};
+
+
+/** The root mutation */
 export type RootMutationUpdateGraphqlDocumentArgs = {
   input: UpdateGraphqlDocumentInput;
 };
@@ -13243,8 +20010,32 @@ export type RootMutationUpdateGraphqlDocumentGroupArgs = {
 
 
 /** The root mutation */
+export type RootMutationUpdateKukArgs = {
+  input: UpdateKukInput;
+};
+
+
+/** The root mutation */
+export type RootMutationUpdateLpuArgs = {
+  input: UpdateLpuInput;
+};
+
+
+/** The root mutation */
+export type RootMutationUpdateMakautArgs = {
+  input: UpdateMakautInput;
+};
+
+
+/** The root mutation */
 export type RootMutationUpdateMediaItemArgs = {
   input: UpdateMediaItemInput;
+};
+
+
+/** The root mutation */
+export type RootMutationUpdateMumbai_UniversityArgs = {
+  input: UpdateMumbai_UniversityInput;
 };
 
 
@@ -13263,6 +20054,12 @@ export type RootMutationUpdatePostArgs = {
 /** The root mutation */
 export type RootMutationUpdatePostFormatArgs = {
   input: UpdatePostFormatInput;
+};
+
+
+/** The root mutation */
+export type RootMutationUpdateRgpvArgs = {
+  input: UpdateRgpvInput;
 };
 
 
@@ -13310,10 +20107,28 @@ export type RootQuery = {
   contentType?: Maybe<ContentType>;
   /** Connection between the RootQuery type and the ContentType type */
   contentTypes?: Maybe<RootQueryToContentTypeConnection>;
+  /** An object of the delhi_university Type.  */
+  delhiUniversity?: Maybe<Delhi_University>;
+  /**
+   * A delhi_university object
+   * @deprecated Deprecated in favor of using the single entry point for this type with ID and IDType fields. For example, instead of postBy( id: &quot;&quot; ), use post(id: &quot;&quot; idType: &quot;&quot;)
+   */
+  delhiUniversityBy?: Maybe<Delhi_University>;
+  /** Connection between the RootQuery type and the delhi_university type */
+  delhiUniversitys?: Maybe<RootQueryToDelhi_UniversityConnection>;
   /** Fields of the &#039;DiscussionSettings&#039; settings group */
   discussionSettings?: Maybe<DiscussionSettings>;
   /** Fields of the &#039;GeneralSettings&#039; settings group */
   generalSettings?: Maybe<GeneralSettings>;
+  /** An object of the ggsipu Type.  */
+  ggsipu?: Maybe<Ggsipu>;
+  /**
+   * A ggsipu object
+   * @deprecated Deprecated in favor of using the single entry point for this type with ID and IDType fields. For example, instead of postBy( id: &quot;&quot; ), use post(id: &quot;&quot; idType: &quot;&quot;)
+   */
+  ggsipuBy?: Maybe<Ggsipu>;
+  /** Connection between the RootQuery type and the ggsipu type */
+  ggsipus?: Maybe<RootQueryToGgsipuConnection>;
   /** Returns the stylesheet resulting of merging core, theme, and user data. */
   globalStylesheet?: Maybe<Scalars['String']['output']>;
   /** An object of the graphqlDocument Type. Saved GraphQL Documents */
@@ -13329,6 +20144,33 @@ export type RootQuery = {
   graphqlDocumentGroups?: Maybe<RootQueryToGraphqlDocumentGroupConnection>;
   /** Connection between the RootQuery type and the graphqlDocument type */
   graphqlDocuments?: Maybe<RootQueryToGraphqlDocumentConnection>;
+  /** An object of the kuk Type.  */
+  kuk?: Maybe<Kuk>;
+  /**
+   * A kuk object
+   * @deprecated Deprecated in favor of using the single entry point for this type with ID and IDType fields. For example, instead of postBy( id: &quot;&quot; ), use post(id: &quot;&quot; idType: &quot;&quot;)
+   */
+  kukBy?: Maybe<Kuk>;
+  /** Connection between the RootQuery type and the kuk type */
+  kuks?: Maybe<RootQueryToKukConnection>;
+  /** An object of the lpu Type.  */
+  lpu?: Maybe<Lpu>;
+  /**
+   * A lpu object
+   * @deprecated Deprecated in favor of using the single entry point for this type with ID and IDType fields. For example, instead of postBy( id: &quot;&quot; ), use post(id: &quot;&quot; idType: &quot;&quot;)
+   */
+  lpuBy?: Maybe<Lpu>;
+  /** Connection between the RootQuery type and the lpu type */
+  lpus?: Maybe<RootQueryToLpuConnection>;
+  /** An object of the makaut Type.  */
+  makaut?: Maybe<Makaut>;
+  /**
+   * A makaut object
+   * @deprecated Deprecated in favor of using the single entry point for this type with ID and IDType fields. For example, instead of postBy( id: &quot;&quot; ), use post(id: &quot;&quot; idType: &quot;&quot;)
+   */
+  makautBy?: Maybe<Makaut>;
+  /** Connection between the RootQuery type and the makaut type */
+  makauts?: Maybe<RootQueryToMakautConnection>;
   /** An object of the mediaItem Type.  */
   mediaItem?: Maybe<MediaItem>;
   /**
@@ -13346,6 +20188,15 @@ export type RootQuery = {
   menuItems?: Maybe<RootQueryToMenuItemConnection>;
   /** Connection between the RootQuery type and the Menu type */
   menus?: Maybe<RootQueryToMenuConnection>;
+  /** An object of the mumbai_university Type.  */
+  mumbaiUniversity?: Maybe<Mumbai_University>;
+  /**
+   * A mumbai_university object
+   * @deprecated Deprecated in favor of using the single entry point for this type with ID and IDType fields. For example, instead of postBy( id: &quot;&quot; ), use post(id: &quot;&quot; idType: &quot;&quot;)
+   */
+  mumbaiUniversityBy?: Maybe<Mumbai_University>;
+  /** Connection between the RootQuery type and the mumbai_university type */
+  mumbaiUniversitys?: Maybe<RootQueryToMumbai_UniversityConnection>;
   /** Fetches an object given its ID */
   node?: Maybe<Node>;
   /** Fetches an object given its Unique Resource Identifier */
@@ -13384,6 +20235,15 @@ export type RootQuery = {
   registeredStylesheets?: Maybe<RootQueryToEnqueuedStylesheetConnection>;
   /** Connection between the RootQuery type and the ContentNode type */
   revisions?: Maybe<RootQueryToRevisionsConnection>;
+  /** An object of the rgpv Type.  */
+  rgpv?: Maybe<Rgpv>;
+  /**
+   * A rgpv object
+   * @deprecated Deprecated in favor of using the single entry point for this type with ID and IDType fields. For example, instead of postBy( id: &quot;&quot; ), use post(id: &quot;&quot; idType: &quot;&quot;)
+   */
+  rgpvBy?: Maybe<Rgpv>;
+  /** Connection between the RootQuery type and the rgpv type */
+  rgpvs?: Maybe<RootQueryToRgpvConnection>;
   /** The logo set in the customizer */
   siteLogo?: Maybe<MediaItem>;
   /** A 0bject */
@@ -13496,6 +20356,58 @@ export type RootQueryContentTypesArgs = {
 
 
 /** The root entry point into the Graph */
+export type RootQueryDelhiUniversityArgs = {
+  asPreview?: InputMaybe<Scalars['Boolean']['input']>;
+  id: Scalars['ID']['input'];
+  idType?: InputMaybe<Delhi_UniversityIdType>;
+};
+
+
+/** The root entry point into the Graph */
+export type RootQueryDelhiUniversityByArgs = {
+  delhi_universityId?: InputMaybe<Scalars['Int']['input']>;
+  id?: InputMaybe<Scalars['ID']['input']>;
+  uri?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** The root entry point into the Graph */
+export type RootQueryDelhiUniversitysArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<RootQueryToDelhi_UniversityConnectionWhereArgs>;
+};
+
+
+/** The root entry point into the Graph */
+export type RootQueryGgsipuArgs = {
+  asPreview?: InputMaybe<Scalars['Boolean']['input']>;
+  id: Scalars['ID']['input'];
+  idType?: InputMaybe<GgsipuIdType>;
+};
+
+
+/** The root entry point into the Graph */
+export type RootQueryGgsipuByArgs = {
+  ggsipuId?: InputMaybe<Scalars['Int']['input']>;
+  id?: InputMaybe<Scalars['ID']['input']>;
+  uri?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** The root entry point into the Graph */
+export type RootQueryGgsipusArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<RootQueryToGgsipuConnectionWhereArgs>;
+};
+
+
+/** The root entry point into the Graph */
 export type RootQueryGlobalStylesheetArgs = {
   types?: InputMaybe<Array<InputMaybe<GlobalStylesheetTypesEnum>>>;
 };
@@ -13542,6 +20454,86 @@ export type RootQueryGraphqlDocumentsArgs = {
   first?: InputMaybe<Scalars['Int']['input']>;
   last?: InputMaybe<Scalars['Int']['input']>;
   where?: InputMaybe<RootQueryToGraphqlDocumentConnectionWhereArgs>;
+};
+
+
+/** The root entry point into the Graph */
+export type RootQueryKukArgs = {
+  asPreview?: InputMaybe<Scalars['Boolean']['input']>;
+  id: Scalars['ID']['input'];
+  idType?: InputMaybe<KukIdType>;
+};
+
+
+/** The root entry point into the Graph */
+export type RootQueryKukByArgs = {
+  id?: InputMaybe<Scalars['ID']['input']>;
+  kukId?: InputMaybe<Scalars['Int']['input']>;
+  slug?: InputMaybe<Scalars['String']['input']>;
+  uri?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** The root entry point into the Graph */
+export type RootQueryKuksArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<RootQueryToKukConnectionWhereArgs>;
+};
+
+
+/** The root entry point into the Graph */
+export type RootQueryLpuArgs = {
+  asPreview?: InputMaybe<Scalars['Boolean']['input']>;
+  id: Scalars['ID']['input'];
+  idType?: InputMaybe<LpuIdType>;
+};
+
+
+/** The root entry point into the Graph */
+export type RootQueryLpuByArgs = {
+  id?: InputMaybe<Scalars['ID']['input']>;
+  lpuId?: InputMaybe<Scalars['Int']['input']>;
+  uri?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** The root entry point into the Graph */
+export type RootQueryLpusArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<RootQueryToLpuConnectionWhereArgs>;
+};
+
+
+/** The root entry point into the Graph */
+export type RootQueryMakautArgs = {
+  asPreview?: InputMaybe<Scalars['Boolean']['input']>;
+  id: Scalars['ID']['input'];
+  idType?: InputMaybe<MakautIdType>;
+};
+
+
+/** The root entry point into the Graph */
+export type RootQueryMakautByArgs = {
+  id?: InputMaybe<Scalars['ID']['input']>;
+  makautId?: InputMaybe<Scalars['Int']['input']>;
+  slug?: InputMaybe<Scalars['String']['input']>;
+  uri?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** The root entry point into the Graph */
+export type RootQueryMakautsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<RootQueryToMakautConnectionWhereArgs>;
 };
 
 
@@ -13603,6 +20595,33 @@ export type RootQueryMenusArgs = {
   first?: InputMaybe<Scalars['Int']['input']>;
   last?: InputMaybe<Scalars['Int']['input']>;
   where?: InputMaybe<RootQueryToMenuConnectionWhereArgs>;
+};
+
+
+/** The root entry point into the Graph */
+export type RootQueryMumbaiUniversityArgs = {
+  asPreview?: InputMaybe<Scalars['Boolean']['input']>;
+  id: Scalars['ID']['input'];
+  idType?: InputMaybe<Mumbai_UniversityIdType>;
+};
+
+
+/** The root entry point into the Graph */
+export type RootQueryMumbaiUniversityByArgs = {
+  id?: InputMaybe<Scalars['ID']['input']>;
+  mumbai_universityId?: InputMaybe<Scalars['Int']['input']>;
+  slug?: InputMaybe<Scalars['String']['input']>;
+  uri?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** The root entry point into the Graph */
+export type RootQueryMumbaiUniversitysArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<RootQueryToMumbai_UniversityConnectionWhereArgs>;
 };
 
 
@@ -13729,6 +20748,33 @@ export type RootQueryRevisionsArgs = {
   first?: InputMaybe<Scalars['Int']['input']>;
   last?: InputMaybe<Scalars['Int']['input']>;
   where?: InputMaybe<RootQueryToRevisionsConnectionWhereArgs>;
+};
+
+
+/** The root entry point into the Graph */
+export type RootQueryRgpvArgs = {
+  asPreview?: InputMaybe<Scalars['Boolean']['input']>;
+  id: Scalars['ID']['input'];
+  idType?: InputMaybe<RgpvIdType>;
+};
+
+
+/** The root entry point into the Graph */
+export type RootQueryRgpvByArgs = {
+  id?: InputMaybe<Scalars['ID']['input']>;
+  rgpvId?: InputMaybe<Scalars['Int']['input']>;
+  slug?: InputMaybe<Scalars['String']['input']>;
+  uri?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** The root entry point into the Graph */
+export type RootQueryRgpvsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<RootQueryToRgpvConnectionWhereArgs>;
 };
 
 
@@ -14136,6 +21182,85 @@ export type RootQueryToContentTypeConnectionPageInfo = ContentTypeConnectionPage
   startCursor?: Maybe<Scalars['String']['output']>;
 };
 
+/** Connection between the RootQuery type and the delhi_university type */
+export type RootQueryToDelhi_UniversityConnection = Connection & {
+  __typename?: 'RootQueryToDelhi_universityConnection';
+  /** Edges for the RootQueryToDelhi_universityConnection connection */
+  edges: Array<RootQueryToDelhi_UniversityConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<Delhi_University>;
+  /** Information about pagination in a connection. */
+  pageInfo: RootQueryToDelhi_UniversityConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type RootQueryToDelhi_UniversityConnectionEdge = DelhiUniversityConnectionEdge & Edge & {
+  __typename?: 'RootQueryToDelhi_universityConnectionEdge';
+  /** A cursor for use in pagination */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The item at the end of the edge */
+  node: Delhi_University;
+};
+
+/** Page Info on the &quot;RootQueryToDelhi_universityConnection&quot; */
+export type RootQueryToDelhi_UniversityConnectionPageInfo = Delhi_UniversityConnectionPageInfo & PageInfo & WpPageInfo & {
+  __typename?: 'RootQueryToDelhi_universityConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Arguments for filtering the RootQueryToDelhi_universityConnection connection */
+export type RootQueryToDelhi_UniversityConnectionWhereArgs = {
+  /** The user that's connected as the author of the object. Use the userId for the author object. */
+  author?: InputMaybe<Scalars['Int']['input']>;
+  /** Find objects connected to author(s) in the array of author's userIds */
+  authorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Find objects connected to the author by the author's nicename */
+  authorName?: InputMaybe<Scalars['String']['input']>;
+  /** Find objects NOT connected to author(s) in the array of author's userIds */
+  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Filter the connection based on dates */
+  dateQuery?: InputMaybe<DateQueryInput>;
+  /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
+  hasPassword?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Specific database ID of the object */
+  id?: InputMaybe<Scalars['Int']['input']>;
+  /** Array of IDs for the objects to retrieve */
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Get objects with a specific mimeType property */
+  mimeType?: InputMaybe<MimeTypeEnum>;
+  /** Slug / post_name of the object */
+  name?: InputMaybe<Scalars['String']['input']>;
+  /** Specify objects to retrieve. Use slugs */
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** What parameter to use to order the objects by. */
+  orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
+  /** Use ID to return only children. Use 0 to return only top-level items */
+  parent?: InputMaybe<Scalars['ID']['input']>;
+  /** Specify objects whose parent is in an array */
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Specify posts whose parent is not in an array */
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Show posts with a specific password. */
+  password?: InputMaybe<Scalars['String']['input']>;
+  /** Show Posts based on a keyword search */
+  search?: InputMaybe<Scalars['String']['input']>;
+  /** Retrieve posts where post status is in an array. */
+  stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
+  /** Show posts with a specific status. */
+  status?: InputMaybe<PostStatusEnum>;
+  /** Title of the object */
+  title?: InputMaybe<Scalars['String']['input']>;
+};
+
 /** Connection between the RootQuery type and the EnqueuedScript type */
 export type RootQueryToEnqueuedScriptConnection = Connection & EnqueuedScriptConnection & {
   __typename?: 'RootQueryToEnqueuedScriptConnection';
@@ -14200,6 +21325,85 @@ export type RootQueryToEnqueuedStylesheetConnectionPageInfo = EnqueuedStylesheet
   hasPreviousPage: Scalars['Boolean']['output'];
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Connection between the RootQuery type and the ggsipu type */
+export type RootQueryToGgsipuConnection = Connection & GgsipuConnection & {
+  __typename?: 'RootQueryToGgsipuConnection';
+  /** Edges for the RootQueryToGgsipuConnection connection */
+  edges: Array<RootQueryToGgsipuConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<Ggsipu>;
+  /** Information about pagination in a connection. */
+  pageInfo: RootQueryToGgsipuConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type RootQueryToGgsipuConnectionEdge = Edge & GgsipuConnectionEdge & {
+  __typename?: 'RootQueryToGgsipuConnectionEdge';
+  /** A cursor for use in pagination */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The item at the end of the edge */
+  node: Ggsipu;
+};
+
+/** Page Info on the &quot;RootQueryToGgsipuConnection&quot; */
+export type RootQueryToGgsipuConnectionPageInfo = GgsipuConnectionPageInfo & PageInfo & WpPageInfo & {
+  __typename?: 'RootQueryToGgsipuConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Arguments for filtering the RootQueryToGgsipuConnection connection */
+export type RootQueryToGgsipuConnectionWhereArgs = {
+  /** The user that's connected as the author of the object. Use the userId for the author object. */
+  author?: InputMaybe<Scalars['Int']['input']>;
+  /** Find objects connected to author(s) in the array of author's userIds */
+  authorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Find objects connected to the author by the author's nicename */
+  authorName?: InputMaybe<Scalars['String']['input']>;
+  /** Find objects NOT connected to author(s) in the array of author's userIds */
+  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Filter the connection based on dates */
+  dateQuery?: InputMaybe<DateQueryInput>;
+  /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
+  hasPassword?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Specific database ID of the object */
+  id?: InputMaybe<Scalars['Int']['input']>;
+  /** Array of IDs for the objects to retrieve */
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Get objects with a specific mimeType property */
+  mimeType?: InputMaybe<MimeTypeEnum>;
+  /** Slug / post_name of the object */
+  name?: InputMaybe<Scalars['String']['input']>;
+  /** Specify objects to retrieve. Use slugs */
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** What parameter to use to order the objects by. */
+  orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
+  /** Use ID to return only children. Use 0 to return only top-level items */
+  parent?: InputMaybe<Scalars['ID']['input']>;
+  /** Specify objects whose parent is in an array */
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Specify posts whose parent is not in an array */
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Show posts with a specific password. */
+  password?: InputMaybe<Scalars['String']['input']>;
+  /** Show Posts based on a keyword search */
+  search?: InputMaybe<Scalars['String']['input']>;
+  /** Retrieve posts where post status is in an array. */
+  stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
+  /** Show posts with a specific status. */
+  status?: InputMaybe<PostStatusEnum>;
+  /** Title of the object */
+  title?: InputMaybe<Scalars['String']['input']>;
 };
 
 /** Connection between the RootQuery type and the graphqlDocument type */
@@ -14350,6 +21554,243 @@ export type RootQueryToGraphqlDocumentGroupConnectionWhereArgs = {
   termTaxonomyId?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
   /** Whether to prime meta caches for matched terms. Default true. */
   updateTermMetaCache?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** Connection between the RootQuery type and the kuk type */
+export type RootQueryToKukConnection = Connection & KukConnection & {
+  __typename?: 'RootQueryToKukConnection';
+  /** Edges for the RootQueryToKukConnection connection */
+  edges: Array<RootQueryToKukConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<Kuk>;
+  /** Information about pagination in a connection. */
+  pageInfo: RootQueryToKukConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type RootQueryToKukConnectionEdge = Edge & KukConnectionEdge & {
+  __typename?: 'RootQueryToKukConnectionEdge';
+  /** A cursor for use in pagination */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The item at the end of the edge */
+  node: Kuk;
+};
+
+/** Page Info on the &quot;RootQueryToKukConnection&quot; */
+export type RootQueryToKukConnectionPageInfo = KukConnectionPageInfo & PageInfo & WpPageInfo & {
+  __typename?: 'RootQueryToKukConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Arguments for filtering the RootQueryToKukConnection connection */
+export type RootQueryToKukConnectionWhereArgs = {
+  /** The user that's connected as the author of the object. Use the userId for the author object. */
+  author?: InputMaybe<Scalars['Int']['input']>;
+  /** Find objects connected to author(s) in the array of author's userIds */
+  authorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Find objects connected to the author by the author's nicename */
+  authorName?: InputMaybe<Scalars['String']['input']>;
+  /** Find objects NOT connected to author(s) in the array of author's userIds */
+  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Filter the connection based on dates */
+  dateQuery?: InputMaybe<DateQueryInput>;
+  /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
+  hasPassword?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Specific database ID of the object */
+  id?: InputMaybe<Scalars['Int']['input']>;
+  /** Array of IDs for the objects to retrieve */
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Get objects with a specific mimeType property */
+  mimeType?: InputMaybe<MimeTypeEnum>;
+  /** Slug / post_name of the object */
+  name?: InputMaybe<Scalars['String']['input']>;
+  /** Specify objects to retrieve. Use slugs */
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** What parameter to use to order the objects by. */
+  orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
+  /** Use ID to return only children. Use 0 to return only top-level items */
+  parent?: InputMaybe<Scalars['ID']['input']>;
+  /** Specify objects whose parent is in an array */
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Specify posts whose parent is not in an array */
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Show posts with a specific password. */
+  password?: InputMaybe<Scalars['String']['input']>;
+  /** Show Posts based on a keyword search */
+  search?: InputMaybe<Scalars['String']['input']>;
+  /** Retrieve posts where post status is in an array. */
+  stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
+  /** Show posts with a specific status. */
+  status?: InputMaybe<PostStatusEnum>;
+  /** Title of the object */
+  title?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** Connection between the RootQuery type and the lpu type */
+export type RootQueryToLpuConnection = Connection & LpuConnection & {
+  __typename?: 'RootQueryToLpuConnection';
+  /** Edges for the RootQueryToLpuConnection connection */
+  edges: Array<RootQueryToLpuConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<Lpu>;
+  /** Information about pagination in a connection. */
+  pageInfo: RootQueryToLpuConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type RootQueryToLpuConnectionEdge = Edge & LpuConnectionEdge & {
+  __typename?: 'RootQueryToLpuConnectionEdge';
+  /** A cursor for use in pagination */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The item at the end of the edge */
+  node: Lpu;
+};
+
+/** Page Info on the &quot;RootQueryToLpuConnection&quot; */
+export type RootQueryToLpuConnectionPageInfo = LpuConnectionPageInfo & PageInfo & WpPageInfo & {
+  __typename?: 'RootQueryToLpuConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Arguments for filtering the RootQueryToLpuConnection connection */
+export type RootQueryToLpuConnectionWhereArgs = {
+  /** The user that's connected as the author of the object. Use the userId for the author object. */
+  author?: InputMaybe<Scalars['Int']['input']>;
+  /** Find objects connected to author(s) in the array of author's userIds */
+  authorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Find objects connected to the author by the author's nicename */
+  authorName?: InputMaybe<Scalars['String']['input']>;
+  /** Find objects NOT connected to author(s) in the array of author's userIds */
+  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Filter the connection based on dates */
+  dateQuery?: InputMaybe<DateQueryInput>;
+  /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
+  hasPassword?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Specific database ID of the object */
+  id?: InputMaybe<Scalars['Int']['input']>;
+  /** Array of IDs for the objects to retrieve */
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Get objects with a specific mimeType property */
+  mimeType?: InputMaybe<MimeTypeEnum>;
+  /** Slug / post_name of the object */
+  name?: InputMaybe<Scalars['String']['input']>;
+  /** Specify objects to retrieve. Use slugs */
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** What parameter to use to order the objects by. */
+  orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
+  /** Use ID to return only children. Use 0 to return only top-level items */
+  parent?: InputMaybe<Scalars['ID']['input']>;
+  /** Specify objects whose parent is in an array */
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Specify posts whose parent is not in an array */
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Show posts with a specific password. */
+  password?: InputMaybe<Scalars['String']['input']>;
+  /** Show Posts based on a keyword search */
+  search?: InputMaybe<Scalars['String']['input']>;
+  /** Retrieve posts where post status is in an array. */
+  stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
+  /** Show posts with a specific status. */
+  status?: InputMaybe<PostStatusEnum>;
+  /** Title of the object */
+  title?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** Connection between the RootQuery type and the makaut type */
+export type RootQueryToMakautConnection = Connection & MakautConnection & {
+  __typename?: 'RootQueryToMakautConnection';
+  /** Edges for the RootQueryToMakautConnection connection */
+  edges: Array<RootQueryToMakautConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<Makaut>;
+  /** Information about pagination in a connection. */
+  pageInfo: RootQueryToMakautConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type RootQueryToMakautConnectionEdge = Edge & MakautConnectionEdge & {
+  __typename?: 'RootQueryToMakautConnectionEdge';
+  /** A cursor for use in pagination */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The item at the end of the edge */
+  node: Makaut;
+};
+
+/** Page Info on the &quot;RootQueryToMakautConnection&quot; */
+export type RootQueryToMakautConnectionPageInfo = MakautConnectionPageInfo & PageInfo & WpPageInfo & {
+  __typename?: 'RootQueryToMakautConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Arguments for filtering the RootQueryToMakautConnection connection */
+export type RootQueryToMakautConnectionWhereArgs = {
+  /** The user that's connected as the author of the object. Use the userId for the author object. */
+  author?: InputMaybe<Scalars['Int']['input']>;
+  /** Find objects connected to author(s) in the array of author's userIds */
+  authorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Find objects connected to the author by the author's nicename */
+  authorName?: InputMaybe<Scalars['String']['input']>;
+  /** Find objects NOT connected to author(s) in the array of author's userIds */
+  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Filter the connection based on dates */
+  dateQuery?: InputMaybe<DateQueryInput>;
+  /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
+  hasPassword?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Specific database ID of the object */
+  id?: InputMaybe<Scalars['Int']['input']>;
+  /** Array of IDs for the objects to retrieve */
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Get objects with a specific mimeType property */
+  mimeType?: InputMaybe<MimeTypeEnum>;
+  /** Slug / post_name of the object */
+  name?: InputMaybe<Scalars['String']['input']>;
+  /** Specify objects to retrieve. Use slugs */
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** What parameter to use to order the objects by. */
+  orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
+  /** Use ID to return only children. Use 0 to return only top-level items */
+  parent?: InputMaybe<Scalars['ID']['input']>;
+  /** Specify objects whose parent is in an array */
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Specify posts whose parent is not in an array */
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Show posts with a specific password. */
+  password?: InputMaybe<Scalars['String']['input']>;
+  /** Show Posts based on a keyword search */
+  search?: InputMaybe<Scalars['String']['input']>;
+  /** Retrieve posts where post status is in an array. */
+  stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
+  /** Show posts with a specific status. */
+  status?: InputMaybe<PostStatusEnum>;
+  /** Title of the object */
+  title?: InputMaybe<Scalars['String']['input']>;
 };
 
 /** Connection between the RootQuery type and the mediaItem type */
@@ -14517,6 +21958,85 @@ export type RootQueryToMenuItemConnectionWhereArgs = {
   parentDatabaseId?: InputMaybe<Scalars['Int']['input']>;
   /** The ID of the parent menu object */
   parentId?: InputMaybe<Scalars['ID']['input']>;
+};
+
+/** Connection between the RootQuery type and the mumbai_university type */
+export type RootQueryToMumbai_UniversityConnection = Connection & {
+  __typename?: 'RootQueryToMumbai_universityConnection';
+  /** Edges for the RootQueryToMumbai_universityConnection connection */
+  edges: Array<RootQueryToMumbai_UniversityConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<Mumbai_University>;
+  /** Information about pagination in a connection. */
+  pageInfo: RootQueryToMumbai_UniversityConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type RootQueryToMumbai_UniversityConnectionEdge = Edge & MumbaiUniversityConnectionEdge & {
+  __typename?: 'RootQueryToMumbai_universityConnectionEdge';
+  /** A cursor for use in pagination */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The item at the end of the edge */
+  node: Mumbai_University;
+};
+
+/** Page Info on the &quot;RootQueryToMumbai_universityConnection&quot; */
+export type RootQueryToMumbai_UniversityConnectionPageInfo = Mumbai_UniversityConnectionPageInfo & PageInfo & WpPageInfo & {
+  __typename?: 'RootQueryToMumbai_universityConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Arguments for filtering the RootQueryToMumbai_universityConnection connection */
+export type RootQueryToMumbai_UniversityConnectionWhereArgs = {
+  /** The user that's connected as the author of the object. Use the userId for the author object. */
+  author?: InputMaybe<Scalars['Int']['input']>;
+  /** Find objects connected to author(s) in the array of author's userIds */
+  authorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Find objects connected to the author by the author's nicename */
+  authorName?: InputMaybe<Scalars['String']['input']>;
+  /** Find objects NOT connected to author(s) in the array of author's userIds */
+  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Filter the connection based on dates */
+  dateQuery?: InputMaybe<DateQueryInput>;
+  /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
+  hasPassword?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Specific database ID of the object */
+  id?: InputMaybe<Scalars['Int']['input']>;
+  /** Array of IDs for the objects to retrieve */
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Get objects with a specific mimeType property */
+  mimeType?: InputMaybe<MimeTypeEnum>;
+  /** Slug / post_name of the object */
+  name?: InputMaybe<Scalars['String']['input']>;
+  /** Specify objects to retrieve. Use slugs */
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** What parameter to use to order the objects by. */
+  orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
+  /** Use ID to return only children. Use 0 to return only top-level items */
+  parent?: InputMaybe<Scalars['ID']['input']>;
+  /** Specify objects whose parent is in an array */
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Specify posts whose parent is not in an array */
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Show posts with a specific password. */
+  password?: InputMaybe<Scalars['String']['input']>;
+  /** Show Posts based on a keyword search */
+  search?: InputMaybe<Scalars['String']['input']>;
+  /** Retrieve posts where post status is in an array. */
+  stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
+  /** Show posts with a specific status. */
+  status?: InputMaybe<PostStatusEnum>;
+  /** Title of the object */
+  title?: InputMaybe<Scalars['String']['input']>;
 };
 
 /** Connection between the RootQuery type and the page type */
@@ -14862,6 +22382,85 @@ export type RootQueryToRevisionsConnectionPageInfo = ContentNodeConnectionPageIn
 export type RootQueryToRevisionsConnectionWhereArgs = {
   /** The Types of content to filter */
   contentTypes?: InputMaybe<Array<InputMaybe<ContentTypeEnum>>>;
+  /** Filter the connection based on dates */
+  dateQuery?: InputMaybe<DateQueryInput>;
+  /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
+  hasPassword?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Specific database ID of the object */
+  id?: InputMaybe<Scalars['Int']['input']>;
+  /** Array of IDs for the objects to retrieve */
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Get objects with a specific mimeType property */
+  mimeType?: InputMaybe<MimeTypeEnum>;
+  /** Slug / post_name of the object */
+  name?: InputMaybe<Scalars['String']['input']>;
+  /** Specify objects to retrieve. Use slugs */
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** What parameter to use to order the objects by. */
+  orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
+  /** Use ID to return only children. Use 0 to return only top-level items */
+  parent?: InputMaybe<Scalars['ID']['input']>;
+  /** Specify objects whose parent is in an array */
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Specify posts whose parent is not in an array */
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Show posts with a specific password. */
+  password?: InputMaybe<Scalars['String']['input']>;
+  /** Show Posts based on a keyword search */
+  search?: InputMaybe<Scalars['String']['input']>;
+  /** Retrieve posts where post status is in an array. */
+  stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
+  /** Show posts with a specific status. */
+  status?: InputMaybe<PostStatusEnum>;
+  /** Title of the object */
+  title?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** Connection between the RootQuery type and the rgpv type */
+export type RootQueryToRgpvConnection = Connection & RgpvConnection & {
+  __typename?: 'RootQueryToRgpvConnection';
+  /** Edges for the RootQueryToRgpvConnection connection */
+  edges: Array<RootQueryToRgpvConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<Rgpv>;
+  /** Information about pagination in a connection. */
+  pageInfo: RootQueryToRgpvConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type RootQueryToRgpvConnectionEdge = Edge & RgpvConnectionEdge & {
+  __typename?: 'RootQueryToRgpvConnectionEdge';
+  /** A cursor for use in pagination */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The item at the end of the edge */
+  node: Rgpv;
+};
+
+/** Page Info on the &quot;RootQueryToRgpvConnection&quot; */
+export type RootQueryToRgpvConnectionPageInfo = PageInfo & RgpvConnectionPageInfo & WpPageInfo & {
+  __typename?: 'RootQueryToRgpvConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Arguments for filtering the RootQueryToRgpvConnection connection */
+export type RootQueryToRgpvConnectionWhereArgs = {
+  /** The user that's connected as the author of the object. Use the userId for the author object. */
+  author?: InputMaybe<Scalars['Int']['input']>;
+  /** Find objects connected to author(s) in the array of author's userIds */
+  authorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Find objects connected to the author by the author's nicename */
+  authorName?: InputMaybe<Scalars['String']['input']>;
+  /** Find objects NOT connected to author(s) in the array of author's userIds */
+  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
   /** Filter the connection based on dates */
   dateQuery?: InputMaybe<DateQueryInput>;
   /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
@@ -15875,34 +23474,6 @@ export type TaxonomyToTermNodeConnectionPageInfo = PageInfo & TermNodeConnection
   startCursor?: Maybe<Scalars['String']['output']>;
 };
 
-/** The template assigned to the node */
-export type Template_PageNoTitle = ContentTemplate & {
-  __typename?: 'Template_PageNoTitle';
-  /** The name of the template */
-  templateName?: Maybe<Scalars['String']['output']>;
-};
-
-/** The template assigned to the node */
-export type Template_PageWithSidebar = ContentTemplate & {
-  __typename?: 'Template_PageWithSidebar';
-  /** The name of the template */
-  templateName?: Maybe<Scalars['String']['output']>;
-};
-
-/** The template assigned to the node */
-export type Template_PageWithWideImage = ContentTemplate & {
-  __typename?: 'Template_PageWithWideImage';
-  /** The name of the template */
-  templateName?: Maybe<Scalars['String']['output']>;
-};
-
-/** The template assigned to the node */
-export type Template_SingleWithSidebar = ContentTemplate & {
-  __typename?: 'Template_SingleWithSidebar';
-  /** The name of the template */
-  templateName?: Maybe<Scalars['String']['output']>;
-};
-
 /** Terms are nodes within a Taxonomy, used to group and relate other nodes. */
 export type TermNode = {
   /** @deprecated Deprecated in favor of using Next.js pages */
@@ -16238,6 +23809,104 @@ export type UpdateCommentPayload = {
   success?: Maybe<Scalars['Boolean']['output']>;
 };
 
+/** Input for the updateDelhi_university mutation. */
+export type UpdateDelhi_UniversityInput = {
+  /** The userId to assign as the author of the object */
+  authorId?: InputMaybe<Scalars['ID']['input']>;
+  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: InputMaybe<Scalars['String']['input']>;
+  /** The comment status for the object */
+  commentStatus?: InputMaybe<Scalars['String']['input']>;
+  /** The content of the object */
+  content?: InputMaybe<Scalars['String']['input']>;
+  /** The date of the object. Preferable to enter as year/month/day (e.g. 01/31/2017) as it will rearrange date as fit if it is not specified. Incomplete dates may have unintended results for example, "2017" as the input will use current date with timestamp 20:17  */
+  date?: InputMaybe<Scalars['String']['input']>;
+  /** The excerpt of the object */
+  excerpt?: InputMaybe<Scalars['String']['input']>;
+  /** The ID of the delhi_university object */
+  id: Scalars['ID']['input'];
+  /** Override the edit lock when another user is editing the post */
+  ignoreEditLock?: InputMaybe<Scalars['Boolean']['input']>;
+  /** A field used for ordering posts. This is typically used with nav menu items or for special ordering of hierarchical content types. */
+  menuOrder?: InputMaybe<Scalars['Int']['input']>;
+  /** The ID of the parent object */
+  parentId?: InputMaybe<Scalars['ID']['input']>;
+  /** The password used to protect the content of the object */
+  password?: InputMaybe<Scalars['String']['input']>;
+  /** The ping status for the object */
+  pingStatus?: InputMaybe<Scalars['String']['input']>;
+  /** URLs that have been pinged. */
+  pinged?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Set connections between the delhi_university and postFormats */
+  postFormats?: InputMaybe<Delhi_UniversityPostFormatsInput>;
+  /** The slug of the object */
+  slug?: InputMaybe<Scalars['String']['input']>;
+  /** The status of the object */
+  status?: InputMaybe<PostStatusEnum>;
+  /** The title of the object */
+  title?: InputMaybe<Scalars['String']['input']>;
+  /** URLs queued to be pinged. */
+  toPing?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+/** The payload for the updateDelhi_university mutation. */
+export type UpdateDelhi_UniversityPayload = {
+  __typename?: 'UpdateDelhi_universityPayload';
+  /** If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: Maybe<Scalars['String']['output']>;
+  /** The Post object mutation type. */
+  delhi_university?: Maybe<Delhi_University>;
+};
+
+/** Input for the updateGgsipu mutation. */
+export type UpdateGgsipuInput = {
+  /** The userId to assign as the author of the object */
+  authorId?: InputMaybe<Scalars['ID']['input']>;
+  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: InputMaybe<Scalars['String']['input']>;
+  /** The comment status for the object */
+  commentStatus?: InputMaybe<Scalars['String']['input']>;
+  /** The content of the object */
+  content?: InputMaybe<Scalars['String']['input']>;
+  /** The date of the object. Preferable to enter as year/month/day (e.g. 01/31/2017) as it will rearrange date as fit if it is not specified. Incomplete dates may have unintended results for example, "2017" as the input will use current date with timestamp 20:17  */
+  date?: InputMaybe<Scalars['String']['input']>;
+  /** The excerpt of the object */
+  excerpt?: InputMaybe<Scalars['String']['input']>;
+  /** The ID of the ggsipu object */
+  id: Scalars['ID']['input'];
+  /** Override the edit lock when another user is editing the post */
+  ignoreEditLock?: InputMaybe<Scalars['Boolean']['input']>;
+  /** A field used for ordering posts. This is typically used with nav menu items or for special ordering of hierarchical content types. */
+  menuOrder?: InputMaybe<Scalars['Int']['input']>;
+  /** The ID of the parent object */
+  parentId?: InputMaybe<Scalars['ID']['input']>;
+  /** The password used to protect the content of the object */
+  password?: InputMaybe<Scalars['String']['input']>;
+  /** The ping status for the object */
+  pingStatus?: InputMaybe<Scalars['String']['input']>;
+  /** URLs that have been pinged. */
+  pinged?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Set connections between the ggsipu and postFormats */
+  postFormats?: InputMaybe<GgsipuPostFormatsInput>;
+  /** The slug of the object */
+  slug?: InputMaybe<Scalars['String']['input']>;
+  /** The status of the object */
+  status?: InputMaybe<PostStatusEnum>;
+  /** The title of the object */
+  title?: InputMaybe<Scalars['String']['input']>;
+  /** URLs queued to be pinged. */
+  toPing?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+/** The payload for the updateGgsipu mutation. */
+export type UpdateGgsipuPayload = {
+  __typename?: 'UpdateGgsipuPayload';
+  /** If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: Maybe<Scalars['String']['output']>;
+  /** The Post object mutation type. */
+  ggsipu?: Maybe<Ggsipu>;
+};
+
 /** Input for the updateGraphqlDocumentGroup mutation. */
 export type UpdateGraphqlDocumentGroupInput = {
   /** The slug that the graphql_document_group will be an alias of */
@@ -16306,6 +23975,149 @@ export type UpdateGraphqlDocumentPayload = {
   graphqlDocument?: Maybe<GraphqlDocument>;
 };
 
+/** Input for the updateKuk mutation. */
+export type UpdateKukInput = {
+  /** The userId to assign as the author of the object */
+  authorId?: InputMaybe<Scalars['ID']['input']>;
+  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: InputMaybe<Scalars['String']['input']>;
+  /** The comment status for the object */
+  commentStatus?: InputMaybe<Scalars['String']['input']>;
+  /** The content of the object */
+  content?: InputMaybe<Scalars['String']['input']>;
+  /** The date of the object. Preferable to enter as year/month/day (e.g. 01/31/2017) as it will rearrange date as fit if it is not specified. Incomplete dates may have unintended results for example, "2017" as the input will use current date with timestamp 20:17  */
+  date?: InputMaybe<Scalars['String']['input']>;
+  /** The excerpt of the object */
+  excerpt?: InputMaybe<Scalars['String']['input']>;
+  /** The ID of the kuk object */
+  id: Scalars['ID']['input'];
+  /** Override the edit lock when another user is editing the post */
+  ignoreEditLock?: InputMaybe<Scalars['Boolean']['input']>;
+  /** A field used for ordering posts. This is typically used with nav menu items or for special ordering of hierarchical content types. */
+  menuOrder?: InputMaybe<Scalars['Int']['input']>;
+  /** The password used to protect the content of the object */
+  password?: InputMaybe<Scalars['String']['input']>;
+  /** The ping status for the object */
+  pingStatus?: InputMaybe<Scalars['String']['input']>;
+  /** URLs that have been pinged. */
+  pinged?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Set connections between the kuk and postFormats */
+  postFormats?: InputMaybe<KukPostFormatsInput>;
+  /** The slug of the object */
+  slug?: InputMaybe<Scalars['String']['input']>;
+  /** The status of the object */
+  status?: InputMaybe<PostStatusEnum>;
+  /** The title of the object */
+  title?: InputMaybe<Scalars['String']['input']>;
+  /** URLs queued to be pinged. */
+  toPing?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+/** The payload for the updateKuk mutation. */
+export type UpdateKukPayload = {
+  __typename?: 'UpdateKukPayload';
+  /** If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: Maybe<Scalars['String']['output']>;
+  /** The Post object mutation type. */
+  kuk?: Maybe<Kuk>;
+};
+
+/** Input for the updateLpu mutation. */
+export type UpdateLpuInput = {
+  /** The userId to assign as the author of the object */
+  authorId?: InputMaybe<Scalars['ID']['input']>;
+  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: InputMaybe<Scalars['String']['input']>;
+  /** The comment status for the object */
+  commentStatus?: InputMaybe<Scalars['String']['input']>;
+  /** The content of the object */
+  content?: InputMaybe<Scalars['String']['input']>;
+  /** The date of the object. Preferable to enter as year/month/day (e.g. 01/31/2017) as it will rearrange date as fit if it is not specified. Incomplete dates may have unintended results for example, "2017" as the input will use current date with timestamp 20:17  */
+  date?: InputMaybe<Scalars['String']['input']>;
+  /** The excerpt of the object */
+  excerpt?: InputMaybe<Scalars['String']['input']>;
+  /** The ID of the lpu object */
+  id: Scalars['ID']['input'];
+  /** Override the edit lock when another user is editing the post */
+  ignoreEditLock?: InputMaybe<Scalars['Boolean']['input']>;
+  /** A field used for ordering posts. This is typically used with nav menu items or for special ordering of hierarchical content types. */
+  menuOrder?: InputMaybe<Scalars['Int']['input']>;
+  /** The ID of the parent object */
+  parentId?: InputMaybe<Scalars['ID']['input']>;
+  /** The password used to protect the content of the object */
+  password?: InputMaybe<Scalars['String']['input']>;
+  /** The ping status for the object */
+  pingStatus?: InputMaybe<Scalars['String']['input']>;
+  /** URLs that have been pinged. */
+  pinged?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Set connections between the lpu and postFormats */
+  postFormats?: InputMaybe<LpuPostFormatsInput>;
+  /** The slug of the object */
+  slug?: InputMaybe<Scalars['String']['input']>;
+  /** The status of the object */
+  status?: InputMaybe<PostStatusEnum>;
+  /** The title of the object */
+  title?: InputMaybe<Scalars['String']['input']>;
+  /** URLs queued to be pinged. */
+  toPing?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+/** The payload for the updateLpu mutation. */
+export type UpdateLpuPayload = {
+  __typename?: 'UpdateLpuPayload';
+  /** If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: Maybe<Scalars['String']['output']>;
+  /** The Post object mutation type. */
+  lpu?: Maybe<Lpu>;
+};
+
+/** Input for the updateMakaut mutation. */
+export type UpdateMakautInput = {
+  /** The userId to assign as the author of the object */
+  authorId?: InputMaybe<Scalars['ID']['input']>;
+  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: InputMaybe<Scalars['String']['input']>;
+  /** The comment status for the object */
+  commentStatus?: InputMaybe<Scalars['String']['input']>;
+  /** The content of the object */
+  content?: InputMaybe<Scalars['String']['input']>;
+  /** The date of the object. Preferable to enter as year/month/day (e.g. 01/31/2017) as it will rearrange date as fit if it is not specified. Incomplete dates may have unintended results for example, "2017" as the input will use current date with timestamp 20:17  */
+  date?: InputMaybe<Scalars['String']['input']>;
+  /** The excerpt of the object */
+  excerpt?: InputMaybe<Scalars['String']['input']>;
+  /** The ID of the makaut object */
+  id: Scalars['ID']['input'];
+  /** Override the edit lock when another user is editing the post */
+  ignoreEditLock?: InputMaybe<Scalars['Boolean']['input']>;
+  /** A field used for ordering posts. This is typically used with nav menu items or for special ordering of hierarchical content types. */
+  menuOrder?: InputMaybe<Scalars['Int']['input']>;
+  /** The password used to protect the content of the object */
+  password?: InputMaybe<Scalars['String']['input']>;
+  /** The ping status for the object */
+  pingStatus?: InputMaybe<Scalars['String']['input']>;
+  /** URLs that have been pinged. */
+  pinged?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Set connections between the makaut and postFormats */
+  postFormats?: InputMaybe<MakautPostFormatsInput>;
+  /** The slug of the object */
+  slug?: InputMaybe<Scalars['String']['input']>;
+  /** The status of the object */
+  status?: InputMaybe<PostStatusEnum>;
+  /** The title of the object */
+  title?: InputMaybe<Scalars['String']['input']>;
+  /** URLs queued to be pinged. */
+  toPing?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+/** The payload for the updateMakaut mutation. */
+export type UpdateMakautPayload = {
+  __typename?: 'UpdateMakautPayload';
+  /** If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: Maybe<Scalars['String']['output']>;
+  /** The Post object mutation type. */
+  makaut?: Maybe<Makaut>;
+};
+
 /** Input for the updateMediaItem mutation. */
 export type UpdateMediaItemInput = {
   /** Alternative text to display when mediaItem is not displayed */
@@ -16349,6 +24161,53 @@ export type UpdateMediaItemPayload = {
   clientMutationId?: Maybe<Scalars['String']['output']>;
   /** The MediaItem object mutation type. */
   mediaItem?: Maybe<MediaItem>;
+};
+
+/** Input for the updateMumbai_university mutation. */
+export type UpdateMumbai_UniversityInput = {
+  /** The userId to assign as the author of the object */
+  authorId?: InputMaybe<Scalars['ID']['input']>;
+  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: InputMaybe<Scalars['String']['input']>;
+  /** The comment status for the object */
+  commentStatus?: InputMaybe<Scalars['String']['input']>;
+  /** The content of the object */
+  content?: InputMaybe<Scalars['String']['input']>;
+  /** The date of the object. Preferable to enter as year/month/day (e.g. 01/31/2017) as it will rearrange date as fit if it is not specified. Incomplete dates may have unintended results for example, "2017" as the input will use current date with timestamp 20:17  */
+  date?: InputMaybe<Scalars['String']['input']>;
+  /** The excerpt of the object */
+  excerpt?: InputMaybe<Scalars['String']['input']>;
+  /** The ID of the mumbai_university object */
+  id: Scalars['ID']['input'];
+  /** Override the edit lock when another user is editing the post */
+  ignoreEditLock?: InputMaybe<Scalars['Boolean']['input']>;
+  /** A field used for ordering posts. This is typically used with nav menu items or for special ordering of hierarchical content types. */
+  menuOrder?: InputMaybe<Scalars['Int']['input']>;
+  /** The password used to protect the content of the object */
+  password?: InputMaybe<Scalars['String']['input']>;
+  /** The ping status for the object */
+  pingStatus?: InputMaybe<Scalars['String']['input']>;
+  /** URLs that have been pinged. */
+  pinged?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Set connections between the mumbai_university and postFormats */
+  postFormats?: InputMaybe<Mumbai_UniversityPostFormatsInput>;
+  /** The slug of the object */
+  slug?: InputMaybe<Scalars['String']['input']>;
+  /** The status of the object */
+  status?: InputMaybe<PostStatusEnum>;
+  /** The title of the object */
+  title?: InputMaybe<Scalars['String']['input']>;
+  /** URLs queued to be pinged. */
+  toPing?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+/** The payload for the updateMumbai_university mutation. */
+export type UpdateMumbai_UniversityPayload = {
+  __typename?: 'UpdateMumbai_universityPayload';
+  /** If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: Maybe<Scalars['String']['output']>;
+  /** The Post object mutation type. */
+  mumbai_university?: Maybe<Mumbai_University>;
 };
 
 /** Input for the updatePage mutation. */
@@ -16487,6 +24346,53 @@ export type UpdatePostPayload = {
   clientMutationId?: Maybe<Scalars['String']['output']>;
   /** The Post object mutation type. */
   post?: Maybe<Post>;
+};
+
+/** Input for the updateRgpv mutation. */
+export type UpdateRgpvInput = {
+  /** The userId to assign as the author of the object */
+  authorId?: InputMaybe<Scalars['ID']['input']>;
+  /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: InputMaybe<Scalars['String']['input']>;
+  /** The comment status for the object */
+  commentStatus?: InputMaybe<Scalars['String']['input']>;
+  /** The content of the object */
+  content?: InputMaybe<Scalars['String']['input']>;
+  /** The date of the object. Preferable to enter as year/month/day (e.g. 01/31/2017) as it will rearrange date as fit if it is not specified. Incomplete dates may have unintended results for example, "2017" as the input will use current date with timestamp 20:17  */
+  date?: InputMaybe<Scalars['String']['input']>;
+  /** The excerpt of the object */
+  excerpt?: InputMaybe<Scalars['String']['input']>;
+  /** The ID of the rgpv object */
+  id: Scalars['ID']['input'];
+  /** Override the edit lock when another user is editing the post */
+  ignoreEditLock?: InputMaybe<Scalars['Boolean']['input']>;
+  /** A field used for ordering posts. This is typically used with nav menu items or for special ordering of hierarchical content types. */
+  menuOrder?: InputMaybe<Scalars['Int']['input']>;
+  /** The password used to protect the content of the object */
+  password?: InputMaybe<Scalars['String']['input']>;
+  /** The ping status for the object */
+  pingStatus?: InputMaybe<Scalars['String']['input']>;
+  /** URLs that have been pinged. */
+  pinged?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Set connections between the rgpv and postFormats */
+  postFormats?: InputMaybe<RgpvPostFormatsInput>;
+  /** The slug of the object */
+  slug?: InputMaybe<Scalars['String']['input']>;
+  /** The status of the object */
+  status?: InputMaybe<PostStatusEnum>;
+  /** The title of the object */
+  title?: InputMaybe<Scalars['String']['input']>;
+  /** URLs queued to be pinged. */
+  toPing?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+/** The payload for the updateRgpv mutation. */
+export type UpdateRgpvPayload = {
+  __typename?: 'UpdateRgpvPayload';
+  /** If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
+  clientMutationId?: Maybe<Scalars['String']['output']>;
+  /** The Post object mutation type. */
+  rgpv?: Maybe<Rgpv>;
 };
 
 /** Input for the updateSettings mutation. */
@@ -16688,6 +24594,8 @@ export type User = Commenter & DatabaseIdentifier & Node & UniformResourceIdenti
   conditionalTags?: Maybe<ConditionalTags>;
   /** Identifies the primary key from the database. */
   databaseId: Scalars['Int']['output'];
+  /** Connection between the User type and the delhi_university type */
+  delhiUniversitys?: Maybe<UserToDelhi_UniversityConnection>;
   /** Description of the user. */
   description?: Maybe<Scalars['String']['output']>;
   /** Email address of the user. This is equivalent to the WP_User-&gt;user_email property. */
@@ -16700,6 +24608,8 @@ export type User = Commenter & DatabaseIdentifier & Node & UniformResourceIdenti
   extraCapabilities?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
   /** First name of the user. This is equivalent to the WP_User-&gt;user_first_name property. */
   firstName?: Maybe<Scalars['String']['output']>;
+  /** Connection between the User type and the ggsipu type */
+  ggsipus?: Maybe<UserToGgsipuConnection>;
   /** The globally unique identifier for the user object. */
   id: Scalars['ID']['output'];
   /** Whether the node is a Comment */
@@ -16714,12 +24624,20 @@ export type User = Commenter & DatabaseIdentifier & Node & UniformResourceIdenti
   isRestricted?: Maybe<Scalars['Boolean']['output']>;
   /** Whether the node is a Term */
   isTermNode: Scalars['Boolean']['output'];
+  /** Connection between the User type and the kuk type */
+  kuks?: Maybe<UserToKukConnection>;
   /** Last name of the user. This is equivalent to the WP_User-&gt;user_last_name property. */
   lastName?: Maybe<Scalars['String']['output']>;
   /** The preferred language locale set for the user. Value derived from get_user_locale(). */
   locale?: Maybe<Scalars['String']['output']>;
+  /** Connection between the User type and the lpu type */
+  lpus?: Maybe<UserToLpuConnection>;
+  /** Connection between the User type and the makaut type */
+  makauts?: Maybe<UserToMakautConnection>;
   /** Connection between the User type and the mediaItem type */
   mediaItems?: Maybe<UserToMediaItemConnection>;
+  /** Connection between the User type and the mumbai_university type */
+  mumbaiUniversitys?: Maybe<UserToMumbai_UniversityConnection>;
   /** Display name of the user. This is equivalent to the WP_User-&gt;display_name property. */
   name?: Maybe<Scalars['String']['output']>;
   /** Fields of the NcUserMeta ACF Field Group */
@@ -16736,6 +24654,8 @@ export type User = Commenter & DatabaseIdentifier & Node & UniformResourceIdenti
   registeredDate?: Maybe<Scalars['String']['output']>;
   /** Connection between the User and Revisions authored by the user */
   revisions?: Maybe<UserToRevisionsConnection>;
+  /** Connection between the User type and the rgpv type */
+  rgpvs?: Maybe<UserToRgpvConnection>;
   /** Connection between the User type and the UserRole type */
   roles?: Maybe<UserToUserRoleConnection>;
   /** Whether the Toolbar should be displayed when the user is viewing the site. */
@@ -16779,6 +24699,16 @@ export type UserCommentsArgs = {
 
 
 /** A User object */
+export type UserDelhiUniversitysArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<UserToDelhi_UniversityConnectionWhereArgs>;
+};
+
+
+/** A User object */
 export type UserEnqueuedScriptsArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
@@ -16797,12 +24727,62 @@ export type UserEnqueuedStylesheetsArgs = {
 
 
 /** A User object */
+export type UserGgsipusArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<UserToGgsipuConnectionWhereArgs>;
+};
+
+
+/** A User object */
+export type UserKuksArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<UserToKukConnectionWhereArgs>;
+};
+
+
+/** A User object */
+export type UserLpusArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<UserToLpuConnectionWhereArgs>;
+};
+
+
+/** A User object */
+export type UserMakautsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<UserToMakautConnectionWhereArgs>;
+};
+
+
+/** A User object */
 export type UserMediaItemsArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   last?: InputMaybe<Scalars['Int']['input']>;
   where?: InputMaybe<UserToMediaItemConnectionWhereArgs>;
+};
+
+
+/** A User object */
+export type UserMumbaiUniversitysArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<UserToMumbai_UniversityConnectionWhereArgs>;
 };
 
 
@@ -16833,6 +24813,16 @@ export type UserRevisionsArgs = {
   first?: InputMaybe<Scalars['Int']['input']>;
   last?: InputMaybe<Scalars['Int']['input']>;
   where?: InputMaybe<UserToRevisionsConnectionWhereArgs>;
+};
+
+
+/** A User object */
+export type UserRgpvsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<UserToRgpvConnectionWhereArgs>;
 };
 
 
@@ -17186,6 +25176,10 @@ export enum UserRoleEnum {
   /** User role with specific capabilities */
   Editor = 'EDITOR',
   /** User role with specific capabilities */
+  SeoEditor = 'SEO_EDITOR',
+  /** User role with specific capabilities */
+  SeoManager = 'SEO_MANAGER',
+  /** User role with specific capabilities */
   Subscriber = 'SUBSCRIBER'
 }
 
@@ -17284,6 +25278,85 @@ export type UserToCommentConnectionWhereArgs = {
   userId?: InputMaybe<Scalars['ID']['input']>;
 };
 
+/** Connection between the User type and the delhi_university type */
+export type UserToDelhi_UniversityConnection = Connection & {
+  __typename?: 'UserToDelhi_universityConnection';
+  /** Edges for the UserToDelhi_universityConnection connection */
+  edges: Array<UserToDelhi_UniversityConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<Delhi_University>;
+  /** Information about pagination in a connection. */
+  pageInfo: UserToDelhi_UniversityConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type UserToDelhi_UniversityConnectionEdge = DelhiUniversityConnectionEdge & Edge & {
+  __typename?: 'UserToDelhi_universityConnectionEdge';
+  /** A cursor for use in pagination */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The item at the end of the edge */
+  node: Delhi_University;
+};
+
+/** Page Info on the &quot;UserToDelhi_universityConnection&quot; */
+export type UserToDelhi_UniversityConnectionPageInfo = Delhi_UniversityConnectionPageInfo & PageInfo & WpPageInfo & {
+  __typename?: 'UserToDelhi_universityConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Arguments for filtering the UserToDelhi_universityConnection connection */
+export type UserToDelhi_UniversityConnectionWhereArgs = {
+  /** The user that's connected as the author of the object. Use the userId for the author object. */
+  author?: InputMaybe<Scalars['Int']['input']>;
+  /** Find objects connected to author(s) in the array of author's userIds */
+  authorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Find objects connected to the author by the author's nicename */
+  authorName?: InputMaybe<Scalars['String']['input']>;
+  /** Find objects NOT connected to author(s) in the array of author's userIds */
+  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Filter the connection based on dates */
+  dateQuery?: InputMaybe<DateQueryInput>;
+  /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
+  hasPassword?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Specific database ID of the object */
+  id?: InputMaybe<Scalars['Int']['input']>;
+  /** Array of IDs for the objects to retrieve */
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Get objects with a specific mimeType property */
+  mimeType?: InputMaybe<MimeTypeEnum>;
+  /** Slug / post_name of the object */
+  name?: InputMaybe<Scalars['String']['input']>;
+  /** Specify objects to retrieve. Use slugs */
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** What parameter to use to order the objects by. */
+  orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
+  /** Use ID to return only children. Use 0 to return only top-level items */
+  parent?: InputMaybe<Scalars['ID']['input']>;
+  /** Specify objects whose parent is in an array */
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Specify posts whose parent is not in an array */
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Show posts with a specific password. */
+  password?: InputMaybe<Scalars['String']['input']>;
+  /** Show Posts based on a keyword search */
+  search?: InputMaybe<Scalars['String']['input']>;
+  /** Retrieve posts where post status is in an array. */
+  stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
+  /** Show posts with a specific status. */
+  status?: InputMaybe<PostStatusEnum>;
+  /** Title of the object */
+  title?: InputMaybe<Scalars['String']['input']>;
+};
+
 /** Connection between the User type and the EnqueuedScript type */
 export type UserToEnqueuedScriptConnection = Connection & EnqueuedScriptConnection & {
   __typename?: 'UserToEnqueuedScriptConnection';
@@ -17350,6 +25423,322 @@ export type UserToEnqueuedStylesheetConnectionPageInfo = EnqueuedStylesheetConne
   startCursor?: Maybe<Scalars['String']['output']>;
 };
 
+/** Connection between the User type and the ggsipu type */
+export type UserToGgsipuConnection = Connection & GgsipuConnection & {
+  __typename?: 'UserToGgsipuConnection';
+  /** Edges for the UserToGgsipuConnection connection */
+  edges: Array<UserToGgsipuConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<Ggsipu>;
+  /** Information about pagination in a connection. */
+  pageInfo: UserToGgsipuConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type UserToGgsipuConnectionEdge = Edge & GgsipuConnectionEdge & {
+  __typename?: 'UserToGgsipuConnectionEdge';
+  /** A cursor for use in pagination */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The item at the end of the edge */
+  node: Ggsipu;
+};
+
+/** Page Info on the &quot;UserToGgsipuConnection&quot; */
+export type UserToGgsipuConnectionPageInfo = GgsipuConnectionPageInfo & PageInfo & WpPageInfo & {
+  __typename?: 'UserToGgsipuConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Arguments for filtering the UserToGgsipuConnection connection */
+export type UserToGgsipuConnectionWhereArgs = {
+  /** The user that's connected as the author of the object. Use the userId for the author object. */
+  author?: InputMaybe<Scalars['Int']['input']>;
+  /** Find objects connected to author(s) in the array of author's userIds */
+  authorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Find objects connected to the author by the author's nicename */
+  authorName?: InputMaybe<Scalars['String']['input']>;
+  /** Find objects NOT connected to author(s) in the array of author's userIds */
+  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Filter the connection based on dates */
+  dateQuery?: InputMaybe<DateQueryInput>;
+  /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
+  hasPassword?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Specific database ID of the object */
+  id?: InputMaybe<Scalars['Int']['input']>;
+  /** Array of IDs for the objects to retrieve */
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Get objects with a specific mimeType property */
+  mimeType?: InputMaybe<MimeTypeEnum>;
+  /** Slug / post_name of the object */
+  name?: InputMaybe<Scalars['String']['input']>;
+  /** Specify objects to retrieve. Use slugs */
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** What parameter to use to order the objects by. */
+  orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
+  /** Use ID to return only children. Use 0 to return only top-level items */
+  parent?: InputMaybe<Scalars['ID']['input']>;
+  /** Specify objects whose parent is in an array */
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Specify posts whose parent is not in an array */
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Show posts with a specific password. */
+  password?: InputMaybe<Scalars['String']['input']>;
+  /** Show Posts based on a keyword search */
+  search?: InputMaybe<Scalars['String']['input']>;
+  /** Retrieve posts where post status is in an array. */
+  stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
+  /** Show posts with a specific status. */
+  status?: InputMaybe<PostStatusEnum>;
+  /** Title of the object */
+  title?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** Connection between the User type and the kuk type */
+export type UserToKukConnection = Connection & KukConnection & {
+  __typename?: 'UserToKukConnection';
+  /** Edges for the UserToKukConnection connection */
+  edges: Array<UserToKukConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<Kuk>;
+  /** Information about pagination in a connection. */
+  pageInfo: UserToKukConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type UserToKukConnectionEdge = Edge & KukConnectionEdge & {
+  __typename?: 'UserToKukConnectionEdge';
+  /** A cursor for use in pagination */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The item at the end of the edge */
+  node: Kuk;
+};
+
+/** Page Info on the &quot;UserToKukConnection&quot; */
+export type UserToKukConnectionPageInfo = KukConnectionPageInfo & PageInfo & WpPageInfo & {
+  __typename?: 'UserToKukConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Arguments for filtering the UserToKukConnection connection */
+export type UserToKukConnectionWhereArgs = {
+  /** The user that's connected as the author of the object. Use the userId for the author object. */
+  author?: InputMaybe<Scalars['Int']['input']>;
+  /** Find objects connected to author(s) in the array of author's userIds */
+  authorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Find objects connected to the author by the author's nicename */
+  authorName?: InputMaybe<Scalars['String']['input']>;
+  /** Find objects NOT connected to author(s) in the array of author's userIds */
+  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Filter the connection based on dates */
+  dateQuery?: InputMaybe<DateQueryInput>;
+  /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
+  hasPassword?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Specific database ID of the object */
+  id?: InputMaybe<Scalars['Int']['input']>;
+  /** Array of IDs for the objects to retrieve */
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Get objects with a specific mimeType property */
+  mimeType?: InputMaybe<MimeTypeEnum>;
+  /** Slug / post_name of the object */
+  name?: InputMaybe<Scalars['String']['input']>;
+  /** Specify objects to retrieve. Use slugs */
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** What parameter to use to order the objects by. */
+  orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
+  /** Use ID to return only children. Use 0 to return only top-level items */
+  parent?: InputMaybe<Scalars['ID']['input']>;
+  /** Specify objects whose parent is in an array */
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Specify posts whose parent is not in an array */
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Show posts with a specific password. */
+  password?: InputMaybe<Scalars['String']['input']>;
+  /** Show Posts based on a keyword search */
+  search?: InputMaybe<Scalars['String']['input']>;
+  /** Retrieve posts where post status is in an array. */
+  stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
+  /** Show posts with a specific status. */
+  status?: InputMaybe<PostStatusEnum>;
+  /** Title of the object */
+  title?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** Connection between the User type and the lpu type */
+export type UserToLpuConnection = Connection & LpuConnection & {
+  __typename?: 'UserToLpuConnection';
+  /** Edges for the UserToLpuConnection connection */
+  edges: Array<UserToLpuConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<Lpu>;
+  /** Information about pagination in a connection. */
+  pageInfo: UserToLpuConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type UserToLpuConnectionEdge = Edge & LpuConnectionEdge & {
+  __typename?: 'UserToLpuConnectionEdge';
+  /** A cursor for use in pagination */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The item at the end of the edge */
+  node: Lpu;
+};
+
+/** Page Info on the &quot;UserToLpuConnection&quot; */
+export type UserToLpuConnectionPageInfo = LpuConnectionPageInfo & PageInfo & WpPageInfo & {
+  __typename?: 'UserToLpuConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Arguments for filtering the UserToLpuConnection connection */
+export type UserToLpuConnectionWhereArgs = {
+  /** The user that's connected as the author of the object. Use the userId for the author object. */
+  author?: InputMaybe<Scalars['Int']['input']>;
+  /** Find objects connected to author(s) in the array of author's userIds */
+  authorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Find objects connected to the author by the author's nicename */
+  authorName?: InputMaybe<Scalars['String']['input']>;
+  /** Find objects NOT connected to author(s) in the array of author's userIds */
+  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Filter the connection based on dates */
+  dateQuery?: InputMaybe<DateQueryInput>;
+  /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
+  hasPassword?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Specific database ID of the object */
+  id?: InputMaybe<Scalars['Int']['input']>;
+  /** Array of IDs for the objects to retrieve */
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Get objects with a specific mimeType property */
+  mimeType?: InputMaybe<MimeTypeEnum>;
+  /** Slug / post_name of the object */
+  name?: InputMaybe<Scalars['String']['input']>;
+  /** Specify objects to retrieve. Use slugs */
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** What parameter to use to order the objects by. */
+  orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
+  /** Use ID to return only children. Use 0 to return only top-level items */
+  parent?: InputMaybe<Scalars['ID']['input']>;
+  /** Specify objects whose parent is in an array */
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Specify posts whose parent is not in an array */
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Show posts with a specific password. */
+  password?: InputMaybe<Scalars['String']['input']>;
+  /** Show Posts based on a keyword search */
+  search?: InputMaybe<Scalars['String']['input']>;
+  /** Retrieve posts where post status is in an array. */
+  stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
+  /** Show posts with a specific status. */
+  status?: InputMaybe<PostStatusEnum>;
+  /** Title of the object */
+  title?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** Connection between the User type and the makaut type */
+export type UserToMakautConnection = Connection & MakautConnection & {
+  __typename?: 'UserToMakautConnection';
+  /** Edges for the UserToMakautConnection connection */
+  edges: Array<UserToMakautConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<Makaut>;
+  /** Information about pagination in a connection. */
+  pageInfo: UserToMakautConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type UserToMakautConnectionEdge = Edge & MakautConnectionEdge & {
+  __typename?: 'UserToMakautConnectionEdge';
+  /** A cursor for use in pagination */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The item at the end of the edge */
+  node: Makaut;
+};
+
+/** Page Info on the &quot;UserToMakautConnection&quot; */
+export type UserToMakautConnectionPageInfo = MakautConnectionPageInfo & PageInfo & WpPageInfo & {
+  __typename?: 'UserToMakautConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Arguments for filtering the UserToMakautConnection connection */
+export type UserToMakautConnectionWhereArgs = {
+  /** The user that's connected as the author of the object. Use the userId for the author object. */
+  author?: InputMaybe<Scalars['Int']['input']>;
+  /** Find objects connected to author(s) in the array of author's userIds */
+  authorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Find objects connected to the author by the author's nicename */
+  authorName?: InputMaybe<Scalars['String']['input']>;
+  /** Find objects NOT connected to author(s) in the array of author's userIds */
+  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Filter the connection based on dates */
+  dateQuery?: InputMaybe<DateQueryInput>;
+  /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
+  hasPassword?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Specific database ID of the object */
+  id?: InputMaybe<Scalars['Int']['input']>;
+  /** Array of IDs for the objects to retrieve */
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Get objects with a specific mimeType property */
+  mimeType?: InputMaybe<MimeTypeEnum>;
+  /** Slug / post_name of the object */
+  name?: InputMaybe<Scalars['String']['input']>;
+  /** Specify objects to retrieve. Use slugs */
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** What parameter to use to order the objects by. */
+  orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
+  /** Use ID to return only children. Use 0 to return only top-level items */
+  parent?: InputMaybe<Scalars['ID']['input']>;
+  /** Specify objects whose parent is in an array */
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Specify posts whose parent is not in an array */
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Show posts with a specific password. */
+  password?: InputMaybe<Scalars['String']['input']>;
+  /** Show Posts based on a keyword search */
+  search?: InputMaybe<Scalars['String']['input']>;
+  /** Retrieve posts where post status is in an array. */
+  stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
+  /** Show posts with a specific status. */
+  status?: InputMaybe<PostStatusEnum>;
+  /** Title of the object */
+  title?: InputMaybe<Scalars['String']['input']>;
+};
+
 /** Connection between the User type and the mediaItem type */
 export type UserToMediaItemConnection = Connection & MediaItemConnection & {
   __typename?: 'UserToMediaItemConnection';
@@ -17385,6 +25774,85 @@ export type UserToMediaItemConnectionPageInfo = MediaItemConnectionPageInfo & Pa
 
 /** Arguments for filtering the UserToMediaItemConnection connection */
 export type UserToMediaItemConnectionWhereArgs = {
+  /** The user that's connected as the author of the object. Use the userId for the author object. */
+  author?: InputMaybe<Scalars['Int']['input']>;
+  /** Find objects connected to author(s) in the array of author's userIds */
+  authorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Find objects connected to the author by the author's nicename */
+  authorName?: InputMaybe<Scalars['String']['input']>;
+  /** Find objects NOT connected to author(s) in the array of author's userIds */
+  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Filter the connection based on dates */
+  dateQuery?: InputMaybe<DateQueryInput>;
+  /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
+  hasPassword?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Specific database ID of the object */
+  id?: InputMaybe<Scalars['Int']['input']>;
+  /** Array of IDs for the objects to retrieve */
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Get objects with a specific mimeType property */
+  mimeType?: InputMaybe<MimeTypeEnum>;
+  /** Slug / post_name of the object */
+  name?: InputMaybe<Scalars['String']['input']>;
+  /** Specify objects to retrieve. Use slugs */
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** What parameter to use to order the objects by. */
+  orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
+  /** Use ID to return only children. Use 0 to return only top-level items */
+  parent?: InputMaybe<Scalars['ID']['input']>;
+  /** Specify objects whose parent is in an array */
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Specify posts whose parent is not in an array */
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Show posts with a specific password. */
+  password?: InputMaybe<Scalars['String']['input']>;
+  /** Show Posts based on a keyword search */
+  search?: InputMaybe<Scalars['String']['input']>;
+  /** Retrieve posts where post status is in an array. */
+  stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
+  /** Show posts with a specific status. */
+  status?: InputMaybe<PostStatusEnum>;
+  /** Title of the object */
+  title?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** Connection between the User type and the mumbai_university type */
+export type UserToMumbai_UniversityConnection = Connection & {
+  __typename?: 'UserToMumbai_universityConnection';
+  /** Edges for the UserToMumbai_universityConnection connection */
+  edges: Array<UserToMumbai_UniversityConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<Mumbai_University>;
+  /** Information about pagination in a connection. */
+  pageInfo: UserToMumbai_UniversityConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type UserToMumbai_UniversityConnectionEdge = Edge & MumbaiUniversityConnectionEdge & {
+  __typename?: 'UserToMumbai_universityConnectionEdge';
+  /** A cursor for use in pagination */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The item at the end of the edge */
+  node: Mumbai_University;
+};
+
+/** Page Info on the &quot;UserToMumbai_universityConnection&quot; */
+export type UserToMumbai_UniversityConnectionPageInfo = Mumbai_UniversityConnectionPageInfo & PageInfo & WpPageInfo & {
+  __typename?: 'UserToMumbai_universityConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Arguments for filtering the UserToMumbai_universityConnection connection */
+export type UserToMumbai_UniversityConnectionWhereArgs = {
   /** The user that's connected as the author of the object. Use the userId for the author object. */
   author?: InputMaybe<Scalars['Int']['input']>;
   /** Find objects connected to author(s) in the array of author's userIds */
@@ -17680,6 +26148,85 @@ export type UserToRevisionsConnectionWhereArgs = {
   title?: InputMaybe<Scalars['String']['input']>;
 };
 
+/** Connection between the User type and the rgpv type */
+export type UserToRgpvConnection = Connection & RgpvConnection & {
+  __typename?: 'UserToRgpvConnection';
+  /** Edges for the UserToRgpvConnection connection */
+  edges: Array<UserToRgpvConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<Rgpv>;
+  /** Information about pagination in a connection. */
+  pageInfo: UserToRgpvConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type UserToRgpvConnectionEdge = Edge & RgpvConnectionEdge & {
+  __typename?: 'UserToRgpvConnectionEdge';
+  /** A cursor for use in pagination */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The item at the end of the edge */
+  node: Rgpv;
+};
+
+/** Page Info on the &quot;UserToRgpvConnection&quot; */
+export type UserToRgpvConnectionPageInfo = PageInfo & RgpvConnectionPageInfo & WpPageInfo & {
+  __typename?: 'UserToRgpvConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Arguments for filtering the UserToRgpvConnection connection */
+export type UserToRgpvConnectionWhereArgs = {
+  /** The user that's connected as the author of the object. Use the userId for the author object. */
+  author?: InputMaybe<Scalars['Int']['input']>;
+  /** Find objects connected to author(s) in the array of author's userIds */
+  authorIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Find objects connected to the author by the author's nicename */
+  authorName?: InputMaybe<Scalars['String']['input']>;
+  /** Find objects NOT connected to author(s) in the array of author's userIds */
+  authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Filter the connection based on dates */
+  dateQuery?: InputMaybe<DateQueryInput>;
+  /** True for objects with passwords; False for objects without passwords; null for all objects with or without passwords */
+  hasPassword?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Specific database ID of the object */
+  id?: InputMaybe<Scalars['Int']['input']>;
+  /** Array of IDs for the objects to retrieve */
+  in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Get objects with a specific mimeType property */
+  mimeType?: InputMaybe<MimeTypeEnum>;
+  /** Slug / post_name of the object */
+  name?: InputMaybe<Scalars['String']['input']>;
+  /** Specify objects to retrieve. Use slugs */
+  nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** What parameter to use to order the objects by. */
+  orderby?: InputMaybe<Array<InputMaybe<PostObjectsConnectionOrderbyInput>>>;
+  /** Use ID to return only children. Use 0 to return only top-level items */
+  parent?: InputMaybe<Scalars['ID']['input']>;
+  /** Specify objects whose parent is in an array */
+  parentIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Specify posts whose parent is not in an array */
+  parentNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  /** Show posts with a specific password. */
+  password?: InputMaybe<Scalars['String']['input']>;
+  /** Show Posts based on a keyword search */
+  search?: InputMaybe<Scalars['String']['input']>;
+  /** Retrieve posts where post status is in an array. */
+  stati?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>;
+  /** Show posts with a specific status. */
+  status?: InputMaybe<PostStatusEnum>;
+  /** Title of the object */
+  title?: InputMaybe<Scalars['String']['input']>;
+};
+
 /** Connection between the User type and the userReactionPost type */
 export type UserToUserReactionPostConnection = Connection & UserReactionPostConnection & {
   __typename?: 'UserToUserReactionPostConnection';
@@ -17905,6 +26452,140 @@ export type WritingSettings = {
   useSmilies?: Maybe<Scalars['Boolean']['output']>;
 };
 
+/** A block used for editing the site */
+export type YoastFaqBlock = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
+  __typename?: 'YoastFaqBlock';
+  /** The API version of the Gutenberg Block */
+  apiVersion?: Maybe<Scalars['Int']['output']>;
+  /** Attributes of the YoastFaqBlock Block Type */
+  attributes?: Maybe<YoastFaqBlockAttributes>;
+  /** The name of the category the Block belongs to */
+  blockEditorCategoryName?: Maybe<Scalars['String']['output']>;
+  /** The id of the Block */
+  clientId?: Maybe<Scalars['String']['output']>;
+  /** CSS Classnames to apply to the block */
+  cssClassNames?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  /** The inner blocks of the Block */
+  innerBlocks?: Maybe<Array<Maybe<EditorBlock>>>;
+  /** Whether the block is Dynamic (server rendered) */
+  isDynamic: Scalars['Boolean']['output'];
+  /** The name of the block */
+  name?: Maybe<Scalars['String']['output']>;
+  /** The parent id of the Block */
+  parentClientId?: Maybe<Scalars['String']['output']>;
+  /** The rendered HTML for the block */
+  renderedHtml?: Maybe<Scalars['String']['output']>;
+};
+
+/** Attributes of the YoastFaqBlock Block Type */
+export type YoastFaqBlockAttributes = {
+  __typename?: 'YoastFaqBlockAttributes';
+  /** The &quot;additionalListCssClasses&quot; field on the &quot;YoastFaqBlock&quot; block */
+  additionalListCssClasses?: Maybe<Scalars['String']['output']>;
+  /** The &quot;className&quot; field on the &quot;YoastFaqBlock&quot; block */
+  className?: Maybe<Scalars['String']['output']>;
+  /** The &quot;lock&quot; field on the &quot;YoastFaqBlock&quot; block */
+  lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;metadata&quot; field on the &quot;YoastFaqBlock&quot; block */
+  metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;questions&quot; field on the &quot;YoastFaqBlock&quot; block */
+  questions?: Maybe<Scalars['BlockAttributesObject']['output']>;
+};
+
+/** A block used for editing the site */
+export type YoastHowToBlock = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
+  __typename?: 'YoastHowToBlock';
+  /** The API version of the Gutenberg Block */
+  apiVersion?: Maybe<Scalars['Int']['output']>;
+  /** Attributes of the YoastHowToBlock Block Type */
+  attributes?: Maybe<YoastHowToBlockAttributes>;
+  /** The name of the category the Block belongs to */
+  blockEditorCategoryName?: Maybe<Scalars['String']['output']>;
+  /** The id of the Block */
+  clientId?: Maybe<Scalars['String']['output']>;
+  /** CSS Classnames to apply to the block */
+  cssClassNames?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  /** The inner blocks of the Block */
+  innerBlocks?: Maybe<Array<Maybe<EditorBlock>>>;
+  /** Whether the block is Dynamic (server rendered) */
+  isDynamic: Scalars['Boolean']['output'];
+  /** The name of the block */
+  name?: Maybe<Scalars['String']['output']>;
+  /** The parent id of the Block */
+  parentClientId?: Maybe<Scalars['String']['output']>;
+  /** The rendered HTML for the block */
+  renderedHtml?: Maybe<Scalars['String']['output']>;
+};
+
+/** Attributes of the YoastHowToBlock Block Type */
+export type YoastHowToBlockAttributes = {
+  __typename?: 'YoastHowToBlockAttributes';
+  /** The &quot;additionalListCssClasses&quot; field on the &quot;YoastHowToBlock&quot; block */
+  additionalListCssClasses?: Maybe<Scalars['String']['output']>;
+  /** The &quot;className&quot; field on the &quot;YoastHowToBlock&quot; block */
+  className?: Maybe<Scalars['String']['output']>;
+  /** The &quot;days&quot; field on the &quot;YoastHowToBlock&quot; block */
+  days?: Maybe<Scalars['String']['output']>;
+  /** The &quot;defaultDurationText&quot; field on the &quot;YoastHowToBlock&quot; block */
+  defaultDurationText?: Maybe<Scalars['String']['output']>;
+  /** The &quot;description&quot; field on the &quot;YoastHowToBlock&quot; block */
+  description?: Maybe<Scalars['String']['output']>;
+  /** The &quot;durationText&quot; field on the &quot;YoastHowToBlock&quot; block */
+  durationText?: Maybe<Scalars['String']['output']>;
+  /** The &quot;hasDuration&quot; field on the &quot;YoastHowToBlock&quot; block */
+  hasDuration?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;hours&quot; field on the &quot;YoastHowToBlock&quot; block */
+  hours?: Maybe<Scalars['String']['output']>;
+  /** The &quot;jsonDescription&quot; field on the &quot;YoastHowToBlock&quot; block */
+  jsonDescription?: Maybe<Scalars['String']['output']>;
+  /** The &quot;lock&quot; field on the &quot;YoastHowToBlock&quot; block */
+  lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;metadata&quot; field on the &quot;YoastHowToBlock&quot; block */
+  metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;minutes&quot; field on the &quot;YoastHowToBlock&quot; block */
+  minutes?: Maybe<Scalars['String']['output']>;
+  /** The &quot;steps&quot; field on the &quot;YoastHowToBlock&quot; block */
+  steps?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;unorderedList&quot; field on the &quot;YoastHowToBlock&quot; block */
+  unorderedList?: Maybe<Scalars['Boolean']['output']>;
+};
+
+/** A block used for editing the site */
+export type YoastSeoBreadcrumbs = DelhiUniversityEditorBlock & EditorBlock & GgsipuEditorBlock & KukEditorBlock & LpuEditorBlock & MakautEditorBlock & MumbaiUniversityEditorBlock & PageEditorBlock & PostEditorBlock & RgpvEditorBlock & {
+  __typename?: 'YoastSeoBreadcrumbs';
+  /** The API version of the Gutenberg Block */
+  apiVersion?: Maybe<Scalars['Int']['output']>;
+  /** Attributes of the YoastSeoBreadcrumbs Block Type */
+  attributes?: Maybe<YoastSeoBreadcrumbsAttributes>;
+  /** The name of the category the Block belongs to */
+  blockEditorCategoryName?: Maybe<Scalars['String']['output']>;
+  /** The id of the Block */
+  clientId?: Maybe<Scalars['String']['output']>;
+  /** CSS Classnames to apply to the block */
+  cssClassNames?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  /** The inner blocks of the Block */
+  innerBlocks?: Maybe<Array<Maybe<EditorBlock>>>;
+  /** Whether the block is Dynamic (server rendered) */
+  isDynamic: Scalars['Boolean']['output'];
+  /** The name of the block */
+  name?: Maybe<Scalars['String']['output']>;
+  /** The parent id of the Block */
+  parentClientId?: Maybe<Scalars['String']['output']>;
+  /** The rendered HTML for the block */
+  renderedHtml?: Maybe<Scalars['String']['output']>;
+};
+
+/** Attributes of the YoastSeoBreadcrumbs Block Type */
+export type YoastSeoBreadcrumbsAttributes = {
+  __typename?: 'YoastSeoBreadcrumbsAttributes';
+  /** The &quot;className&quot; field on the &quot;YoastSeoBreadcrumbs&quot; block */
+  className?: Maybe<Scalars['String']['output']>;
+  /** The &quot;lock&quot; field on the &quot;YoastSeoBreadcrumbs&quot; block */
+  lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;metadata&quot; field on the &quot;YoastSeoBreadcrumbs&quot; block */
+  metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
+};
+
 export type SearchFormQueryGetPostsBySearchQueryVariables = Exact<{
   first?: InputMaybe<Scalars['Int']['input']>;
   search?: InputMaybe<Scalars['String']['input']>;
@@ -17933,7 +26614,7 @@ export type NcmazFcTagFullFieldsFragmentFragment = (
   & { ' $fragmentRefs'?: { 'NcmazFcTagShortFieldsFragmentFragment': NcmazFcTagShortFieldsFragmentFragment } }
 ) & { ' $fragmentName'?: 'NcmazFcTagFullFieldsFragmentFragment' };
 
-export type NcmazFcCategoryFullFieldsFragmentFragment = { __typename: 'Category', databaseId: number, description?: string | null, name?: string | null, uri?: string | null, count?: number | null, ncTaxonomyMeta?: { __typename?: 'NcTaxonomyMeta', color?: Array<string | null> | null, featuredImage?: { __typename?: 'AcfMediaItemConnectionEdge', node: (
+export type NcmazFcCategoryFullFieldsFragmentFragment = { __typename: 'Category', databaseId: number, description?: string | null, name?: string | null, uri?: string | null, count?: number | null, ncTaxonomyMeta?: { __typename?: 'NcTaxonomyMeta', color?: Array<string | null> | null, featuredImage?: { __typename?: 'NcTaxonomyMetaFeaturedImageToMediaItemConnectionEdge', node: (
         { __typename?: 'MediaItem' }
         & { ' $fragmentRefs'?: { 'NcmazFcImageFieldsFragment': NcmazFcImageFieldsFragment } }
       ) } | null } | null } & { ' $fragmentName'?: 'NcmazFcCategoryFullFieldsFragmentFragment' };
@@ -17962,55 +26643,55 @@ export type NcmazFcPostFullFieldsFragment = { __typename: 'Post', uri?: string |
     ) } | null, postFormats?: { __typename?: 'PostToPostFormatConnection', nodes: Array<{ __typename?: 'PostFormat', id: string, name?: string | null, slug?: string | null }> } | null, ncmazVideoUrl?: { __typename?: 'NcmazVideoUrl', videoUrl?: string | null } | null, ncmazAudioUrl?: { __typename?: 'NcmazAudioUrl', audioUrl?: string | null } | null, ncPostMetaData?: (
     { __typename?: 'NcPostMetaData' }
     & { ' $fragmentRefs'?: { 'NcmazFcPostMetaFullFieldsFragment': NcmazFcPostMetaFullFieldsFragment } }
-  ) | null, ncmazGalleryImgs?: { __typename?: 'NcmazGalleryImgs', image1?: { __typename?: 'AcfMediaItemConnectionEdge', node: (
+  ) | null, ncmazGalleryImgs?: { __typename?: 'NcmazGalleryImgs', image1?: { __typename?: 'NcmazGalleryImgsImage1ToMediaItemConnectionEdge', node: (
         { __typename?: 'MediaItem' }
         & { ' $fragmentRefs'?: { 'NcmazFcImageHasDetailFieldsFragment': NcmazFcImageHasDetailFieldsFragment } }
-      ) } | null, image2?: { __typename?: 'AcfMediaItemConnectionEdge', node: (
+      ) } | null, image2?: { __typename?: 'NcmazGalleryImgsImage2ToMediaItemConnectionEdge', node: (
         { __typename?: 'MediaItem' }
         & { ' $fragmentRefs'?: { 'NcmazFcImageHasDetailFieldsFragment': NcmazFcImageHasDetailFieldsFragment } }
-      ) } | null, image3?: { __typename?: 'AcfMediaItemConnectionEdge', node: (
+      ) } | null, image3?: { __typename?: 'NcmazGalleryImgsImage3ToMediaItemConnectionEdge', node: (
         { __typename?: 'MediaItem' }
         & { ' $fragmentRefs'?: { 'NcmazFcImageHasDetailFieldsFragment': NcmazFcImageHasDetailFieldsFragment } }
-      ) } | null, image4?: { __typename?: 'AcfMediaItemConnectionEdge', node: (
+      ) } | null, image4?: { __typename?: 'NcmazGalleryImgsImage4ToMediaItemConnectionEdge', node: (
         { __typename?: 'MediaItem' }
         & { ' $fragmentRefs'?: { 'NcmazFcImageHasDetailFieldsFragment': NcmazFcImageHasDetailFieldsFragment } }
-      ) } | null, image5?: { __typename?: 'AcfMediaItemConnectionEdge', node: (
+      ) } | null, image5?: { __typename?: 'NcmazGalleryImgsImage5ToMediaItemConnectionEdge', node: (
         { __typename?: 'MediaItem' }
         & { ' $fragmentRefs'?: { 'NcmazFcImageHasDetailFieldsFragment': NcmazFcImageHasDetailFieldsFragment } }
-      ) } | null, image6?: { __typename?: 'AcfMediaItemConnectionEdge', node: (
+      ) } | null, image6?: { __typename?: 'NcmazGalleryImgsImage6ToMediaItemConnectionEdge', node: (
         { __typename?: 'MediaItem' }
         & { ' $fragmentRefs'?: { 'NcmazFcImageHasDetailFieldsFragment': NcmazFcImageHasDetailFieldsFragment } }
-      ) } | null, image7?: { __typename?: 'AcfMediaItemConnectionEdge', node: (
+      ) } | null, image7?: { __typename?: 'NcmazGalleryImgsImage7ToMediaItemConnectionEdge', node: (
         { __typename?: 'MediaItem' }
         & { ' $fragmentRefs'?: { 'NcmazFcImageHasDetailFieldsFragment': NcmazFcImageHasDetailFieldsFragment } }
-      ) } | null, image8?: { __typename?: 'AcfMediaItemConnectionEdge', node: (
+      ) } | null, image8?: { __typename?: 'NcmazGalleryImgsImage8ToMediaItemConnectionEdge', node: (
         { __typename?: 'MediaItem' }
         & { ' $fragmentRefs'?: { 'NcmazFcImageHasDetailFieldsFragment': NcmazFcImageHasDetailFieldsFragment } }
       ) } | null } | null } & { ' $fragmentName'?: 'NcmazFcPostFullFieldsFragment' };
 
 export type NcmazFcPostCardFieldsFragment = (
-  { __typename?: 'Post', ncmazGalleryImgs?: { __typename?: 'NcmazGalleryImgs', image1?: { __typename?: 'AcfMediaItemConnectionEdge', node: (
+  { __typename?: 'Post', ncmazGalleryImgs?: { __typename?: 'NcmazGalleryImgs', image1?: { __typename?: 'NcmazGalleryImgsImage1ToMediaItemConnectionEdge', node: (
         { __typename?: 'MediaItem' }
         & { ' $fragmentRefs'?: { 'NcmazFcImageFieldsFragment': NcmazFcImageFieldsFragment } }
-      ) } | null, image2?: { __typename?: 'AcfMediaItemConnectionEdge', node: (
+      ) } | null, image2?: { __typename?: 'NcmazGalleryImgsImage2ToMediaItemConnectionEdge', node: (
         { __typename?: 'MediaItem' }
         & { ' $fragmentRefs'?: { 'NcmazFcImageFieldsFragment': NcmazFcImageFieldsFragment } }
-      ) } | null, image3?: { __typename?: 'AcfMediaItemConnectionEdge', node: (
+      ) } | null, image3?: { __typename?: 'NcmazGalleryImgsImage3ToMediaItemConnectionEdge', node: (
         { __typename?: 'MediaItem' }
         & { ' $fragmentRefs'?: { 'NcmazFcImageFieldsFragment': NcmazFcImageFieldsFragment } }
-      ) } | null, image4?: { __typename?: 'AcfMediaItemConnectionEdge', node: (
+      ) } | null, image4?: { __typename?: 'NcmazGalleryImgsImage4ToMediaItemConnectionEdge', node: (
         { __typename?: 'MediaItem' }
         & { ' $fragmentRefs'?: { 'NcmazFcImageFieldsFragment': NcmazFcImageFieldsFragment } }
-      ) } | null, image5?: { __typename?: 'AcfMediaItemConnectionEdge', node: (
+      ) } | null, image5?: { __typename?: 'NcmazGalleryImgsImage5ToMediaItemConnectionEdge', node: (
         { __typename?: 'MediaItem' }
         & { ' $fragmentRefs'?: { 'NcmazFcImageFieldsFragment': NcmazFcImageFieldsFragment } }
-      ) } | null, image6?: { __typename?: 'AcfMediaItemConnectionEdge', node: (
+      ) } | null, image6?: { __typename?: 'NcmazGalleryImgsImage6ToMediaItemConnectionEdge', node: (
         { __typename?: 'MediaItem' }
         & { ' $fragmentRefs'?: { 'NcmazFcImageFieldsFragment': NcmazFcImageFieldsFragment } }
-      ) } | null, image7?: { __typename?: 'AcfMediaItemConnectionEdge', node: (
+      ) } | null, image7?: { __typename?: 'NcmazGalleryImgsImage7ToMediaItemConnectionEdge', node: (
         { __typename?: 'MediaItem' }
         & { ' $fragmentRefs'?: { 'NcmazFcImageFieldsFragment': NcmazFcImageFieldsFragment } }
-      ) } | null, image8?: { __typename?: 'AcfMediaItemConnectionEdge', node: (
+      ) } | null, image8?: { __typename?: 'NcmazGalleryImgsImage8ToMediaItemConnectionEdge', node: (
         { __typename?: 'MediaItem' }
         & { ' $fragmentRefs'?: { 'NcmazFcImageFieldsFragment': NcmazFcImageFieldsFragment } }
       ) } | null } | null }
@@ -18053,26 +26734,26 @@ export type NcmazFcPostMetaFieldsFragment = { __typename: 'NcPostMetaData', view
 
 export type NcmazFcPostMetaFullFieldsFragment = { __typename: 'NcPostMetaData', viewsCount?: number | null, readingTime?: number | null, likesCount?: number | null, savedsCount?: number | null, showRightSidebar?: boolean | null, template?: Array<string | null> | null } & { ' $fragmentName'?: 'NcmazFcPostMetaFullFieldsFragment' };
 
-export type NcmazFcUserShortForPostCardFragmentFragment = { __typename?: 'User', databaseId: number, uri?: string | null, username?: string | null, name?: string | null, ncUserMeta?: { __typename?: 'NcUserMeta', featuredImage?: { __typename?: 'AcfMediaItemConnectionEdge', node: (
+export type NcmazFcUserShortForPostCardFragmentFragment = { __typename?: 'User', databaseId: number, uri?: string | null, username?: string | null, name?: string | null, ncUserMeta?: { __typename?: 'NcUserMeta', featuredImage?: { __typename?: 'NcUserMetaFeaturedImageToMediaItemConnectionEdge', node: (
         { __typename?: 'MediaItem' }
         & { ' $fragmentRefs'?: { 'NcmazFcImageFieldsFragment': NcmazFcImageFieldsFragment } }
       ) } | null } | null } & { ' $fragmentName'?: 'NcmazFcUserShortForPostCardFragmentFragment' };
 
-export type NcmazFcUserFullFieldsFragment = { __typename?: 'User', id: string, databaseId: number, uri?: string | null, username?: string | null, name?: string | null, description?: string | null, registeredDate?: string | null, ncUserMeta?: { __typename?: 'NcUserMeta', buymeacoffeUrl?: string | null, color?: string | null, facebookUrl?: string | null, githubUrl?: string | null, instagramUrl?: string | null, linkedinUrl?: string | null, mediumUrl?: string | null, ncBio?: string | null, pinterestUrl?: string | null, twitchUrl?: string | null, twitterUrl?: string | null, vimeoUrl?: string | null, websiteUrl?: string | null, youtubeUrl?: string | null, tiktokUrl?: string | null, featuredImage?: { __typename?: 'AcfMediaItemConnectionEdge', node: (
+export type NcmazFcUserFullFieldsFragment = { __typename?: 'User', id: string, databaseId: number, uri?: string | null, username?: string | null, name?: string | null, description?: string | null, registeredDate?: string | null, ncUserMeta?: { __typename?: 'NcUserMeta', buymeacoffeUrl?: string | null, color?: string | null, facebookUrl?: string | null, githubUrl?: string | null, instagramUrl?: string | null, linkedinUrl?: string | null, mediumUrl?: string | null, ncBio?: string | null, pinterestUrl?: string | null, twitchUrl?: string | null, twitterUrl?: string | null, vimeoUrl?: string | null, websiteUrl?: string | null, youtubeUrl?: string | null, tiktokUrl?: string | null, featuredImage?: { __typename?: 'NcUserMetaFeaturedImageToMediaItemConnectionEdge', node: (
         { __typename?: 'MediaItem' }
         & { ' $fragmentRefs'?: { 'NcmazFcImageFieldsFragment': NcmazFcImageFieldsFragment } }
-      ) } | null, backgroundImage?: { __typename?: 'AcfMediaItemConnectionEdge', node: (
+      ) } | null, backgroundImage?: { __typename?: 'NcUserMetaBackgroundImageToMediaItemConnectionEdge', node: (
         { __typename?: 'MediaItem' }
         & { ' $fragmentRefs'?: { 'NcmazFcImageFieldsFragment': NcmazFcImageFieldsFragment } }
       ) } | null } | null } & { ' $fragmentName'?: 'NcmazFcUserFullFieldsFragment' };
 
-export type NcPrimaryMenuFieldsFragmentFragment = { __typename?: 'MenuItem', id: string, uri?: string | null, path?: string | null, label?: string | null, parentId?: string | null, cssClasses?: Array<string | null> | null, databaseId: number, ncmazfaustMenu?: { __typename: 'NcmazfaustMenu', isMegaMenu?: boolean | null, numberOfMenuColumns?: number | null, posts?: { __typename?: 'AcfContentNodeConnection', nodes: Array<{ __typename?: 'GraphqlDocument', id: string } | { __typename?: 'MediaItem', id: string } | { __typename?: 'Page', id: string } | { __typename: 'Post', databaseId: number, title?: string | null, uri?: string | null, modified?: string | null, date?: string | null, excerpt?: string | null, id: string, categories?: { __typename?: 'PostToCategoryConnection', nodes: Array<(
+export type NcPrimaryMenuFieldsFragmentFragment = { __typename?: 'MenuItem', id: string, uri?: string | null, path?: string | null, label?: string | null, parentId?: string | null, cssClasses?: Array<string | null> | null, databaseId: number, ncmazfaustMenu?: { __typename: 'NcmazfaustMenu', isMegaMenu?: boolean | null, numberOfMenuColumns?: number | null, posts?: { __typename?: 'NcmazfaustMenuPostsToContentNodeConnection', nodes: Array<{ __typename?: 'Delhi_university', id: string } | { __typename?: 'Ggsipu', id: string } | { __typename?: 'GraphqlDocument', id: string } | { __typename?: 'Kuk', id: string } | { __typename?: 'Lpu', id: string } | { __typename?: 'Makaut', id: string } | { __typename?: 'MediaItem', id: string } | { __typename?: 'Mumbai_university', id: string } | { __typename?: 'Page', id: string } | { __typename: 'Post', databaseId: number, title?: string | null, uri?: string | null, modified?: string | null, date?: string | null, excerpt?: string | null, id: string, categories?: { __typename?: 'PostToCategoryConnection', nodes: Array<(
             { __typename?: 'Category' }
             & { ' $fragmentRefs'?: { 'NcmazFcCategoryCardFieldsNotImageFragment': NcmazFcCategoryCardFieldsNotImageFragment } }
           )> } | null, featuredImage?: { __typename?: 'NodeWithFeaturedImageToMediaItemConnectionEdge', node: (
             { __typename?: 'MediaItem' }
             & { ' $fragmentRefs'?: { 'NcmazFcImageFieldsFragment': NcmazFcImageFieldsFragment } }
-          ) } | null, postFormats?: { __typename?: 'PostToPostFormatConnection', nodes: Array<{ __typename?: 'PostFormat', name?: string | null, slug?: string | null }> } | null } | { __typename?: 'UserReactionPost', id: string }> } | null } | null } & { ' $fragmentName'?: 'NcPrimaryMenuFieldsFragmentFragment' };
+          ) } | null, postFormats?: { __typename?: 'PostToPostFormatConnection', nodes: Array<{ __typename?: 'PostFormat', name?: string | null, slug?: string | null }> } | null } | { __typename?: 'Rgpv', id: string } | { __typename?: 'UserReactionPost', id: string }> } | null } | null } & { ' $fragmentName'?: 'NcPrimaryMenuFieldsFragmentFragment' };
 
 export type NcFooterMenuFieldsFragmentFragment = { __typename?: 'MenuItem', databaseId: number, uri?: string | null, label?: string | null, parentId?: string | null, id: string } & { ' $fragmentName'?: 'NcFooterMenuFieldsFragmentFragment' };
 
@@ -18205,7 +26886,7 @@ export type MyQueryGetCmsUserQueryVariables = Exact<{
 }>;
 
 
-export type MyQueryGetCmsUserQuery = { __typename?: 'RootQuery', user?: { __typename?: 'User', databaseId: number, ncUserMeta?: { __typename?: 'NcUserMeta', ncBio?: string | null, featuredImage?: { __typename?: 'AcfMediaItemConnectionEdge', node: (
+export type MyQueryGetCmsUserQuery = { __typename?: 'RootQuery', user?: { __typename?: 'User', databaseId: number, ncUserMeta?: { __typename?: 'NcUserMeta', ncBio?: string | null, featuredImage?: { __typename?: 'NcUserMetaFeaturedImageToMediaItemConnectionEdge', node: (
           { __typename?: 'MediaItem' }
           & { ' $fragmentRefs'?: { 'NcmazFcImageFieldsFragment': NcmazFcImageFieldsFragment } }
         ) } | null } | null } | null };
@@ -18246,7 +26927,7 @@ export type QueryGetUserReactionPostsByAuthorAndSearchQueryVariables = Exact<{
 
 export type QueryGetUserReactionPostsByAuthorAndSearchQuery = { __typename?: 'RootQuery', userReactionPosts?: { __typename?: 'RootQueryToUserReactionPostConnection', nodes: Array<{ __typename?: 'UserReactionPost', databaseId: number, title?: string | null }>, pageInfo: { __typename?: 'RootQueryToUserReactionPostConnectionPageInfo', hasNextPage: boolean, endCursor?: string | null } } | null };
 
-export type NcmazFcCommentFullFieldsFragment = { __typename: 'Comment', status?: CommentStatusEnum | null, parentId?: string | null, parentDatabaseId?: number | null, id: string, date?: string | null, databaseId: number, content?: string | null, author?: { __typename?: 'CommentToCommenterConnectionEdge', node: { __typename?: 'CommentAuthor', id: string, name?: string | null, databaseId: number, url?: string | null, avatar?: { __typename?: 'Avatar', url?: string | null, default?: string | null } | null } | { __typename?: 'User', id: string, databaseId: number, uri?: string | null, url?: string | null, name?: string | null, ncUserMeta?: { __typename?: 'NcUserMeta', featuredImage?: { __typename?: 'AcfMediaItemConnectionEdge', node: (
+export type NcmazFcCommentFullFieldsFragment = { __typename: 'Comment', status?: CommentStatusEnum | null, parentId?: string | null, parentDatabaseId?: number | null, id: string, date?: string | null, databaseId: number, content?: string | null, author?: { __typename?: 'CommentToCommenterConnectionEdge', node: { __typename?: 'CommentAuthor', id: string, name?: string | null, databaseId: number, url?: string | null, avatar?: { __typename?: 'Avatar', url?: string | null, default?: string | null } | null } | { __typename?: 'User', id: string, databaseId: number, uri?: string | null, url?: string | null, name?: string | null, ncUserMeta?: { __typename?: 'NcUserMeta', featuredImage?: { __typename?: 'NcUserMetaFeaturedImageToMediaItemConnectionEdge', node: (
             { __typename?: 'MediaItem' }
             & { ' $fragmentRefs'?: { 'NcmazFcImageFieldsFragment': NcmazFcImageFieldsFragment } }
           ) } | null } | null } } | null } & { ' $fragmentName'?: 'NcmazFcCommentFullFieldsFragment' };
@@ -18694,7 +27375,7 @@ export type SitemapQueryQueryVariables = Exact<{
 }>;
 
 
-export type SitemapQueryQuery = { __typename?: 'RootQuery', contentNodes?: { __typename?: 'RootQueryToContentNodeConnection', pageInfo: { __typename?: 'RootQueryToContentNodeConnectionPageInfo', hasNextPage: boolean, endCursor?: string | null }, nodes: Array<{ __typename?: 'GraphqlDocument', uri?: string | null, modifiedGmt?: string | null } | { __typename?: 'MediaItem', uri?: string | null, modifiedGmt?: string | null } | { __typename?: 'Page', uri?: string | null, modifiedGmt?: string | null } | { __typename?: 'Post', uri?: string | null, modifiedGmt?: string | null } | { __typename?: 'UserReactionPost', uri?: string | null, modifiedGmt?: string | null }> } | null };
+export type SitemapQueryQuery = { __typename?: 'RootQuery', contentNodes?: { __typename?: 'RootQueryToContentNodeConnection', pageInfo: { __typename?: 'RootQueryToContentNodeConnectionPageInfo', hasNextPage: boolean, endCursor?: string | null }, nodes: Array<{ __typename?: 'Delhi_university', uri?: string | null, modifiedGmt?: string | null } | { __typename?: 'Ggsipu', uri?: string | null, modifiedGmt?: string | null } | { __typename?: 'GraphqlDocument', uri?: string | null, modifiedGmt?: string | null } | { __typename?: 'Kuk', uri?: string | null, modifiedGmt?: string | null } | { __typename?: 'Lpu', uri?: string | null, modifiedGmt?: string | null } | { __typename?: 'Makaut', uri?: string | null, modifiedGmt?: string | null } | { __typename?: 'MediaItem', uri?: string | null, modifiedGmt?: string | null } | { __typename?: 'Mumbai_university', uri?: string | null, modifiedGmt?: string | null } | { __typename?: 'Page', uri?: string | null, modifiedGmt?: string | null } | { __typename?: 'Post', uri?: string | null, modifiedGmt?: string | null } | { __typename?: 'Rgpv', uri?: string | null, modifiedGmt?: string | null } | { __typename?: 'UserReactionPost', uri?: string | null, modifiedGmt?: string | null }> } | null };
 
 export type CoreColumnFragmentFragment = { __typename?: 'CoreColumn', attributes?: { __typename?: 'CoreColumnAttributes', style?: any | null, className?: string | null, cssClassName?: string | null } | null } & { ' $fragmentName'?: 'CoreColumnFragmentFragment' };
 
@@ -18702,11 +27383,11 @@ export type CoreColumnsFragmentFragment = { __typename?: 'CoreColumns', attribut
 
 export type NcmazFaustBlockCtaFragmentFragment = { __typename?: 'NcmazFaustBlockCta', renderedHtml?: string | null } & { ' $fragmentName'?: 'NcmazFaustBlockCtaFragmentFragment' };
 
-export type NcmazFaustBlockGroupFragmentFragment = { __typename?: 'NcmazFaustBlockGroup', aliasAttributes?: { __typename?: 'NcmazFaustBlockGroupAttributes', style: any, variation: string, hasBackground: boolean, className?: string | null } | null } & { ' $fragmentName'?: 'NcmazFaustBlockGroupFragmentFragment' };
+export type NcmazFaustBlockGroupFragmentFragment = { __typename?: 'NcmazFaustBlockGroup', aliasAttributes?: { __typename?: 'NcmazFaustBlockGroupAttributes', style?: any | null, variation?: string | null, hasBackground?: boolean | null, className?: string | null } | null } & { ' $fragmentName'?: 'NcmazFaustBlockGroupFragmentFragment' };
 
-export type NcmazFaustBlockMagazineFragmentFragment = { __typename?: 'NcmazFaustBlockMagazine', attributes?: { __typename?: 'NcmazFaustBlockMagazineAttributes', blockVariation: string, className?: string | null, hasBackground: boolean, showViewAll: boolean } | null } & { ' $fragmentName'?: 'NcmazFaustBlockMagazineFragmentFragment' };
+export type NcmazFaustBlockMagazineFragmentFragment = { __typename?: 'NcmazFaustBlockMagazine', attributes?: { __typename?: 'NcmazFaustBlockMagazineAttributes', blockVariation?: string | null, className?: string | null, hasBackground?: boolean | null, showViewAll?: boolean | null } | null } & { ' $fragmentName'?: 'NcmazFaustBlockMagazineFragmentFragment' };
 
-export type NcmazFaustBlockTermsFragmentFragment = { __typename?: 'NcmazFaustBlockTerms', attributes?: { __typename?: 'NcmazFaustBlockTermsAttributes', blockVariation: string, hasBackground: boolean } | null } & { ' $fragmentName'?: 'NcmazFaustBlockTermsFragmentFragment' };
+export type NcmazFaustBlockTermsFragmentFragment = { __typename?: 'NcmazFaustBlockTerms', attributes?: { __typename?: 'NcmazFaustBlockTermsAttributes', blockVariation?: string | null, hasBackground?: boolean | null } | null } & { ' $fragmentName'?: 'NcmazFaustBlockTermsFragmentFragment' };
 
 export type PageArchiveGetArchiveQueryVariables = Exact<{
   uri?: Scalars['String']['input'];
@@ -18716,13 +27397,13 @@ export type PageArchiveGetArchiveQueryVariables = Exact<{
 }>;
 
 
-export type PageArchiveGetArchiveQuery = { __typename?: 'RootQuery', nodeByUri?: { __typename?: 'Category', uri?: string | null, id: string } | { __typename?: 'Comment', uri?: string | null, id: string } | { __typename?: 'ContentType', uri?: string | null, id: string } | { __typename?: 'GraphqlDocument', uri?: string | null, id: string } | { __typename?: 'GraphqlDocumentGroup', uri?: string | null, id: string } | { __typename?: 'MediaItem', uri?: string | null, id: string } | { __typename?: 'Page', uri?: string | null, id: string } | { __typename?: 'Post', uri?: string | null, id: string } | (
+export type PageArchiveGetArchiveQuery = { __typename?: 'RootQuery', nodeByUri?: { __typename?: 'Category', uri?: string | null, id: string } | { __typename?: 'Comment', uri?: string | null, id: string } | { __typename?: 'ContentType', uri?: string | null, id: string } | { __typename?: 'Delhi_university', uri?: string | null, id: string } | { __typename?: 'Ggsipu', uri?: string | null, id: string } | { __typename?: 'GraphqlDocument', uri?: string | null, id: string } | { __typename?: 'GraphqlDocumentGroup', uri?: string | null, id: string } | { __typename?: 'Kuk', uri?: string | null, id: string } | { __typename?: 'Lpu', uri?: string | null, id: string } | { __typename?: 'Makaut', uri?: string | null, id: string } | { __typename?: 'MediaItem', uri?: string | null, id: string } | { __typename?: 'Mumbai_university', uri?: string | null, id: string } | { __typename?: 'Page', uri?: string | null, id: string } | { __typename?: 'Post', uri?: string | null, id: string } | (
     { __typename?: 'PostFormat', uri?: string | null, id: string, posts?: { __typename?: 'PostFormatToPostConnection', nodes: Array<(
         { __typename?: 'Post' }
         & { ' $fragmentRefs'?: { 'NcmazFcPostCardFieldsFragment': NcmazFcPostCardFieldsFragment } }
       )>, pageInfo: { __typename?: 'PostFormatToPostConnectionPageInfo', endCursor?: string | null, hasNextPage: boolean } } | null }
     & { ' $fragmentRefs'?: { 'NcmazFcPostFormatFullFieldsFragmentFragment': NcmazFcPostFormatFullFieldsFragmentFragment } }
-  ) | { __typename?: 'Tag', uri?: string | null, id: string } | { __typename?: 'User', uri?: string | null, id: string } | { __typename?: 'UserReactionPost', uri?: string | null, id: string } | null, categories?: { __typename?: 'RootQueryToCategoryConnection', nodes: Array<(
+  ) | { __typename?: 'Rgpv', uri?: string | null, id: string } | { __typename?: 'Tag', uri?: string | null, id: string } | { __typename?: 'User', uri?: string | null, id: string } | { __typename?: 'UserReactionPost', uri?: string | null, id: string } | null, categories?: { __typename?: 'RootQueryToCategoryConnection', nodes: Array<(
       { __typename?: 'Category' }
       & { ' $fragmentRefs'?: { 'NcmazFcCategoryFullFieldsFragmentFragment': NcmazFcCategoryFullFieldsFragmentFragment } }
     )> } | null, generalSettings?: (
@@ -18778,7 +27459,7 @@ export type GetPageQuery = { __typename?: 'RootQuery', page?: { __typename?: 'Pa
     ) | (
       { __typename: 'CoreColumns', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null }
       & { ' $fragmentRefs'?: { 'CoreColumnsFragmentFragment': CoreColumnsFragmentFragment } }
-    ) | { __typename: 'CoreCommentAuthorName', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentContent', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentDate', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentEditLink', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentReplyLink', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentTemplate', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreComments', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentsPagination', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentsPaginationNext', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentsPaginationNumbers', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentsPaginationPrevious', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentsTitle', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCover', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreDetails', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreEmbed', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreFile', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreFootnotes', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreFreeform', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreGallery', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreGroup', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreHeading', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreHomeLink', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreHtml', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreImage', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreLatestComments', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreLatestPosts', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreLegacyWidget', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreList', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreListItem', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreLoginout', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreMediaText', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreMissing', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreMore', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreNavigation', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreNavigationLink', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreNavigationSubmenu', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreNextpage', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePageList', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePageListItem', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreParagraph', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePattern', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostAuthor', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostAuthorBiography', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostAuthorName', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostComments', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostCommentsForm', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostContent', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostDate', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostExcerpt', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostFeaturedImage', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostNavigationLink', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostTemplate', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostTerms', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostTitle', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePreformatted', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePullquote', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreQuery', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreQueryNoResults', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreQueryPagination', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreQueryPaginationNext', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreQueryPaginationNumbers', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreQueryPaginationPrevious', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreQueryTitle', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreQuote', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreReadMore', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreRss', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreSearch', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreSeparator', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreShortcode', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreSiteLogo', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreSiteTagline', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreSiteTitle', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreSocialLink', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreSocialLinks', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreSpacer', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreTable', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreTagCloud', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreTemplatePart', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreTermDescription', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreTextColumns', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreVerse', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreVideo', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreWidgetGroup', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'MailpoetSubscriptionFormBlock', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'MailpoetSubscriptionFormBlockRender', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | (
+    ) | { __typename: 'CoreCommentAuthorName', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentContent', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentDate', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentEditLink', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentReplyLink', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentTemplate', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreComments', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentsPagination', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentsPaginationNext', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentsPaginationNumbers', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentsPaginationPrevious', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentsTitle', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCover', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreDetails', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreEmbed', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreFile', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreFootnotes', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreFreeform', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreGallery', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreGroup', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreHeading', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreHomeLink', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreHtml', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreImage', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreLatestComments', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreLatestPosts', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreLegacyWidget', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreList', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreListItem', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreLoginout', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreMediaText', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreMissing', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreMore', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreNavigation', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreNavigationLink', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreNavigationSubmenu', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreNextpage', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePageList', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePageListItem', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreParagraph', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePattern', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostAuthor', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostAuthorBiography', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostAuthorName', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostComments', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostCommentsForm', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostContent', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostDate', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostExcerpt', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostFeaturedImage', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostNavigationLink', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostTemplate', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostTerms', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostTitle', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePreformatted', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePullquote', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreQuery', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreQueryNoResults', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreQueryPagination', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreQueryPaginationNext', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreQueryPaginationNumbers', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreQueryPaginationPrevious', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreQueryTitle', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreQuote', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreReadMore', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreRss', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreSearch', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreSeparator', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreShortcode', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreSiteLogo', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreSiteTagline', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreSiteTitle', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreSocialLink', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreSocialLinks', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreSpacer', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreTable', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreTagCloud', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreTemplatePart', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreTermDescription', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreTextColumns', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreVerse', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreVideo', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreWidgetGroup', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'GenerateblocksButton', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'GenerateblocksButtonContainer', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'GenerateblocksContainer', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'GenerateblocksGrid', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'GenerateblocksHeadline', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'GenerateblocksImage', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'GenerateblocksQueryLoop', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'GeneratepressDynamicContent', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'GeneratepressDynamicImage', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'MailpoetSubscriptionFormBlock', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'MailpoetSubscriptionFormBlockRender', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | (
       { __typename: 'NcmazFaustBlockCta', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null }
       & { ' $fragmentRefs'?: { 'NcmazFaustBlockCtaFragmentFragment': NcmazFaustBlockCtaFragmentFragment } }
     ) | (
@@ -18790,7 +27471,7 @@ export type GetPageQuery = { __typename?: 'RootQuery', page?: { __typename?: 'Pa
     ) | (
       { __typename: 'NcmazFaustBlockTerms', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null }
       & { ' $fragmentRefs'?: { 'NcmazFaustBlockTermsFragmentFragment': NcmazFaustBlockTermsFragmentFragment } }
-    ) | null> | null } | null, generalSettings?: (
+    ) | { __typename: 'PodsPodsBlockField', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'PodsPodsBlockForm', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'PodsPodsBlockList', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'PodsPodsBlockSingle', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'PodsPodsBlockSingleListFields', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'YoastFaqBlock', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'YoastHowToBlock', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'YoastSeoBreadcrumbs', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | null> | null } | null, generalSettings?: (
     { __typename?: 'GeneralSettings' }
     & { ' $fragmentRefs'?: { 'NcgeneralSettingsFieldsFragmentFragment': NcgeneralSettingsFieldsFragmentFragment } }
   ) | null, primaryMenuItems?: { __typename?: 'RootQueryToMenuItemConnection', nodes: Array<(
@@ -18829,6 +27510,35 @@ export type GetPostSiglePageQuery = { __typename?: 'RootQuery', post?: (
       { __typename?: 'MenuItem' }
       & { ' $fragmentRefs'?: { 'NcFooterMenuFieldsFragmentFragment': NcFooterMenuFieldsFragmentFragment } }
     )> } | null };
+
+    export type GetLpuSinglePageQuery = {
+      __typename?: 'RootQuery',
+      lpu?: (
+        { __typename?: 'lpu' }
+        & { ' $fragmentRefs'?: { 'NcmazFcLpuFullFieldsFragment': NcmazFcPostFullFieldsFragment } }
+      ) | null,
+      lpus?: { __typename?: 'RootQueryToLpuConnection', nodes: Array<(
+          { __typename?: 'lpu' }
+          & { ' $fragmentRefs'?: { 'PostCardFieldsNotNcmazMediaFragment': PostCardFieldsNotNcmazMediaFragment } }
+        )> } | null,
+      categories?: { __typename?: 'RootQueryToCategoryConnection', nodes: Array<(
+          { __typename?: 'Category' }
+          & { ' $fragmentRefs'?: { 'NcmazFcCategoryFullFieldsFragmentFragment': NcmazFcCategoryFullFieldsFragmentFragment } }
+        )> } | null,
+      generalSettings?: (
+        { __typename?: 'GeneralSettings' }
+        & { ' $fragmentRefs'?: { 'NcgeneralSettingsFieldsFragmentFragment': NcgeneralSettingsFieldsFragmentFragment } }
+      ) | null,
+      primaryMenuItems?: { __typename?: 'RootQueryToMenuItemConnection', nodes: Array<(
+          { __typename?: 'MenuItem' }
+          & { ' $fragmentRefs'?: { 'NcPrimaryMenuFieldsFragmentFragment': NcPrimaryMenuFieldsFragmentFragment } }
+        )> } | null,
+      footerMenuItems?: { __typename?: 'RootQueryToMenuItemConnection', nodes: Array<(
+          { __typename?: 'MenuItem' }
+          & { ' $fragmentRefs'?: { 'NcFooterMenuFieldsFragmentFragment': NcFooterMenuFieldsFragmentFragment } }
+        )> } | null
+    };
+    
 
 export type PageTagGetTagQueryVariables = Exact<{
   id: Scalars['ID']['input'];
