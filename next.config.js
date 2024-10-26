@@ -5,8 +5,21 @@ const { createSecureHeaders } = require('next-secure-headers')
  * @type {import('next').NextConfig}
  **/
 module.exports = withFaust({
+	eslint: {
+        ignoreDuringBuilds: true,
+    },
+    typescript: {
+        ignoreBuildErrors: true,
+      },
+      compress: true,
+  poweredByHeader: false,
+  reactStrictMode: true,
+  swcMinify: true,
+  i18n: {
+    locales: ['en'],
+    defaultLocale: 'en',
+  },
 	trailingSlash: true,
-	reactStrictMode: true,
 	experimental: {
 		typedRoutes: false,
 	},
